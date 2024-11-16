@@ -1,30 +1,19 @@
-// Example JSON Data (replace with your actual data)
-const apiData = [
-    {
-      "id": 1,
-      "import": "android.view.inputmethod.InputMethodManager",
-      "java_code": "void acceptStylusHandwritingDelegation(View, String, int, Executor, Consumer<Boolean>)",
-      "kotlin_code": "fun acceptStylusHandwritingDelegation(View, String, Int, Executor, Consumer<Boolean!>): Unit",
-      "link": "https://developer.android.com/reference/android/view/inputmethod/InputMethodManager#acceptStylusHandwritingDelegation",
-      "class": "Non-Sensitive",
-      "sensitive_data": null,
-      "category": "UI",
-      "change_type": "Addition",
-      "description": "Delegates stylus handwriting to a specific app."
-    },
-    {
-      "id": 4,
-      "import": "android.view.inputmethod.InputMethodManager",
-      "java_code": "void startConnectionlessStylusHandwriting(View, CursorAnchorInfo, Executor, ConnectionlessHandwritingCallback)",
-      "kotlin_code": "fun startConnectionlessStylusHandwriting(View, CursorAnchorInfo?, Executor, ConnectionlessHandwritingCallback): Unit",
-      "link": "https://developer.android.com/reference/android/view/inputmethod/InputMethodManager#startConnectionlessStylusHandwriting",
-      "class": "Sensitive Source",
-      "sensitive_data": "Recognised handwritten text",
-      "category": "Security",
-      "change_type": "Addition",
-      "description": "Initiates handwriting recognition without requiring a full connection."
+let apiData = []; // Initialize an empty array for the API data
+
+// Fetch the JSON file and populate the apiData variable
+fetch('changes.json') 
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Failed to load JSON: ${response.status}`);
     }
-  ];
+    return response.json();
+  })
+  .then(data => {
+    apiData = data; // Assign the fetched data to the apiData variable
+    populateTables(apiData); // Populate the tables with the loaded data
+  })
+  .catch(error => console.error('Error loading JSON:', error));
+
   
   // Populate Tables
   function populateTables(data) {
