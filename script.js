@@ -1,4 +1,4 @@
-let apiData = []; // Initialize an empty array for the API data
+let apiData = [];
 
 // Fetch the JSON file and populate the apiData variable
 fetch('changes.json') 
