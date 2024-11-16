@@ -9,7 +9,7 @@ fetch('changes.json')
     return response.json();
   })
   .then(data => {
-    apiData = data; // Assign the fetched data to the apiData variable
+     apiData = data.filter(item => item.id !== -1); // Assign the fetched data to the apiData variable
     populateTables(apiData); // Populate the tables with the loaded data
   })
   .catch(error => console.error('Error loading JSON:', error));
