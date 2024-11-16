@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android API Changes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .filters {
+      margin-bottom: 20px;
+    }
+    .filters label {
+      margin-right: 10px;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Android API Changes (API 34 to 35)</h1>
+  <p>Explore and classify Android API changes.</p>
+
+  <!-- Filters -->
+  <div class="filters">
+    <label for="change-type">Change Type:</label>
+    <select id="change-type">
+      <option value="">All</option>
+      <option value="Addition">Addition</option>
+      <option value="Modification">Modification</option>
+      <option value="Deletion">Deletion</option>
+    </select>
+
+    <label for="class">Class:</label>
+    <select id="class">
+      <option value="">All</option>
+      <option value="Sensitive Source">Sensitive Source</option>
+      <option value="Sensitive Sink">Sensitive Sink</option>
+      <option value="Non-Sensitive">Non-Sensitive</option>
+    </select>
+
+    <label for="category">Category:</label>
+    <select id="category">
+      <option value="">All</option>
+      <option value="UI">UI</option>
+      <option value="Security">Security</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <button onclick="applyFilters()">Apply Filters</button>
+  </div>
+
+  <!-- Tables -->
+  <div id="data-tables">
+    <h2>Sensitive Sources</h2>
+    <table id="sensitive-sources">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>API</th>
+          <th>Change Type</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>View Code</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Sensitive Sinks</h2>
+    <table id="sensitive-sinks">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>API</th>
+          <th>Change Type</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>View Code</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Non-Sensitive</h2>
+    <table id="non-sensitive">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>API</th>
+          <th>Change Type</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>View Code</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Export Button -->
+  <button onclick="exportFlowDroid()">Export Selected to FlowDroid</button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
