@@ -61,25 +61,49 @@ fetch('changes.json')
   }
   
   // Export Selected APIs to FlowDroid Format
-  function exportFlowDroid() {
-    const selectedIds = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-      .map(checkbox => parseInt(checkbox.getAttribute('data-id')));
-  
-    const selectedAPIs = apiData.filter(item => selectedIds.includes(item.id));
-    const flowDroidData = selectedAPIs.map(api => ({
-      source: api.class === "Sensitive Source" ? api.java_code : null,
-      sink: api.class === "Sensitive Sink" ? api.java_code : null
-    }));
-  
-    const blob = new Blob([JSON.stringify(flowDroidData, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-  
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'flowdroid.json';
-    a.click();
-  }
-  
-  // Initialize
-  populateTables(apiData);
+function exportFlowDroid() {
+  // Get selected IDs from checkboxes
+  const selectedIds = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+    .map(checkbox => parseInt(checkbox.getAttribute('data-id')));
+
+  // Filter selected APIs and map to FlowDroid format
+  const flowDroidEntries = apiData
+    .filter(item => selectedIds.includes(item.id)) // Only include selected items
+    .map(item => {
+      if (item.class === "Sensitive Source") {
+        return `<${item.import}: ${getReturnType(item.java_code)} ${getMethodSignature(item.java_code)}> -> _SOURCE_`;
+      } else if (item.class === "Sensitive Sink") {
+        return `<${item.import}: ${getReturnType(item.java_code)} ${getMethodSignature(item.java_code)}> -> _SINK_`;
+      }
+      return null; // Exclude Non-Sensitive or unclassified entries
+    })
+    .filter(entry => entry !== null); // Remove null entries
+
+  // Join all entries into a single string with newlines
+  const flowDroidOutput = flowDroidEntries.join('\n');
+
+  // Create a downloadable .txt file
+  const blob = new Blob([flowDroidOutput], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'flowdroid.txt';
+  a.click();
+}
+
+// Helper function to extract return type from the Java method signature
+function getReturnType(javaCode) {
+  const methodParts = javaCode.split(' ');
+  return methodParts[0]; // Return type is the first word
+}
+
+// Helper function to extract method signature from the Java method signature
+function getMethodSignature(javaCode) {
+  const methodStart = javaCode.indexOf(' ') + 1; // Start after the return type
+  return javaCode.substring(methodStart).trim();
+}
+
+// Initialize
+populateTables(apiData);
   
