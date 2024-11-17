@@ -1,56 +1,20 @@
-// Sample Data (use your actual data here)
-const data = [
-  {
-    "id": "1",
-    "import": "android.accessibilityservice.AccessibilityService",
-    "code": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
-    "link": "https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#getBrailleDisplayController()",
-    "class": "Non-Sensitive",
-    "categories": null,
-    "change_type": "Addition",
-    "data_returned": [
-      {
-        "type": "android.accessibilityservice.BrailleDisplayController",
-        "possibly_sensitive": false
-      }
-    ],
-    "data_accepted": null
-  },
-  {
-    "id": "2",
-    "import": "android.adservices.adid.AdIdManager",
-    "code": "void getAdId(java.util.concurrent.Executor, android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>)",
-    "link": "https://developer.android.com/reference/android/adservices/adid/AdIdManager#getAdId(java.util.concurrent.Executor,%20android.adservices.common.AdServicesOutcomeReceiver%3Candroid.adservices.adid.AdId,java.lang.Exception%3E)",
-    "class": "Sensitive Source",
-    "categories": [
-      {
-        "name": "Device or other IDs",
-      }
-    ],
-    "change_type": "Addition",
-    "data_returned": [
-       {
-        "type": "android.adservices.adid.AdId",
-        "categories": [
-          {
-            "name": "Device or other IDs",
-          }
-        ],
-        "possibly_sensitive": true
-      }
-    ],
-    "data_accepted": [
-      {
-        "type": "java.util.concurrent.Executor",
-        "possibly_sensitive": false
-      },
-      {
-        "type": "android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>",
-        "possibly_sensitive": false
-      }
-    ]
-  }
-]
+let apiData = []; // Initialize an empty array for the API data
+
+// Fetch the JSON file and populate the apiData variable
+fetch('changes.json') 
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Failed to load JSON: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    apiData = data; // Assign the fetched data to the apiData variable
+    populateTables(apiData); // Populate the tables with the loaded data
+  })
+  .catch(error => console.error('Error loading JSON:', error));
+
+
 
 // Function to populate the tables with data
 function populateTables(filteredData) {
@@ -108,7 +72,7 @@ function applyFilters() {
   const selectedCategory = document.getElementById('category').value;
 
   // Filter the data based on selected options
-  const filteredData = data.filter(item => {
+  const filteredData = apiData.filter(item => {
     const matchChangeType = changeType ? item.change_type === changeType : true;
     const matchClass = selectedClass ? item.class === selectedClass : true;
     const matchCategory = selectedCategory ? item.categories && item.categories.some(cat => cat.name === selectedCategory) : true;
@@ -151,7 +115,7 @@ function viewSourceCode(link) {
 }
 
 // Initially populate the tables
-populateTables(data);
+populateTables(apiData);
 
 // Add event listeners to filters
 document.getElementById('change-type').addEventListener('change', applyFilters);
