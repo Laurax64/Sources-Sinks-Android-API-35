@@ -56,12 +56,12 @@ function populatePackages(data) {
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td><input type="checkbox" data-id="${api.id}"></td>
-        <td><a href="${item.link}" target="_blank">${api.code}</a></td>
-        <td>${api.change_type || "N/A"}</td>
-        <td>${formatData(api.data_returned)}</td>
-        <td>${formatData(api.data_accepted)}</td>
-        <td>${formatCategories(api.categories)}</td>
+      <td><input type="checkbox" data-id="${api.id}"></td>
+      <td><a href="${api.link}" target="_blank">${api.code}</a></td>
+      <td>${api.change_type || "N/A"}</td>
+      <td>${formatData(api.data_returned)}</td>
+      <td>${formatData(api.data_accepted)}</td>
+      <td>${formatCategories(api.categories)}</td>
       `;
       tbody.appendChild(row);
     });
@@ -87,23 +87,26 @@ function formatCategories(categories) {
 
 function toggleTable(packageName) {
   const table = document.getElementById(`table-${packageName}`);
-  table.style.display = table.style.display === "none" ? "table" : "none";
+  table.classList.toggle("hidden");
 }
 
 function applyFilters() {
-  const showAdded = document.getElementById("filter-added").checked;
-  const showModified = document.getElementById("filter-modified").checked;
-  const showDeleted = document.getElementById("filter-deleted").checked;
+  const changeType = document.getElementById("change-type").value;
+  const selectedClass = document.getElementById("class").value;
+  const selectedCategory = document.getElementById("category").value;
 
   const filteredData = apiData.filter(item => {
-    if (item.change_type === "Addition" && showAdded) return true;
-    if (item.change_type === "Modification" && showModified) return true;
-    if (item.change_type === "Deletion" && showDeleted) return true;
-    return false;
+    const matchesChangeType = !changeType || item.change_type === changeType;
+    const matchesClass = !selectedClass || item.class === selectedClass;
+    const matchesCategory = !selectedCategory || 
+      (item.categories && item.categories.some(cat => cat.name === selectedCategory));
+
+    return matchesChangeType && matchesClass && matchesCategory;
   });
 
   populatePackages(filteredData);
 }
+
 
 // Load data and initialize the page
 let apiData = [];
