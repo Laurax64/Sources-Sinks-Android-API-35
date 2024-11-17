@@ -21,18 +21,14 @@
     "code": "void getAdId(java.util.concurrent.Executor, android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>)",
     "link": "https://developer.android.com/reference/android/adservices/adid/AdIdManager#getAdId(java.util.concurrent.Executor,%20android.adservices.common.AdServicesOutcomeReceiver%3Candroid.adservices.adid.AdId,java.lang.Exception%3E)",
     "class": "Sensitive Source",
-    "categories": [
-      {
-        "name": "Device or other IDs",
-      }
-    ],
+    "categories": "Device or other IDs",
     "change_type": "Addition",
     "data_returned": [
        {
         "type": "android.adservices.adid.AdId",
         "categories": [
           {
-            "name": "Device or other IDs",
+            "name": "Device or other IDs"
           }
         ],
         "possibly_sensitive": true
