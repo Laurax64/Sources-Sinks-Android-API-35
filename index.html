@@ -3,131 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Android API Changes</title>
+  <title>Changes Viewer</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f4f4f4;
-    }
-    .filters {
-      margin-bottom: 20px;
-    }
-    .filters label {
-      margin-right: 10px;
-    }
-    button {
-      margin-top: 10px;
-    }
+    body { font-family: Arial, sans-serif; }
+    .change { margin-bottom: 20px; }
+    .heading { font-weight: bold; }
+    .link { color: blue; text-decoration: underline; }
   </style>
 </head>
 <body>
-  <h1>Android API Changes (API 34 to 35)</h1>
-  <p>Explore and classify Android API changes.</p>
-
-  <!-- Filters -->
-  <div class="filters">
-    <label for="change-type">Change Type:</label>
-    <select id="change-type">
-      <option value="">All</option>
-      <option value="Addition">Addition</option>
-      <option value="Modification">Modification</option>
-      <option value="Deletion">Deletion</option>
-    </select>
-
-    <label for="class">Class:</label>
-    <select id="class">
-      <option value="">All</option>
-      <option value="Sensitive Source">Sensitive Source</option>
-      <option value="Sensitive Sink">Sensitive Sink</option>
-      <option value="Non-Sensitive">Non-Sensitive</option>
-    </select>
-
-    <label for="category">Categories:</label>
-    <select id="category">
-      <option value="Location">Location</option>
-      <option value="Personal Info">Personal Info</option>
-      <option value="Financial Info">Financial Info</option>
-      <option value="Health and Fitness">Health and Fitness</option>
-      <option value="Messages">Messages</option>
-      <option value="Photos and Videos">Photos and Videos</option>
-      <option value="Audio Files">Audio Files</option>
-      <option value="Files and Documents">Files and Documents</option>
-      <option value="Calendar">Calendar</option>
-      <option value="Contacts">Contacts</option>
-      <option value="App Activity">App Activity</option>
-      <option value="Web Browsing<">Web Browsing</option>
-      <option value="App Info and Performance">App Info and Performance</option>
-      <option value="Device or other IDs">Device or other IDs</option>
-    </select>
-
-    <button onclick="applyFilters()">Apply Filters</button>
-  </div>
-
-  <!-- Tables -->
-  <div id="data-tables">
-    <h2>Sensitive Sources</h2>
-    <table id="sensitive-sources">
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Change Type</th>
-          <th>Data Returned</th>
-          <th>Data Accepted</th>
-          <th>Categories</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <h2>Sensitive Sinks</h2>
-    <table id="sensitive-sinks">
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Change Type</th>
-          <th>Data Returned</th>
-          <th>Data Accepted</th>
-          <th>Categories</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <h2>Non-Sensitive</h2>
-    <table id="non-sensitive">
-      <thead>
-     <tr>
-          <th>Code</th>
-          <th>Change Type</th>
-          <th>Data Returned</th>
-          <th>Data Accepted</th>
-          <th>Categories</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
-  <!-- Export Button -->
-  <button onclick="exportFlowDroid()">Export Selected to FlowDroid</button>
-
-  <!-- JavaScript -->
+  <h1>Change List</h1>
+  <div id="changes-container"></div>
   <script src="script.js"></script>
 </body>
 </html>

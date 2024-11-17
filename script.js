@@ -1,119 +1,48 @@
-function assignIds(data) {
-  return data.map((item, index) => {
-    if (!item.id) {
-      item.id = index + 1; // Assign a unique ID
-    }
-    return item;
-  });
-}
-
-function groupByPackage(data) {
-  return data.reduce((groups, item) => {
-    if (!groups[item.import]) {
-      groups[item.import] = [];
-    }
-    groups[item.import].push(item);
-    return groups;
-  }, {});
-}
-
-function populatePackages(data) {
-  const container = document.getElementById("api-changes");
-  container.innerHTML = ""; // Clear existing content
-
-  const packages = groupByPackage(data);
-
-  for (const [packageName, apis] of Object.entries(packages)) {
-    const packageDiv = document.createElement("div");
-    packageDiv.className = "package-group";
-
-    const title = document.createElement("div");
-    title.className = "package-title";
-    title.textContent = packageName;
-    title.onclick = () => toggleTable(packageName);
-
-    packageDiv.appendChild(title);
-
-    const table = document.createElement("table");
-    table.className = "api-table";
-    table.id = `table-${packageName}`;
-
-    const thead = document.createElement("thead");
-    thead.innerHTML = `
-      <tr>
-      <th>Code</th>
-      <th>Change Type</th>
-      <th>Data Returned</th>
-      <th>Data Accepted</th>
-      <th>Categories</th>
-      <th>Select</th>
-      </tr>
-    `;
-    table.appendChild(thead);
-
-    const tbody = document.createElement("tbody");
-    apis.forEach(api => {
-      const row = document.createElement("tr");
-
-      row.innerHTML = `
-      <td><input type="checkbox" data-id="${api.id}"></td>
-      <td><a href="${api.link}" target="_blank">${api.code}</a></td>
-      <td>${api.change_type || "N/A"}</td>
-      <td>${formatData(api.data_returned)}</td>
-      <td>${formatData(api.data_accepted)}</td>
-      <td>${formatCategories(api.categories)}</td>
-      `;
-      tbody.appendChild(row);
-    });
-
-    table.appendChild(tbody);
-    packageDiv.appendChild(table);
-    container.appendChild(packageDiv);
-  }
-}
-
-function formatData(data) {
-  if (!data || !data.data) return "N/A";
-  const sensitivity = data.data.possibly_sensitive ? " (Sensitive)" : "";
-  return `${data.data.type || "N/A"}${sensitivity}`;
-}
-
-function formatCategories(categories) {
-  if (!categories || categories.length === 0) return "N/A";
-  return categories
-    .map(cat => `${cat.name}${cat.example ? ` (e.g., ${cat.example})` : ""}`)
-    .join(", ");
-}
-
-function toggleTable(packageName) {
-  const table = document.getElementById(`table-${packageName}`);
-  table.classList.toggle("hidden");
-}
-
-function applyFilters() {
-  const changeType = document.getElementById("change-type").value;
-  const selectedClass = document.getElementById("class").value;
-  const selectedCategory = document.getElementById("category").value;
-
-  const filteredData = apiData.filter(item => {
-    const matchesChangeType = !changeType || item.change_type === changeType;
-    const matchesClass = !selectedClass || item.class === selectedClass;
-    const matchesCategory = !selectedCategory || 
-      (item.categories && item.categories.some(cat => cat.name === selectedCategory));
-
-    return matchesChangeType && matchesClass && matchesCategory;
-  });
-
-  populatePackages(filteredData);
-}
-
-
-// Load data and initialize the page
-let apiData = [];
-fetch('changes.json')
-  .then(response => response.json())
-  .then(data => {
-    apiData = assignIds(data);
-    populatePackages(apiData);
-  })
-  .catch(error => console.error("Error loading data:", error));
+document.addEventListener("DOMContentLoaded", function() {
+  fetch('changes.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('changes-container');
+      data.forEach(change => {
+        const changeElement = document.createElement('div');
+        changeElement.classList.add('change');
+        
+        // Heading (ID and Import)
+        const heading = document.createElement('div');
+        heading.classList.add('heading');
+        heading.textContent = `ID: ${change.id} - Import: ${change.import}`;
+        changeElement.appendChild(heading);
+        
+        // Code and Link
+        const codeLink = document.createElement('div');
+        codeLink.innerHTML = `<strong>Code:</strong> <code>${change.code}</code> <a href="${change.link}" target="_blank" class="link">View Documentation</a>`;
+        changeElement.appendChild(codeLink);
+        
+        // Class
+        const classElement = document.createElement('div');
+        classElement.innerHTML = `<strong>Class:</strong> ${change.class}`;
+        changeElement.appendChild(classElement);
+        
+        // Categories
+        if (change.categories) {
+          const categories = document.createElement('div');
+          categories.innerHTML = `<strong>Categories:</strong> ${change.categories.map(c => c.name).join(', ')}`;
+          changeElement.appendChild(categories);
+        }
+        
+        // Change Type
+        const changeType = document.createElement('div');
+        changeType.innerHTML = `<strong>Change Type:</strong> ${change.change_type}`;
+        changeElement.appendChild(changeType);
+        
+        // Data Returned
+        const dataReturned = document.createElement('div');
+        dataReturned.innerHTML = `<strong>Data Returned:</strong> ${change.data_returned.map(d => `${d.type}${d.possibly_sensitive ? ' (Sensitive)' : ''}`).join(', ')}`;
+        changeElement.appendChild(dataReturned);
+        
+        // Append change element to container
+        container.appendChild(changeElement);
+      });
+    })
+    .catch(error => console.error('Error loading changes.json:', error));
+});
