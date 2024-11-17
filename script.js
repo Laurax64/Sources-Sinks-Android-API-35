@@ -1,19 +1,14 @@
-let apiData = []; // Initialize an empty array for the API data
+// Fetch data and populate tables
+let apiData = [];
 
-// Fetch the JSON file and populate the apiData variable
-fetch('changes.json') 
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`Failed to load JSON: ${response.status}`);
-    }
-    return response.json();
+fetch('https://github.com/Laurax64/Sources-Sinks-Android-API-35/blob/f03d2fb5ad09e84e8a272c4c5133afa8df02b249/changes.json')
+  .then((response) => response.json())
+  .then((json) => {
+    apiData = json;
+    // Initially populate the tables with the full data
+    populateTables(apiData);
   })
-  .then(data => {
-    apiData = data; // Assign the fetched data to the apiData variable
-  })
-  .catch(error => console.error('Error loading JSON:', error));
-
-
+  .catch((error) => console.error('Error fetching data:', error));
 
 // Function to populate the tables with data
 function populateTables(filteredData) {
@@ -112,9 +107,6 @@ function exportFlowDroid() {
 function viewSourceCode(link) {
   window.open(link, '_blank');
 }
-
-// Initially populate the tables
-populateTables(apiData);
 
 // Add event listeners to filters
 document.getElementById('change-type').addEventListener('change', applyFilters);
