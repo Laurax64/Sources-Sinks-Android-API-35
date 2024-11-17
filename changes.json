@@ -39,7 +39,12 @@
     "data_accepted": [
       {
         "type": "java.util.concurrent.Executor",
-        "possibly_sensitive": false
+        "possibly_sensitive": false,
+        "transmission_destinations": [
+          {
+            resource: null, 
+          }
+        ]  
       },
       {
         "type": "android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>",
