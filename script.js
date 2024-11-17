@@ -1,12 +1,3 @@
-function assignIds(data) {
-  return data.map((item, index) => {
-    if (!item.id) {
-      item.id = index + 1; // Assign a unique ID
-    }
-    return item;
-  });
-}
-
 function groupByPackage(data) {
   return data.reduce((groups, item) => {
     if (!groups[item.import]) {
@@ -19,7 +10,7 @@ function groupByPackage(data) {
 
 function populatePackages(data) {
   const container = document.getElementById("api-changes");
-  container.innerHTML = ""; // Clear existing content
+  container.innerHTML = ""; 
 
   const packages = groupByPackage(data);
 
@@ -113,7 +104,6 @@ let apiData = [];
 fetch('changes.json')
   .then(response => response.json())
   .then(data => {
-    apiData = assignIds(data);
     populatePackages(apiData);
   })
   .catch(error => console.error("Error loading data:", error));
