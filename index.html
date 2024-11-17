@@ -55,12 +55,22 @@
       <option value="Non-Sensitive">Non-Sensitive</option>
     </select>
 
-    <label for="category">Category:</label>
+    <label for="category">Categories:</label>
     <select id="category">
-      <option value="">All</option>
-      <option value="UI">UI</option>
-      <option value="Security">Security</option>
-      <option value="Other">Other</option>
+      <option value="">Location</option>
+      <option value="">Personal Info</option>
+      <option value="">Financial Info</option>
+      <option value="">Health and Fitness</option>
+      <option value="">Messages</option>
+      <option value="">Photos and Videos</option>
+      <option value="">Audio Files</option>
+      <option value="">Files and Documents</option>
+      <option value="">Calendar</option>
+      <option value="">Contacts</option>
+      <option value="">App Activity</option>
+      <option value="">Web Browsing</option>
+      <option value="">App Info and Performance</option>
+      <option value="">Device or other IDs</option>
     </select>
 
     <button onclick="applyFilters()">Apply Filters</button>
@@ -72,14 +82,12 @@
     <table id="sensitive-sources">
       <thead>
         <tr>
-          <th>Select</th>
           <th>Code</th>
           <th>Change Type</th>
-          <th>Class</th>
           <th>Data Returned</th>
           <th>Data Accepted</th>
           <th>Categories</th>
-          <th>Description</th>
+          <th>Select</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -89,12 +97,11 @@
     <table id="sensitive-sinks">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>API</th>
+          <th>Code</th>
           <th>Change Type</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>View Code</th>
+          <th>Data Returned</th>
+          <th>Data Accepted</th>
+          <th>Categories</th>
           <th>Select</th>
         </tr>
       </thead>
@@ -104,13 +111,12 @@
     <h2>Non-Sensitive</h2>
     <table id="non-sensitive">
       <thead>
-        <tr>
-          <th>ID</th>
-          <th>API</th>
+     <tr>
+          <th>Code</th>
           <th>Change Type</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>View Code</th>
+          <th>Data Returned</th>
+          <th>Data Accepted</th>
+          <th>Categories</th>ƒ
           <th>Select</th>
         </tr>
       </thead>
