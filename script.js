@@ -1,109 +1,120 @@
-let apiData = [];
-
-// Fetch the JSON file and populate the apiData variable
-fetch('changes.json') 
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`Failed to load JSON: ${response.status}`);
+function assignIds(data) {
+  return data.map((item, index) => {
+    if (!item.id) {
+      item.id = index + 1; // Assign a unique ID
     }
-    return response.json();
-  })
+    return item;
+  });
+}
+
+function groupByPackage(data) {
+  return data.reduce((groups, item) => {
+    if (!groups[item.import]) {
+      groups[item.import] = [];
+    }
+    groups[item.import].push(item);
+    return groups;
+  }, {});
+}
+
+function populatePackages(data) {
+  const container = document.getElementById("api-changes");
+  container.innerHTML = ""; // Clear existing content
+
+  const packages = groupByPackage(data);
+
+  for (const [packageName, apis] of Object.entries(packages)) {
+    const packageDiv = document.createElement("div");
+    packageDiv.className = "package-group";
+
+    const title = document.createElement("div");
+    title.className = "package-title";
+    title.textContent = packageName;
+    title.onclick = () => toggleTable(packageName);
+
+    packageDiv.appendChild(title);
+
+    const table = document.createElement("table");
+    table.className = "api-table";
+    table.id = `table-${packageName}`;
+
+    const thead = document.createElement("thead");
+    thead.innerHTML = `
+      <tr>
+        <th>Select</th>
+        <th>Code</th>
+        <th>Change Type</th>
+        <th>Class</th>
+        <th>Data Returned</th>
+        <th>Data Accepted</th>
+        <th>Categories</th>
+        <th>Description</th>
+      </tr>
+    `;
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    apis.forEach(api => {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td><input type="checkbox" data-id="${api.id}"></td>
+        <td>${api.code || "N/A"}</td>
+        <td>${api.change_type || "N/A"}</td>
+        <td>${api.class || "N/A"}</td>
+        <td>${formatData(api.data_returned)}</td>
+        <td>${formatData(api.data_accepted)}</td>
+        <td>${formatCategories(api.categories)}</td>
+        <td>${api.link ? `<a href="${api.link}" target="_blank">Link</a>` : "N/A"}</td>
+      `;
+      tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    packageDiv.appendChild(table);
+    container.appendChild(packageDiv);
+  }
+}
+
+function formatData(data) {
+  if (!data || !data.data) return "N/A";
+  const sensitivity = data.data.possibly_sensitive ? " (Sensitive)" : "";
+  return `${data.data.type || "N/A"}${sensitivity}`;
+}
+
+function formatCategories(categories) {
+  if (!categories || categories.length === 0) return "N/A";
+  return categories
+    .map(cat => `${cat.name}${cat.example ? ` (e.g., ${cat.example})` : ""}`)
+    .join(", ");
+}
+
+function toggleTable(packageName) {
+  const table = document.getElementById(`table-${packageName}`);
+  table.style.display = table.style.display === "none" ? "table" : "none";
+}
+
+function applyFilters() {
+  const showAdded = document.getElementById("filter-added").checked;
+  const showChanged = document.getElementById("filter-changed").checked;
+  const showDeleted = document.getElementById("filter-deleted").checked;
+
+  const filteredData = apiData.filter(item => {
+    if (item.change_type === "Addition" && showAdded) return true;
+    if (item.change_type === "Change" && showChanged) return true;
+    if (item.change_type === "Deletion" && showDeleted) return true;
+    return false;
+  });
+
+  populatePackages(filteredData);
+}
+
+// Load data and initialize the page
+let apiData = [];
+fetch('changes.json')
+  .then(response => response.json())
   .then(data => {
-     apiData = data.filter(item => item.id !== -1); // Assign the fetched data to the apiData variable
-    populateTables(apiData); // Populate the tables with the loaded data
+    apiData = assignIds(data);
+    populatePackages(apiData);
   })
-  .catch(error => console.error('Error loading JSON:', error));
-
-  
-  // Populate Tables
-  function populateTables(data) {
-    ['sensitive-sources', 'sensitive-sinks', 'non-sensitive'].forEach(tableId => {
-      document.getElementById(tableId).querySelector('tbody').innerHTML = ''; // Clear previous data
-    });
-  
-    data.forEach(item => {
-      const tableId = item.class === "Sensitive Source" ? 'sensitive-sources' :
-        item.class === "Sensitive Sink" ? 'sensitive-sinks' : 'non-sensitive';
-  
-      const row = `
-        <tr>
-          <td>${item.id}</td>
-          <td><a href="${item.link}" target="_blank">${item.java_code}</a></td>
-          <td>${item.change_type}</td>
-          <td>${item.category || "Uncategorized"}</td>
-          <td>${item.description || "No description available"}</td>
-          <td><button onclick="viewCode(${item.id})">View Code</button></td>
-          <td><input type="checkbox" data-id="${item.id}"></td>
-        </tr>`;
-      document.getElementById(tableId).querySelector('tbody').innerHTML += row;
-    });
-  }
-  
-  // View Code
-  function viewCode(id) {
-    const entry = apiData.find(item => item.id === id);
-    alert(`Java Code:\n${entry.java_code}\n\nKotlin Code:\n${entry.kotlin_code}`);
-  }
-  
-  // Filter Functionality
-  function applyFilters() {
-    const changeType = document.getElementById('change-type').value;
-    const apiClass = document.getElementById('class').value;
-    const category = document.getElementById('category').value;
-  
-    const filteredData = apiData.filter(item => {
-      return (!changeType || item.change_type === changeType) &&
-        (!apiClass || item.class === apiClass) &&
-        (!category || item.category === category);
-    });
-  
-    populateTables(filteredData);
-  }
-  
-  // Export Selected APIs to FlowDroid Format
-function exportFlowDroid() {
-  // Get selected IDs from checkboxes
-  const selectedIds = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-    .map(checkbox => parseInt(checkbox.getAttribute('data-id')));
-
-  // Filter selected APIs and map to FlowDroid format
-  const flowDroidEntries = apiData
-    .filter(item => selectedIds.includes(item.id)) // Only include selected items
-    .map(item => {
-      if (item.class === "Sensitive Source") {
-        return `<${item.import}: ${getReturnType(item.java_code)} ${getMethodSignature(item.java_code)}> -> _SOURCE_`;
-      } else if (item.class === "Sensitive Sink") {
-        return `<${item.import}: ${getReturnType(item.java_code)} ${getMethodSignature(item.java_code)}> -> _SINK_`;
-      }
-      return null; // Exclude Non-Sensitive or unclassified entries
-    })
-    .filter(entry => entry !== null); // Remove null entries
-
-  // Join all entries into a single string with newlines
-  const flowDroidOutput = flowDroidEntries.join('\n');
-
-  // Create a downloadable .txt file
-  const blob = new Blob([flowDroidOutput], { type: 'text/plain' });
-  const url = URL.createObjectURL(blob);
-
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'flowdroid.txt';
-  a.click();
-}
-
-// Helper function to extract return type from the Java method signature
-function getReturnType(javaCode) {
-  const methodParts = javaCode.split(' ');
-  return methodParts[0]; // Return type is the first word
-}
-
-// Helper function to extract method signature from the Java method signature
-function getMethodSignature(javaCode) {
-  const methodStart = javaCode.indexOf(' ') + 1; // Start after the return type
-  return javaCode.substring(methodStart).trim();
-}
-
-// Initialize
-populateTables(apiData);
-  
+  .catch(error => console.error("Error loading data:", error));
