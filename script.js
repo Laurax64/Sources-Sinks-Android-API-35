@@ -23,11 +23,9 @@ function populateTables(filteredData) {
     const row = document.createElement('tr');
     
     // Code 
-    const codeCell  = document.createElement('a');
-    linkElement.href = item.link;  
-    linkElement.textContent = item.code; 
-    row.appendChild(codeCell)
-    
+    const codeCell = document.createElement('td');
+    codeCell.textContent = item.code
+ 
     // Change Type
     const changeTypeCell = document.createElement('td');
     changeTypeCell.textContent = item.change_type;
@@ -40,8 +38,10 @@ function populateTables(filteredData) {
 
 
     // Select Checkbox
-    const selectCell = document.createElement('input');
-    selectCell .type = 'checkbox';
+    const selectCell = document.createElement('td');
+    const selectCheckbox = document.createElement('input');
+    selectCheckbox.type = 'checkbox';
+    selectCell.appendChild(selectCheckbox);
     row.appendChild(selectCell);
 
     tableBody.appendChild(row);
