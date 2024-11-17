@@ -10,7 +10,6 @@ fetch('changes.json')
   })
   .then(data => {
     apiData = data; // Assign the fetched data to the apiData variable
-    populateTables(apiData); // Populate the tables with the loaded data
   })
   .catch(error => console.error('Error loading JSON:', error));
 
