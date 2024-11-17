@@ -64,9 +64,8 @@ function populatePackages(data) {
 }
 
 function formatData(dataArray) {
-  if (!Array.isArray(dataArray)) return "N/A";
   return dataArray
-    .map(data => 
+   .map(data => 
       `${data.data?.type || "N/A"}${data.possibly_sensitive ? " (Sensitive)" : ""}`
     )
     .join(", "); 
