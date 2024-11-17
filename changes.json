@@ -40,11 +40,7 @@
       {
         "type": "java.util.concurrent.Executor",
         "possibly_sensitive": false,
-        "transmission_destinations": [
-          {
-            "resource": null, 
-          }
-        ]  
+        "transmission_destinations": null
       },
       {
         "type": "android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>",
