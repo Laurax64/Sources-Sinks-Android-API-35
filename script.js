@@ -15,20 +15,36 @@ function populateTables(filteredData) {
   // Clear existing table data
   document.querySelectorAll('tbody').forEach(tbody => tbody.innerHTML = '');
 
-  // Populate tables based on the filtered data
   filteredData.forEach(item => {
     const tableId = item.class === 'Sensitive Source' ? 'sensitive-sources' :
                     item.class === 'Sensitive Sink' ? 'sensitive-sinks' : 'non-sensitive';
 
     const tableBody = document.querySelector(`#${tableId} tbody`);
-    const row = `
-      <tr>
-      <td><a href="${item.link}" target="_blank">${item.code}</a></td>
-      <td>${item.change_type}</td>
-      <td>${item.item.categories || "Uncategorized"}</td>
-      <td><input type="checkbox" data-id="${item.id}"></td>
-    </tr>`;
+    const row = document.createElement('tr');
     
+    // Code
+    const codeCell = document.createElement('td');
+    codeCell.textContent = item.code;
+    codeCell.link = item.link;
+    row.appendChild(codeCell);
+
+    // Change Type
+    const changeTypeCell = document.createElement('td');
+    changeTypeCell.textContent = item.change_type;
+    row.appendChild(changeTypeCell);
+
+    // Categories
+    const categoriesCell = document.createElement('td');
+    categoriesCell.textContent =  item.categories ? item.categories : 'N/A'
+    row.appendChild(categoriesCell);
+
+    // Select Checkbox
+    const selectCell = document.createElement('td');
+    const selectCheckbox = document.createElement('input');
+    selectCheckbox.type = 'checkbox';
+    selectCell.appendChild(selectCheckbox);
+    row.appendChild(selectCell);
+
     tableBody.appendChild(row);
   });
 }
