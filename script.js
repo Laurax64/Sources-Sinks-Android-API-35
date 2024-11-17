@@ -23,7 +23,7 @@ function populateTables(filteredData) {
     const tableBody = document.querySelector(`#${tableId} tbody`);
     const row = `
       <tr>
-      <td><a href="${item.link}" target="_blank">${item.java_code}</a></td>
+      <td><a href="${item.link}" target="_blank">${item.code}</a></td>
       <td>${item.change_type}</td>
       <td>${item.item.categories || "Uncategorized"}</td>
       <td><input type="checkbox" data-id="${item.id}"></td>
@@ -62,9 +62,9 @@ function exportFlowDroid() {
     .filter(item => selectedIds.includes(item.id)) // Only include selected items
     .map(item => {
       if (item.class === "Sensitive Source") {
-        return `<${item.import}: ${getReturnType(item.java_code)} ${getMethodSignature(item.java_code)}> -> _SOURCE_`;
+        return `<${item.import}: ${getReturnType(item.code)} ${getMethodSignature(item.code)}> -> _SOURCE_`;
       } else if (item.class === "Sensitive Sink") {
-        return `<${item.import}: ${getReturnType(item.java_code)} ${getMethodSignature(item.java_code)}> -> _SINK_`;
+        return `<${item.import}: ${getReturnType(item.code)} ${getMethodSignature(item.code)}> -> _SINK_`;
       }
       return null; // Exclude Non-Sensitive or unclassified entries
     })
