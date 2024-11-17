@@ -50,7 +50,7 @@ const data = [
       }
     ]
   }
-];
+]
 
 // Function to populate the tables with data
 function populateTables(filteredData) {
