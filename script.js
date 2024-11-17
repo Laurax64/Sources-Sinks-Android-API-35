@@ -21,40 +21,14 @@ function populateTables(filteredData) {
                     item.class === 'Sensitive Sink' ? 'sensitive-sinks' : 'non-sensitive';
 
     const tableBody = document.querySelector(`#${tableId} tbody`);
-    const row = document.createElement('tr');
+    const row = `
+      <tr>
+      <td><a href="${item.link}" target="_blank">${item.java_code}</a></td>
+      <td>${item.change_type}</td>
+      <td>${item.item.categories || "Uncategorized"}</td>
+      <td><input type="checkbox" data-id="${item.id}"></td>
+    </tr>`;
     
-    // Code
-    const codeCell = document.createElement('td');
-    codeCell.textContent = item.code;
-    row.appendChild(codeCell);
-
-    // Change Type
-    const changeTypeCell = document.createElement('td');
-    changeTypeCell.textContent = item.change_type;
-    row.appendChild(changeTypeCell);
-
-    // Data Returned
-    const dataReturnedCell = document.createElement('td');
-    dataReturnedCell.textContent = ""; //TODO
-    row.appendChild(dataReturnedCell);
-
-    // Data Accepted
-    const dataAcceptedCell = document.createElement('td');
-    dataAcceptedCell.textContent = ""; //TODO
-    row.appendChild(dataAcceptedCell);
-
-    // Categories
-    const categoriesCell = document.createElement('td');
-    categoriesCell.textContent = ""; //TODO
-    row.appendChild(categoriesCell);
-
-    // Select Checkbox
-    const selectCell = document.createElement('td');
-    const selectCheckbox = document.createElement('input');
-    selectCheckbox.type = 'checkbox';
-    selectCell.appendChild(selectCheckbox);
-    row.appendChild(selectCell);
-
     tableBody.appendChild(row);
   });
 }
@@ -80,27 +54,30 @@ function applyFilters() {
 
 // Function to export selected data to FlowDroid format
 function exportFlowDroid() {
-  const selectedRows = document.querySelectorAll('input[type="checkbox"]:checked');
-  const flowDroidData = [];
-
-  selectedRows.forEach(checkbox => {
-    const row = checkbox.closest('tr');
-    const codeCell = row.querySelector('td:nth-child(1)');
-    const classCell = row.closest('table').id;
-    const dataReturnedCell = row.querySelector('td:nth-child(3)');
-    const dataAcceptedCell = row.querySelector('td:nth-child(4)');
-    
-    flowDroidData.push({
-      code: codeCell.textContent,
-      class: classCell.replace('-', ' ').toUpperCase(),
-      dataReturned: dataReturnedCell.textContent,
-      dataAccepted: dataAcceptedCell.textContent
-    });
-  });
-
-  // For demonstration, log to the console. You can replace this with actual export logic.
-  console.log(flowDroidData);
-  alert('Exported data to FlowDroid format. Check console for details.');
+  // Get selected IDs from checkboxes
+  const selectedIds = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+    .map(checkbox => parseInt(checkbox.getAttribute('data-id')));
+  // Filter selected APIs and map to FlowDroid format
+  const flowDroidEntries = apiData
+    .filter(item => selectedIds.includes(item.id)) // Only include selected items
+    .map(item => {
+      if (item.class === "Sensitive Source") {
+        return `<${item.import}: ${getReturnType(item.java_code)} ${getMethodSignature(item.java_code)}> -> _SOURCE_`;
+      } else if (item.class === "Sensitive Sink") {
+        return `<${item.import}: ${getReturnType(item.java_code)} ${getMethodSignature(item.java_code)}> -> _SINK_`;
+      }
+      return null; // Exclude Non-Sensitive or unclassified entries
+    })
+    .filter(entry => entry !== null); // Remove null entries
+  // Join all entries into a single string with newlines
+  const flowDroidOutput = flowDroidEntries.join('\n');
+  // Create a downloadable .txt file
+  const blob = new Blob([flowDroidOutput], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'flowdroid.txt';
+  a.click();
 }
 
 // Function to view source code
