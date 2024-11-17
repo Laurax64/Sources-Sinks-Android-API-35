@@ -42,7 +42,7 @@
         "possibly_sensitive": false,
         "transmission_destinations": [
           {
-            resource: null, 
+            "resource": null, 
           }
         ]  
       },
