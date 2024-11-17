@@ -5,6 +5,8 @@
     "code": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
     "link": "https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#getBrailleDisplayController()",
     "class": "Non-Sensitive",
+    "categories": null,
+    "change_type": "Addition",
     "data_returned": {
       "data": {
         "type": "android.accessibilityservice.BrailleDisplayController",
