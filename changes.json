@@ -2,8 +2,8 @@
   {
     "id": "1",
     "import": "android.accessibilityservice.AccessibilityService",
-    "code": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
-    "code_long": "BrailleDisplayController getBrailleDisplayController()",
+    "code": "BrailleDisplayController getBrailleDisplayController()",
+    "code_long": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
     "link": "https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#getBrailleDisplayController()",
     "class": "Non-Sensitive",
     "categories": null,
