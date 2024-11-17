@@ -7,13 +7,13 @@
     "class": "Non-Sensitive",
     "categories": null,
     "change_type": "Addition",
-    "data_returned": {
-      "data": {
+    "data_returned": [
+      {
         "type": "android.accessibilityservice.BrailleDisplayController",
         "possibly_sensitive": false
       }
-    },
-    "data_accepted": {}
+    ],
+    "data_accepted": null
   },
   {
     "id": "2",
@@ -24,31 +24,27 @@
     "categories": [
       {
         "name": "Device or other IDs",
-        "example": null
       }
     ],
     "change_type": "Addition",
-    "data_returned": {
-      "data": {
+    "data_returned": [
+       {
         "type": "android.adservices.adid.AdId",
         "categories": [
           {
             "name": "Device or other IDs",
-            "example": null
           }
         ],
         "possibly_sensitive": true
       }
-    },
+    ],
     "data_accepted": [
       {
         "type": "java.util.concurrent.Executor",
-        "categories": null,
         "possibly_sensitive": false
       },
       {
         "type": "android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>",
-        "categories": null,
         "possibly_sensitive": false
       }
     ]
