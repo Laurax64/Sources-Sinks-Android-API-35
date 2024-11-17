@@ -32,12 +32,12 @@ function populatePackages(data) {
     const thead = document.createElement("thead");
     thead.innerHTML = `
       <tr>
+      <th>Select</th>
       <th>Code</th>
       <th>Change Type</th>
       <th>Data Returned</th>
       <th>Data Accepted</th>
       <th>Categories</th>
-      <th>Select</th>
       </tr>
     `;
     table.appendChild(thead);
@@ -64,9 +64,10 @@ function populatePackages(data) {
 }
 
 function formatData(dataArray) {
+  if (!dataArray) return "N/A";
   return dataArray
-   .map(data => 
-      `${data.data?.type || "N/A"}${data.possibly_sensitive ? " (Sensitive)" : ""}`
+    .map(data => 
+      `${data.type || "N/A"}${data.possibly_sensitive ? " (Sensitive)" : ""}`
     )
     .join(", "); 
 }
@@ -100,12 +101,20 @@ function applyFilters() {
   populatePackages(filteredData);
 }
 
+function exportFlowDroid() {
+  const selectedItems = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+    .map(checkbox => checkbox.dataset.id);
+
+  console.log("Selected API IDs for export:", selectedItems);
+  // Add code to format and export selected items to FlowDroid format here.
+}
 
 // Load data and initialize the page
 let apiData = [];
 fetch('changes.json')
   .then(response => response.json())
   .then(data => {
+    apiData = data; // Assign fetched data to the global apiData variable
     populatePackages(apiData);
   })
   .catch(error => console.error("Error loading data:", error));
