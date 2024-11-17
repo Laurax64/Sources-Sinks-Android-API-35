@@ -37,7 +37,7 @@ function populateTables(filteredData) {
 
     // Categories
     const categoriesCell = document.createElement('td');
-    categoriesCell.textContent =  item.categories ? item.categories : 'N/A'
+    categoriesCell.textContent =  item.categories ? item.categories : ""
     row.appendChild(categoriesCell);
 
 

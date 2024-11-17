@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,30 +10,38 @@
       font-family: Arial, sans-serif;
       margin: 20px;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 20px;
     }
-    th, td {
+
+    th,
+    td {
       border: 1px solid #ddd;
       padding: 8px;
       text-align: left;
     }
+
     th {
       background-color: #f4f4f4;
     }
+
     .filters {
       margin-bottom: 20px;
     }
+
     .filters label {
       margin-right: 10px;
     }
+
     button {
       margin-top: 10px;
     }
   </style>
 </head>
+
 <body>
   <h1>Android API Changes (API 34 to 35)</h1>
   <p>Explore and classify Android API changes.</p>
@@ -75,6 +84,9 @@
     </select>
 
     <button onclick="applyFilters()">Apply Filters</button>
+
+    <button onclick="exportFlowDroid()">Export Selected to FlowDroid</button>
+
   </div>
 
   <!-- Tables -->
@@ -108,7 +120,7 @@
     <h2>Non-Sensitive</h2>
     <table id="non-sensitive">
       <thead>
-     <tr>
+        <tr>
           <th>Code</th>
           <th>Change Type</th>
           <th>Categories</th>
@@ -119,10 +131,8 @@
     </table>
   </div>
 
-  <!-- Export Button -->
-  <button onclick="exportFlowDroid()">Export Selected to FlowDroid</button>
-
   <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
+
 </html>
