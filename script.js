@@ -41,14 +41,12 @@ function populatePackages(data) {
     const thead = document.createElement("thead");
     thead.innerHTML = `
       <tr>
-        <th>Select</th>
-        <th>Code</th>
-        <th>Change Type</th>
-        <th>Class</th>
-        <th>Data Returned</th>
-        <th>Data Accepted</th>
-        <th>Categories</th>
-        <th>Description</th>
+      <th>Code</th>
+      <th>Change Type</th>
+      <th>Data Returned</th>
+      <th>Data Accepted</th>
+      <th>Categories</th>
+      <th>Select</th>
       </tr>
     `;
     table.appendChild(thead);
@@ -59,13 +57,11 @@ function populatePackages(data) {
 
       row.innerHTML = `
         <td><input type="checkbox" data-id="${api.id}"></td>
-        <td>${api.code || "N/A"}</td>
+        <td><a href="${item.link}" target="_blank">${api.code}</a></td>
         <td>${api.change_type || "N/A"}</td>
-        <td>${api.class || "N/A"}</td>
         <td>${formatData(api.data_returned)}</td>
         <td>${formatData(api.data_accepted)}</td>
         <td>${formatCategories(api.categories)}</td>
-        <td>${api.link ? `<a href="${api.link}" target="_blank">Link</a>` : "N/A"}</td>
       `;
       tbody.appendChild(row);
     });
@@ -96,12 +92,12 @@ function toggleTable(packageName) {
 
 function applyFilters() {
   const showAdded = document.getElementById("filter-added").checked;
-  const showChanged = document.getElementById("filter-changed").checked;
+  const showModified = document.getElementById("filter-modified").checked;
   const showDeleted = document.getElementById("filter-deleted").checked;
 
   const filteredData = apiData.filter(item => {
     if (item.change_type === "Addition" && showAdded) return true;
-    if (item.change_type === "Change" && showChanged) return true;
+    if (item.change_type === "Modification" && showModified) return true;
     if (item.change_type === "Deletion" && showDeleted) return true;
     return false;
   });
