@@ -92,7 +92,7 @@ function applyFilters() {
   const filteredData = apiData.filter(item => {
     const matchesChangeType = !changeType || item.change_type === changeType;
     const matchesClass = !selectedClass || item.class === selectedClass;
-    const matchesCategory = !selectedCategory || 
+    const matchesCategory = !selectedCategory || selectedCategory === "All" || 
       (item.categories && item.categories.some(cat => cat.name === selectedCategory));
 
     return matchesChangeType && matchesClass && matchesCategory;
@@ -100,6 +100,7 @@ function applyFilters() {
 
   populatePackages(filteredData);
 }
+
 
 function exportFlowDroid() {
   const selectedItems = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
