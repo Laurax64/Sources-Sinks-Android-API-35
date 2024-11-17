@@ -63,16 +63,19 @@ function populatePackages(data) {
   }
 }
 
-function formatData(data) {
-  if (!data || !data.data) return "N/A";
-  const sensitivity = data.data.possibly_sensitive ? " (Sensitive)" : "";
-  return `${data.data.type || "N/A"}${sensitivity}`;
+function formatData(dataArray) {
+  if (!Array.isArray(dataArray)) return "N/A";
+  return dataArray
+    .map(data => 
+      `${data.data?.type || "N/A"}${data.possibly_sensitive ? " (Sensitive)" : ""}`
+    )
+    .join(", "); 
 }
 
 function formatCategories(categories) {
   if (!categories || categories.length === 0) return "N/A";
   return categories
-    .map(cat => `${cat.name}${cat.example ? ` (e.g., ${cat.example})` : ""}`)
+    .map(category => category.name)
     .join(", ");
 }
 
