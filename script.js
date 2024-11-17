@@ -22,11 +22,14 @@ function populateTables(filteredData) {
     const tableBody = document.querySelector(`#${tableId} tbody`);
     const row = document.createElement('tr');
     
-    // Code
+    // Code 
     const codeCell = document.createElement('td');
-    codeCell.textContent = item.code;
-    codeCell.link = item.link;
-    row.appendChild(codeCell);
+    const linkElement = document.createElement('a');
+    linkElement.href = item.link;  // Set the URL for the link
+    linkElement.textContent = item.code;  // Set the visible text for the link
+    
+    // Append the link element to the codeCell
+    codeCell.appendChild(linkElement);
 
     // Change Type
     const changeTypeCell = document.createElement('td');
@@ -37,6 +40,7 @@ function populateTables(filteredData) {
     const categoriesCell = document.createElement('td');
     categoriesCell.textContent =  item.categories ? item.categories : 'N/A'
     row.appendChild(categoriesCell);
+
 
     // Select Checkbox
     const selectCell = document.createElement('td');
@@ -78,9 +82,9 @@ function exportFlowDroid() {
     .filter(item => selectedIds.includes(item.id)) // Only include selected items
     .map(item => {
       if (item.class === "Sensitive Source") {
-        return `<${item.import}: ${getReturnType(item.code)} ${getMethodSignature(item.code)}> -> _SOURCE_`;
+        return `<${item.import}: ${getReturnType(item.code_long)} ${getMethodSignature(item.code_long)}> -> _SOURCE_`;
       } else if (item.class === "Sensitive Sink") {
-        return `<${item.import}: ${getReturnType(item.code)} ${getMethodSignature(item.code)}> -> _SINK_`;
+        return `<${item.import}: ${getReturnType(item.code_long)} ${getMethodSignature(item.code_long)}> -> _SINK_`;
       }
       return null; // Exclude Non-Sensitive or unclassified entries
     })
