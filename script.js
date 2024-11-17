@@ -24,8 +24,12 @@ function populateTables(filteredData) {
     
     // Code 
     const codeCell = document.createElement('td');
-    codeCell.textContent = item.code
- 
+    const linkElement = document.createElement('a');
+    linkElement.href = item.link; 
+    linkElement.textContent = item.code;  
+    codeCell.appendChild(linkElement);  
+    row.appendChild(codeCell);
+
     // Change Type
     const changeTypeCell = document.createElement('td');
     changeTypeCell.textContent = item.change_type;
