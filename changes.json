@@ -54,6 +54,7 @@
     "code": "int describeContents()",
     "code_long": "int describeContents()",
     "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#describeContents()",
+    "class": "Non-Sensitive",
     "categories": null,
     "change_type": "Addition",
     "data_returned": [
@@ -65,9 +66,89 @@
     "data_accepted": null
   },
   {
+    "id": "4",
+    "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
+    "code": "boolean equals(Object)",
+    "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#equals(java.lang.Object)",
+    "class": "Non-Sensitive",
+    "categories": null,
+    "change_type": "Addition",
+    "data_returned": [
+      {
+        "type": "boolean",
+        "possibly_sensitive": false
+      }
+    ],
+    "data_accepted": [
+      {
+        "type": "java.lang.Object",
+        "possibly_sensitive": true,
+        "transmission_destinations": null
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
+    "code": "List<Long> getAdSelectionIds()",
+    "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getAdSelectionIds()",
+    "class": "Sensitive Source",
+    "categories": "Device or other IDs",
+    "change_type": "Addition",
+    "data_returned": [
+      {
+        "type": "List<Long>",
+        "possibly_sensitive": true
+      }
+    ],
+    "data_accepted": [ {
+      "type": "List<Long>",
+      "possibly_sensitive": true,
+      "transmission_destinations": null
+    }
+  ]
+  },
+  {
+    "id": "6",
+    "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
+    "code": "Uri getSelectionLogicUri()",
+    "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSelectionLogicUri()",
+    "class": "Non-Sensitive",
+    "categories": null,
+    "change_type": "Addition",
+    "data_returned": [
+      {
+        "type": "android.net.Uri",
+        "possibly_sensitive": false
+      }
+    ],
+    "data_accepted": [ 
+      {
+      "type": "android.net.Uri",
+      "possibly_sensitive": false,
+      "transmission_destinations": null
+    }
+  ]
+},
+  {
+    "id": "7",
+    "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
+    "code": "AdSelectionSignals getSelectionSignals()",
+    "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSelectionSignals()",
+    "class": "",
+    "categories": "",
+    "change_type": "Addition",
+    "data_returned": [
+      {
+        "type": "android.adservices.common.AdSelectionSignals"
+      }
+    ],
+    "data_accepted": null
+  },
+  {
     "id": "",
     "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
-    "code": "",
+    "code": "AdTechIdentifier getSeller()",
     "link": "",
     "categories": null,
     "change_type": null,
@@ -77,7 +158,7 @@
   {
     "id": "",
     "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
-    "code": "",
+    "code": "int hashCode()",
     "link": "",
     "categories": null,
     "change_type": null,
@@ -87,47 +168,7 @@
   {
     "id": "",
     "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
-    "code": "",
-    "link": "",
-    "categories": null,
-    "change_type": null,
-    "data_returned": null,
-    "data_accepted": null
-  },
-  {
-    "id": "",
-    "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
-    "code": "",
-    "link": "",
-    "categories": null,
-    "change_type": null,
-    "data_returned": null,
-    "data_accepted": null
-  },
-  {
-    "id": "",
-    "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
-    "code": "",
-    "link": "",
-    "categories": null,
-    "change_type": null,
-    "data_returned": null,
-    "data_accepted": null
-  },
-  {
-    "id": "",
-    "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
-    "code": "",
-    "link": "",
-    "categories": null,
-    "change_type": null,
-    "data_returned": null,
-    "data_accepted": null
-  },
-  {
-    "id": "",
-    "import": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
-    "code": "",
+    "code": "void writeToParcel (Parcel, int)",
     "link": "",
     "categories": null,
     "change_type": null,
