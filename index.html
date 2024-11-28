@@ -78,57 +78,58 @@
       <option value="Calendar">Calendar</option>
       <option value="Contacts">Contacts</option>
       <option value="App Activity">App Activity</option>
-      <option value="Web Browsing<">Web Browsing</option>
+      <option value="Web Browsing">Web Browsing</option>
       <option value="App Info and Performance">App Info and Performance</option>
       <option value="Device or other IDs">Device or other IDs</option>
     </select>
 
-    <button onclick="applyFilters()">Apply Filters</button>
+    <button onclick="downloadJSON()">Export Selected to FlowDroid</button>
 
-    <button onclick="exportFlowDroid()">Export Selected to FlowDroid</button>
+    <button onclick="exportFlowDroid()">Download JSON</button>
 
   </div>
 
   <!-- Tables -->
-  <div id="data-tables">
-    <h2>Sensitive Sources</h2>
-    <table id="sensitive-sources">
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Change Type</th>
-          <th>Categories</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+  <h2>Sensitive Sources</h2>
+  <table id="sensitive-sources">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Change Type</th>
+        <th>Category</th>
+        <th>Data Returned</th>
+        <th>Select</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
-    <h2>Sensitive Sinks</h2>
-    <table id="sensitive-sinks">
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Change Type</th>
-          <th>Categories</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+  <h2>Sensitive Sinks</h2>
+  <table id="sensitive-sinks">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Change Type</th>
+        <th>Category</th>
+        <th>Data Transmitted</th>
+        <th>Select</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
-    <h2>Non-Sensitive</h2>
-    <table id="non-sensitive">
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Change Type</th>
-          <th>Categories</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+  <h2>Non-Sensitive</h2>
+  <table id="non-sensitive">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Change Type</th>
+        <th>Category</th>
+        <th>Select</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
   </div>
 
   <!-- JavaScript -->

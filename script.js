@@ -10,24 +10,23 @@ fetch('changes.json')
   })
   .catch((error) => console.error('Error fetching data:', error));
 
-// Function to populate the tables with data
 function populateTables(filteredData) {
   // Clear existing table data
   document.querySelectorAll('tbody').forEach(tbody => tbody.innerHTML = '');
 
   filteredData.forEach(item => {
     const tableId = item.class === 'Sensitive Source' ? 'sensitive-sources' :
-                    item.class === 'Sensitive Sink' ? 'sensitive-sinks' : 'non-sensitive';
+      item.class === 'Sensitive Sink' ? 'sensitive-sinks' : 'non-sensitive';
 
     const tableBody = document.querySelector(`#${tableId} tbody`);
     const row = document.createElement('tr');
-    
+
     // Code 
     const codeCell = document.createElement('td');
     const linkElement = document.createElement('a');
-    linkElement.href = item.link; 
-    linkElement.textContent = item.code;  
-    codeCell.appendChild(linkElement);  
+    linkElement.href = item.link;
+    linkElement.textContent = item.code;
+    codeCell.appendChild(linkElement);
     row.appendChild(codeCell);
 
     // Change Type
@@ -37,9 +36,38 @@ function populateTables(filteredData) {
 
     // Categories
     const categoriesCell = document.createElement('td');
-    categoriesCell.textContent =  item.categories ? item.categories : ""
+    categoriesCell.textContent = item.category ? item.category : "";
     row.appendChild(categoriesCell);
 
+    // Data Returned (Sensitive Sources only)
+    if (item.class === "Sensitive Source") {
+      const dataReturnedCell = document.createElement('td');
+      if (item.data_returned && item.data_returned.length > 0) {
+        dataReturnedCell.innerHTML = item.data_returned
+          .filter(data => data.possibly_sensitive)
+          .map(data => data.description)
+          .join("<br>");
+      } else {
+        dataReturnedCell.textContent = "None";
+      }
+      row.appendChild(dataReturnedCell);
+    }
+
+    // Data Transmitted (Sensitive Sinks only)
+    if (item.class === "Sensitive Sink") {
+      const dataTransmittedCell = document.createElement('td');
+      if (item.data_transmitted && item.data_transmitted.length > 0) {
+        dataTransmittedCell.innerHTML = item.data_transmitted.map(data =>
+          data.destinations
+            .filter(dest => dest.accesible_to_third_parties && data.possibly_sensitive)
+            .map(dest => `${data.type} to ${dest.resource}`) //TODO Consider changing type to description.
+            .join("<br>")
+        ).join("<br>");
+      } else {
+        dataTransmittedCell.textContent = "None";
+      }
+      row.appendChild(dataTransmittedCell);
+    }
 
     // Select Checkbox
     const selectCell = document.createElement('td');
@@ -62,7 +90,7 @@ function applyFilters() {
   const filteredData = apiData.filter(item => {
     const matchChangeType = changeType ? item.change_type === changeType : true;
     const matchClass = selectedClass ? item.class === selectedClass : true;
-    const matchCategory = selectedCategory ? item.categories && item.categories.contains(selectedCategory) : true;
+    const matchCategory = selectedCategory ? item.category == selectedCategory : true;
 
     return matchChangeType && matchClass && matchCategory;
   });
@@ -97,6 +125,10 @@ function exportFlowDroid() {
   a.href = url;
   a.download = 'flowdroid.txt';
   a.click();
+}
+
+function downloadJSON() {
+
 }
 
 // Function to view source code
