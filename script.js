@@ -101,30 +101,7 @@ function applyFilters() {
 
 // Function to export selected data to FlowDroid format
 function exportFlowDroid() {
-  // Get selected IDs from checkboxes
-  const selectedIds = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-    .map(checkbox => parseInt(checkbox.getAttribute('data-id')));
-  // Filter selected APIs and map to FlowDroid format
-  const flowDroidEntries = apiData
-    .filter(item => selectedIds.includes(item.id)) // Only include selected items
-    .map(item => {
-      if (item.class === "Sensitive Source") {
-        return `<${item.import}: ${getReturnType(item.code_long)} ${getMethodSignature(item.code_long)}> -> _SOURCE_`;
-      } else if (item.class === "Sensitive Sink") {
-        return `<${item.import}: ${getReturnType(item.code_long)} ${getMethodSignature(item.code_long)}> -> _SINK_`;
-      }
-      return null; // Exclude Non-Sensitive or unclassified entries
-    })
-    .filter(entry => entry !== null); // Remove null entries
-  // Join all entries into a single string with newlines
-  const flowDroidOutput = flowDroidEntries.join('\n');
-  // Create a downloadable .txt file
-  const blob = new Blob([flowDroidOutput], { type: 'text/plain' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'flowdroid.txt';
-  a.click();
+
 }
 
 function downloadJSON() {

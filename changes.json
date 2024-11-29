@@ -4,7 +4,7 @@
     "import": "android.accessibilityservice.AccessibilityService",
     "code": "BrailleDisplayController getBrailleDisplayController()",
     "code_long": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
-    "link": "https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#getBrailleDisplayController()",
+    "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/accessibilityservice/AccessibilityService.java;drc=46b645ecb4e797a7291d540ff7fc802819dd953f;l=3661",
     "class": "Non-Sensitive",
     "category": null,
     "change_type": "Addition",
