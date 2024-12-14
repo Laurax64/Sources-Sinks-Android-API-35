@@ -46,6 +46,12 @@
   <h1>Android API Changes (API 34 to 35)</h1>
   <p>Explore and classify Android API changes.</p>
 
+    <!-- Bar Chart Section -->
+    <div id="chart-container">
+      <h2>Statistics</h2>
+      <canvas id="statistics-chart" width="50" height="25"></canvas>
+    </div>
+  
   <!-- Filters -->
   <div class="filters">
     <label for="change-type">Change Type:</label>
@@ -132,7 +138,26 @@
   </table>
   </div>
 
+  <div id="chart-container">
+    <h2>Statistics</h2>
+    <canvas id="statistics-chart"></canvas>
+  </div>
+  
+  <style>
+    #chart-container {
+      width: 500px;
+      height: 400px;
+    }
+  
+    #statistics-chart {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  
   <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="statistics.js"></script>
   <script src="script.js"></script>
 </body>
 
