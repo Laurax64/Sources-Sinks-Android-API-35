@@ -34,7 +34,7 @@ function parseApiData(data) {
               //code_long: method.code_long,
               link: method.link,
               class: method.class,  // Class name from changed_classes
-              category: method.categories.toString() || null,
+              categories: method.categories || null,
               change_type: method.change_type,
               data_returned: method.data_returned || [],
               data_transmitted: method.data_transmitted || []
@@ -54,7 +54,7 @@ function parseApiData(data) {
              // code_long: method.code_long,
               link: method.link,
               class: method.class,  // Interface name from added_interfaces
-              category: method.categories.toString()  || null,
+              categories: method.categories || null,
               change_type: method.change_type,
               data_returned: method.data_returned || [],
               data_transmitted: method.data_transmitted || []
@@ -74,7 +74,7 @@ function parseApiData(data) {
              // code_long: method.code_long,
               link: method.link,
               class: method.class,  // Interface name from added_interfaces
-              category: method.categories.toString()  || null,
+              categories: method.categories  || null,
               change_type: method.change_type,
               data_returned: method.data_returned || [],
               data_transmitted: method.data_transmitted || []
@@ -93,7 +93,7 @@ function parseApiData(data) {
               //code_long: method.code_long,
               link: method.link,
               class: method.class,  // Class name from added_classes
-              category: method.categories.toString() || null,
+              categories: method.categories || null,
               change_type: method.change_type,
               data_returned: method.data_returned || [],
               data_transmitted: method.data_transmitted || []
@@ -117,8 +117,6 @@ function populateTables(filteredData) {
   
   // Clear existing rows in all tables
   document.querySelectorAll('tbody').forEach(tbody => tbody.innerHTML = '');
-  console.log('rows cleared')
-           // Store table bodies in a map for faster access
 
   const tableBodies = {
     'sensitive-sources': document.querySelector('#sensitive-sources tbody'),
@@ -126,8 +124,6 @@ function populateTables(filteredData) {
     'non-sensitive': document.querySelector('#non-sensitive tbody')
   };
   
-  console.log(JSON.stringify(tableBodies, null, 2));
-
   filteredData.forEach(item => {
   
           let tableId;
@@ -143,19 +139,14 @@ function populateTables(filteredData) {
               tableId = 'non-sensitive';
               break;
           }
-          // Make sure to log the tableId before calling toString
-          console.log(tableId.toString());  
-          
+    
                    // Get the corresponding table body based on tableId
           const tableBody = tableBodies[tableId];
           
           // Ensure the table body exists before appending the row
           if (tableBody) {
             const row = createTableRow(item);
-            tableBody.appendChild(row);
-
-          const sensitiveSourcesBody = document.querySelector('#sensitive-sources tbody');
-          console.log(sensitiveSourcesBody.innerHTML);  // Should log the <tbody> element or null 
+            tableBody.appendChild(row); 
           } else {
             console.warn(`Table with ID ${tableId} does not exist.`);
           }                
@@ -185,7 +176,7 @@ function createTableRow(item) {
   row.appendChild(changeTypeCell);
 
   const categoriesCell = document.createElement('td');
-  categoriesCell.textContent = item.category ? item.category : "";
+  categoriesCell.textContent = item.categories ? item.categories : "";
   row.appendChild(categoriesCell);
 
   if (item.class === "Sensitive Source") {
@@ -208,12 +199,12 @@ function createTableRow(item) {
 function applyFilters() {
   const changeType = document.getElementById('change-type').value;
   const selectedClass = document.getElementById('class').value;
-  const selectedCategory = document.getElementById('category').value;
+  const selectedCategory = document.getElementById('categories').value;
   const filteredData = apiData.filter(item => {
     const matchChangeType = changeType ? item.change_type === changeType : true;
     const matchClass = selectedClass ? item.class === selectedClass : true;
-    const matchCategory = selectedCategory ? item.category == selectedCategory : true;
-
+    const matchCategory = selectedCategory ? (item.categories.includes(selectedCategory) || selectedCategory == "All Categories") : true;
+    console.log(selectedCategory)
     return matchChangeType && matchClass && matchCategory;
   });
 
@@ -291,4 +282,4 @@ function viewSourceCode(link) {
 // Event Listeners for filter changes
 document.getElementById('change-type').addEventListener('change', applyFilters);
 document.getElementById('class').addEventListener('change', applyFilters);
-document.getElementById('category').addEventListener('change', applyFilters);
+document.getElementById('categories').addEventListener('change', applyFilters);

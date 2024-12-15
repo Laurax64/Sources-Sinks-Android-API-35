@@ -67,16 +67,12 @@
       "code_long": "void getAdId(java.util.concurrent.Executor, android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>)",
       "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adid/AdIdManager.java;drc=913c7c595935c9c4392a9f2282ff5ae85073308e;l=120",
       "class": "Sensitive Source",
-      "categories": "Device or other IDs",
+      "categories": ["Device or other IDs"],
       "change_type": "Addition",
       "data_returned": [
         {
           "type": "android.adservices.adid.AdId",
-          "categories": [
-            {
-              "name": "Device or other IDs"
-            }
-          ],
+          "categories": ["Device or other IDs"],
           "possibly_sensitive": true
         }
       ],
@@ -127,7 +123,7 @@
           "code": "List<Long> getAdSelectionIds()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getAdSelectionIds()",
           "class": "Sensitive Source",
-          "categories": "Device or other IDs",
+          "categories": ["Device or other IDs"],
           "change_type": "Addition",
           "data_returned": [
             {
@@ -157,7 +153,7 @@
           "code": "AdSelectionSignals getSelectionSignals()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSelectionSignals()",
           "class": "Sensitive Source",
-          "categories": "AppActivity, Location",
+          "categories": ["AppActivity", "Location"],
           "change_type": "Addition",
           "data_returned": [
             {
@@ -172,7 +168,7 @@
           "code": "AdTechIdentifier getSeller()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSeller()",
           "class": "Non-Sensitive",
-          "categories": "",
+          "categories": [],
           "change_type": "Addition",
           "data_returned": [
             {
@@ -249,7 +245,7 @@
           "code": "AdSelectionFromOutcomesConfig build()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#build()",
           "class": "Sensitive Source",
-          "categories": "App Activity, Location",
+          "categories": ["App Activity", "Location"],
           "change_type": [],
           "data_returned": [
             {
@@ -263,7 +259,7 @@
           "code": "AdSelectionFromOutcomesConfig.Builder setAdSelectionIds(List<Long>)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setAdSelectionIds(java.util.List%3Cjava.lang.Long%3E)",
           "class": "Sensitive Source",
-          "categories": "App Activity, Location",
+          "categories": ["App Activity", "Location"],
           "change_type": "Addition",
           "data_returned": [
             {
@@ -311,7 +307,7 @@
           "code": "AdSelectionFromOutcomesConfig.Builder setSelectionLogicUri(Uri)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSelectionLogicUri(android.net.Uri)",
           "class": "Sensitive Source",
-          "categories": "Location",
+          "categories": ["Location"],
           "change_type": "Addition",
           "data_returned": [
             {
@@ -335,7 +331,7 @@
           "code": "AdSelectionFromOutcomesConfig.Builder setSelectionSignals(AdSelectionSignals)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSelectionSignals(android.adservices.common.AdSelectionSignals)",
           "class": "Sensitive Source",
-          "categories": "App Activity, Location",
+          "categories": ["App Activity", "Location"],
           "change_type": "Addition",
           "data_returned": [
             {
