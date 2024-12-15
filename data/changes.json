@@ -1,0 +1,519 @@
+[
+  {
+    "package": "android",
+    "changed_classes": [
+      {
+        "name": "Manifest.permission",
+        "implemented_methods": []
+      },
+      {
+        "name": "R.attr",
+        "implemented_methods": []
+      },
+      {
+      "name": "R.color",
+      "implemented_methods": []
+      }
+       ]
+    },
+    {
+    "package": "android.accessibilityservice",
+     "added_interfaces": [
+    {
+      "name": "BrailleDisplayController",
+      "implemented_methods": [
+
+      ]
+    },
+    {
+      "name":"BrailleDisplayController.BrailleDisplayCallback",
+      "implemented_methods": [
+        
+      ]
+    }
+     ],
+  "changed_classes": [
+    {
+      "name":"AccessibilityService",
+      "implemented_methods": [
+        {
+          "code": "BrailleDisplayController getBrailleDisplayController()",
+          "code_long": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/accessibilityservice/AccessibilityService.java;drc=46b645ecb4e797a7291d540ff7fc802819dd953f;l=3661",
+          "class": "Non-Sensitive",
+          "categories": [],
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "android.accessibilityservice.BrailleDisplayController",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        }
+      ]
+    }
+  ]
+},
+  {
+    "package": "android.adservices.adid",
+    "changes_classes":
+    [
+      {
+    "name": "AdIdManager",
+    "implemented_methods": [
+    {
+      "code": "void getAdId(Executor, AdServicesOutcomeReceiver<AdId, Exception>)",
+      "code_long": "void getAdId(java.util.concurrent.Executor, android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>)",
+      "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adid/AdIdManager.java;drc=913c7c595935c9c4392a9f2282ff5ae85073308e;l=120",
+      "class": "Sensitive Source",
+      "categories": "Device or other IDs",
+      "change_type": "Addition",
+      "data_returned": [
+        {
+          "type": "android.adservices.adid.AdId",
+          "categories": [
+            {
+              "name": "Device or other IDs"
+            }
+          ],
+          "possibly_sensitive": true
+        }
+      ],
+      "data_transmitted": []
+    }
+     ]
+    }
+     ]
+},
+{
+  "package": "android.adservices.adselection",
+  "added_classes": [
+    {
+      "name": "AdSelectionFromOutcomesConfig",
+      "implemented_methods": [
+        {
+          "code": "int describeContents()",
+          "code_long": "int describeContents()",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#describeContents()",
+          "class": "Non-Sensitive",
+          "categories": [],
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "int",
+              "description": "",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "boolean equals(Object)",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#equals(java.lang.Object)",
+          "class": "Non-Sensitive",
+          "categories": [],
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "boolean",
+              "description": "",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "List<Long> getAdSelectionIds()",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getAdSelectionIds()",
+          "class": "Sensitive Source",
+          "categories": "Device or other IDs",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "List<Long>",
+              "description": "",
+              "possibly_sensitive": true
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "Uri getSelectionLogicUri()",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSelectionLogicUri()",
+          "class": "Non-Sensitive",
+          "categories": [],
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "android.net.Uri",
+              "description": "",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "AdSelectionSignals getSelectionSignals()",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSelectionSignals()",
+          "class": "Sensitive Source",
+          "categories": "AppActivity, Location",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "android.adservices.common.AdSelectionSignals",
+              "description": "",
+              "possibly_sensitive": true
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "AdTechIdentifier getSeller()",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSeller()",
+          "class": "Non-Sensitive",
+          "categories": "",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "android.adservices.common.AdTechIdentifier",
+              "description": "The ad identifier of the seller",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "int hashCode()",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#hashCode()",
+          "class": "Non-Sensitive",
+          "categories": [],
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "Int",
+              "description": "A hash code value",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "void writeToParcel(Parcel, int)",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#writeToParcel(android.os.Parcel,%20int)",
+          "class": "Non-Sensitive",
+          "categories": [],
+          "change_type": "Addition",
+          "data_returned": [],
+          "data_transmitted": [
+            {
+              "type": "Parcel",
+              "destinations": [
+                {
+                  "resource": "Application code",
+                  "accessible_to_third_parties": false
+                }
+              ]
+            },
+            {
+              "type": "int",
+              "destinations": [
+                {
+                  "resource": "Application code",
+                  "accessible_to_third_parties": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AdSelectionFromOutcomesConfig.Builder",
+      "implemented_methods": [
+        {
+          "code": "Builder()",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#Builder()",
+          "class": "Non-Sensitive",
+          "categories": [],
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "AdSelectionFromOutcomesConfig.Builder",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "AdSelectionFromOutcomesConfig build()",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#build()",
+          "class": "Sensitive Source",
+          "categories": "App Activity, Location",
+          "change_type": [],
+          "data_returned": [
+            {
+              "type": "AdSelectionFromOutcomesConfig",
+              "possibly_sensitive": true
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "AdSelectionFromOutcomesConfig.Builder setAdSelectionIds(List<Long>)",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setAdSelectionIds(java.util.List%3Cjava.lang.Long%3E)",
+          "class": "Sensitive Source",
+          "categories": "App Activity, Location",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "AdSelectionFromOutcomesConfig.Builder",
+              "possibly_sensitive": true
+            }
+          ],
+          "data_transmitted": [
+            {
+              "type": "List<Long>",
+              "destinations": [
+                {
+                  "resource": "Application code",
+                  "accessible_to_third_parties": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "AdSelectionFromOutcomesConfig.Builder setSelectionLogicUri(Uri)",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSelectionLogicUri(android.net.Uri)",
+          "class": "Sensitive Source",
+          "categories": ["App Activity", "Location"],
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "AdSelectionFromOutcomesConfig.Builder",
+              "possibly_sensitive": true
+            }
+          ],
+          "data_transmitted": [
+            {
+              "type": "android.net.Uri",
+              "destinations": [
+                {
+                  "resource": "Application code",
+                  "accesible_to_third_parties": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "AdSelectionFromOutcomesConfig.Builder setSelectionLogicUri(Uri)",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSelectionLogicUri(android.net.Uri)",
+          "class": "Sensitive Source",
+          "categories": "Location",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "AdSelectionFromOutcomesConfig.Builder",
+              "possibly_sensitive": true
+            }
+          ],
+          "data_transmitted": [
+            {
+              "type": "android.net.Uri",
+              "destinations": [
+                {
+                  "resource": "Application code",
+                  "accesible_to_third_parties": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "AdSelectionFromOutcomesConfig.Builder setSelectionSignals(AdSelectionSignals)",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSelectionSignals(android.adservices.common.AdSelectionSignals)",
+          "class": "Sensitive Source",
+          "categories": "App Activity, Location",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "AdSelectionFromOutcomesConfig.Builder",
+              "possibly_sensitive": true
+            }
+          ],
+          "data_transmitted": [
+            {
+              "type": "AdSelectionSignals",
+              "destinations": [
+                {
+                  "resource": "Application code",
+                  "accesible_to_third_parties": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "AdSelectionFromOutcomesConfig.Builder setSeller(AdTechIdentifier)",
+          "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig.Builder setSeller(android.adservices.common.AdTechIdentifier)",
+          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSeller(android.adservices.common.AdTechIdentifier)",
+          "class": "Sensitive Source",
+          "categories": ["App Activity", "Location"],
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "AdSelectionFromOutcomesConfig.Builder",
+              "possibly_sensitive": true
+            }
+          ],
+          "data_transmitted": [
+            {
+              "type": "AdTechIdentifier",
+              "destinations": [
+                {
+                  "resource": "Application code",
+                  "accesible_to_third_parties": false
+                }
+              ]
+            }
+          ]
+        }
+  ]
+} 
+]
+  ,
+  "changed_classes": [
+    {
+      "name": "AdSelectionConfig",
+      "implemented_methods": []
+    },
+    {
+      "name": "AdSelectionConfig.Builder",
+      "implemented_methods": []
+    },
+    {
+      "name": "AdSelectionManager",
+      "implemented_methods": []
+    },
+    {
+      "name": "AdSelectionOutcome",
+      "implemented_methods": []
+    },
+    {
+      "name": "AddAdSelectionOverrideRequest",
+      "implemented_methods": []
+    },
+    {
+      "name": "ReportImpressionRequest",
+      "implemented_methods": []
+    },
+    {
+      "name": "TestAdSelectionManager",
+      "implemented_methods": []
+    }
+  ]
+},
+  {"package": "android.adservices.common"},
+  {"package": "android.adservices.customaudience"},
+  {"package": "android.adservices.measurement"},
+  {"package": "android.adservices.ondevicepersonalization"},
+  {"package": "android.adservices.signals"},
+  {"package": "android.adservices.topics"},
+  {"package": "android.app"},
+  {"package": "android.app.admin"},
+  {"package": "android.app.appsearch"},
+  {"package": "android.app.appsearch.observer"},
+  {"package": "android.app.job"},
+  {"package": "android.app.role"},
+  {"package": "android.app.sdksandbox"},
+  {"package": "android.app.sdksandbox.sdkprovider"},
+  {"package": "android.app.slice"},
+  {"package": "android.app.usage"},
+  {"package": "android.appwidget"},
+  {"package": "android.bluetooth"},
+  {"package": "android.companion"},
+  {"package": "android.companion.virtual"},
+  {"package": "android.content"},
+  {"package": "android.content.om"},
+  {"package": "android.content.pm"},
+  {"package": "android.content.res"},
+  {"package": "android.crypto.hpke"},
+  {"package": "android.database.sqlite"},
+  {"package": "android.graphics"},
+  {"package": "android.graphics.fonts"},
+  {"package": "android.graphics.pdf"},
+  {"package": "android.graphics.pdf.content"},
+  {"package": "android.graphics.pdf.models"},
+  {"package": "android.graphics.pdf.models.selection"},
+  {"package": "android.graphics.text"},
+  {"package": "android.hardware"},
+  {"package": "android.hardware.biometrics"},
+  {"package": "android.hardware.camera2"},
+  {"package": "android.hardware.camera2.params"},
+  {"package": "android.hardware.input"},
+  {"package": "android.health.connect"},
+  {"package": "android.health.connect.datatypes"},
+  {"package": "android.health.connect.datatypes.units"},
+  {"package": "android.icu.lang"},
+  {"package": "android.icu.number"},
+  {"package": "android.icu.text"},
+  {"package": "android.icu.util"},
+  {"package": "android.inputmethodservice"},
+  {"package": "android.location"},
+  {"package": "android.location.altitude"},
+  {"package": "android.media"},
+  {"package": "android.media.audiofx"},
+  {"package": "android.media.metrics"},
+  {"package": "android.media.midi"},
+  {"package": "android.net"},
+  {"package": "android.net.ipsec.ike"},
+  {"package": "android.net.nsd"},
+  {"package": "android.net.vcn"},
+  {"package": "android.net.wifi"},
+  {"package": "android.net.wifi.p2p"},
+  {"package": "android.net.wifi.rtt"},
+  {"package": "android.nfc"},
+  {"package": "android.nfc.cardemulation"},
+  {"package": "android.os"},
+  {"package": "android.os.health"},
+  {"package": "android.provider"},
+  {"package": "android.security"},
+  {"package": "android.security.keystore"},
+  {"package": "android.service.chooser"},
+  {"package": "android.service.controls"},
+  {"package": "android.service.notification"},
+  {"package": "android.service.persistentdata"},
+  {"package": "android.service.voice"},
+  {"package": "android.speech"},
+  {"package": "android.system"},
+  {"package": "android.telecom"},
+  {"package": "android.telephony"},
+  {"package": "android.telephony.data"},
+  {"package": "android.telephony.euicc"},
+  {"package": "android.telephony.ims.feature"},
+  {"package": "android.text"},
+  {"package": "android.text.style"},
+  {"package": "android.util"},
+  {"package": "android.view"},
+  {"package": "android.view.accessibility"},
+  {"package": "android.view.inputmethod"},
+  {"package": "android.webkit"},
+  {"package": "android.widget"},
+  {"package": "android.window"},
+  {"package": "java.io"},
+  {"package": "java.lang"},
+  {"package": "java.lang.invoke"},
+  {"package": "java.nio"},
+  {"package": "java.security"},
+  {"package": "java.security.interfaces"},
+  {"package": "java.security.spec"},
+  {"package": "java.util"},
+  {"package": "java.util.concurrent"},
+  {"package": "java.util.random"},
+  {"package": "java.util.stream"},
+  {"package": "java.util.zip"},
+  {"package": "javax.crypto.spec"},
+  {"package": "javax.security.auth.x500"}
+ ]

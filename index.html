@@ -1,78 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Android API Changes</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    th,
-    td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #f4f4f4;
-    }
-
-    .filters {
-      margin-bottom: 20px;
-    }
-
-    .filters label {
-      margin-right: 10px;
-    }
-
-    button {
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <h1>Android API Changes (API 34 to 35)</h1>
-  <p>Explore and classify Android API changes.</p>
+  <p>Classification and Categorization of all implemented Methods introduced with API 35</p>
 
-    <!-- Bar Chart Section -->
-    <div id="chart-container">
-      <h2>Statistics</h2>
-      <canvas id="statistics-chart" width="50" height="25"></canvas>
-    </div>
-  
+  <!-- Bar Chart Section -->
+  <div id="chart-container">
+    <h2>Statistics</h2>
+    <canvas id="statistics-chart" width="50" height="25"></canvas>
+  </div>
+
   <!-- Filters -->
   <div class="filters">
-    <label for="change-type">Change Type:</label>
     <select id="change-type">
-      <option value="">All</option>
+      <option value="">All Change Types</option>
       <option value="Addition">Addition</option>
       <option value="Modification">Modification</option>
       <option value="Deletion">Deletion</option>
     </select>
 
-    <label for="class">Class:</label>
     <select id="class">
-      <option value="">All</option>
+      <option value="">All Classes</option>
       <option value="Sensitive Source">Sensitive Source</option>
       <option value="Sensitive Sink">Sensitive Sink</option>
       <option value="Non-Sensitive">Non-Sensitive</option>
     </select>
 
-    <label for="category">Categories:</label>
     <select id="category">
-      <option value="">All</option>
+      <option value="">All Categories</option>
       <option value="Location">Location</option>
       <option value="Personal Info">Personal Info</option>
       <option value="Financial Info">Financial Info</option>
@@ -89,10 +51,10 @@
       <option value="Device or other IDs">Device or other IDs</option>
     </select>
 
-    <button onclick="downloadJSON()">Export Selected to FlowDroid</button>
+    <button onclick="exportFlowDroid()">Export to FlowDroid</button>
 
-    <button onclick="exportFlowDroid()">Download JSON</button>
-
+    <button onclick="downloadJSON()">Download JSON</button>
+  <button id="toggle-chart-button" onclick="toggleChartVisibility()">Show Statistics</button>
   </div>
 
   <!-- Tables -->
@@ -104,7 +66,6 @@
         <th>Change Type</th>
         <th>Category</th>
         <th>Data Returned</th>
-        <th>Select</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -118,47 +79,27 @@
         <th>Change Type</th>
         <th>Category</th>
         <th>Data Transmitted</th>
-        <th>Select</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
 
-  <h2>Non-Sensitive</h2>
+  <h2>Non-Sensitives</h2>
   <table id="non-sensitive">
     <thead>
       <tr>
         <th>Code</th>
         <th>Change Type</th>
         <th>Category</th>
-        <th>Select</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
-  </div>
 
-  <div id="chart-container">
-    <h2>Statistics</h2>
-    <canvas id="statistics-chart"></canvas>
-  </div>
-  
-  <style>
-    #chart-container {
-      width: 500px;
-      height: 400px;
-    }
-  
-    #statistics-chart {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-  
   <!-- JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="statistics.js"></script>
-  <script src="script.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/statistics.js"></script>
 </body>
 
 </html>
