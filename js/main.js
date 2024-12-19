@@ -1,110 +1,58 @@
+
 /**
- * Fetches the data from 'changes.json' and stores it in the apiData array.
- * Populates tables with the fetched data.
+ * The array containing the fetched data from 'changes.json'.
  */
 let apiData = [];
 
+// Fetch the data from 'changes.json' and store it in apiData and populate the tables with the fetched data.
 fetch('data/changes.json')
   .then((response) => response.json())
   .then((json) => {
     apiData = json;
-    if (!apiData || apiData.length === 0) {
-      console.log("No data available to populate tables");
-    }             
-   
-    // Initially populate the tables with the full data
-    populateTables(parseApiData(apiData));
+    apiData = parseApiData(apiData);
+    populateTables(apiData);
   })
-  .catch((error) => {
-    console.error('Error fetching data:', error);
 
-  });
+/**
+ * Parses the given data to extract all implemented methods and compiles them into a flat array format.
+ * 
+ * @param {Array} data - The package objects to be parsed.
+ * @returns {Array} - The objects containting the implemented methods details.
+ */
 
 function parseApiData(data) {
   const parsedData = [];
+  const keysToProcess = ["changed_classes", "added_interfaces", "changed_interfaces", "added_classes"];
+  keysToProcess.forEach(key => {
+    data.forEach(pkg => {
+      pkg[key]?.forEach(item => pushData(parsedData, item.implemented_methods));
+    })
+  })
+  return parsedData
+}
 
-  data.forEach(pkg => {
-    // Handle changed classes
-    if (pkg.changed_classes) {
-      pkg.changed_classes.forEach(cls => {
-        if (cls.implemented_methods) {
-          cls.implemented_methods.forEach(method => {
-            parsedData.push({
-              code: method.code,
-              //code_long: method.code_long,
-              link: method.link,
-              class: method.class,  // Class name from changed_classes
-              categories: method.categories || null,
-              change_type: method.change_type,
-              data_returned: method.data_returned || [],
-              data_transmitted: method.data_transmitted || []
-            });
-          });
-        }
-      });
-    }
 
-    // Handle added interfaces
-    if (pkg.added_interfaces) {
-      pkg.added_interfaces.forEach(iface => {
-        if (iface.implemented_methods) {
-          iface.implemented_methods.forEach(method => {
-            parsedData.push({
-              code: method.code,
-             // code_long: method.code_long,
-              link: method.link,
-              class: method.class,  // Interface name from added_interfaces
-              categories: method.categories || null,
-              change_type: method.change_type,
-              data_returned: method.data_returned || [],
-              data_transmitted: method.data_transmitted || []
-            });
-          });
-        }
-      });
-    }
-
-    // Handle added interfaces
-    if (pkg.changed_interfaces) {
-      pkg.changed_interfaces.forEach(iface => {
-        if (iface.implemented_methods) {
-          iface.implemented_methods.forEach(method => {
-            parsedData.push({
-              code: method.code,
-             // code_long: method.code_long,
-              link: method.link,
-              class: method.class,  // Interface name from added_interfaces
-              categories: method.categories  || null,
-              change_type: method.change_type,
-              data_returned: method.data_returned || [],
-              data_transmitted: method.data_transmitted || []
-            });
-          });
-        }
-      });
-    }
-    // Handle added classes
-    if (pkg.added_classes) {
-      pkg.added_classes.forEach(cls => {
-        if (cls.implemented_methods) {
-          cls.implemented_methods.forEach(method => {
-            parsedData.push({
-              code: method.code,
-              //code_long: method.code_long,
-              link: method.link,
-              class: method.class,  // Class name from added_classes
-              categories: method.categories || null,
-              change_type: method.change_type,
-              data_returned: method.data_returned || [],
-              data_transmitted: method.data_transmitted || []
-            });
-          });
-        }
-      });
-    }
-  });
-
-  return parsedData;
+/**
+ * Pushes the implemented_method's data to the given parsedData field.
+ * 
+ * @param {Array} parsedData - The array to push the data to.
+ * @param {Array} implemented_methods - The implemented_methods to push.
+ */
+function pushData(parsedData, implemented_methods) {
+  if (implemented_methods) {
+    implemented_methods.forEach(method =>
+      parsedData.push({
+        code: method.code,
+        code_long: method.code_long,
+        link: method.link,
+        class: method.class,
+        category: method.category || null,
+        change_type: method.change_type,
+        data_returned: method.data_returned || [],
+        data_transmitted: method.data_transmitted || []
+      })
+    )
+  }
 }
 
 /**
@@ -114,46 +62,38 @@ function parseApiData(data) {
  * @param {Array} filteredData - The data to populate the tables with.
  */
 function populateTables(filteredData) {
-  
-  // Clear existing rows in all tables
-  document.querySelectorAll('tbody').forEach(tbody => tbody.innerHTML = '');
-
   const tableBodies = {
     'sensitive-sources': document.querySelector('#sensitive-sources tbody'),
     'sensitive-sinks': document.querySelector('#sensitive-sinks tbody'),
     'non-sensitive': document.querySelector('#non-sensitive tbody')
-  };
-  
+  }
+
+  // Clear existing table rows
+  Object.values(tableBodies).forEach(tableBody => {
+    while (tableBody.firstChild) {
+      tableBody.removeChild(tableBody.firstChild);
+    }
+  })
+
   filteredData.forEach(item => {
-  
-          let tableId;
-          switch (item.class) {
-            case "Sensitive Source":
-              tableId = 'sensitive-sources';
-              break;
-            case "Sensitive Sink":
-              tableId = 'sensitive-sinks';
-              break;
-            case "Non-Sensitive":
-            default:
-              tableId = 'non-sensitive';
-              break;
-          }
-    
-                   // Get the corresponding table body based on tableId
-          const tableBody = tableBodies[tableId];
-          
-          // Ensure the table body exists before appending the row
-          if (tableBody) {
-            const row = createTableRow(item);
-            tableBody.appendChild(row); 
-          } else {
-            console.warn(`Table with ID ${tableId} does not exist.`);
-          }                
-  });
+
+    let tableId;
+    switch (item.class) {
+      case "Sensitive Source":
+        tableId = 'sensitive-sources';
+        break;
+      case "Sensitive Sink":
+        tableId = 'sensitive-sinks';
+        break;
+      case "Non-Sensitive":
+      default:
+        tableId = 'non-sensitive';
+        break;
+    }
+    const tableBody = tableBodies[tableId];
+    tableBody.appendChild(createTableRow(item));
+  })
 }
-
-
 
 /**
  * Creates a table row for a given item of data.
@@ -176,7 +116,7 @@ function createTableRow(item) {
   row.appendChild(changeTypeCell);
 
   const categoriesCell = document.createElement('td');
-  categoriesCell.textContent = item.categories ? item.categories : "";
+  categoriesCell.textContent = item.category ? item.category : "";
   row.appendChild(categoriesCell);
 
   if (item.class === "Sensitive Source") {
@@ -199,11 +139,11 @@ function createTableRow(item) {
 function applyFilters() {
   const changeType = document.getElementById('change-type').value;
   const selectedClass = document.getElementById('class').value;
-  const selectedCategory = document.getElementById('categories').value;
+  const selectedCategory = document.getElementById('category').value;
   const filteredData = apiData.filter(item => {
     const matchChangeType = changeType ? item.change_type === changeType : true;
     const matchClass = selectedClass ? item.class === selectedClass : true;
-    const matchCategory = selectedCategory ? (item.categories.includes(selectedCategory) || selectedCategory == "All Categories") : true;
+    const matchCategory = selectedCategory ? item.category === selectedCategory : true;
     console.log(selectedCategory)
     return matchChangeType && matchClass && matchCategory;
   });
@@ -246,11 +186,12 @@ function getSensitiveSinkDataTransmitted(item) {
 }
 
 /**
+ * Exports the data to FlowDroid format 
  * @todo Write the documentation.
  * @todo Implement this function.
  */
 function exportFlowDroid() {
-  
+
 }
 
 /**
@@ -261,8 +202,8 @@ function downloadJSON() {
     alert('No data available to download');
     return;
   }
-
-  const jsonData = JSON.stringify(apiData, null, 2);  // Pretty-printing the JSON
+  // Pretty-printing the JSON  
+  const jsonData = JSON.stringify(apiData, null, 2);
   const blob = new Blob([jsonData], { type: 'application/json' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
@@ -282,4 +223,4 @@ function viewSourceCode(link) {
 // Event Listeners for filter changes
 document.getElementById('change-type').addEventListener('change', applyFilters);
 document.getElementById('class').addEventListener('change', applyFilters);
-document.getElementById('categories').addEventListener('change', applyFilters);
+document.getElementById('category').addEventListener('change', applyFilters);

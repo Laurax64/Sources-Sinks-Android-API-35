@@ -41,7 +41,7 @@
           "code_long": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
           "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/accessibilityservice/AccessibilityService.java;drc=46b645ecb4e797a7291d540ff7fc802819dd953f;l=3661",
           "class": "Non-Sensitive",
-          "categories": [],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -67,12 +67,12 @@
       "code_long": "void getAdId(java.util.concurrent.Executor, android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>)",
       "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adid/AdIdManager.java;drc=913c7c595935c9c4392a9f2282ff5ae85073308e;l=120",
       "class": "Sensitive Source",
-      "categories": ["Device or other IDs"],
+      "category": "Device or other IDs",
       "change_type": "Addition",
       "data_returned": [
         {
           "type": "android.adservices.adid.AdId",
-          "categories": ["Device or other IDs"],
+          "category": "Device or other IDs",
           "possibly_sensitive": true
         }
       ],
@@ -93,7 +93,7 @@
           "code_long": "int describeContents()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#describeContents()",
           "class": "Non-Sensitive",
-          "categories": [],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -108,7 +108,7 @@
           "code": "boolean equals(Object)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#equals(java.lang.Object)",
           "class": "Non-Sensitive",
-          "categories": [],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -123,7 +123,7 @@
           "code": "List<Long> getAdSelectionIds()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getAdSelectionIds()",
           "class": "Sensitive Source",
-          "categories": ["Device or other IDs"],
+          "category": "Device or other IDs",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -138,7 +138,7 @@
           "code": "Uri getSelectionLogicUri()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSelectionLogicUri()",
           "class": "Non-Sensitive",
-          "categories": [],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -151,14 +151,13 @@
         },
         {
           "code": "AdSelectionSignals getSelectionSignals()",
-          "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSelectionSignals()",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=d69d593e7550930bab1a51e09b9166e17a88f738;l=107",
           "class": "Sensitive Source",
-          "categories": ["AppActivity", "Location"],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
               "type": "android.adservices.common.AdSelectionSignals",
-              "description": "",
               "possibly_sensitive": true
             }
           ],
@@ -168,7 +167,7 @@
           "code": "AdTechIdentifier getSeller()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#getSeller()",
           "class": "Non-Sensitive",
-          "categories": [],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -183,7 +182,7 @@
           "code": "int hashCode()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#hashCode()",
           "class": "Non-Sensitive",
-          "categories": [],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -198,7 +197,7 @@
           "code": "void writeToParcel(Parcel, int)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig#writeToParcel(android.os.Parcel,%20int)",
           "class": "Non-Sensitive",
-          "categories": [],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [],
           "data_transmitted": [
@@ -231,7 +230,7 @@
           "code": "Builder()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#Builder()",
           "class": "Non-Sensitive",
-          "categories": [],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -245,7 +244,7 @@
           "code": "AdSelectionFromOutcomesConfig build()",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#build()",
           "class": "Sensitive Source",
-          "categories": ["App Activity", "Location"],
+          "category": "",
           "change_type": [],
           "data_returned": [
             {
@@ -259,7 +258,7 @@
           "code": "AdSelectionFromOutcomesConfig.Builder setAdSelectionIds(List<Long>)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setAdSelectionIds(java.util.List%3Cjava.lang.Long%3E)",
           "class": "Sensitive Source",
-          "categories": ["App Activity", "Location"],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -283,7 +282,7 @@
           "code": "AdSelectionFromOutcomesConfig.Builder setSelectionLogicUri(Uri)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSelectionLogicUri(android.net.Uri)",
           "class": "Sensitive Source",
-          "categories": ["App Activity", "Location"],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -307,7 +306,7 @@
           "code": "AdSelectionFromOutcomesConfig.Builder setSelectionLogicUri(Uri)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSelectionLogicUri(android.net.Uri)",
           "class": "Sensitive Source",
-          "categories": ["Location"],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -331,7 +330,7 @@
           "code": "AdSelectionFromOutcomesConfig.Builder setSelectionSignals(AdSelectionSignals)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSelectionSignals(android.adservices.common.AdSelectionSignals)",
           "class": "Sensitive Source",
-          "categories": ["App Activity", "Location"],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
@@ -356,7 +355,7 @@
           "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig.Builder setSeller(android.adservices.common.AdTechIdentifier)",
           "link": "https://developer.android.com/reference/android/adservices/adselection/AdSelectionFromOutcomesConfig.Builder#setSeller(android.adservices.common.AdTechIdentifier)",
           "class": "Sensitive Source",
-          "categories": ["App Activity", "Location"],
+          "category": "",
           "change_type": "Addition",
           "data_returned": [
             {
