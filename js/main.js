@@ -119,17 +119,14 @@ function createTableRow(item) {
   categoriesCell.textContent = item.category ? item.category : "";
   row.appendChild(categoriesCell);
 
-  if (item.class === "Sensitive Source") {
-    const dataReturnedCell = document.createElement('td');
-    dataReturnedCell.innerHTML = getSensitiveSourceDataReturned(item);
-    row.appendChild(dataReturnedCell);
-  }
+  const dataReturnedCell = document.createElement('td');
+  dataReturnedCell.innerHTML = getDataReturnedDescription(item);
+  row.appendChild(dataReturnedCell);
 
-  if (item.class === "Sensitive Sink") {
-    const dataTransmittedCell = document.createElement('td');
-    dataTransmittedCell.innerHTML = getSensitiveSinkDataTransmitted(item);
-    row.appendChild(dataTransmittedCell);
-  }
+  const dataTransmittedCell = document.createElement('td');
+  dataTransmittedCell.textContent = getDataTransmittedDescription(item);
+  row.appendChild(dataTransmittedCell);
+
   return row;
 }
 
@@ -157,12 +154,10 @@ function applyFilters() {
  * @param {Object} item - The data item of the sensitive source.
  * @returns {string} - The formatted data returned description.
  */
-function getSensitiveSourceDataReturned(item) {
+function getDataReturnedDescription(item) {
   if (item.data_returned && item.data_returned.length > 0) {
-    return item.data_returned
-      .filter(data => data.possibly_sensitive)
-      .map(data => data.description)
-      .join("<br>");
+    return item.data_returned.map(data =>
+      data.description).join()
   }
   return "None";
 }
@@ -173,14 +168,11 @@ function getSensitiveSourceDataReturned(item) {
  * @param {Object} item - The data item of the sensitive sink.
  * @returns {string} - The formatted data transmitted description.
  */
-function getSensitiveSinkDataTransmitted(item) {
+function getDataTransmittedDescription(item) {
+  console.log(item.data_transmitted)
   if (item.data_transmitted && item.data_transmitted.length > 0) {
     return item.data_transmitted.map(data =>
-      data.destinations
-        .filter(dest => dest.accesible_to_third_parties && data.possibly_sensitive)
-        .map(dest => `${data.type} to ${dest.resource}`)
-        .join("<br>")
-    ).join("<br>");
+      data.description).join()
   }
   return "None";
 }

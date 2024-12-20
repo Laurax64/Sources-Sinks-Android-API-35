@@ -2,7 +2,7 @@
 const categories = [
   "Location", "Personal Info", "Financial Info", "Health and Fitness", "Messages",
   "Photos and Videos", "Audio Files", "Files and Docs", "Calendar", "Contacts",
-  "App Activity", "Web Browsing", "App Info and Performance", "Device or other IDs", "Category Unknown"
+  "App Activity", "Web Browsing", "App Info and Performance", "Device or other IDs", "Undefined"
 ];
 
 // Create a function to generate the counts structure
@@ -39,11 +39,50 @@ function showChart() {
   });
 }
 
+function showPieChart() {
+  const counts = createCategoryCounts(apiData);
+
+  // Aggregate total counts for each category across all classes
+  const totalCounts = categories.map(category => {
+    return Object.keys(counts).reduce((sum, classType) => sum + counts[classType][category], 0);
+  });
+
+  new Chart(document.getElementById('statistics-chart'), {
+    type: 'pie',
+    data: {
+      labels: categories,
+      datasets: [{
+        data: totalCounts,
+        backgroundColor: categories.map(getColorForCategory)
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top'
+        },
+        tooltip: {
+          callbacks: {
+            label: (tooltipItem) => {
+              const category = tooltipItem.label;
+              const value = tooltipItem.raw;
+              return `${category}: ${value}`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+
 /**
  * Counts each class and category combination in the data.
  * 
- * @param {string[]} apiData The data to count classes and categories for.
- * @returns{string[]} An object containing the counts.
+ * @param {object} apiData The data to count classes and categories for.
+ * @returns {object} An object containing the counts.
  */
 function createCategoryCounts(apiData) {
   const counts = {
@@ -53,24 +92,23 @@ function createCategoryCounts(apiData) {
   };
 
   apiData.forEach(item => {
-    const category = item.category || "Category Unknown";
+    const category = item.category || "Undefined";
     if (counts.hasOwnProperty(item.class)) {
       counts[item.class][category]++;
     } else {
-      counts["Non-Sensitive"]++;
+      counts["Non-Sensitive"]["Undefined"]++;
     }
   });
   return counts;
 }
 
 /**
- * Generates a dataset for the bar chart from the counts where the label is the category name 
+ * Generate a dataset for the bar chart from the counts where the label is the category name 
  * and the data is the count for each class.
  * 
- * @param {string[]} categories The counted categories.
- * @param {string[]} classes The counted classes.
- * @param {object} counts The counted data.
- * @returns {object[]} The dataset for the bar chart.
+ * @param {*} categories The counted categories.
+ * @param {*} classes The counted classes.
+ * @returns The dataset for the bar chart.
  */
 function generateDataset(categories, classes, counts) {
   const dataset =
@@ -80,8 +118,7 @@ function generateDataset(categories, classes, counts) {
         data: classes.map(classType => counts[classType][category]),
         backgroundColor: getColorForCategory(category)
       }
-    }
-    )
+    });
   return dataset
 }
 
