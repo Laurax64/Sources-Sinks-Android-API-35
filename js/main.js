@@ -1,4 +1,3 @@
-
 /**
  * The array containing the fetched data from 'changes.json'.
  */
