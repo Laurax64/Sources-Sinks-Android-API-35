@@ -140,13 +140,13 @@
             "code": "AdSelectionSignals getSelectionSignals()",
             "code_long": "android.adservices.common.AdSelectionSignals getSelectionSignals()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=107",
-            "class": "Sensitive Source",
+            "class": "Non-Sensitive",
             "category": "",
             "change_type": "Addition",
             "data_returned": [
               {
                 "type": "android.adservices.common.AdSelectionSignals",
-                "description": "Ad selection signals, TODO: Improve description",
+                "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": true
               }
             ],
@@ -503,13 +503,182 @@
       {
         "name": "AddAdSelectionFromOutcomesOverrideRequest",
         "implemented_methods": [
-
-
+          {
+            "code": "AddAdSelectionFromOutcomesOverrideRequest(AdSelectionFromOutcomesConfig, String, AdSelectionSignals)",
+            "code_long": "AddAdSelectionFromOutcomesOverrideRequest(android.adservices.adselection.AdSelectionFromOutcomesConfig, java.lang.String, android.adservices.common.AdSelectionSignals)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AddAdSelectionFromOutcomesOverrideRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=42",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AddAdSelectionFromOutcomesOverrideRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=61",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
+                "description": "An object of type AdSelectionFromOutcomesConfig that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getOutcomeSelectionLogicJs()",
+            "code_long": "java.lang.String getOutcomeSelectionLogicJs()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AddAdSelectionFromOutcomesOverrideRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=71",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "The outcome selection logic that will be executed during ad outcome selection, TODO: Improve description",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionSignals getOutcomeSelectionTrustedSignals()",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AddAdSelectionFromOutcomesOverrideRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=80",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdSelectionSignals",
+                "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
         ]
       },
       {
         "name": "DecisionLogic",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "DecisionLogic(String)",
+            "code_long": "DecisionLogic(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=17e38eddfe702cd983a320d9ceae55f1f39b6c04;l=34",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+          "code": "DecisionLogic(Parcel)",
+          "code_long": "DecisionLogic(android.os.Parcel)",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=17e38eddfe702cd983a320d9ceae55f1f39b6c04;l=39",
+          "class": "Non-Sensitive",
+          "category": "",
+          "change_type": "Addition",
+          "data_returned": [],
+          "data_transmitted": []
+        },
+        {
+          "code": "int describeContents()",
+          "code_long": "int describeContents()",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=59",
+          "class": "Non-Sensitive",
+          "category": "",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "int",
+              "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "void writeToParcel(Parcel, int)",
+          "code_long": "void writeToParcel(android.os.Parcel, int)",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=64",
+          "class": "Non-Sensitive",
+          "category": "",
+          "change_type": "Addition",
+          "data_returned": [],
+          "data_transmitted": []
+        },
+        {
+          "code": "String toString()",
+          "code_long": "java.lang.String toString()",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=70",
+          "class": "Non-Sensitive",
+          "category": "",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "java.lang.String",
+              "description": "Ad selection decision logic that could have been provided by the buyer or seller",
+              "possibly_sensitive": false
+            }
+
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "int hashCode()",
+          "code_long": "int hashCode()",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=75",
+          "class": "Non-Sensitive",
+          "category": "",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "Int",
+              "description": "A hash code value",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "boolean equals(Object)",
+          "code_long": "boolean equals(java.lang.Object)",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=80",
+          "class": "Non-Sensitive",
+          "category": "",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "boolean",
+              "description": "Whether the given object is equal to this DecisionLogic",
+              "possibly_sensitive": false
+            }
+          ],
+          "data_transmitted": []
+        },
+        {
+          "code": "String getLogic()",
+          "code_long": "String getLogic()",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=88",
+          "class": "Non-Sensitive",
+          "category": "",
+          "change_type": "Addition",
+          "data_returned": [
+            {
+              "type": "java.lang.String",
+              "description": "Ad selection decision logic that could have been provided by the buyer or seller",
+              "possibly_sensitive": false
+            }
+
+          ],
+          "data_transmitted": []
+        }
+        ]
       },
       {
         "name": "GetAdSelectionDataOutcome",
