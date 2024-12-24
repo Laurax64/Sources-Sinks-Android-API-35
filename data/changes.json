@@ -1165,7 +1165,35 @@
       },
       {
         "name": "RemoveAdSelectionFromOutcomesOverrideRequest",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "RemoveAdSelectionFromOutcomesOverrideRequest(AdSelectionFromOutcomesConfig)",
+            "code_long": "RemoveAdSelectionFromOutcomesOverrideRequest(android.adservices.adselection.AdSelectionFromOutcomesConfig)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/RemoveAdSelectionFromOutcomesOverrideRequest.java;drc=8f140862437027f453d298aaf0c66fa5f6117be2;l=34",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig())",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/RemoveAdSelectionFromOutcomesOverrideRequest.java;drc=8f140862437027f453d298aaf0c66fa5f6117be2;l=41",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
+                "description": "An object of type AdSelectionFromOutcomesConfig that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+
+        ]
       },
       {
         "name": "ReportEventRequest",
