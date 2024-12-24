@@ -1,0 +1,2211 @@
+[
+  {
+    "package": "android",
+    "changed_classes": [
+      {
+        "name": "Manifest.permission",
+        "implemented_methods": []
+      },
+      {
+        "name": "R.attr",
+        "implemented_methods": []
+      },
+      {
+        "name": "R.color",
+        "implemented_methods": []
+      }
+    ]
+  },
+  {
+    "package": "android.accessibilityservice",
+    "added_interfaces": [
+      {
+        "name": "BrailleDisplayController",
+        "implemented_methods": []
+      },
+      {
+        "name": "BrailleDisplayController.BrailleDisplayCallback",
+        "implemented_methods": []
+      }
+    ],
+    "changed_classes": [
+      {
+        "name": "AccessibilityService",
+        "implemented_methods": [
+          {
+            "code": "BrailleDisplayController getBrailleDisplayController()",
+            "code_long": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/accessibilityservice/AccessibilityService.java;drc=46b645ecb4e797a7291d540ff7fc802819dd953f;l=3661",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.accessibilityservice.BrailleDisplayController",
+                "description": "An object of type BrailleDisplayControllerImpl that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "package": "android.adservices.adid",
+    "changes_classes": [
+      {
+        "name": "AdIdManager",
+        "implemented_methods": [
+          {
+            "code": "void getAdId(Executor, AdServicesOutcomeReceiver<AdId, Exception>)",
+            "code_long": "void getAdId(java.util.concurrent.Executor, android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adid/AdIdManager.java;drc=913c7c595935c9c4392a9f2282ff5ae85073308e;l=120",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adid.AdId",
+                "description": "The device's advertising ID",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "package": "android.adservices.adselection",
+    "added_classes": [
+      {
+        "name": "AdSelectionFromOutcomesConfig",
+        "implemented_methods": [
+          {
+            "code": "AdSelectionFromOutcomesConfig(AdTechIdentifier, List<Long>, AdSelectionSignals, Uri)",
+            "code_long": "AdSelectionFromOutcomesConfig(android.adservices.common.AdTechIdentifier, java.util.List<java.lang.Long>, android.adservices.common.AdSelectionSignals, android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=58",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig(Parcel)",
+            "code_long": "AdSelectionFromOutcomesConfig(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=74",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdTechIdentifier getSeller()",
+            "code_long": "android.adservices.common.AdTechIdentifier getSeller()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=88",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdTechIdentifier",
+                "description": "An ad tech identifier of the seller, for example, www.example-ssp.com",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "List<Long> getAdSelectionIds()",
+            "code_long": "java.util.list<java.lang.Long> getAdSelectionIds()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=97",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.list<java.lang.Long>",
+                "description": "The ad selection IDs, which are used to identify ads that might be shown to the user",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionSignals getSelectionSignals()",
+            "code_long": "android.adservices.common.AdSelectionSignals getSelectionSignals()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=107",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdSelectionSignals",
+                "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Uri getSelectionLogicUri()",
+            "code_long": "android.net.Uri getSelectionLogicUri()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=116",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.net.Uri",
+                "description": "The URI used to retrieve the JS code containing the seller/SSP selectOutcome function",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=121",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": [
+              {
+                "type": "android.os.Parcel",
+                "description": "A parcel into the application code",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Application code",
+                    "accessible_to_third_parties": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=131",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=136",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this AdSelectionFromOutcomesConfig",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=147",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AdSelectionFromOutcomesConfig.Builder",
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "code_long": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=161",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig.Builder setSeller(AdTechIdentifier)",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig.Builder setSeller(android.adservices.common.AdTechIdentifier)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=165",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "This AdSelectionFromOutcomesConfig.Builder",
+                "description": "This AdSelectionFromOutcomesConfig.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": [
+              {
+                "type": " android.adservices.common.AdTechIdentifier",
+                "description": "An ad tech identifier of the seller into the application code",
+                "possibly_sensitive": false,
+                "destinations": [
+                  {
+                    "resource": "Application code",
+                    "accesible_to_third_parties": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig.Builder setAdSelectionIds(List<Long>)",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig.Builder setAdSelectionIds(java.util.List<java.lang.Long>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=174",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "AdSelectionFromOutcomesConfig.Builder",
+                "description": "This AdSelectionFromOutcomesConfig.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": [
+              {
+                "type": "java.util.List<java.lang.Long>",
+                "description": "The ad selection IDs into the application code",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Application code",
+                    "accessible_to_third_parties": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig.Builder setSelectionSignals(AdSelectionSignals)",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig.Builder setSelectionSignals(android.adservices.common.AdSelectionSignals)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=187",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "AdSelectionFromOutcomesConfig.Builder",
+                "description": "This AdSelectionFromOutcomesConfig.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": [
+              {
+                "type": "android.adservices.common.AdSelectionSignals",
+                "description": "Ad selection signals into the application code",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Application code",
+                    "accesible_to_third_parties": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig.Builder setSelectionLogicUri(Uri)",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig.Builder setSelectionLogicUri(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=225",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "This AdSelectionFromOutcomesConfig.Builder",
+                "description": "This AdSelectionFromOutcomesConfig.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": [
+              {
+                "type": "android.net.Uri",
+                "description": "The URI used to retrieve the JS code containing the seller/SSP selectOutcome function into the application code",
+                "possibly_sensitive": false,
+                "destinations": [
+                  {
+                    "resource": "Application code",
+                    "accesible_to_third_parties": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig build()",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=235",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
+                "description": "An object of type AdSelectionFromOutcomesConfig that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AdWithBid",
+        "implemented_methods": [
+          {
+            "code": "AdWithBid(AdData, double)",
+            "code_long": "AdWithBid(android.adservices.common.AdData, double)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdWithBid.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=66",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": [
+              {
+                "type": "android.adservices.common.AdData",
+                "description": "Data specific to an ad that is necessary for ad selection and rendering into the application code",
+                "possibly_sensitive": false
+              }
+            ]
+          },
+          {
+            "code": "AdWithBid(Parcel)",
+            "code_long": "AdWithBid(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdWithBid.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=72",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": [
+              {
+                "type": "android.adservices.common.AdData",
+                "description": "Data specific to an ad that is necessary for ad selection and rendering into the application code",
+                "possibly_sensitive": false
+              }
+            ]
+          },
+          {
+            "code": "AdData getAdData()",
+            "code_long": "android.adservices.common.AdData getAdData()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdWithBid.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=82",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdData",
+                "description": "Data specific to an ad that is necessary for ad selection and rendering into the application code",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "double getBid()",
+            "code_long": "double getBid()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdWithBid.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=99",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "double",
+                "description": "The amount of money an advertiser has bid during the ad selection process to show an ad",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdWithBid.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=104",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdWithBid.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=117",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this AdWithBid",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdWithBid.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=126",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AddAdSelectionFromOutcomesOverrideRequest",
+        "implemented_methods": [
+          {
+            "code": "AddAdSelectionFromOutcomesOverrideRequest(AdSelectionFromOutcomesConfig, String, AdSelectionSignals)",
+            "code_long": "AddAdSelectionFromOutcomesOverrideRequest(android.adservices.adselection.AdSelectionFromOutcomesConfig, java.lang.String, android.adservices.common.AdSelectionSignals)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AddAdSelectionFromOutcomesOverrideRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=42",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AddAdSelectionFromOutcomesOverrideRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=61",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
+                "description": "An object of type AdSelectionFromOutcomesConfig that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getOutcomeSelectionLogicJs()",
+            "code_long": "java.lang.String getOutcomeSelectionLogicJs()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AddAdSelectionFromOutcomesOverrideRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=71",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "The outcome selection logic that will be executed during ad outcome selection, TODO: Improve description",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionSignals getOutcomeSelectionTrustedSignals()",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AddAdSelectionFromOutcomesOverrideRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=80",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdSelectionSignals",
+                "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "DecisionLogic",
+        "implemented_methods": [
+          {
+            "code": "DecisionLogic(String)",
+            "code_long": "DecisionLogic(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=17e38eddfe702cd983a320d9ceae55f1f39b6c04;l=34",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "DecisionLogic(Parcel)",
+            "code_long": "DecisionLogic(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=17e38eddfe702cd983a320d9ceae55f1f39b6c04;l=39",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=59",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=64",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "String toString()",
+            "code_long": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=70",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "Ad selection decision logic that could have been provided by the buyer or seller",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=75",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=80",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this DecisionLogic",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getLogic()",
+            "code_long": "String getLogic()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/DecisionLogic.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=88",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "Ad selection decision logic that could have been provided by the buyer or seller",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "GetAdSelectionDataOutcome",
+        "implemented_methods": [
+          {
+            "code": "GetAdSelectionDataOutcome(long, byte[])",
+            "code_long": "GetAdSelectionDataOutcome(long, byte[])",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataOutcome.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=37",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "long getAdSelectionId()",
+            "code_long": "long getAdSelectionId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataOutcome.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=47",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "long",
+                "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "long getAdSelectionDataId()",
+            "code_long": "long getAdSelectionDataId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataOutcome.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=54",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "long",
+                "description": "The id that uniquely identifies ad selection data",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "byte[] getAdSelectionData()",
+            "code_long": "byte[] getAdSelectionData()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataOutcome.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=60",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "long",
+                "description": "The ad selection data that is collected from device",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "GetAdSelectionDataRequest",
+        "implemented_methods": [
+          {
+            "code": "GetAdSelectionDataRequest(AdTechIdentifier, Uri, SellerConfiguration)",
+            "code_long": "GetAdSelectionDataRequest(android.adservices.common.AdTechIdentifier, android.net.Uri, android.adservices.adselection.SellerConfiguration)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataRequest.java;drc=68f47c31e6b8502274aaf8060f243d34e63b7027;l=42",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdTechIdentifier getSeller()",
+            "code_long": "android.adservices.common.AdTechIdentifier getSeller()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataRequest.java;drc=68f47c31e6b8502274aaf8060f243d34e63b7027;l=55",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdTechIdentifier",
+                "description": "An ad tech identifier of the seller, for example, www.example-ssp.com",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Uri getCoordinatorOriginUri()",
+            "code_long": "android.net.Uri getCoordinatorOriginUri()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataRequest.java;drc=68f47c31e6b8502274aaf8060f243d34e63b7027;l=66",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.net.Uri",
+                "description": "The coordinator origin Uri where the public keys for encryption are fetched from",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "SellerConfiguration getSellerConfiguration()",
+            "code_long": "android.adservices.adselection.SellerConfiguration getSellerConfiguration()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataRequest.java;drc=68f47c31e6b8502274aaf8060f243d34e63b7027;l=78",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.SellerConfiguration",
+                "description": "The seller ad tech's requested payload configuration",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "GetAdSelectionDataRequest.Builder",
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "code_long": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataRequest.java;drc=68f47c31e6b8502274aaf8060f243d34e63b7027;l=92",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "GetAdSelectionDataRequest.Builder setCoordinatorOriginUri(Uri)",
+            "code_long": "android.adservices.adselection.GetAdSelectionDataRequest.Builder setCoordinatorOriginUri(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataRequest.java;drc=68f47c31e6b8502274aaf8060f243d34e63b7027;l=113",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.GetAdSelectionDataRequest.Builder",
+                "description": "An object of type GetAdSelectionDataRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "GetAdSelectionDataRequest build()",
+            "code_long": "android.adservices.adselection.GetAdSelectionDataRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataRequest.java;drc=68f47c31e6b8502274aaf8060f243d34e63b7027;l=123",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.GetAdSelectionDataRequest",
+                "description": "An object of type GetAdSelectionDataRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "GetAdSelectionDataRequest.Builder setSellerConfiguration(SellerConfiguration)",
+            "code_long": "android.adservices.adselection.GetAdSelectionDataRequest.Builder setSellerConfiguration(android.adservices.adselection.SellerConfiguration)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataRequest.java;drc=68f47c31e6b8502274aaf8060f243d34e63b7027;l=134",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.GetAdSelectionDataRequest.Builder",
+                "description": "An object of type GetAdSelectionDataRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "PerBuyerDecisionLogic",
+        "implemented_methods": [
+          {
+            "code": "PerBuyerDecisionLogic(Map<AdTechIdentifier, DecisionLogic>)",
+            "code_long": "PerBuyerDecisionLogic(java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=58drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=58",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "PerBuyerDecisionLogic(Parcel)",
+            "code_long": "PerBuyerDecisionLogic(Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=63",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=85",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=90",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": [
+              {
+                "type": "android.os.Parcel",
+                "description": "A parcel into the application code",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Application code",
+                    "accessible_to_third_parties": false
+                  }
+                ]
+              },
+              {
+                "type": "java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic>",
+                "description": "A map into the application code",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Application code",
+                    "accessible_to_third_parties": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=96",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=101",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this PerBuyerDecisionLogic",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Map<AdTechIdentifier, DecisionLogic> getPerBuyerLogicMap()",
+            "code_long": "Map<AdTechIdentifier, DecisionLogic> getPerBuyerLogicMap()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=109",
+            "class": "",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic>",
+                "description": "Map of buyers and their decision logic to be fetched during ad selection",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "PersistAdSelectionResultRequest",
+        "implemented_methods": [
+          {
+            "code": "PersistAdSelectionResultRequest(long, AdTechIdentifier, byte[])",
+            "code_long": "PersistAdSelectionResultRequest(long, android.adservices.common.AdTechIdentifier, byte[])",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=45",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "long getAdSelectionId()",
+            "code_long": "long getAdSelectionId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=59",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "long",
+                "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "long getAdSelectionDataId()",
+            "code_long": "long getAdSelectionDataId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=70",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "long",
+                "description": "The id that uniquely identifies ad selection data",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdTechIdentifier getSeller()",
+            "code_long": "android.adservices.common.AdTechIdentifier getSeller()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=78",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdTechIdentifier",
+                "description": "An ad tech identifier of the seller, for example, www.example-ssp.com",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "byte[] getAdSelectionResult()",
+            "code_long": "byte[] getAdSelectionResult()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=86",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "byte[]",
+                "description": "An ad selection result",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "PersistAdSelectionResultRequest.Builder",
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "code_long": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=100",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest.Builder setAdSelectionId(long adSelectionId)",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder setAdSelectionId(long adSelectionId)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=108",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
+                "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest.Builder setAdSelectionDataId(long)",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder setAdSelectionDataId(long)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=117",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
+                "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest.Builder setSeller(AdTechIdentifier)",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder setSeller(android.adservices.common.AdTechIdentifier)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=125",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
+                "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest.Builder setAdSelectionResult(byte[])",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder setAdSelectionResult(byte[])",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=133",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
+                "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest build()",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=150",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest",
+                "description": "An object of type PersistAdSelectionResultRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "RemoveAdSelectionFromOutcomesOverrideRequest",
+        "implemented_methods": [
+          {
+            "code": "RemoveAdSelectionFromOutcomesOverrideRequest(AdSelectionFromOutcomesConfig)",
+            "code_long": "RemoveAdSelectionFromOutcomesOverrideRequest(android.adservices.adselection.AdSelectionFromOutcomesConfig)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/RemoveAdSelectionFromOutcomesOverrideRequest.java;drc=8f140862437027f453d298aaf0c66fa5f6117be2;l=34",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig())",
+            "code_long": "android.adservices.adselection.AdSelectionFromOutcomesConfig getAdSelectionFromOutcomesConfig()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/RemoveAdSelectionFromOutcomesOverrideRequest.java;drc=8f140862437027f453d298aaf0c66fa5f6117be2;l=41",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
+                "description": "An object of type AdSelectionFromOutcomesConfig that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "ReportEventRequest",
+        "implemented_methods": [
+          {
+            "code": "ReportEventRequest(Builder)",
+            "code_long": "ReportEventRequest(android.adservices.adselection.ReportEventRequest.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=59",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "long getAdSelectionId()",
+            "code_long": "long getAdSelectionId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=85",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "long",
+                "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getKey()",
+            "code_long": "java.lang.String getKey()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=104",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "A key for the type of ad event to be reported",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "InputEvent getInputEvent()",
+            "code_long": "android.view.InputEvent getInputEvent()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=115",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.view.InputEvent",
+                "description": "An object of type InputEvent that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getData()",
+            "code_long": "java.lang.String getData()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=129",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "The ad event data",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int getReportingDestinations()",
+            "code_long": "int getReportingDestinations()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=144",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "The bitfield of reporting destinations to report to (buyer, seller, or both)",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "ReportEventRequest.Builder",
+        "implemented_methods": [
+          {
+            "code": "Builder(long, String, String, int)",
+            "code_long": "Builder(long, java.lang.String, java.lang.String, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=171",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setAdSelectionId(long adSelectionId)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setAdSelectionId(long adSelectionId)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=204",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setKey(String)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setKey(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=217",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setInputEvent(InputEvent)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setInputEvent(android.view.InputEvent)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=230",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setData(String)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setData(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=241",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setReportingDestinations(int)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setReportingDestinations(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=254",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "ReportEventRequest build()",
+            "code_long": "android.adservices.adselection.ReportEventRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=265",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest",
+                "description": "An object of type ReportEventRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "SetAppInstallAdvertisersRequest",
+        "implemented_methods": [
+          {
+            "code": "SetAppInstallAdvertisersRequest(Set<AdTechIdentifier>)",
+            "code_long": "SetAppInstallAdvertisersRequest(java.util.Set<android.adservices.commonAdTechIdentifier>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=35",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Set<AdTechIdentifier> getAdvertisers()",
+            "code_long": "java.util.Set<android.adservices.common.AdTechIdentifier> getAdvertisers()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=47",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.Set<android.adservices.common.AdTechIdentifier>",
+                "description": "A set of objects of type AdTechIdentifier that might contain sensitive data, but are not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "SetAppInstallAdvertisersRequest.Builder",
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "code_long": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=54",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "SetAppInstallAdvertisersRequest.Builder setAdvertisers(Set<AdTechIdentifier>)",
+            "code_long": "android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder setAdvertisers(java.util.Set<android.adservices.commonAdTechIdentifier>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=61",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder",
+                "description": "An object of type SetAppInstallAdvertisersRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "SetAppInstallAdvertisersRequest build()",
+            "code_long": "android.adservices.adselection.SetAppInstallAdvertisersRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=71",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.SetAppInstallAdvertisersRequest",
+                "description": "An object of type SetAppInstallAdvertisersRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "SignedContextualAds",
+        "implemented_methods": [
+            {
+              "code": "SignedContextualAds(AdTechIdentifier, Uri, List<AdWithBid>, byte[])",
+              "code_long": "SignedContextualAds(android.adservices.common.AdTechIdentifier, android.net.Uri, java.util.List<android.adservices.adselection.AdWithBid>, byte[])",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=86",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds(Parcel)",
+              "code_long": "SignedContextualAds(android.os.Parcel)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=97",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "describeContents()",
+              "code_long": "int describeContents()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=106",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "int",
+                  "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "void writeToParcel(Parcel, int)",
+              "code_long": "android.adservices.adselection.SignedContextualAds writeToParcel(android.os.Parcel, int)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=111",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": [
+                {
+                  "type": "Parcel",
+                  "description": "The Parcel to which the object should be written",
+                  "possibly_sensitive": false
+                },
+                {
+                  "type": "int",
+                  "description": "Additional flags about how the object should be written",
+                  "possibly_sensitive": false
+                }
+              ]
+            },
+            {
+              "code": "boolean equals(Object)",
+              "code_long": "boolean equals(java.lang.Object)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=121",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "boolean",
+                  "description": "Whether the given object is equal to this SignedContextualAds",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "int hashCode()",
+              "code_long": "int hashCode()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=132",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "int",
+                  "description": "A hash code value",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "AdTechIdentifier getBuyer()",
+              "code_long": "android.adservices.common.AdTechIdentifier getBuyer()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=140",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.common.AdTechIdentifier",
+                  "description": "An object of type AdTechIdentfier",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "Uri getDecisionLogicUri()",
+              "code_long": "android.net.Uri getDecisionLogicUri()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=149",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.net.Uri",
+                  "description": "The URI used to retrieve the updateBid() and reportWin() function used during the ad selection and reporting process",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "List<AdWithBid> getAdsWithBid()",
+              "code_long": "java.util.List<android.adservices.adselection.AdWithBid> getAdsWithBid()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=157",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "java.util.List<android.adservices.adselection.AdWithBid>",
+                  "description": "A list of objects of type AdWithBid that might contain sensitive data, but are not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "byte[] getSignature()",
+              "code_long": "byte[] getSignature()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=169",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "byte[]",
+                  "description": "A copy of the signature for the contextual ads object",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "String toString()",
+              "code_long": "java.lang.String toString())",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=174",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "java.lang.String",
+                  "description": "This SignedContextualAds object as a String, not sensitive since SignedContextualAds doesn't contain sensitive data",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            }
+          ]
+        },
+        {
+          "name": "SignedContextualAds.Builder",
+          "implemented_methods": [
+            {
+              "code": "Builder()",
+              "code_long": "Builder()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=194",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "Builder(SignedContextualAds)",
+              "code_long": "Builder(android.adservices.adselection.SignedContextualAds)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=197",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds.Builder setBuyer(AdTechIdentifier)",
+              "code_long": "android.adservices.adselection.SignedContextualAds.Builder setBuyer(android.adservices.common.AdTechIdentifier)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=212",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds.Builder",
+                  "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds.Builder setDecisionLogicUri(Uri)",
+              "code_long": "android.adservices.adselection.SignedContextualAds.Builder setDecisionLogicUri(android.net.Uri)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=225",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds.Builder",
+                  "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds.Builder setAdsWithBid(List<AdWithBid> adsWithBid)",
+              "code_long": "android.adservices.adselection.SignedContextualAds.Builder setAdsWithBid(java.util.List<android.adservices.adselection.AdWithBid>)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=238",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds.Builder",
+                  "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds.Builder setSignature(byte[])",
+              "code_long": "android.adservices.adselection.SignedContextualAds.Builder setSignature(byte[])",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=247",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds.Builder",
+                  "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds build()",
+              "code_long": "android.adservices.adselection.SignedContextualAds build()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=260",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds",
+                  "description": "An object of type SignedContextualAds that might contain sensitive data, but is not sensitive itself",  
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            }
+          ]
+        },
+        {
+          "name": "UpdateAdCounterHistogramRequest",
+          "implemented_methods": [
+            {
+              "code": "UpdateAdCounterHistogramRequest(Builder)",
+              "code_long": "UpdateAdCounterHistogramRequest(android.adservices.adselection.UpdateAdCounterHistogramRequest.Builder)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=60",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "long getAdSelectionId()",
+              "code_long": "long getAdSelectionId()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=79",
+              "class": "Sensitive Source",
+              "category": "Device or other IDs",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "long",
+                  "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
+                  "possibly_sensitive": true
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "int getAdEventType()",
+              "code_long": "int getAdEventType()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=88",
+              "class": "Sensitive Source",
+              "category": "App Activity",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "long",
+                  "description": "The ad event type, e.g., view or click",
+                  "possibly_sensitive": true
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "AdTechIdentifier getCallerAdTech()",
+              "code_long": "android.adservices.common.AdTechIdentifier getCallerAdTech()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=106",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.common.AdTechIdentifier",
+                  "description": "An object of type AdTechIdentfier",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "boolean equals(Object)",
+              "code_long": "boolean equals(java.lang.Object)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=115",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "boolean",
+                  "description": "Whether the given object is equal to this UpdateAdCounterHistogramRequest",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "int hashCode()",
+              "code_long": "int hashCode()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=126",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "int",
+                  "description": "A hash code value",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "String toString()",
+              "code_long": "java.lang.String toString())",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=131",
+              "class": "Sensitive Source",
+              "category": "App Activity",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "java.lang.String",
+                  "description": "This UpdateAdCounterHistogramRequest object as a String, sensitive since UpdateAdCounterHistogramRequest does contain sensitive data",
+                  "possibly_sensitive": true
+                }
+              ],
+              "data_transmitted": []
+            }
+
+          ]
+        },
+        {
+          "name": "UpdateAdCounterHistogramRequest.Builder",
+          "implemented_methods": []
+        }
+      ],
+      "changed_classes": [
+        {
+          "name": "AdSelectionConfig",
+          "implemented_methods": []
+        },
+        {
+          "name": "AdSelectionConfig.Builder",
+          "implemented_methods": []
+        },
+        {
+          "name": "AdSelectionManager",
+          "implemented_methods": []
+        },
+        {
+          "name": "AdSelectionOutcome",
+          "implemented_methods": []
+        },
+        {
+          "name": "AddAdSelectionOverrideRequest",
+          "implemented_methods": []
+        },
+        {
+          "name": "ReportImpressionRequest",
+          "implemented_methods": []
+        },
+        {
+          "name": "TestAdSelectionManager",
+          "implemented_methods": []
+        }
+      ]
+    },
+    {
+      "package": "android.adservices.common"
+    },
+    {
+      "package": "android.adservices.customaudience"
+    },
+    {
+      "package": "android.adservices.measurement"
+    },
+    {
+      "package": "android.adservices.ondevicepersonalization"
+    },
+    {
+      "package": "android.adservices.signals"
+    },
+    {
+      "package": "android.adservices.topics"
+    },
+    {
+      "package": "android.app"
+    },
+    {
+      "package": "android.app.admin"
+    },
+    {
+      "package": "android.app.appsearch"
+    },
+    {
+      "package": "android.app.appsearch.observer"
+    },
+    {
+      "package": "android.app.job"
+    },
+    {
+      "package": "android.app.role"
+    },
+    {
+      "package": "android.app.sdksandbox"
+    },
+    {
+      "package": "android.app.sdksandbox.sdkprovider"
+    },
+    {
+      "package": "android.app.slice"
+    },
+    {
+      "package": "android.app.usage"
+    },
+    {
+      "package": "android.appwidget"
+    },
+    {
+      "package": "android.bluetooth"
+    },
+    {
+      "package": "android.companion"
+    },
+    {
+      "package": "android.companion.virtual"
+    },
+    {
+      "package": "android.content"
+    },
+    {
+      "package": "android.content.om"
+    },
+    {
+      "package": "android.content.pm"
+    },
+    {
+      "package": "android.content.res"
+    },
+    {
+      "package": "android.crypto.hpke"
+    },
+    {
+      "package": "android.database.sqlite"
+    },
+    {
+      "package": "android.graphics"
+    },
+    {
+      "package": "android.graphics.fonts"
+    },
+    {
+      "package": "android.graphics.pdf"
+    },
+    {
+      "package": "android.graphics.pdf.content"
+    },
+    {
+      "package": "android.graphics.pdf.models"
+    },
+    {
+      "package": "android.graphics.pdf.models.selection"
+    },
+    {
+      "package": "android.graphics.text"
+    },
+    {
+      "package": "android.hardware"
+    },
+    {
+      "package": "android.hardware.biometrics"
+    },
+    {
+      "package": "android.hardware.camera2"
+    },
+    {
+      "package": "android.hardware.camera2.params"
+    },
+    {
+      "package": "android.hardware.input"
+    },
+    {
+      "package": "android.health.connect"
+    },
+    {
+      "package": "android.health.connect.datatypes"
+    },
+    {
+      "package": "android.health.connect.datatypes.units"
+    },
+    {
+      "package": "android.icu.lang"
+    },
+    {
+      "package": "android.icu.number"
+    },
+    {
+      "package": "android.icu.text"
+    },
+    {
+      "package": "android.icu.util"
+    },
+    {
+      "package": "android.inputmethodservice"
+    },
+    {
+      "package": "android.location"
+    },
+    {
+      "package": "android.location.altitude"
+    },
+    {
+      "package": "android.media"
+    },
+    {
+      "package": "android.media.audiofx"
+    },
+    {
+      "package": "android.media.metrics"
+    },
+    {
+      "package": "android.media.midi"
+    },
+    {
+      "package": "android.net"
+    },
+    {
+      "package": "android.net.ipsec.ike"
+    },
+    {
+      "package": "android.net.nsd"
+    },
+    {
+      "package": "android.net.vcn"
+    },
+    {
+      "package": "android.net.wifi"
+    },
+    {
+      "package": "android.net.wifi.p2p"
+    },
+    {
+      "package": "android.net.wifi.rtt"
+    },
+    {
+      "package": "android.nfc"
+    },
+    {
+      "package": "android.nfc.cardemulation"
+    },
+    {
+      "package": "android.os"
+    },
+    {
+      "package": "android.os.health"
+    },
+    {
+      "package": "android.provider"
+    },
+    {
+      "package": "android.security"
+    },
+    {
+      "package": "android.security.keystore"
+    },
+    {
+      "package": "android.service.chooser"
+    },
+    {
+      "package": "android.service.controls"
+    },
+    {
+      "package": "android.service.notification"
+    },
+    {
+      "package": "android.service.persistentdata"
+    },
+    {
+      "package": "android.service.voice"
+    },
+    {
+      "package": "android.speech"
+    },
+    {
+      "package": "android.system"
+    },
+    {
+      "package": "android.telecom"
+    },
+    {
+      "package": "android.telephony"
+    },
+    {
+      "package": "android.telephony.data"
+    },
+    {
+      "package": "android.telephony.euicc"
+    },
+    {
+      "package": "android.telephony.ims.feature"
+    },
+    {
+      "package": "android.text"
+    },
+    {
+      "package": "android.text.style"
+    },
+    {
+      "package": "android.util"
+    },
+    {
+      "package": "android.view"
+    },
+    {
+      "package": "android.view.accessibility"
+    },
+    {
+      "package": "android.view.inputmethod"
+    },
+    {
+      "package": "android.webkit"
+    },
+    {
+      "package": "android.widget"
+    },
+    {
+      "package": "android.window"
+    },
+    {
+      "package": "java.io"
+    },
+    {
+      "package": "java.lang"
+    },
+    {
+      "package": "java.lang.invoke"
+    },
+    {
+      "package": "java.nio"
+    },
+    {
+      "package": "java.security"
+    },
+    {
+      "package": "java.security.interfaces"
+    },
+    {
+      "package": "java.security.spec"
+    },
+    {
+      "package": "java.util"
+    },
+    {
+      "package": "java.util.concurrent"
+    },
+    {
+      "package": "java.util.random"
+    },
+    {
+      "package": "java.util.stream"
+    },
+    {
+      "package": "java.util.zip"
+    },
+    {
+      "package": "javax.crypto.spec"
+    },
+    {
+      "package": "javax.security.auth.x500"
+    }
+  ]
