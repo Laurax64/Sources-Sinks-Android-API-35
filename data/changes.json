@@ -1435,7 +1435,48 @@
       {
         "name": "SetAppInstallAdvertisersRequest.Builder",
         "implemented_methods": [
-          
+          {
+            "code": "Builder()",
+            "code_long": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=54",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "SetAppInstallAdvertisersRequest.Builder setAdvertisers(Set<AdTechIdentifier>)",
+            "code_long": "android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder setAdvertisers(java.util.Set<android.adservices.commonAdTechIdentifier>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=61",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder",
+                "description": "An object of type SetAppInstallAdvertisersRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "SetAppInstallAdvertisersRequest build()",
+            "code_long": "android.adservices.adselection.SetAppInstallAdvertisersRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=71",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.SetAppInstallAdvertisersRequest",
+                "description": "An object of type SetAppInstallAdvertisersRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
         ]
       },
       {
