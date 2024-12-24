@@ -869,7 +869,125 @@
       },
       {
         "name": "PerBuyerDecisionLogic",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "PerBuyerDecisionLogic(Map<AdTechIdentifier, DecisionLogic>)",
+            "code_long": "PerBuyerDecisionLogic(java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=58drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=58",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "PerBuyerDecisionLogic(Parcel)",
+            "code_long": "PerBuyerDecisionLogic(Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=63",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=85",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=90",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": [
+              {
+                "type": "android.os.Parcel",
+                "description": "A parcel into the application code",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Application code",
+                    "accessible_to_third_parties": false
+                  }
+                ]
+              },
+              {
+                "type": "java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic>",
+                "description": "A map into the application code",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Application code",
+                    "accessible_to_third_parties": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=96",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "Int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=101",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this PerBuyerDecisionLogic",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Map<AdTechIdentifier, DecisionLogic> getPerBuyerLogicMap()",
+            "code_long": "Map<AdTechIdentifier, DecisionLogic> getPerBuyerLogicMap()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;drc=bbb2c57579362b05ee3cfb47f382e5e902844b15;l=109",
+            "class": "",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic>",
+                "description": "Map of buyers and their decision logic to be fetched during ad selection",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "PersistAdSelectionResultRequest",
