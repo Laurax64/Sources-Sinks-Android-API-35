@@ -1403,11 +1403,40 @@
       },
       {
         "name": "SetAppInstallAdvertisersRequest",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "SetAppInstallAdvertisersRequest(Set<AdTechIdentifier>)",
+            "code_long": "SetAppInstallAdvertisersRequest(java.util.Set<android.adservices.commonAdTechIdentifier>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=35",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Set<AdTechIdentifier> getAdvertisers()",
+            "code_long": "java.util.Set<android.adservices.commonAdTechIdentifier> getAdvertisers()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=47",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.Set<android.adservices.commonAdTechIdentifier>",
+                "description": "A set of objects of type android.adservices.commonAdTechIdentifier that might contain sensitive data, but are not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "SetAppInstallAdvertisersRequest.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          
+        ]
       },
       {
         "name": "SignedContextualAds",
