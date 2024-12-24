@@ -1192,7 +1192,6 @@
             ],
             "data_transmitted": []
           }
-
         ]
       },
       {
@@ -1416,15 +1415,15 @@
           },
           {
             "code": "Set<AdTechIdentifier> getAdvertisers()",
-            "code_long": "java.util.Set<android.adservices.commonAdTechIdentifier> getAdvertisers()",
+            "code_long": "java.util.Set<android.adservices.common.AdTechIdentifier> getAdvertisers()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SetAppInstallAdvertisersRequest.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=47",
             "class": "Non-Sensitive",
             "category": "",
             "change_type": "Addition",
             "data_returned": [
               {
-                "type": "java.util.Set<android.adservices.commonAdTechIdentifier>",
-                "description": "A set of objects of type android.adservices.commonAdTechIdentifier that might contain sensitive data, but are not sensitive itself",
+                "type": "java.util.Set<android.adservices.common.AdTechIdentifier>",
+                "description": "A set of objects of type AdTechIdentifier that might contain sensitive data, but are not sensitive itself",
                 "possibly_sensitive": false
               }
             ],
@@ -1481,353 +1480,523 @@
       },
       {
         "name": "SignedContextualAds",
-        "implemented_methods": []
-      },
-      {
-        "name": "SignedContextualAds.Builder",
-        "implemented_methods": []
-      },
-      {
-        "name": "UpdateAdCounterHistogramRequest",
-        "implemented_methods": []
-      },
-      {
-        "name": "UpdateAdCounterHistogramRequest.Builder",
-        "implemented_methods": []
-      }
-    ],
-    "changed_classes": [
-      {
-        "name": "AdSelectionConfig",
-        "implemented_methods": []
-      },
-      {
-        "name": "AdSelectionConfig.Builder",
-        "implemented_methods": []
-      },
-      {
-        "name": "AdSelectionManager",
-        "implemented_methods": []
-      },
-      {
-        "name": "AdSelectionOutcome",
-        "implemented_methods": []
-      },
-      {
-        "name": "AddAdSelectionOverrideRequest",
-        "implemented_methods": []
-      },
-      {
-        "name": "ReportImpressionRequest",
-        "implemented_methods": []
-      },
-      {
-        "name": "TestAdSelectionManager",
-        "implemented_methods": []
-      }
-    ]
-  },
-  {
-    "package": "android.adservices.common"
-  },
-  {
-    "package": "android.adservices.customaudience"
-  },
-  {
-    "package": "android.adservices.measurement"
-  },
-  {
-    "package": "android.adservices.ondevicepersonalization"
-  },
-  {
-    "package": "android.adservices.signals"
-  },
-  {
-    "package": "android.adservices.topics"
-  },
-  {
-    "package": "android.app"
-  },
-  {
-    "package": "android.app.admin"
-  },
-  {
-    "package": "android.app.appsearch"
-  },
-  {
-    "package": "android.app.appsearch.observer"
-  },
-  {
-    "package": "android.app.job"
-  },
-  {
-    "package": "android.app.role"
-  },
-  {
-    "package": "android.app.sdksandbox"
-  },
-  {
-    "package": "android.app.sdksandbox.sdkprovider"
-  },
-  {
-    "package": "android.app.slice"
-  },
-  {
-    "package": "android.app.usage"
-  },
-  {
-    "package": "android.appwidget"
-  },
-  {
-    "package": "android.bluetooth"
-  },
-  {
-    "package": "android.companion"
-  },
-  {
-    "package": "android.companion.virtual"
-  },
-  {
-    "package": "android.content"
-  },
-  {
-    "package": "android.content.om"
-  },
-  {
-    "package": "android.content.pm"
-  },
-  {
-    "package": "android.content.res"
-  },
-  {
-    "package": "android.crypto.hpke"
-  },
-  {
-    "package": "android.database.sqlite"
-  },
-  {
-    "package": "android.graphics"
-  },
-  {
-    "package": "android.graphics.fonts"
-  },
-  {
-    "package": "android.graphics.pdf"
-  },
-  {
-    "package": "android.graphics.pdf.content"
-  },
-  {
-    "package": "android.graphics.pdf.models"
-  },
-  {
-    "package": "android.graphics.pdf.models.selection"
-  },
-  {
-    "package": "android.graphics.text"
-  },
-  {
-    "package": "android.hardware"
-  },
-  {
-    "package": "android.hardware.biometrics"
-  },
-  {
-    "package": "android.hardware.camera2"
-  },
-  {
-    "package": "android.hardware.camera2.params"
-  },
-  {
-    "package": "android.hardware.input"
-  },
-  {
-    "package": "android.health.connect"
-  },
-  {
-    "package": "android.health.connect.datatypes"
-  },
-  {
-    "package": "android.health.connect.datatypes.units"
-  },
-  {
-    "package": "android.icu.lang"
-  },
-  {
-    "package": "android.icu.number"
-  },
-  {
-    "package": "android.icu.text"
-  },
-  {
-    "package": "android.icu.util"
-  },
-  {
-    "package": "android.inputmethodservice"
-  },
-  {
-    "package": "android.location"
-  },
-  {
-    "package": "android.location.altitude"
-  },
-  {
-    "package": "android.media"
-  },
-  {
-    "package": "android.media.audiofx"
-  },
-  {
-    "package": "android.media.metrics"
-  },
-  {
-    "package": "android.media.midi"
-  },
-  {
-    "package": "android.net"
-  },
-  {
-    "package": "android.net.ipsec.ike"
-  },
-  {
-    "package": "android.net.nsd"
-  },
-  {
-    "package": "android.net.vcn"
-  },
-  {
-    "package": "android.net.wifi"
-  },
-  {
-    "package": "android.net.wifi.p2p"
-  },
-  {
-    "package": "android.net.wifi.rtt"
-  },
-  {
-    "package": "android.nfc"
-  },
-  {
-    "package": "android.nfc.cardemulation"
-  },
-  {
-    "package": "android.os"
-  },
-  {
-    "package": "android.os.health"
-  },
-  {
-    "package": "android.provider"
-  },
-  {
-    "package": "android.security"
-  },
-  {
-    "package": "android.security.keystore"
-  },
-  {
-    "package": "android.service.chooser"
-  },
-  {
-    "package": "android.service.controls"
-  },
-  {
-    "package": "android.service.notification"
-  },
-  {
-    "package": "android.service.persistentdata"
-  },
-  {
-    "package": "android.service.voice"
-  },
-  {
-    "package": "android.speech"
-  },
-  {
-    "package": "android.system"
-  },
-  {
-    "package": "android.telecom"
-  },
-  {
-    "package": "android.telephony"
-  },
-  {
-    "package": "android.telephony.data"
-  },
-  {
-    "package": "android.telephony.euicc"
-  },
-  {
-    "package": "android.telephony.ims.feature"
-  },
-  {
-    "package": "android.text"
-  },
-  {
-    "package": "android.text.style"
-  },
-  {
-    "package": "android.util"
-  },
-  {
-    "package": "android.view"
-  },
-  {
-    "package": "android.view.accessibility"
-  },
-  {
-    "package": "android.view.inputmethod"
-  },
-  {
-    "package": "android.webkit"
-  },
-  {
-    "package": "android.widget"
-  },
-  {
-    "package": "android.window"
-  },
-  {
-    "package": "java.io"
-  },
-  {
-    "package": "java.lang"
-  },
-  {
-    "package": "java.lang.invoke"
-  },
-  {
-    "package": "java.nio"
-  },
-  {
-    "package": "java.security"
-  },
-  {
-    "package": "java.security.interfaces"
-  },
-  {
-    "package": "java.security.spec"
-  },
-  {
-    "package": "java.util"
-  },
-  {
-    "package": "java.util.concurrent"
-  },
-  {
-    "package": "java.util.random"
-  },
-  {
-    "package": "java.util.stream"
-  },
-  {
-    "package": "java.util.zip"
-  },
-  {
-    "package": "javax.crypto.spec"
-  },
-  {
-    "package": "javax.security.auth.x500"
-  }
-]
+        "implemented_methods": [
+            {
+              "code": "SignedContextualAds(AdTechIdentifier, Uri, List<AdWithBid>, byte[])",
+              "code_long": "SignedContextualAds(android.adservices.common.AdTechIdentifier, android.net.Uri, java.util.List<android.adservices.adselection.AdWithBid>, byte[])",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=86",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds(Parcel)",
+              "code_long": "SignedContextualAds(android.os.Parcel)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=97",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "describeContents()",
+              "code_long": "int describeContents()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=106",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "int",
+                  "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "void writeToParcel(Parcel, int)",
+              "code_long": "android.adservices.adselection.SignedContextualAds writeToParcel(android.os.Parcel, int)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=111",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": [
+                {
+                  "type": "Parcel",
+                  "description": "The Parcel to which the object should be written",
+                  "possibly_sensitive": false
+                },
+                {
+                  "type": "int",
+                  "description": "Additional flags about how the object should be written",
+                  "possibly_sensitive": false
+                }
+              ]
+            },
+            {
+              "code": "boolean equals(Object)",
+              "code_long": "boolean equals(java.lang.Object)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=121",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "boolean",
+                  "description": "Whether the given object is equal to this SignedContextualAds",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "int hashCode()",
+              "code_long": "int hashCode()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=132",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "Int",
+                  "description": "A hash code value",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "AdTechIdentifier getBuyer()",
+              "code_long": "android.adservices.common.AdTechIdentifier getBuyer()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=140",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.common.AdTechIdentifier",
+                  "description": "An object of type AdTechIdentfier",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "Uri getDecisionLogicUri()",
+              "code_long": "android.net.Uri getDecisionLogicUri()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=149",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.net.Uri",
+                  "description": "The URI used to retrieve the updateBid() and reportWin() function used during the ad selection and reporting process",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "List<AdWithBid> getAdsWithBid()",
+              "code_long": "java.util.List<android.adservices.adselection.AdWithBid> getAdsWithBid()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=157",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "java.util.List<android.adservices.adselection.AdWithBid>",
+                  "description": "A list of objects of type AdWithBid that might contain sensitive data, but are not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "byte[] getSignature()",
+              "code_long": "byte[] getSignature()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=169",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "byte[]",
+                  "description": "A copy of the signature for the contextual ads object",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "String toString()",
+              "code_long": "java.lang.String toString())",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=174",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "java.lang.String",
+                  "description": "This SignedContextualAds object as a String, not sensitive since SignedContextualAds doesn't contain sensitive data",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            }
+          ]
+        },
+        {
+          "name": "SignedContextualAds.Builder",
+          "implemented_methods": []
+        },
+        {
+          "name": "UpdateAdCounterHistogramRequest",
+          "implemented_methods": []
+        },
+        {
+          "name": "UpdateAdCounterHistogramRequest.Builder",
+          "implemented_methods": []
+        }
+      ],
+      "changed_classes": [
+        {
+          "name": "AdSelectionConfig",
+          "implemented_methods": []
+        },
+        {
+          "name": "AdSelectionConfig.Builder",
+          "implemented_methods": []
+        },
+        {
+          "name": "AdSelectionManager",
+          "implemented_methods": []
+        },
+        {
+          "name": "AdSelectionOutcome",
+          "implemented_methods": []
+        },
+        {
+          "name": "AddAdSelectionOverrideRequest",
+          "implemented_methods": []
+        },
+        {
+          "name": "ReportImpressionRequest",
+          "implemented_methods": []
+        },
+        {
+          "name": "TestAdSelectionManager",
+          "implemented_methods": []
+        }
+      ]
+    },
+    {
+      "package": "android.adservices.common"
+    },
+    {
+      "package": "android.adservices.customaudience"
+    },
+    {
+      "package": "android.adservices.measurement"
+    },
+    {
+      "package": "android.adservices.ondevicepersonalization"
+    },
+    {
+      "package": "android.adservices.signals"
+    },
+    {
+      "package": "android.adservices.topics"
+    },
+    {
+      "package": "android.app"
+    },
+    {
+      "package": "android.app.admin"
+    },
+    {
+      "package": "android.app.appsearch"
+    },
+    {
+      "package": "android.app.appsearch.observer"
+    },
+    {
+      "package": "android.app.job"
+    },
+    {
+      "package": "android.app.role"
+    },
+    {
+      "package": "android.app.sdksandbox"
+    },
+    {
+      "package": "android.app.sdksandbox.sdkprovider"
+    },
+    {
+      "package": "android.app.slice"
+    },
+    {
+      "package": "android.app.usage"
+    },
+    {
+      "package": "android.appwidget"
+    },
+    {
+      "package": "android.bluetooth"
+    },
+    {
+      "package": "android.companion"
+    },
+    {
+      "package": "android.companion.virtual"
+    },
+    {
+      "package": "android.content"
+    },
+    {
+      "package": "android.content.om"
+    },
+    {
+      "package": "android.content.pm"
+    },
+    {
+      "package": "android.content.res"
+    },
+    {
+      "package": "android.crypto.hpke"
+    },
+    {
+      "package": "android.database.sqlite"
+    },
+    {
+      "package": "android.graphics"
+    },
+    {
+      "package": "android.graphics.fonts"
+    },
+    {
+      "package": "android.graphics.pdf"
+    },
+    {
+      "package": "android.graphics.pdf.content"
+    },
+    {
+      "package": "android.graphics.pdf.models"
+    },
+    {
+      "package": "android.graphics.pdf.models.selection"
+    },
+    {
+      "package": "android.graphics.text"
+    },
+    {
+      "package": "android.hardware"
+    },
+    {
+      "package": "android.hardware.biometrics"
+    },
+    {
+      "package": "android.hardware.camera2"
+    },
+    {
+      "package": "android.hardware.camera2.params"
+    },
+    {
+      "package": "android.hardware.input"
+    },
+    {
+      "package": "android.health.connect"
+    },
+    {
+      "package": "android.health.connect.datatypes"
+    },
+    {
+      "package": "android.health.connect.datatypes.units"
+    },
+    {
+      "package": "android.icu.lang"
+    },
+    {
+      "package": "android.icu.number"
+    },
+    {
+      "package": "android.icu.text"
+    },
+    {
+      "package": "android.icu.util"
+    },
+    {
+      "package": "android.inputmethodservice"
+    },
+    {
+      "package": "android.location"
+    },
+    {
+      "package": "android.location.altitude"
+    },
+    {
+      "package": "android.media"
+    },
+    {
+      "package": "android.media.audiofx"
+    },
+    {
+      "package": "android.media.metrics"
+    },
+    {
+      "package": "android.media.midi"
+    },
+    {
+      "package": "android.net"
+    },
+    {
+      "package": "android.net.ipsec.ike"
+    },
+    {
+      "package": "android.net.nsd"
+    },
+    {
+      "package": "android.net.vcn"
+    },
+    {
+      "package": "android.net.wifi"
+    },
+    {
+      "package": "android.net.wifi.p2p"
+    },
+    {
+      "package": "android.net.wifi.rtt"
+    },
+    {
+      "package": "android.nfc"
+    },
+    {
+      "package": "android.nfc.cardemulation"
+    },
+    {
+      "package": "android.os"
+    },
+    {
+      "package": "android.os.health"
+    },
+    {
+      "package": "android.provider"
+    },
+    {
+      "package": "android.security"
+    },
+    {
+      "package": "android.security.keystore"
+    },
+    {
+      "package": "android.service.chooser"
+    },
+    {
+      "package": "android.service.controls"
+    },
+    {
+      "package": "android.service.notification"
+    },
+    {
+      "package": "android.service.persistentdata"
+    },
+    {
+      "package": "android.service.voice"
+    },
+    {
+      "package": "android.speech"
+    },
+    {
+      "package": "android.system"
+    },
+    {
+      "package": "android.telecom"
+    },
+    {
+      "package": "android.telephony"
+    },
+    {
+      "package": "android.telephony.data"
+    },
+    {
+      "package": "android.telephony.euicc"
+    },
+    {
+      "package": "android.telephony.ims.feature"
+    },
+    {
+      "package": "android.text"
+    },
+    {
+      "package": "android.text.style"
+    },
+    {
+      "package": "android.util"
+    },
+    {
+      "package": "android.view"
+    },
+    {
+      "package": "android.view.accessibility"
+    },
+    {
+      "package": "android.view.inputmethod"
+    },
+    {
+      "package": "android.webkit"
+    },
+    {
+      "package": "android.widget"
+    },
+    {
+      "package": "android.window"
+    },
+    {
+      "package": "java.io"
+    },
+    {
+      "package": "java.lang"
+    },
+    {
+      "package": "java.lang.invoke"
+    },
+    {
+      "package": "java.nio"
+    },
+    {
+      "package": "java.security"
+    },
+    {
+      "package": "java.security.interfaces"
+    },
+    {
+      "package": "java.security.spec"
+    },
+    {
+      "package": "java.util"
+    },
+    {
+      "package": "java.util.concurrent"
+    },
+    {
+      "package": "java.util.random"
+    },
+    {
+      "package": "java.util.stream"
+    },
+    {
+      "package": "java.util.zip"
+    },
+    {
+      "package": "javax.crypto.spec"
+    },
+    {
+      "package": "javax.security.auth.x500"
+    }
+  ]
