@@ -231,7 +231,7 @@
             "change_type": "Addition",
             "data_returned": [
               {
-                "type": "Int",
+                "type": "int",
                 "description": "A hash code value",
                 "possibly_sensitive": false
               }
@@ -491,7 +491,7 @@
             "change_type": "Addition",
             "data_returned": [
               {
-                "type": "Int",
+                "type": "int",
                 "description": "A hash code value",
                 "possibly_sensitive": false
               }
@@ -637,7 +637,7 @@
             "change_type": "Addition",
             "data_returned": [
               {
-                "type": "Int",
+                "type": "int",
                 "description": "A hash code value",
                 "possibly_sensitive": false
               }
@@ -948,7 +948,7 @@
             "change_type": "Addition",
             "data_returned": [
               {
-                "type": "Int",
+                "type": "int",
                 "description": "A hash code value",
                 "possibly_sensitive": false
               }
@@ -1563,7 +1563,7 @@
               "change_type": "Addition",
               "data_returned": [
                 {
-                  "type": "Int",
+                  "type": "int",
                   "description": "A hash code value",
                   "possibly_sensitive": false
                 }
@@ -1708,7 +1708,7 @@
               "data_transmitted": []
             },
             {
-              "code": "SignedContextualAds.Builder setAdsWithBid(List<AdWithBid> adsWithBid) ",
+              "code": "SignedContextualAds.Builder setAdsWithBid(List<AdWithBid> adsWithBid)",
               "code_long": "android.adservices.adselection.SignedContextualAds.Builder setAdsWithBid(java.util.List<android.adservices.adselection.AdWithBid>)",
               "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=238",
               "class": "Non-Sensitive",
@@ -1724,7 +1724,7 @@
               "data_transmitted": []
             },
             {
-              "code": "SignedContextualAds.Builder setSignature(byte[]) ",
+              "code": "SignedContextualAds.Builder setSignature(byte[])",
               "code_long": "android.adservices.adselection.SignedContextualAds.Builder setSignature(byte[])",
               "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=247",
               "class": "Non-Sensitive",
@@ -1740,7 +1740,7 @@
               "data_transmitted": []
             },
             {
-              "code": "SignedContextualAds build() ",
+              "code": "SignedContextualAds build()",
               "code_long": "android.adservices.adselection.SignedContextualAds build()",
               "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=260",
               "class": "Non-Sensitive",
@@ -1759,7 +1759,115 @@
         },
         {
           "name": "UpdateAdCounterHistogramRequest",
-          "implemented_methods": []
+          "implemented_methods": [
+            {
+              "code": "UpdateAdCounterHistogramRequest(Builder)",
+              "code_long": "UpdateAdCounterHistogramRequest(android.adservices.adselection.UpdateAdCounterHistogramRequest.Builder)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=60",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "long getAdSelectionId()",
+              "code_long": "long getAdSelectionId()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=79",
+              "class": "Sensitive Source",
+              "category": "Device or other IDs",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "long",
+                  "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
+                  "possibly_sensitive": true
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "int getAdEventType()",
+              "code_long": "int getAdEventType()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=88",
+              "class": "Sensitive Source",
+              "category": "App Activity",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "long",
+                  "description": "The ad event type, e.g., view or click",
+                  "possibly_sensitive": true
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "AdTechIdentifier getCallerAdTech()",
+              "code_long": "android.adservices.common.AdTechIdentifier getCallerAdTech()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=106",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.common.AdTechIdentifier",
+                  "description": "An object of type AdTechIdentfier",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "boolean equals(Object)",
+              "code_long": "boolean equals(java.lang.Object)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=115",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "boolean",
+                  "description": "Whether the given object is equal to this UpdateAdCounterHistogramRequest",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "int hashCode()",
+              "code_long": "int hashCode()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=126",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "int",
+                  "description": "A hash code value",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "String toString()",
+              "code_long": "java.lang.String toString())",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/UpdateAdCounterHistogramRequest.java;drc=bd635164d6a6f6332670356fb40aaa96a1c658cb;l=131",
+              "class": "Sensitive Source",
+              "category": "App Activity",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "java.lang.String",
+                  "description": "This UpdateAdCounterHistogramRequest object as a String, sensitive since UpdateAdCounterHistogramRequest does contain sensitive data",
+                  "possibly_sensitive": true
+                }
+              ],
+              "data_transmitted": []
+            }
+
+          ]
         },
         {
           "name": "UpdateAdCounterHistogramRequest.Builder",

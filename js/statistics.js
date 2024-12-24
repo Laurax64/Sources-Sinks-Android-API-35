@@ -1,22 +1,79 @@
-// Define the categories once
+const classes = ["Sensitive Source", "Sensitive Sink", "Non-Sensitive"]
 const categories = [
   "Location", "Personal Info", "Financial Info", "Health and Fitness", "Messages",
   "Photos and Videos", "Audio Files", "Files and Docs", "Calendar", "Contacts",
   "App Activity", "Web Browsing", "App Info and Performance", "Device or other IDs", "Undefined"
 ];
 
-// Create a function to generate the counts structure
 const createCounts = () => Object.fromEntries(categories.map(category => [category, 0]));
 
-function showChart() {
-  const counts = createCategoryCounts(apiData);
+function showSourcesChart() {
+  const counts = createSourcesCounts(apiData);
 
-  const classes = Object.keys(counts);
+  // Extract categories from the counts object
   const categories = Object.keys(counts["Sensitive Source"]);
 
-  const dataset = generateDataset(categories, classes, counts);
+  // Prepare the dataset for the chart
+  const dataset = [{
+    label: 'Sensitive Source',
+    data: categories.map(category => counts["Sensitive Source"][category]),
+    backgroundColor: categories.map(getColorForCategory)
+  }];
 
-  new Chart(document.getElementById('statistics-chart'), {
+  // Create the chart
+  new Chart(document.getElementById('sources-chart'), {
+    type: 'bar',
+    data: {
+      labels: categories,
+      datasets: dataset,
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false } 
+      },
+    }
+  });
+}
+
+function showSinksChart() {
+  const counts = createSinkCounts(apiData);
+
+  // Extract categories from the counts object
+  const categories = Object.keys(counts["Sensitive Sink"]);
+
+  // Prepare the dataset for the chart
+  const dataset = [{
+    label: 'Sensitive Sink',
+    data: categories.map(category => counts["Sensitive Sink"][category]),
+    backgroundColor: categories.map(getColorForCategory)
+  }];
+
+  // Create the chart
+  new Chart(document.getElementById('sinks-chart'), {
+    type: 'bar',
+    data: {
+      labels: categories,
+      datasets: dataset,
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false } 
+      },
+    }
+  });
+}
+
+
+
+function showClassesChart(){
+  const classesCounts = createClassesCounts(apiData);
+
+  const classes = Object.keys(classesCounts);
+  const dataset = generateClassesDataset(classes, classesCounts);
+
+  new Chart(document.getElementById('all-classes-chart'), {
     type: 'bar',
     data: {
       labels: classes,
@@ -25,102 +82,73 @@ function showChart() {
     options: {
       responsive: true,
       plugins: {
-        legend: { display: true }
-      },
-      scales: {
-        x: {
-          stacked: true,
-        },
-        y: {
-          stacked: true
-        }
+        legend: { display: false}
       },
     }
   });
 }
 
-function showPieChart() {
-  const counts = createCategoryCounts(apiData);
-
-  // Aggregate total counts for each category across all classes
-  const totalCounts = categories.map(category => {
-    return Object.keys(counts).reduce((sum, classType) => sum + counts[classType][category], 0);
-  });
-
-  new Chart(document.getElementById('statistics-chart'), {
-    type: 'pie',
-    data: {
-      labels: categories,
-      datasets: [{
-        data: totalCounts,
-        backgroundColor: categories.map(getColorForCategory)
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          display: true,
-          position: 'top'
-        },
-        tooltip: {
-          callbacks: {
-            label: (tooltipItem) => {
-              const category = tooltipItem.label;
-              const value = tooltipItem.raw;
-              return `${category}: ${value}`;
-            }
-          }
-        }
-      }
-    }
-  });
-}
-
-
-/**
- * Counts each class and category combination in the data.
- * 
- * @param {object} apiData The data to count classes and categories for.
- * @returns {object} An object containing the counts.
- */
-function createCategoryCounts(apiData) {
+function createSourcesCounts(apiData) {
   const counts = {
     "Sensitive Source": createCounts(),
-    "Sensitive Sink": createCounts(),
-    "Non-Sensitive": createCounts()
   };
 
   apiData.forEach(item => {
     const category = item.category || "Undefined";
-    if (counts.hasOwnProperty(item.class)) {
-      counts[item.class][category]++;
-    } else {
-      counts["Non-Sensitive"]["Undefined"]++;
+    if (item.class === "Sensitive Source") {
+      counts["Sensitive Source"][category]++;
     }
   });
   return counts;
 }
 
-/**
- * Generate a dataset for the bar chart from the counts where the label is the category name 
- * and the data is the count for each class.
- * 
- * @param {*} categories The counted categories.
- * @param {*} classes The counted classes.
- * @returns The dataset for the bar chart.
- */
-function generateDataset(categories, classes, counts) {
-  const dataset =
-    categories.map(category => {
-      return {
-        label: category,
-        data: classes.map(classType => counts[classType][category]),
-        backgroundColor: getColorForCategory(category)
-      }
-    });
-  return dataset
+function createSinkCounts(apiData) {
+  const counts = {
+    "Sensitive Sink": createCounts(),
+  };
+
+  apiData.forEach(item => {
+    const category = item.category || "Undefined";
+    if (item.class === "Sensitive Sink") {
+      counts["Sensitive Sink"][category]++;
+    }
+  });
+  return counts;
 }
+
+
+
+function createClassesCounts(apiData) {
+  const counts = {
+    "Sensitive Source": 0,
+    "Sensitive Sink": 0,
+    "Non-Sensitive": 0
+  };
+
+  apiData.forEach(item => {
+    if (counts.hasOwnProperty(item.class)) {
+      counts[item.class]++;
+    }
+  });
+  return counts;
+}
+
+function generateDataset(categories, classType, counts) {
+  return categories.map(category => ({
+    label: category,
+    data: [counts[classType][category]], // Data should be an array
+    backgroundColor: getColorForCategory(category)
+  }));
+}
+
+
+function generateClassesDataset(classes, counts) {
+  return [{
+    data: classes.map(classType => counts[classType]),
+    //backgroundColor: classes.map(getColorForClass)
+  }];
+}
+
 
 /**
  * Gets the color for a specific category.
@@ -149,6 +177,16 @@ function getColorForCategory(category) {
   return colorMap[category] || '#ccf5ff';
 }
 
+function getColorForClass(className) {
+  const colorMap = {
+    "Sensitive Source": '#FF6384', // Red
+    "Sensitive Sink": '#36A2EB',   // Blue
+    "Non-Sensitive": '#4BC0C0'     // Green
+  };
+  return colorMap[className] || '#cccccc'; // Default to light gray if class not found
+}
+
+
 /**
  * Toggles the visibility of the chart.
  */
@@ -158,11 +196,13 @@ function toggleChartVisibility() {
   if (chartContainer.style.display === 'none' || chartContainer.style.display === '') {
     chartContainer.style.display = 'block';
     toggleButton.textContent = 'Hide Statistics';
-    showChart();
+    showSourcesChart();
+    showSinksChart();
+    showClassesChart();
   } else {
     chartContainer.style.display = 'none';
     toggleButton.textContent = 'Show Statistics';
-    const canvas = document.getElementById('statistics-chart');
+    const canvas = document.getElementById('sources-sinks-chart');
     const chartInstance = Chart.getChart(canvas);
     if (chartInstance) {
       chartInstance.destroy();
