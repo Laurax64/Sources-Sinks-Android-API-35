@@ -188,24 +188,23 @@ function getColorForClass(className) {
 
 
 /**
- * Toggles the visibility of the chart.
+ * Toggles the visibility of the charts.
  */
 function toggleChartVisibility() {
-  const chartContainer = document.getElementById('chart-container');
+  const chartsWrapper = document.getElementById('charts-wrapper');
+  const chartContainers = document.querySelectorAll('#chart-container');
   const toggleButton = document.getElementById('toggle-chart-button');
-  if (chartContainer.style.display === 'none' || chartContainer.style.display === '') {
-    chartContainer.style.display = 'block';
-    toggleButton.textContent = 'Hide Statistics';
+
+  // Toggle visibility of charts-wrapper
+  if (chartsWrapper.style.display === 'none' || chartsWrapper.style.display === '') {
+    chartsWrapper.style.display = 'flex'; // Show charts
     showSourcesChart();
     showSinksChart();
     showClassesChart();
+    toggleButton.textContent = 'Hide Statistics';
   } else {
-    chartContainer.style.display = 'none';
+    chartsWrapper.style.display = 'none'; // Hide charts
     toggleButton.textContent = 'Show Statistics';
-    const canvas = document.getElementById('sources-sinks-chart');
-    const chartInstance = Chart.getChart(canvas);
-    if (chartInstance) {
-      chartInstance.destroy();
-    }
   }
 }
+
