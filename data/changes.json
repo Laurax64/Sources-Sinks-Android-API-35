@@ -1276,7 +1276,7 @@
             "code": "int getReportingDestinations()",
             "code_long": "int getReportingDestinations()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=144",
-            "class": "Sensitive Source",
+            "class": "Non-Sensitive",
             "category": "",
             "change_type": "Addition",
             "data_returned": [
@@ -1293,7 +1293,112 @@
       {
         "name": "ReportEventRequest.Builder",
         "implemented_methods": [
-          
+          {
+            "code": "Builder(long, String, String, int)",
+            "code_long": "Builder(long, java.lang.String, java.lang.String, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=171",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setAdSelectionId(long adSelectionId)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setAdSelectionId(long adSelectionId)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=204",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setKey(String)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setKey(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=217",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setInputEvent(InputEvent)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setInputEvent(android.view.InputEvent)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=230",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setData(String)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setData(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=241",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setReportingDestinations(int)",
+            "code_long": "android.adservices.adselection.ReportEventRequest.Builder setReportingDestinations(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=254",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "ReportEventRequest build()",
+            "code_long": "android.adservices.adselection.ReportEventRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=265",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.ReportEventRequest",
+                "description": "An object of type ReportEventRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
         ]
       },
       {
