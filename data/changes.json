@@ -1654,7 +1654,108 @@
         },
         {
           "name": "SignedContextualAds.Builder",
-          "implemented_methods": []
+          "implemented_methods": [
+            {
+              "code": "Builder()",
+              "code_long": "Builder()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=194",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "Builder(SignedContextualAds)",
+              "code_long": "Builder(android.adservices.adselection.SignedContextualAds)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=197",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds.Builder setBuyer(AdTechIdentifier)",
+              "code_long": "android.adservices.adselection.SignedContextualAds.Builder setBuyer(android.adservices.common.AdTechIdentifier)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=212",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds.Builder",
+                  "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds.Builder setDecisionLogicUri(Uri)",
+              "code_long": "android.adservices.adselection.SignedContextualAds.Builder setDecisionLogicUri(android.net.Uri)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=225",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds.Builder",
+                  "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds.Builder setAdsWithBid(List<AdWithBid> adsWithBid) ",
+              "code_long": "android.adservices.adselection.SignedContextualAds.Builder setAdsWithBid(java.util.List<android.adservices.adselection.AdWithBid>)",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=238",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds.Builder",
+                  "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds.Builder setSignature(byte[]) ",
+              "code_long": "android.adservices.adselection.SignedContextualAds.Builder setSignature(byte[])",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=247",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds.Builder",
+                  "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            },
+            {
+              "code": "SignedContextualAds build() ",
+              "code_long": "android.adservices.adselection.SignedContextualAds build()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=260",
+              "class": "Non-Sensitive",
+              "category": "",
+              "change_type": "Addition",
+              "data_returned": [
+                {
+                  "type": "android.adservices.adselection.SignedContextualAds",
+                  "description": "An object of type SignedContextualAds that might contain sensitive data, but is not sensitive itself",  
+                  "possibly_sensitive": false
+                }
+              ],
+              "data_transmitted": []
+            }
+          ]
         },
         {
           "name": "UpdateAdCounterHistogramRequest",
