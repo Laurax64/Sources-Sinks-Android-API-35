@@ -1060,7 +1060,7 @@
             "data_returned": [
               {
                 "type": "byte[]",
-                "description": "Ad selection result",
+                "description": "An ad selection result",
                 "possibly_sensitive": true
               }
             ],
@@ -1070,7 +1070,98 @@
       },
       {
         "name": "PersistAdSelectionResultRequest.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "code_long": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=100",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest.Builder setAdSelectionId(long adSelectionId)",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder setAdSelectionId(long adSelectionId)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=108",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
+                "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest.Builder setAdSelectionDataId(long)",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder setAdSelectionDataId(long)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=117",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
+                "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest.Builder setSeller(AdTechIdentifier)",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder setSeller(android.adservices.common.AdTechIdentifier)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=125",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
+                "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest.Builder setAdSelectionResult(byte[])",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder setAdSelectionResult(byte[])",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=133",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
+                "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "PersistAdSelectionResultRequest build()",
+            "code_long": "android.adservices.adselection.PersistAdSelectionResultRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=150",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.adselection.PersistAdSelectionResultRequest",
+                "description": "An object of type PersistAdSelectionResultRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "RemoveAdSelectionFromOutcomesOverrideRequest",
