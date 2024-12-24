@@ -199,15 +199,6 @@ function downloadJSON() {
   link.click();
 }
 
-/**
- * Opens the source code in a new tab.
- * 
- * @param {string} link - The URL of the source code to view.
- */
-function viewSourceCode(link) {
-  window.open(link, '_blank');
-}
-
 // Event Listeners for filter changes
 document.getElementById('change-type').addEventListener('change', applyFilters);
 document.getElementById('class').addEventListener('change', applyFilters);

@@ -993,6 +993,16 @@
         "name": "PersistAdSelectionResultRequest",
         "implemented_methods": [
           {
+            "code": "PersistAdSelectionResultRequest(long, AdTechIdentifier, byte[])",
+            "code_long": "PersistAdSelectionResultRequest(long, android.adservices.common.AdTechIdentifier, byte[])",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=45",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
             "code": "long getAdSelectionId()",
             "code_long": "long getAdSelectionId()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=59",
@@ -1003,6 +1013,54 @@
               {
                 "type": "long",
                 "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "long getAdSelectionDataId()",
+            "code_long": "long getAdSelectionDataId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=70",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "long",
+                "description": "The id that uniquely identifies ad selection data",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdTechIdentifier getSeller()",
+            "code_long": "android.adservices.common.AdTechIdentifier getSeller()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=78",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdTechIdentifier",
+                "description": "An ad tech identifier of the seller, for example, www.example-ssp.com",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "byte[] getAdSelectionResult()",
+            "code_long": "byte[] getAdSelectionResult()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PersistAdSelectionResultRequest.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=86",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "byte[]",
+                "description": "Ad selection result",
                 "possibly_sensitive": true
               }
             ],
