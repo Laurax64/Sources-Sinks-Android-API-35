@@ -123,7 +123,7 @@ function createTableRow(item) {
   row.appendChild(dataReturnedCell);
 
   const dataTransmittedCell = document.createElement('td');
-  dataTransmittedCell.textContent = getDataTransmittedDescription(item);
+  dataTransmittedCell.innerHTML = getDataTransmittedDescription(item);
   row.appendChild(dataTransmittedCell);
 
   return row;
@@ -151,12 +151,11 @@ function applyFilters() {
  * Returns the formatted data for the 'Data Returned' column in a 'Sensitive Source' row.
  * 
  * @param {Object} item - The data item of the sensitive source.
- * @returns {string} - The formatted data returned description.
+ * @returns {string} - The formatted data returned description with line breaks.
  */
 function getDataReturnedDescription(item) {
   if (item.data_returned && item.data_returned.length > 0) {
-    return item.data_returned.map(data =>
-      data.description).join()
+    return item.data_returned.map(data => data.description).join("<br>");
   }
   return "None";
 }
@@ -165,13 +164,11 @@ function getDataReturnedDescription(item) {
  * Returns the formatted data for the 'Data Transmitted' column in a 'Sensitive Sink' row.
  * 
  * @param {Object} item - The data item of the sensitive sink.
- * @returns {string} - The formatted data transmitted description.
+ * @returns {string} - The formatted data transmitted description with line breaks.
  */
 function getDataTransmittedDescription(item) {
-  console.log(item.data_transmitted)
   if (item.data_transmitted && item.data_transmitted.length > 0) {
-    return item.data_transmitted.map(data =>
-      data.description).join()
+    return item.data_transmitted.map(data => data.description).join("<br>");
   }
   return "None";
 }
