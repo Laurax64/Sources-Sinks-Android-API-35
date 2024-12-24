@@ -1197,11 +1197,104 @@
       },
       {
         "name": "ReportEventRequest",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "ReportEventRequest(Builder)",
+            "code_long": "ReportEventRequest(android.adservices.adselection.ReportEventRequest.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=59",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "long getAdSelectionId()",
+            "code_long": "long getAdSelectionId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=85",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "long",
+                "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getKey()",
+            "code_long": "java.lang.String getKey()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=104",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "A key for the type of ad event to be reported",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "InputEvent getInputEvent()",
+            "code_long": "android.view.InputEvent getInputEvent()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=115",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.view.InputEvent",
+                "description": "An object of type InputEvent that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getData()",
+            "code_long": "java.lang.String getData()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=129",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "The ad event data",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int getReportingDestinations()",
+            "code_long": "int getReportingDestinations()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/ReportEventRequest.java;drc=c3f0f9743dfb741703bf7d5d4df5fc4fda2858b2;l=144",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "The bitfield of reporting destinations to report to (buyer, seller, or both)",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "ReportEventRequest.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          
+        ]
       },
       {
         "name": "SetAppInstallAdvertisersRequest",
