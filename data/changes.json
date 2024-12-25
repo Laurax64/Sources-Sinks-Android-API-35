@@ -1528,12 +1528,12 @@
             "data_transmitted": [
               {
                 "type": "Parcel",
-                "description": "The Parcel to which the object should be written",
+                "description": "The Parcel to which the object should be written into the application code",
                 "possibly_sensitive": false
               },
               {
                 "type": "int",
-                "description": "Additional flags about how the object should be written",
+                "description": "Additional flags about how the object should be written into the application code",
                 "possibly_sensitive": false
               }
             ]
@@ -2241,7 +2241,497 @@
     ]
   },
   {
-    "package": "android.adservices.common"
+    "package": "android.adservices.common",
+    "added_classes": [
+      {
+        "name": "AdFilters",
+        "implemented_methods": [
+          {
+            "code": "AdFilters(Builder)",
+            "code_long": "AdFilters(android.adservices.common.AdFilters.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=65",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdFilters(Parcel)",
+            "code_long": "AdFilters(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=72",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "FrequencyCapFilters getFrequencyCapFilters()",
+            "code_long": "android.adservices.common.FrequencyCapFilters getFrequencyCapFilters()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=72",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.FrequencyCapFilters",
+                "description": "An object of type FrequencyCapFilters that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AppInstallFilters getAppInstallFilters()",
+            "code_long": "android.adservices.common.AppInstallFilters getAppInstallFilters()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=102",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AppInstallFilters",
+                "description": "An object of type AppInstallFilters that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int getSizeInBytes()",
+            "code_long": "int getSizeInBytes()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=110",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "The estimated size of the ad filters of this AdFilters object",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "JSONObject toJson()",
+            "code_long": "org.json.JSONObject toJson()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=127",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "org.json.JSONObject",
+                "description": "The ad filters of this AdFilters object",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdFilters fromJson(org.json.JSONObject json)",
+            "code_long": "android.adservices.common.AdFilters fromJson(org.json.JSONObject json)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=146",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdFilters",
+                "description": "An object of type AdFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=160",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=175",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=181",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this AdFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=191",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String toString()",
+            "code_long": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=196",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "This AdFilters object as a String, not sensitive since AdFilters does not contain sensitive data",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AdFilters.Builder",
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "code_long": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=210",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setFrequencyCapFilters(FrequencyCapFilters)",
+            "code_long": "android.adservices.common.AdFilters.Builder setFrequencyCapFilters(android.adservices.common.FrequencyCapFilters)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=225",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdFilters.Builder",
+                "description": "An object of type AdFilters.Builder",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setAppInstallFilters(AppInstallFilters)",
+            "code_long": "android.adservices.common.AdFilters.Builder setAppInstallFilters(android.adservices.common.AppInstallFilters)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=232",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdFilters.Builder",
+                "description": "An object of type AdFilters.Builder",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdFilters build()",
+            "code_long": "android.adservices.common.AdFilters build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=239",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdFilters",
+                "description": "An object of type AdFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AppInstallFilters",
+        "implemented_methods": [
+          {
+            "code": "AppInstallFilters(Builder)",
+            "code_long": "AppInstallFilters(android.adservices.common.AppInstallFilters.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=76",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "AppInstallFilters(Parcel)",
+            "code_long": "AppInstallFilters(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=82",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Set<String> getPackageNames()",
+            "code_long": "java.util.Set<java.lang.String> getPackageNames()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=82",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.Set<java.lang.String>",
+                "description": "The package names this ad is filtered on"
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int getSizeInBytes()",
+            "code_long": "int getSizeInBytes()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=103",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "The estimated size of the package names this ad is filtered on",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "JSONObject toJson()",
+            "code_long": "org.json.JSONObject toJson()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=117",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "org.json.JSONObject",
+                "description": "The package names this ad is filtered on",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdFilters fromJson(org.json.JSONObject json)",
+            "code_long": "android.adservices.common.AppInstallFilters fromJson(org.json.JSONObject json)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=135",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AppInstallFilters",
+                "description": "An object of type AppInstallFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=151",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=158",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=164",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this AppInstallFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=173",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String toString()",
+            "code_long": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=178",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "This AppInstallFilters object as a String, not sensitive since AppInstallFilters does not contain sensitive data",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AppInstallFilters.Builder",
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "code_long": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=186",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+        
+          {
+            "code": "Builder setPackageNames(Set<String>)",
+            "code_long": "android.adservices.common.AppInstallFilters.Builder setPackageNames(java.util.Set<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=194",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AppInstallFilters.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AppInstallFilters build()",
+            "code_long": "android.adservices.common.AppInstallFilters build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AppInstallFilters.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=202",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AppInstallFilters",
+                "description": "An object of type AppInstallFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "FrequencyCapFilters",
+        "implemented_methods": []
+      },
+      {
+        "name": "FrequencyCapFilters.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "KeyedFrequencyCap",
+        "implemented_methods": []
+      },
+      {
+        "name": "KeyedFrequencyCap.Builder",
+        "implemented_methods": []
+      }
+    ],
+    "added_interfaces": [
+      {
+        "name": "AdServicesOutcomeReceiver",
+        "implemented_methods": []
+      }
+    ],
+    "changed_classes": [
+      {
+        "name": "AdData",
+        "implemented_methods": []
+      },
+      {
+        "name": "AdData.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "AdServicesPermissions",
+        "implemented_methods": []
+      }
+    ]
   },
   {
     "package": "android.adservices.customaudience"
