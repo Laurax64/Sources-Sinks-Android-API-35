@@ -54,7 +54,7 @@
   },
   {
     "package": "android.adservices.adid",
-    "changes_classes": [
+    "changed_classes": [
       {
         "name": "AdIdManager",
         "implemented_methods": [
@@ -1860,7 +1860,7 @@
             "data_returned": [
               {
                 "type": "java.lang.String",
-                "description": "This UpdateAdCounterHistogramRequest object as a String, sensitive since UpdateAdCounterHistogramRequest does contain sensitive data",
+                "description": "The ad event type, e.g., view or click",
                 "possibly_sensitive": true
               }
             ],
@@ -2660,7 +2660,6 @@
             "data_returned": [],
             "data_transmitted": []
           },
-        
           {
             "code": "Builder setPackageNames(Set<String>)",
             "code_long": "android.adservices.common.AppInstallFilters.Builder setPackageNames(java.util.Set<java.lang.String>)",
@@ -2697,19 +2696,631 @@
       },
       {
         "name": "FrequencyCapFilters",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "FrequencyCapFilters(Builder)",
+            "code_long": "FrequencyCapFilters(android.adservices.common.FrequencyCapFilters.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=132",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "FrequencyCapFilters(Parcel)",
+            "code_long": "FrequencyCapFilters(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=141",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "List<KeyedFrequencyCap> getKeyedFrequencyCapsForWinEvents()",
+            "code_long": "java.util.List<android.adservices.common.KeyedFrequencyCap> getKeyedFrequencyCapsForWinEvents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=168",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
+                "description": "A list of objects of type KeyedFrequencyCap",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "List<KeyedFrequencyCap> getKeyedFrequencyCapsForImpressionEvents()",
+            "code_long": "java.util.List<android.adservices.common.KeyedFrequencyCap> getKeyedFrequencyCapsForImpressionEvents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=187",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
+                "description": "A list of objects of type KeyedFrequencyCap",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "List<KeyedFrequencyCap> getKeyedFrequencyCapsForViewEvents()",
+            "code_long": "java.util.List<android.adservices.common.KeyedFrequencyCap> getKeyedFrequencyCapsForViewEvents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=202",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
+                "description": "A list of objects of type KeyedFrequencyCap",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "List<KeyedFrequencyCap> getKeyedFrequencyCapsForClickEvents()",
+            "code_long": "java.util.List<android.adservices.common.KeyedFrequencyCap> getKeyedFrequencyCapsForClickEvents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=217",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
+                "description": "A list of objects of type KeyedFrequencyCap",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int getSizeInBytes()",
+            "code_long": "int getSizeInBytes()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=225",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "The estimated total size of the frequency caps lists",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int getSizeInBytesOfFcapList(List<KeyedFrequencyCap>)",
+            "code_long": "int getSizeInBytesOfFcapList(java.util.List<android.adservices.common.KeyedFrequencyCap>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=232",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "The estimated total size of the give frequency caps list",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "JSONObject toJson()",
+            "code_long": "org.json.JSONObject toJson()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=246",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "org.json.JSONObject",
+                "description": "The frequency caps lists",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "JSONObject fcapSetToJsonArray(List<KeyedFrequencyCap>)",
+            "code_long": "org.json.JSONObject fcapSetToJsonArray(java.util.List<android.adservices.common.KeyedFrequencyCap>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=258",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "org.json.JSONObject",
+                "description": "A frequency caps list",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "FrequencyCapFilters fromJson(org.json.JSONObject json)",
+            "code_long": "android.adservices.common.FrequencyCapFilters fromJson(org.json.JSONObject json)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=275",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.FrequencyCapFilters",
+                "description": "An object of type FrequencyCapFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "List<KeyedFrequencyCap> jsonArrayToFcapList(JSONArray)",
+            "code_long": "java.util.List<android.adservices.common.KeyedFrequencyCap> jsonArrayToFcapList(org.json.JSONArray)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=296",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
+                "description": "A frequency caps list",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=306",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=316",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=322",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this FrequencyCapFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=335",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String toString()",
+            "code_long": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=344",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "This FrequencyCapFilters object as a String, not sensitive since FrequencyCapFilters does not contain sensitive data",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "FrequencyCapFilters.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "code_long": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=371",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setKeyedFrequencyCapsForWinEvents(List<KeyedFrequencyCap>)",
+            "code_long": "android.adservices.common.FrequencyCapFilters.Builder setKeyedFrequencyCapsForWinEvents(java.util.List<android.adservices.common.KeyedFrequencyCap>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=380",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.FrequencyCapFilters.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setKeyedFrequencyCapsForImpressionEvents(List<KeyedFrequencyCap>)",
+            "code_long": "android.adservices.common.FrequencyCapFilters.Builder setKeyedFrequencyCapsForImpressionEvents(java.util.List<android.adservices.common.KeyedFrequencyCap>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=398",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.FrequencyCapFilters.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setKeyedFrequencyCapsForViewEvents(List<KeyedFrequencyCap>)",
+            "code_long": "android.adservices.common.FrequencyCapFilters.Builder setKeyedFrequencyCapsForViewEvents(java.util.List<android.adservices.common.KeyedFrequencyCap>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=417",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.FrequencyCapFilters.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setKeyedFrequencyCapsForClickEvents(List<KeyedFrequencyCap>)",
+            "code_long": "android.adservices.common.FrequencyCapFilters.Builder setKeyedFrequencyCapsForClickEvents(java.util.List<android.adservices.common.KeyedFrequencyCap>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=435",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.FrequencyCapFilters.Builder",
+                "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AppInstallFilters build()",
+            "code_long": "android.adservices.common.FrequencyCapFilters build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/FrequencyCapFilters.java;drc=5717bb7272e0f92db9bc59c975dd3afc790817f2;l=455",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.FrequencyCapFilters",
+                "description": "An object of type FrequencyCapFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "KeyedFrequencyCap",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "KeyedFrequencyCap(Builder)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=83",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "KeyedFrequencyCap(Parcel)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=91",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "int getAdCounterKey()",
+            "code_long": "int getAdCounterKey()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=108",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "An identifier which defines any criteria which may have previously been counted and persisted on the device",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int getMaxCount()",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=123",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "The maximum count of ad event (e.g., click or view) occurrences allowed within a given time interval",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Duration getInterval()",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=137",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "The interval over which the ad event frequency cap is calculated",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int getSizeInBytes()",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=145",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "The total estimated size of the key, duration, and the maxCount field of this KeyedFrequencyCap object",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "JSONObject toJson()",
+            "code_long": "org.json.JSONObject toJson()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=155",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "org.json.JSONObject",
+                "description": "The key, duration, and the maxCount of this KeyedFrequencyCap object",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "KeyedFrequencyCap fromJson(JSONObject)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=171",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.KeyedFrequencyCap",
+                "description": "An object of type KeyedFrequencyCap",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=180",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=189",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=195",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this KeyedFrequencyCap object",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=206",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String toString()",
+            "code_long": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=211",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "The key, duration, and the maxCount of this KeyedFrequencyCap object",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "KeyedFrequencyCap.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder(int, int, Duration)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=228",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setAdCounterKey(int)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=251",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.KeyedFrequencyCap.Builder",
+                "description": "An object of type KeyedFrequencyCap.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setMaxCount(int)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=262",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.KeyedFrequencyCap.Builder",
+                "description": "An object of type KeyedFrequencyCap.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setInterval(Duration)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=276",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.KeyedFrequencyCap.Builder",
+                "description": "An object of type KeyedFrequencyCap.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "KeyedFrequencyCap build()",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/KeyedFrequencyCap.java;drc=b6eb3a560ef67bc173974f807434d655bdd6e1d3;l=289",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.KeyedFrequencyCap",
+                "description": "An object of type KeyedFrequencyCap that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       }
     ],
     "added_interfaces": [
@@ -2721,11 +3332,109 @@
     "changed_classes": [
       {
         "name": "AdData",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Set<Integer> getAdCounterKeys()",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdData.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=141",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.Set<java.lang.Integer>",
+                "description": "Keys used in counting ad events(e.g., click or view)",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdFilters getAdFilters()",
+            "code_long": "android.adservices.common.AdFilters getAdFilters()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdData.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=152",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdFilters",
+                "description": "An object of type AdFilters",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getAdRenderId()",
+            "code_long": "java.lang.String getAdRenderId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdData.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=167",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "The ad render id for server auctions",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "AdData.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder setAdCounterKeys(Set<Integer>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdData.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=259",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdData.Builder",
+                "description": "An object of type AdData.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setAdFilters(AdFilters)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdData.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=277",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdData.Builder",
+                "description": "An object of type AdData.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setAdRenderId(String)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/common/AdData.java;drc=dffdfdefe42dfc0a5a292fa873b01465821cfcb3;l=288",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdData.Builder",
+                "description": "An object of type AdData.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "AdServicesPermissions",
@@ -2734,7 +3443,55 @@
     ]
   },
   {
-    "package": "android.adservices.customaudience"
+    "package": "android.adservices.customaudience",
+    "added_classes": [
+      {
+        "name": "FetchAndJoinCustomAudienceRequest",
+        "implemented_methods": []
+      },
+      {
+        "name": "FetchAndJoinCustomAudienceRequest.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "PartialCustomAudience",
+        "implemented_methods": []
+      },
+      {
+        "name": "PartialCustomAudience.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "ScheduleCustomAudienceUpdateRequest",
+        "implemented_methods": []
+      },
+      {
+        "name": "ScheduleCustomAudienceUpdateRequest.Builder",
+        "implemented_methods": []
+      }
+    ],
+    "changed_classes":[
+  {
+    "name": "AddCustomAudienceOverrideRequest",
+    "implemented_methods": []
+  },
+  {
+    "name": "AddCustomAudienceOverrideRequest.Builder",
+    "implemented_methods": []
+  },
+  {
+    "name": "CustomAudience",
+    "implemented_methods": []
+  },
+  {
+    "name": "CustomAudience.Builder",
+    "implemented_methods": []
+  },
+  {
+    "name": "CustomAudienceManager",
+    "implemented_methods": []
+  }
+    ]
   },
   {
     "package": "android.adservices.measurement"
@@ -2890,7 +3647,28 @@
     "package": "android.net"
   },
   {
-    "package": "android.net.ipsec.ike"
+    "package": "android.net.ipsec.ike",
+    "changed_classes": [
+      {
+        "name": "IkeSession",
+        "implemented_methods": [
+          {
+            "code": "void dump(PrintWriter)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/IPsec/src/java/android/net/ipsec/ike/IkeSession.java;drc=1a420dfec138ac90bb7b35649f94021cab19e5bf;l=472",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "IkeSessionParams",
+        "implemented_methods": []
+      }
+    ]
   },
   {
     "package": "android.net.nsd"
