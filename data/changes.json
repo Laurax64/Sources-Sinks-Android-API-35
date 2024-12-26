@@ -4253,12 +4253,214 @@
       },
       {
         "name": "CustomAudienceManager",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "void fetchAndJoinCustomAudience(FetchAndJoinCustomAudienceRequest, Executor, OutcomeReceiver<Object, Exception>)",
+            "code_long": "void fetchAndJoinCustomAudience(android.adservices.customaudience.FetchAndJoinCustomAudienceRequest, java.util.concurrent.Executor, android.os.OutcomeReceiver<java.lang.Object, java.lang.Exception>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/CustomAudienceManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=226",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "void scheduleCustomAudienceUpdate(ScheduleCustomAudienceUpdateRequest, Executor, AdServicesOutcomeReceiver<Object, Exception>)",
+            "code_long": "scheduleCustomAudienceUpdate(android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest, java.util.concurrent.Executor, android.os.OutcomeReceiver<java.lang.Object, java.lang.Exception>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/CustomAudienceManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=486",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          }
+        ]
       }
     ]
   },
   {
-    "package": "android.adservices.measurement"
+    "package": "android.adservices.measurement",
+    "added_classes":[
+      {
+        "name": "SourceRegistrationRequest",
+        "implemented_methods": [
+          {
+            "code": "SourceRegistrationRequest(Builder)",
+            "code_long": "SourceRegistrationRequest(android.adservices.measurement.SourceRegistrationRequest.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=48",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "SourceRegistrationRequest(Parcel)",
+            "code_long": "SourceRegistrationRequest(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=53",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=68",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this SourceRegistrationRequest",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=77",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "List<Uri> getRegistrationUris()",
+            "code_long": "java.util.List<android.net.Uri> getRegistrationUris()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=83",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.List<android.net.Uri>",
+                "description": "Registration URIs to fetch sources, TODO: Improve description",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "InputEvent getInputEvent()",
+            "code_long": "android.view.InputEvent getInputEvent()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=93",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.view.InputEvent getInputEvent() or null",
+                "description": "An object of type InputEvent for a click event or null for a view event",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=98",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=103",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "SourceRegistrationRequest.Builder",
+        "implemented_methods": [
+          {
+            "code": "Builder(List<Uri>)",
+            "code_long": "Builder(java.util.List<android.net.Uri>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=127",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setInputEvent(InputEvent)",
+            "code_long": "android.adservices.measurement.SourceRegistrationRequest.Builder setInputEvent(android.view.InputEvent)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=156",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.measurement.SourceRegistrationRequest.Builder",
+                "description": "An object of type SourceRegistrationRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive":false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "SourceRegistrationRequest build()",
+            "code_long": "android.adservices.customaudience.SourceRegistrationRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/SourceRegistrationRequest.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=163",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.measurement.SourceRegistrationRequest",
+                "description": "An object of type SourceRegistrationRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      }
+    ],
+    "changed_classes":[
+      {
+        "name": "MeasurementManager",
+        "implemented_methods":[
+          {
+            "code": "void deleteRegistrations(DeletionRequest, Executor, AdServicesOutcomeReceiver<Object, Exception>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/MeasurementManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=372",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.adservices.ondevicepersonalization"

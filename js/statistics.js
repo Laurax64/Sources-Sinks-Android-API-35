@@ -186,7 +186,6 @@ function getColorForClass(className) {
   return colorMap[className] || '#cccccc'; // Default to light gray if class not found
 }
 
-
 /**
  * Toggles the visibility of the charts.
  */
