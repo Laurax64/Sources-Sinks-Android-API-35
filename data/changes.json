@@ -4457,6 +4457,76 @@
             "change_type": "Addition",
             "data_returned": [],
             "data_transmitted": []
+          },
+          {
+            "code": "void getMeasurementApiStatus(Executor, AdServicesOutcomeReceiver<Integer, Exception>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/MeasurementManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=389",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "void registerSource(SourceRegistrationRequest, Executor, AdServicesOutcomeReceiver<Object, Exception>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/MeasurementManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=200",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "void registerSource(SourceRegistrationRequest, Executor, OutcomeReceiver<Object, Exception>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/MeasurementManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=182",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "void registerSource(Uri, InputEvent, Executor, AdServicesOutcomeReceiver<Object, Exception>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/MeasurementManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=164",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "void registerTrigger(Uri, Executor, AdServicesOutcomeReceiver<Object, Exception>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/MeasurementManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=331",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "void registerWebSource(WebSourceRegistrationRequest, Executor, AdServicesOutcomeReceiver<Object, Exception>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/MeasurementManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=246",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "void registerWebTrigger(WebTriggerRegistrationRequest, Executor, AdServicesOutcomeReceiver<Object, Exception>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/measurement/MeasurementManager.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=291",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
           }
         ]
       }
