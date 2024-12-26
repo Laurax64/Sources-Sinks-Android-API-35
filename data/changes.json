@@ -3532,7 +3532,7 @@
             "data_returned": [
               {
                 "type": "android.adservices.common.AdSelectionSignals",
-                "description": "An object of type AdData.Builder that might contain sensitive data, but is not sensitive itself",
+                "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
             ],
@@ -3580,8 +3580,9 @@
             "data_returned": [
               {
                 "type": "java.lang.String",
-                "description": "The custom audience request, which can contain information like user bidding signals that contains personal user data.",
-                "possibly_sensitive": false
+                "description": "The custom audience request, which might contain user bidding signals, e.g., the user's coarse location",
+                "link": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android", 
+                "possibly_sensitive": true
               }
             ],
             "data_transmitted": []
@@ -3602,7 +3603,7 @@
             "data_transmitted": []
           },
           {
-            "code": "Builder setFetchUri(Uri) {",
+            "code": "Builder setFetchUri(Uri)",
             "code_long": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder setFetchUri(android.net.Uri)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=172",
             "class": "Non-Sensitive",
@@ -3611,7 +3612,8 @@
             "data_returned": [
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
-                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
               }
             ],
             "data_transmitted": []
@@ -3626,7 +3628,8 @@
             "data_returned": [
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
-                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself", 
+                "possibly_sensitive": false
               }
             ],
             "data_transmitted": []
@@ -3641,7 +3644,8 @@
             "data_returned": [
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
-                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
               }
             ],
             "data_transmitted": []
@@ -3656,7 +3660,8 @@
             "data_returned": [
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
-                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
               }
             ],
             "data_transmitted": []
@@ -3671,7 +3676,8 @@
             "data_returned": [
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
-                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
               }
             ],
             "data_transmitted": []
@@ -3685,8 +3691,9 @@
             "change_type": "Addition",
             "data_returned": [
               {
-                "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
-                "description": "An object of type FetchAndJoinCustomAudienceRequest that might contain sensitive data, but is not sensitive itself"
+                "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest",
+                "description": "An object of type FetchAndJoinCustomAudienceRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
               }
             ],
             "data_transmitted": []
@@ -3695,20 +3702,469 @@
       },
       {
         "name": "PartialCustomAudience",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "PartialCustomAudience(PartialCustomAudience.Builder)",
+            "code_long": "PartialCustomAudience(android.adservices.customaudience.PartialCustomAudience.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=52",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "PartialCustomAudience(Parcel)",
+            "code_long": "PartialCustomAudience(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=78",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getName()",
+            "code_long": "java.lang.String getName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=99",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "A name for a custom audience a user might be added to. A custom audience is an abstract grouping of users with similar demonstrated interests.",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Instant getActivationTime()",
+            "code_long": "java.time.Instant getActivationTime()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=110",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.time.Instant",
+                "description": "The time instant by which joining the custom audience will be delayed. Sensitive if it depends on the user's personal information.",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Instant getExpirationTime()",
+            "code_long": "java.time.Instant getExpirationTime()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=121",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.time.Instant",
+                "description": "The time instant by which the membership to the custom audience will expire. Sensitive if it depends on the user's personal information.",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionSignals getUserBiddingSignals()",
+            "code_long": "android.adservices.common.AdSelectionSignals getUserBiddingSignals()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=133",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdSelectionSignals",
+                "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=141",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=150",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this PartialCustomAudience",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String toString()",
+            "code_long": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=164",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "The custom audience request, which might contain user bidding signals, e.g., the user's coarse location",
+                "source": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android", 
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=178",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=183",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "PartialCustomAudience.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder(String)",
+            "code_long": "Builder(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=214",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setActivationTime(Instant)",
+            "code_long": "android.adservices.customaudience.PartialCustomAudience.Builder setActivationTime(java.time.Instant)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=225",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.PartialCustomAudience.Builder",
+                "description": "An object of type PartialCustomAudience.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setExpirationTime(Instant)",
+            "code_long": "android.adservices.customaudience.PartialCustomAudience.Builder setExpirationTime(java.time.Instant)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=236",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.PartialCustomAudience.Builder",
+                "description": "An object of type PartialCustomAudience.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive":false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setUserBiddingSignals(AdSelectionSignals)",
+            "code_long": "android.adservices.customaudience.PartialCustomAudience.Builder setUserBiddingSignals(android.adservices.common.AdSelectionSignals)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=248",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.PartialCustomAudience.Builder",
+                "description": "An object of type PartialCustomAudience.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "PartialCustomAudience build()",
+            "code_long": "android.adservices.customaudience.PartialCustomAudience build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/PartialCustomAudience.java;drc=25e2328bea22430acfb9a8529ca1cad0ba3603a6;l=260",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.PartialCustomAudience",
+                "description": "An object of type PartialCustomAudience that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive":false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "ScheduleCustomAudienceUpdateRequest",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "ScheduleCustomAudienceUpdateRequest(ScheduleCustomAudienceUpdateRequest.Builder)",
+            "code_long": "ScheduleCustomAudienceUpdateRequest(android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=47",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Uri getUpdateUri()",
+            "code_long": "android.net.Uri getUpdateUri()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=64",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.net.Uri",
+                "description": "The URI from which the update for the buyer's custom audiences will be fetched. A custom audience is an abstract grouping of users with similar demonstrated interests.",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "java.time.Duration getMinDelay()",
+            "code_long": "java.time.Duration getMinDelay()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=73",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.time.Duration",
+                "description": "The minimum duration that the update will be deferred before the service fetches updates for the buyer ad tech's custom audiences.",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "List<PartialCustomAudience> getPartialCustomAudienceList()",
+            "code_long": "java.util.List<android.adservices.customaudience.PartialCustomAudience> getPartialCustomAudienceList() ",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=82",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.List<android.adservices.customaudience.PartialCustomAudience>",
+                "description": "A list of objects of type PartialCustomAudience that might contain sensitive data, but are not sensitive themselves",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean shouldReplacePendingUpdates()",
+            "code_long": "boolean shouldReplacePendingUpdates()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=96",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether any pending scheduled updates should be canceled and replaced.",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=100",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=112",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this ScheduleCustomAudienceUpdateRequest",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String toString()",
+            "code_long": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=125",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "A human-readable representation of ScheduleCustomAudienceUpdateRequest containing a partial custom audience list.",
+                "source": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android", 
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "ScheduleCustomAudienceUpdateRequest.Builder",
-        "implemented_methods": []
-      }
+        "implemented_methods": [
+          {
+            "code": "Builder(Uri, Duration, List<PartialCustomAudience>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=155",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setUpdateUri(Uri)",
+            "code_long": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder setUpdateUri(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=179",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder",
+                "description": "An object of type ScheduleCustomAudienceUpdateRequest.Builder that might contain sensitive data, but is not sensitive itself"
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setMinDelay(Duration)",
+            "code_long": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder setMinDelay(java.time.Duration)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=193",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder",
+                "description": "An object of type ScheduleCustomAudienceUpdateRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setPartialCustomAudienceList(List<PartialCustomAudience>)",
+            "code_long": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder setPartialCustomAudienceList(List<PartialCustomAudience>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=208",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder",
+                "description": "An object of type ScheduleCustomAudienceUpdateRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setShouldReplacePendingUpdates(boolean)",
+            "code_long": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder setShouldReplacePendingUpdates(boolean)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=226",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder",
+                "description": "An object of type ScheduleCustomAudienceUpdateRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "ScheduleCustomAudienceUpdateRequest build()",
+            "code_long": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/ScheduleCustomAudienceUpdateRequest.java;drc=686f559bd513c556c8cd2f145858f64ae0d2784e;l=233",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest",
+                "description": "An object of type ScheduleCustomAudienceUpdateRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      }      
     ],
     "changed_classes": [
       {
