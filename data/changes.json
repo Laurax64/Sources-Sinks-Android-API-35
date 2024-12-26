@@ -3581,7 +3581,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The custom audience request, which might contain user bidding signals, e.g., the user's coarse location",
-                "link": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android", 
+                "link": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android",
                 "possibly_sensitive": true
               }
             ],
@@ -3628,7 +3628,7 @@
             "data_returned": [
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
-                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself", 
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
             ],
@@ -3830,7 +3830,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The custom audience request, which might contain user bidding signals, e.g., the user's coarse location",
-                "source": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android", 
+                "source": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android",
                 "possibly_sensitive": true
               }
             ],
@@ -3904,7 +3904,7 @@
               {
                 "type": "android.adservices.customaudience.PartialCustomAudience.Builder",
                 "description": "An object of type PartialCustomAudience.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive":false
+                "possibly_sensitive": false
               }
             ],
             "data_transmitted": []
@@ -3936,7 +3936,7 @@
               {
                 "type": "android.adservices.customaudience.PartialCustomAudience",
                 "description": "An object of type PartialCustomAudience that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive":false
+                "possibly_sensitive": false
               }
             ],
             "data_transmitted": []
@@ -4063,7 +4063,7 @@
               {
                 "type": "java.lang.String",
                 "description": "A human-readable representation of ScheduleCustomAudienceUpdateRequest containing a partial custom audience list.",
-                "source": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android", 
+                "source": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android",
                 "possibly_sensitive": true
               }
             ],
@@ -4164,24 +4164,92 @@
             "data_transmitted": []
           }
         ]
-      }      
+      }
     ],
     "changed_classes": [
       {
         "name": "AddCustomAudienceOverrideRequest",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "long getBiddingLogicJsVersion()",
+            "code_long": "long getBiddingLogicJsVersion()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/AddCustomAudienceOverrideRequest.java;drc=0ebdbd4eff0cd0861819d97a863599769b2bfcc8;l=92",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "long",
+                "description": "A version value for ad bidding logic",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "AddCustomAudienceOverrideRequest.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder setBiddingLogicJsVersion(long)",
+            "code_long": "android.adservices.customaudience.AddCustomAudienceOverrideRequest.Builder setBiddingLogicJsVersion(long)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/AddCustomAudienceOverrideRequest.java;drc=0ebdbd4eff0cd0861819d97a863599769b2bfcc8;l=157",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.AddCustomAudienceOverrideRequest.Builder",
+                "description": "An object of type AddCustomAudienceOverrideRequest.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "CustomAudience",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "int getAuctionServerRequestFlags()",
+            "code_long": "int getAuctionServerRequestFlags()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/CustomAudience.java;drc=38ad53e8d52c05ef4a4e5397a889232426146400;l=356",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "Flag indicating whether ads for this custom audience can be omitted",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "CustomAudience.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "CustomAudience.Builder setAuctionServerRequestFlags(int)",
+            "code_long": "android.adservices.customaudience.CustomAudience.Builder getAuctionServerRequestFlags()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/CustomAudience.java;drc=38ad53e8d52c05ef4a4e5397a889232426146400;l=554",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.CustomAudience.Builder",
+                "description": "An object of type CustomAudience.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "CustomAudienceManager",
@@ -4487,7 +4555,36 @@
     "package": "java.security.spec"
   },
   {
-    "package": "java.util"
+    "package": "java.util",
+    "changed_classes": [
+      {
+        "name": "Properties",
+        "implemented_methods": [
+          {
+            "code": "void storeToXML(java.io.OutputStream, java.lang.String, java.nio.charset.Charset)",
+            "code_long": "void storeToXML(OutputStream, String, Charset)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:libcore/ojluni/src/main/java/java/util/Properties.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=1104",
+            "class": "Sensitive Sink",
+            "category": "Files and Docs",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "XML file containing properties (key-value pairs) to, e.g., external file storage.",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "External File Storage",
+                    "accesible_to_third_parties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "java.util.concurrent"
