@@ -3447,11 +3447,251 @@
     "added_classes": [
       {
         "name": "FetchAndJoinCustomAudienceRequest",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "FetchAndJoinCustomAudienceRequest(FetchAndJoinCustomAudienceRequest.Builder)",
+            "code_long": "FetchAndJoinCustomAudienceRequest(android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=45",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Uri getFetchUri()",
+            "code_long": "android.net.Uri getFetchUri()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=60",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.net.Uri",
+                "description": "A URI for a custom audience a user might be added to. A custom audience is an abstract grouping of users with similar demonstrated interests.",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String getName()",
+            "code_long": "java.lang.String getName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=70",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "A name for a custom audience a user might be added to. A custom audience is an abstract grouping of users with similar demonstrated interests.",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Instant getActivationTime()",
+            "code_long": "java.time.Instant getActivationTime()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=80",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.time.Instant",
+                "description": "The time instant by which by which joining the custom audience will be delayed. Sensitive if it depends on the user's personal information.",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Instant getExpirationTime()",
+            "code_long": "java.time.Instant getExpirationTime()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=90",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.time.Instant",
+                "description": "The time instant by which the membership to the custom audience will expire. Sensitive if it depends on the user's personal information.",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AdSelectionSignals getUserBiddingSignals()",
+            "code_long": "android.adservices.common.AdSelectionSignals getUserBiddingSignals()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=101",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.common.AdSelectionSignals",
+                "description": "An object of type AdData.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=110",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this FetchAndJoinCustomAudienceRequest",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=125",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "String toString()",
+            "code_long": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=134",
+            "class": "Sensitive Source",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.lang.String",
+                "description": "The custom audience request, which can contain information like user bidding signals that contains personal user data.",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "FetchAndJoinCustomAudienceRequest.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder(Uri)",
+            "code_long": "Builder(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=161",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setFetchUri(Uri) {",
+            "code_long": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder setFetchUri(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=172",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setName(String)",
+            "code_long": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder setName(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=184",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setActivationTime(Instant)",
+            "code_long": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder setActivationTime(java.time.Instant)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=195",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setExpirationTime(Instant)",
+            "code_long": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder setExpirationTime(java.time.Instant)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=206",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "Builder setUserBiddingSignals(AdSelectionSignals)",
+            "code_long": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder setUserBiddingSignals(android.adservices.common.AdSelectionSignals)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=217",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
+                "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself"
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "FetchAndJoinCustomAudienceRequest build()",
+            "code_long": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=229",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
+                "description": "An object of type FetchAndJoinCustomAudienceRequest that might contain sensitive data, but is not sensitive itself"
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
       },
       {
         "name": "PartialCustomAudience",
@@ -3470,27 +3710,27 @@
         "implemented_methods": []
       }
     ],
-    "changed_classes":[
-  {
-    "name": "AddCustomAudienceOverrideRequest",
-    "implemented_methods": []
-  },
-  {
-    "name": "AddCustomAudienceOverrideRequest.Builder",
-    "implemented_methods": []
-  },
-  {
-    "name": "CustomAudience",
-    "implemented_methods": []
-  },
-  {
-    "name": "CustomAudience.Builder",
-    "implemented_methods": []
-  },
-  {
-    "name": "CustomAudienceManager",
-    "implemented_methods": []
-  }
+    "changed_classes": [
+      {
+        "name": "AddCustomAudienceOverrideRequest",
+        "implemented_methods": []
+      },
+      {
+        "name": "AddCustomAudienceOverrideRequest.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "CustomAudience",
+        "implemented_methods": []
+      },
+      {
+        "name": "CustomAudience.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "CustomAudienceManager",
+        "implemented_methods": []
+      }
     ]
   },
   {
