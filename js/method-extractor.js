@@ -1,11 +1,13 @@
+const primitiveTypes = ["byte", "short", "int", "long", "float", "double", "char", "boolean"];
+
 /**
  * Checks if a type is sensitive for data_transmitted
  * @param {string} type - The type to check
  * @returns {boolean} - True if the type is sensitive, false otherwise
  */
 function isPossiblySensitiveForTransmission(type) {
-    const possiblySensitivTypes = ["byte", "short", "int", "long", "float", "double", "char", "boolean"];
-    return  possiblySensitivTypes.includes(type);
+    const possiblySensitivTypes = primitiveTypes + ["String"];
+    return possiblySensitivTypes.includes(type);
 }
 
 /** 
@@ -21,7 +23,7 @@ function getDataTransmitted(parameters) {
                 description: `A ${type} into the application code`,
                 possibly_sensitive: isPossiblySensitiveForTransmission(type),
                 destinations: [{
-                    resource: "Application code", 
+                    resource: "Application code",
                     accessible_to_third_parties: false
                 }]
             });
@@ -31,25 +33,26 @@ function getDataTransmitted(parameters) {
 }
 
 function extractFullyQualifiedName(className, imports, packageName) {
-    // Check if class is explicitly imported
-    const explicitImport = imports.find((imp) => imp.endsWith(`.${className}`));
-    if (explicitImport) {
-        return explicitImport;
-    }
-
-    // Check for wildcard imports (e.g., java.io.*)
-    const wildcardImport = imports.find((imp) => imp.endsWith(".*"));
-    if (wildcardImport) {
-        return `${wildcardImport.replace(".*", "")}.${className}`;
-    }
-
-    // Default to package if no imports are found
-    if (packageName) {
-        return `${packageName}.${className}`;
-    }
-
-    // If not explicitly imported or in package, do not qualify
+if (primitiveTypes.includes(className)) {
     return className;
+}
+const explicitImport = imports.find((imp) => imp.endsWith(`.${className}`));
+if (explicitImport) {
+    return explicitImport;
+}
+if (className === "String") {
+    return "java.lang.String";
+}
+if (className.startsWith("List")) {
+    return `java.util.${className}`;
+}
+// Default to package if no imports are found
+if (packageName) {
+    return `${packageName}.${className}`;
+}
+
+// If not explicitly imported or in package, do not qualify
+return className;
 }
 
 function getDataReturned(returnType) {
@@ -69,10 +72,10 @@ function getDataReturned(returnType) {
  * @param {string} type - The type to check
  * @returns {boolean} - True if the type is possibly sensitive, false otherwise
  *
- */ 
+ */
 function isPossiblySensitive(type) {
     const possiblySensitivTypes = ["byte", "short", "int", "long", "float", "double", "char", "boolean"];
-    return  possiblySensitivTypes.includes(type);
+    return possiblySensitivTypes.includes(type);
 }
 
 /**
@@ -105,6 +108,7 @@ function extractMethodHeaders(javaCode, baseUrl) {
         const lineNumber = calculateLineNumber(javaCode, match.index);
         const methodLink = `${baseUrl};l=${lineNumber}`;
 
+        // TODO Remove parameter name and annotation
         methods.push({
             methodSignature: `${returnType.trim()} ${methodName.trim()}(${parameters.trim()})`,
             fullyQualifiedReturnType: fullyQualifiedReturnType,
