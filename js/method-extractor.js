@@ -8,11 +8,14 @@ function isPossiblySensitiveForTransmission(type) {
     return  possiblySensitivTypes.includes(type);
 }
 
+/** 
+ @todo add String as java.lang.String for code long and fix transmitted data
+ */
 function getDataTransmitted(parameters) {
     const parameterTypes = parameters.split(",").map(param => param.trim().split(" ")[0]);
     const dataTransmitted = [];
     parameterTypes.forEach(type => {
-        if (type && !["void", "boolean", "int", "long", "String", "float", "double", "char"].includes(type)) {
+        if (type && !["void", "boolean", "int", "long", "float", "double", "char"].includes(type)) {
             dataTransmitted.push({
                 type: type,
                 description: `A ${type} into the application code`,
@@ -71,6 +74,11 @@ function isPossiblySensitive(type) {
     const possiblySensitivTypes = ["byte", "short", "int", "long", "float", "double", "char", "boolean"];
     return  possiblySensitivTypes.includes(type);
 }
+
+/**
+ * 
+ * @todo fix parameters
+ */
 
 function extractMethodHeaders(javaCode, baseUrl) {
     const packageMatch = javaCode.match(/package\s+([\w.]+);/);
