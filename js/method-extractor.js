@@ -10,7 +10,6 @@ function isPossiblySensitiveForTransmission(type) {
 
 function getDataTransmitted(parameters) {
     const parameterTypes = parameters.split(",").map(param => param.trim().split(" ")[0]);
-
     const dataTransmitted = [];
     parameterTypes.forEach(type => {
         if (type && !["void", "boolean", "int", "long", "String", "float", "double", "char"].includes(type)) {
@@ -19,13 +18,12 @@ function getDataTransmitted(parameters) {
                 description: `A ${type} into the application code`,
                 possibly_sensitive: isPossiblySensitiveForTransmission(type),
                 destinations: [{
-                    resource: "Application code",  // Default assumption
-                    accessible_to_third_parties: false  // Default assumption
+                    resource: "Application code", 
+                    accessible_to_third_parties: false
                 }]
             });
         }
     });
-    
     return dataTransmitted;
 }
 
@@ -51,16 +49,16 @@ function extractFullyQualifiedName(className, imports, packageName) {
     return className;
 }
 
-function getDataReturned(type) {
-    // If the return type exists and is a custom class, add it to data_returned
-    if (type && !["void", "boolean", "int", "long", "String", "float", "double", "char"].includes(type)) {
-        return [{
-            type: type,
-            description: `An object of type ${type} that might contain sensitive data, but is not sensitive itself`,
-            possibly_sensitive: isPossiblySensitive(type)
-        }];
+function getDataReturned(returnType) {
+    const dataReturned = [];
+    if (returnType && returnType !== "void") {
+        dataReturned.push({
+            "type": returnType,
+            "description": `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`,
+            "possibly_sensitive": isPossiblySensitiveForTransmission(returnType)
+        });
     }
-    return [];
+    return dataReturned;
 }
 
 /**
@@ -75,28 +73,25 @@ function isPossiblySensitive(type) {
 }
 
 function extractMethodHeaders(javaCode) {
-    // Extract package name
     const packageMatch = javaCode.match(/package\s+([\w.]+);/);
     const packageName = packageMatch ? packageMatch[1] : null;
 
-    // Extract import statements
     const importMatches = [...javaCode.matchAll(/import\s+([\w.*]+);/g)];
     const imports = importMatches.map((match) => match[1]);
 
-    // Remove single-line and multi-line comments
     const cleanedCode = javaCode
-        .replace(/\/\/.*/g, "") // Remove single-line comments
-        .replace(/\/\*[\s\S]*?\*\//g, ""); // Remove multi-line comments
+        .replace(/\/\/.*/g, "")
+        .replace(/\/\*[\s\S]*?\*\//g, "");
 
-    // Regex pattern to match method headers
+    const classMatch = cleanedCode.match(/\bclass\s+(\w+)/);
+    const className = classMatch ? classMatch[1] : "UnknownClass";
+
     const methodPattern = /(?<modifiers>\b(public|private|protected|static|final|synchronized|native|\s)+\b)\s*(?<returnType>[\w<>\[\]]+)\s+(?<methodName>[\w<>]+)\s*\((?<parameters>[^)]*)\)\s*(?<exceptions>(throws\s+[\w<>\[\],\s]+)?)\s*{/g;
     const matches = cleanedCode.matchAll(methodPattern);
 
     const methods = [];
     for (const match of matches) {
         const { returnType, methodName, parameters } = match.groups;
-
-        // Resolve fully qualified name for the return type, exclude built-ins
         const fullyQualifiedReturnType = extractFullyQualifiedName(returnType.trim(), imports, packageName);
 
         methods.push({
@@ -106,25 +101,28 @@ function extractMethodHeaders(javaCode) {
             dataTransmitted: getDataTransmitted(parameters.trim())
         });
     }
-    return methods;
-}
 
-function formatMethodsAsJson(methodHeaders) {
-    return methodHeaders.map(method => ({
-        code: method.methodSignature,
-        code_long: method.fullyQualifiedReturnType
-            ? method.methodSignature.replace(method.methodSignature.split(" ")[0], method.fullyQualifiedReturnType)
-            : method.methodSignature,
-        link: "",
-        class: "Non-Sensitive",
-        category: "",
-        change_type: "Addition",
-        data_returned: method.dataReturned,
-        data_transmitted: method.dataTransmitted
-    }));
+    return { className, methods };
 }
 
 
+function formatMethodsAsJson(className, methodHeaders) {
+    return {
+        name: className,
+        implemented_methods: methodHeaders.map(method => ({
+            code: method.methodSignature,
+            code_long: method.fullyQualifiedReturnType
+                ? method.methodSignature.replace(method.methodSignature.split(" ")[0], method.fullyQualifiedReturnType)
+                : method.methodSignature,
+            link: "", // No link since input is from pasted text
+            class: "Non-Sensitive", // Default value
+            category: "", // Default value
+            change_type: "Addition", // Default value
+            data_returned: method.dataReturned,
+            data_transmitted: method.dataTransmitted
+        }))
+    };
+}
 
 function processJavaCode() {
     const javaCode = document.getElementById("javaCode").value;
@@ -134,8 +132,13 @@ function processJavaCode() {
     }
 
     try {
-        const methodHeaders = extractMethodHeaders(javaCode);
-        const formattedJson = formatMethodsAsJson(methodHeaders);
+        // Extract method headers and class name
+        const { className, methods } = extractMethodHeaders(javaCode);
+
+        // Format as JSON
+        const formattedJson = formatMethodsAsJson(className, methods);
+
+        // Display the JSON result
         document.getElementById("outputJson").textContent = JSON.stringify(formattedJson, null, 4);
     } catch (error) {
         document.getElementById("outputJson").textContent = `Error: ${error.message}`;
