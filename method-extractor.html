@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Method Extractor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    textarea, pre {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: monospace;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Java Method Extractor</h1>
+  <textarea id="javaCode" rows="10" placeholder="Paste your Java code here..."></textarea>
+  <button onclick="processJavaCode()">Process Code</button>
+  <pre id="outputJson">Processed JSON will appear here...</pre>
+  <script src="js/method-extractor.js"></script>
+</body>
+</html>
