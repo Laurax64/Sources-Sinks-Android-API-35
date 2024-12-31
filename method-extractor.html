@@ -9,9 +9,22 @@
 <body>
   <h1>Java Method Extractor</h1>
   <p>The method extractor is not accurate. It provides an approximation and is intended solely to assist in speeding up the documentation process. It should not be relied upon for precise results.</p>
-  <textarea id="javaCode" rows="10" placeholder="Paste your Java code here..."></textarea>
+
+  <!-- Textarea for Java Code Input -->
+  <label for="javaCode">Paste Java Code:</label><br>
+  <textarea id="javaCode" rows="10" placeholder="Paste your Java code here..."></textarea><br><br>
+
+  <!-- Input for Android Code Search Base URL -->
+  <label for="baseUrl">Paste Android Code Search URL:</label><br>
+  <textarea id="baseUrl" placeholder="https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/SomeModule/framework/java/MockPackagePath/MockClass.java"></textarea><br><br>
+
+  <!-- Button to Process Java Code -->
   <button onclick="processJavaCode()">Process Code</button>
+
+  <!-- Output JSON -->
+  <h2>Output JSON:</h2>
   <pre id="outputJson">Processed JSON will appear here...</pre>
+
   <script src="js/method-extractor.js"></script>
 </body>
 </html>

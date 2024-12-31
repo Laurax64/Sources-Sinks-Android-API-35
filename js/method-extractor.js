@@ -72,7 +72,7 @@ function isPossiblySensitive(type) {
     return  possiblySensitivTypes.includes(type);
 }
 
-function extractMethodHeaders(javaCode) {
+function extractMethodHeaders(javaCode, baseUrl) {
     const packageMatch = javaCode.match(/package\s+([\w.]+);/);
     const packageName = packageMatch ? packageMatch[1] : null;
 
@@ -87,16 +87,20 @@ function extractMethodHeaders(javaCode) {
     const className = classMatch ? classMatch[1] : "UnknownClass";
 
     const methodPattern = /(?<modifiers>\b(public|private|protected|static|final|synchronized|native|\s)+\b)\s*(?<returnType>[\w<>\[\]]+)\s+(?<methodName>[\w<>]+)\s*\((?<parameters>[^)]*)\)\s*(?<exceptions>(throws\s+[\w<>\[\],\s]+)?)\s*{/g;
-    const matches = cleanedCode.matchAll(methodPattern);
+    const matches = [...javaCode.matchAll(methodPattern)];
 
     const methods = [];
     for (const match of matches) {
         const { returnType, methodName, parameters } = match.groups;
         const fullyQualifiedReturnType = extractFullyQualifiedName(returnType.trim(), imports, packageName);
 
+        const lineNumber = calculateLineNumber(javaCode, match.index);
+        const methodLink = `${baseUrl};l=${lineNumber}`;
+
         methods.push({
             methodSignature: `${returnType.trim()} ${methodName.trim()}(${parameters.trim()})`,
             fullyQualifiedReturnType: fullyQualifiedReturnType,
+            lineLink: methodLink,
             dataReturned: getDataReturned(fullyQualifiedReturnType),
             dataTransmitted: getDataTransmitted(parameters.trim())
         });
@@ -104,6 +108,22 @@ function extractMethodHeaders(javaCode) {
 
     return { className, methods };
 }
+
+
+function calculateLineNumber(javaCode, matchIndex) {
+    const lines = javaCode.split("\n");
+    let currentPos = 0;
+
+    for (let lineNum = 0; lineNum < lines.length; lineNum++) {
+        currentPos += lines[lineNum].length + 1;  // +1 for newline character
+        if (currentPos > matchIndex) {
+            return lineNum + 1;  // Adding 1 for 1-based index
+        }
+    }
+
+    return -1;  // If not found
+}
+
 
 
 function formatMethodsAsJson(className, methodHeaders) {
@@ -114,7 +134,7 @@ function formatMethodsAsJson(className, methodHeaders) {
             code_long: method.fullyQualifiedReturnType
                 ? method.methodSignature.replace(method.methodSignature.split(" ")[0], method.fullyQualifiedReturnType)
                 : method.methodSignature,
-            link: "", // No link since input is from pasted text
+            link: method.lineLink,
             class: "Non-Sensitive", // Default value
             category: "", // Default value
             change_type: "Addition", // Default value
@@ -126,21 +146,27 @@ function formatMethodsAsJson(className, methodHeaders) {
 
 function processJavaCode() {
     const javaCode = document.getElementById("javaCode").value;
+    const baseUrl = document.getElementById("baseUrl").value;  // New input for base URL
     if (!javaCode.trim()) {
         document.getElementById("outputJson").textContent = "Please paste some Java code to process.";
         return;
     }
 
+    if (!baseUrl.trim()) {
+        document.getElementById("outputJson").textContent = "Please provide the base URL.";
+        return;
+    }
+
     try {
         // Extract method headers and class name
-        const { className, methods } = extractMethodHeaders(javaCode);
+        const { className, methods } = extractMethodHeaders(javaCode, baseUrl);
 
-        // Format as JSON
-        const formattedJson = formatMethodsAsJson(className, methods);
+        // Format as JSON and include the base URL with line numbers
+        const formattedJson = formatMethodsAsJson(className, methods, baseUrl);
 
-        // Display the JSON result
         document.getElementById("outputJson").textContent = JSON.stringify(formattedJson, null, 4);
     } catch (error) {
         document.getElementById("outputJson").textContent = `Error: ${error.message}`;
     }
 }
+
