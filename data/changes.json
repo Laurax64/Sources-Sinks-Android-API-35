@@ -4280,7 +4280,7 @@
   },
   {
     "package": "android.adservices.measurement",
-    "added_classes":[
+    "added_classes": [
       {
         "name": "SourceRegistrationRequest",
         "implemented_methods": [
@@ -4420,7 +4420,7 @@
               {
                 "type": "android.adservices.measurement.SourceRegistrationRequest.Builder",
                 "description": "An object of type SourceRegistrationRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive":false
+                "possibly_sensitive": false
               }
             ],
             "data_transmitted": []
@@ -4444,10 +4444,10 @@
         ]
       }
     ],
-    "changed_classes":[
+    "changed_classes": [
       {
         "name": "MeasurementManager",
-        "implemented_methods":[
+        "implemented_methods": [
           {
             "code": "void deleteRegistrations(DeletionRequest, Executor, AdServicesOutcomeReceiver<Object, Exception>)",
             "code_long": "",
@@ -4533,7 +4533,441 @@
     ]
   },
   {
-    "package": "android.adservices.ondevicepersonalization"
+    "package": "android.adservices.ondevicepersonalization",
+    "added_interfaces": [
+      {
+        "name": "IsolatedWorker",
+        "implemented_methods": [
+          {
+            "code": "default void onExecute(ExecuteInput, OutcomeReceiver<ExecuteOutput, IsolatedServiceException>",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedWorker.java;drc=ce047ad9a4cacad569fcecd1210568c73df8018b;l=56",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "default void onDownloadCompleted(DownloadCompletedInput, OutcomeReceiver<DownloadCompletedOutput, IsolatedServiceException>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedWorker.java;drc=ce047ad9a4cacad569fcecd1210568c73df8018b;l=74",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "default void onRender(RenderInput,OutcomeReceiver<RenderOutput, IsolatedServiceException>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedWorker.java;drc=ce047ad9a4cacad569fcecd1210568c73df8018b;l=96",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "default void onEvent(EventInput, OutcomeReceiver<EventOutput, IsolatedServiceException>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedWorker.java;drc=ce047ad9a4cacad569fcecd1210568c73df8018b;l=113",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "default void onTrainingExamples(TrainingExamplesInput, OutcomeReceiver<TrainingExamplesOutput, IsolatedServiceException> receiver)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedWorker.java;drc=ce047ad9a4cacad569fcecd1210568c73df8018b;l=131",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          },
+          {
+            "code": "default void onWebTrigger(WebTriggerInput input, OutcomeReceiver<WebTriggerOutput, IsolatedServiceException>)",
+            "code_long": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedWorker.java;drc=ce047ad9a4cacad569fcecd1210568c73df8018b;l=152",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "KeyValueStore",
+        "implemented_methods": []
+      },
+      {
+        "name": "MutableKeyValueStore",
+        "implemented_methods": []
+      }
+    ],
+    "added_classes": [
+      {
+        "name": "AppInfo",
+        "implemented_methods": [
+          {
+            "code": "boolean isInstalled() ",
+            "code_long": "boolean isInstalled() ",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/AppInfo.java;drc=07fff4415846d038b49582e0e2cfb32aa46f6c8f;l=63",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the app is installed",
+                "possibly_sensitive": true
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/AppInfo.java;drc=07fff4415846d038b49582e0e2cfb32aa46f6c8f;l=69",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this AppInfo",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/AppInfo.java;drc=07fff4415846d038b49582e0e2cfb32aa46f6c8f;l=85",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "code_long": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/AppInfo.java;drc=07fff4415846d038b49582e0e2cfb32aa46f6c8f;l=96",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [],
+            "data_transmitted": [
+]
+          },
+          {
+            "code": "int describeContents()",
+            "code_long": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/AppInfo.java;drc=07fff4415846d038b49582e0e2cfb32aa46f6c8f;l=107",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "AppInfo(Parcel)",
+            "code_long": "AppInfo(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/AppInfo.java;drc=07fff4415846d038b49582e0e2cfb32aa46f6c8f;l=112",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "DownloadCompletedInput",
+        "implemented_methods": [
+          {
+            "code": "KeyValueStore getDownloadedContents()",
+            "code_long": "android.adservices.ondevicepersonalization.KeyValueStore getDownloadedContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedInput.java;drc=07f88c150af179619afdb4e52dfee46a99fa8f5d;l=53",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.KeyValueStore",
+                "description": "An object of type KeyValueStore that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedInput.java;drc=07f88c150af179619afdb4e52dfee46a99fa8f5d;l=58",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this DownloadCompletedInput",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedInput.java;drc=07f88c150af179619afdb4e52dfee46a99fa8f5d;l=69",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
+        ]
+      },
+      {
+        "name": "DownloadCompletedOutput",
+        "implemented_methods": []
+      },
+      {
+        "name": "DownloadCompletedOutput.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "EventInput",
+        "implemented_methods": []
+      },
+      {
+        "name": "EventLogRecord",
+        "implemented_methods": []
+      },
+      {
+        "name": "EventLogRecord.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "EventOutput",
+        "implemented_methods": []
+      },
+      {
+        "name": "EventOutput.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "EventUrlProvider",
+        "implemented_methods": []
+      },
+      {
+        "name": "ExecuteInIsolatedServiceRequest",
+        "implemented_methods": []
+      },
+      {
+        "name": "ExecuteInIsolatedServiceRequest.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "ExecuteInIsolatedServiceRequest.OutputSpec",
+        "implemented_methods": []
+      },
+      {
+        "name": "ExecuteInIsolatedServiceResponse",
+        "implemented_methods": []
+      },
+      {
+        "name": "ExecuteInput",
+        "implemented_methods": []
+      },
+      {
+        "name": "ExecuteOutput",
+        "implemented_methods": []
+      },
+      {
+        "name": "ExecuteOutput.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "FederatedComputeInput",
+        "implemented_methods": []
+      },
+      {
+        "name": "FederatedComputeInput.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "FederatedComputeScheduler",
+        "implemented_methods": []
+      },
+      {
+        "name": "FederatedComputeScheduler.Params",
+        "implemented_methods": []
+      },
+      {
+        "name": "InferenceInput",
+        "implemented_methods": []
+      },
+      {
+        "name": "InferenceInput.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "InferenceInput.Params",
+        "implemented_methods": []
+      },
+      {
+        "name": "InferenceInput.Params.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "InferenceOutput",
+        "implemented_methods": []
+      },
+      {
+        "name": "InferenceOutput.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "IsolatedService",
+        "implemented_methods": []
+      },
+      {
+        "name": "LogReader",
+        "implemented_methods": []
+      },
+      {
+        "name": "ModelManager",
+        "implemented_methods": []
+      },
+      {
+        "name": "OnDevicePersonalizationManager",
+        "implemented_methods": []
+      },
+      {
+        "name": "OnDevicePersonalizationManager.ExecuteResult",
+        "implemented_methods": []
+      },
+      {
+        "name": "RenderingConfig",
+        "implemented_methods": []
+      },
+      {
+        "name": "RenderingConfig.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "RenderInput",
+        "implemented_methods": []
+      },
+      {
+        "name": "RenderOutput",
+        "implemented_methods": []
+      },
+      {
+        "name": "RenderOutput.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "RequestLogRecord",
+        "implemented_methods": []
+      },
+      {
+        "name": "RequestLogRecord.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "RequestToken",
+        "implemented_methods": []
+      },
+      {
+        "name": "SurfacePackageToken",
+        "implemented_methods": []
+      },
+      {
+        "name": "TrainingExampleRecord",
+        "implemented_methods": []
+      },
+      {
+        "name": "TrainingExampleRecord.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "TrainingExamplesInput",
+        "implemented_methods": []
+      },
+      {
+        "name": "TrainingExamplesOutput",
+        "implemented_methods": []
+      },
+      {
+        "name": "TrainingExamplesOutput.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "TrainingInterval",
+        "implemented_methods": []
+      },
+      {
+        "name": "TrainingInterval.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "UserData",
+        "implemented_methods": []
+      },
+      {
+        "name": "WebTriggerInput",
+        "implemented_methods": []
+      },
+      {
+        "name": "WebTriggerOutput",
+        "implemented_methods": []
+      },
+      {
+        "name": "WebTriggerOutput.Builder",
+        "implemented_methods": []
+      },
+      {
+        "name": "IsolatedServiceException",
+        "implemented_methods": []
+      },
+      {
+        "name": "OnDevicePersonalizationException",
+        "implemented_methods": []
+      }
+    ]
   },
   {
     "package": "android.adservices.signals"
@@ -4833,8 +5267,8 @@
         "name": "Properties",
         "implemented_methods": [
           {
-            "code": "void storeToXML(java.io.OutputStream, java.lang.String, java.nio.charset.Charset)",
-            "code_long": "void storeToXML(OutputStream, String, Charset)",
+            "code": "void storeToXML(OutputStream, String, Charset)",
+            "code_long": "void storeToXML(java.io.OutputStream, java.lang.String, java.nio.charset.Charset)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:libcore/ojluni/src/main/java/java/util/Properties.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=1104",
             "class": "Sensitive Sink",
             "category": "Files and Docs",

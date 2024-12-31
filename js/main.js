@@ -24,23 +24,28 @@ function parseApiData(data) {
   const keysToProcess = ["changed_classes", "added_interfaces", "changed_interfaces", "added_classes"];
   keysToProcess.forEach(key => {
     data.forEach(pkg => {
-      pkg[key]?.forEach(item => pushData(parsedData, item.implemented_methods));
-    })
-  })
-  return parsedData
+      pkg[key]?.forEach(item => {
+        pushData(parsedData, pkg.package, item.implemented_methods); // Pass package name here
+      });
+    });
+  });
+  return parsedData;
 }
+
 
 
 /**
  * Pushes the implemented_method's data to the given parsedData field.
  * 
  * @param {Array} parsedData - The array to push the data to.
+ * @param {String} packageName - The package name to push.
  * @param {Array} implemented_methods - The implemented_methods to push.
  */
-function pushData(parsedData, implemented_methods) {
+function pushData(parsedData, packageName, implemented_methods) {
   if (implemented_methods) {
     implemented_methods.forEach(method =>
       parsedData.push({
+        package: packageName, // Explicitly set the package name
         code: method.code,
         code_long: method.code_long,
         link: method.link,
@@ -50,9 +55,10 @@ function pushData(parsedData, implemented_methods) {
         data_returned: method.data_returned || [],
         data_transmitted: method.data_transmitted || []
       })
-    )
+    );
   }
 }
+
 
 /**
  * Populates the tables with the filtered data.
@@ -171,15 +177,6 @@ function getDataTransmittedDescription(item) {
     return item.data_transmitted.map(data => data.description).join("<br>");
   }
   return "None";
-}
-
-/**
- * Exports the data to FlowDroid format 
- * @todo Write the documentation.
- * @todo Implement this function.
- */
-function exportFlowDroid() {
-
 }
 
 /**

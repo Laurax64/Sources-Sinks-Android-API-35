@@ -1,2 +1,3 @@
 Landroid/accessibilityservice/BrailleDisplayController;->checkApiFlagIsEnabled()V,blocked
 Landroid/accessibilityservice/BrailleDisplayController;->setTestBrailleDisplayData(Landroid/accessibilityservice/AccessibilityService;Ljava/util/List;)V,blocked,test-api
+Landroid/adservices/ondevicepersonalization/KeyValueStore;->getTableId()I,blocked

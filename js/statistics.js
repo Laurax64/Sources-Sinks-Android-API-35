@@ -116,8 +116,6 @@ function createSinkCounts(apiData) {
   return counts;
 }
 
-
-
 function createClassesCounts(apiData) {
   const counts = {
     "Sensitive Source": 0,
@@ -187,22 +185,19 @@ function getColorForClass(className) {
 }
 
 /**
- * Toggles the visibility of the charts.
+ * Toggles the visibility of the bar charts.
  */
 function toggleChartVisibility() {
   const chartsWrapper = document.getElementById('charts-wrapper');
-  const chartContainers = document.querySelectorAll('#chart-container');
   const toggleButton = document.getElementById('toggle-chart-button');
-
-  // Toggle visibility of charts-wrapper
   if (chartsWrapper.style.display === 'none' || chartsWrapper.style.display === '') {
-    chartsWrapper.style.display = 'flex'; // Show charts
+    chartsWrapper.style.display = 'flex'; 
     showSourcesChart();
     showSinksChart();
     showClassesChart();
     toggleButton.textContent = 'Hide Statistics';
   } else {
-    chartsWrapper.style.display = 'none'; // Hide charts
+    chartsWrapper.style.display = 'none';
     toggleButton.textContent = 'Show Statistics';
   }
 }
