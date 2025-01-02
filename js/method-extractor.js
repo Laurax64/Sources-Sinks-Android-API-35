@@ -26,7 +26,7 @@ const accessModifiers = ["public", "private", "protected"];
  */
 function getDataReturned(returnType) {
     const dataReturned = [];
-    if (returnType && returnType !== "void") {
+    if (returnType && returnType !== "void" && !accessModifiers.some(modifier => returnType == modifier)) {
         dataReturned.push({
             type: returnType,
             description: `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`,
@@ -44,7 +44,7 @@ function getDataReturned(returnType) {
  * @returns {string} - The fully qualified name of the class.
  */
 function extractFullyQualifiedName(shortName, imports, classType, packageName) {
-    if (!shortName || accessModifiers.any(modifier => shortName == modifier )) {
+    if (!shortName || accessModifiers.some(modifier => shortName == modifier )) {
         return "";
     }
 
@@ -85,10 +85,10 @@ function extractMethodHeaders(javaCode, baseUrl, className) {
         const { returnType, methodName, parameters } = match.groups;
         const fullyQualifiedReturnType = extractFullyQualifiedName(returnType.trim(), imports, className, packageName);
         methods.push({
-            methodSignature: `${returnType.trim()} ${methodName.trim()}(${parameters.trim()})`,
+            methodSignature: `${returnType} ${methodName}(${parameters})`,
             fullyQualifiedReturnType: fullyQualifiedReturnType,
             lineLink: getMethodLink(baseUrl, javaCode, match.index),
-            dataReturned: getDataReturned(fullyQualifiedReturnType),
+            dataReturned: getDataReturned(returnType.trim()),
             dataTransmitted: []
         });
     }
@@ -108,9 +108,7 @@ function getImports(javaCode) {
 }
 
 function removeDocumentation(javaCode) {
-    return javaCode
-        .replace(/\/\/[^\n]*\n?/g, match => " ".repeat(match.length)) // Single-line comments
-        .replace(/\/\*[\s\S]*?\*\//g, match => " ".repeat(match.length)); // Multi-line comments
+    return javaCode.replace(/\/\*[\s\S]*?\*\//g, match => " ".repeat(match.length)); // Multi-line comments
 }
 
 
@@ -234,7 +232,7 @@ function processJavaCode() {
     try {
         const packageName = getPackageName(javaCode);
         const className = getClassName(javaCode);
-        const methodHeaders = extractMethodHeaders(javaCode, baseUrl, className);
+        const methodHeaders = extractMethodHeaders(javaCode, baseUrl, className)
         const imports = getImports(javaCode);
         const formattedJson = formatAsJson(className, methodHeaders, packageName, imports);
 
