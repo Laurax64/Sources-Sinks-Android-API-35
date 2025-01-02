@@ -4669,8 +4669,7 @@
             "category": "",
             "change_type": "Addition",
             "data_returned": [],
-            "data_transmitted": [
-]
+            "data_transmitted": []
           },
           {
             "code": "int describeContents()",
@@ -4762,56 +4761,56 @@
       {
         "name": "DownloadCompletedOutput",
         "implemented_methods": [
-            {
-                "code": "List<String> getRetainedKeys()",
-                "code_long": "java.util.List<java.lang.String> getRetainedKeys()",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=74",
-                "class": "Non-Sensitive",
-                "category": "",
-                "change_type": "Addition",
-                "data_returned": [
-                    {
-                        "type": "java.util.List<java.lang.String>",
-                        "description": "The keys to be retained in the REMOTE_DATA table.",
-                        "possibly_sensitive": false
-                    }
-                ],
-                "data_transmitted": []
-            },
-            {
-                "code": "boolean equals(Object)",
-                "code_long": "boolean equals(java.lang.Object)",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=79",
-                "class": "Non-Sensitive",
-                "category": "",
-                "change_type": "Addition",
-                "data_returned": [
-                    {
-                        "type": "boolean",
-                        "description": "Whether the given object is equal to this DownloadCompletedOutput",
-                        "possibly_sensitive": false
-                    }
-                ],
-                "data_transmitted": []
-            },
-            {
-                "code": "int hashCode()",
-                "code_long": "int hashCode()",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=95",
-                "class": "Non-Sensitive",
-                "category": "",
-                "change_type": "Addition",
-                "data_returned": [
-                    {
-                        "type": "int",
-                        "description": "A hash code value",
-                        "possibly_sensitive": false
-                    }
-                ],
-                "data_transmitted": []
-            }
+          {
+            "code": "List<String> getRetainedKeys()",
+            "code_long": "java.util.List<java.lang.String> getRetainedKeys()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=74",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "java.util.List<java.lang.String>",
+                "description": "The keys to be retained in the REMOTE_DATA table.",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "code_long": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=79",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this DownloadCompletedOutput",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "code_long": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=95",
+            "class": "Non-Sensitive",
+            "category": "",
+            "change_type": "Addition",
+            "data_returned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "data_transmitted": []
+          }
         ]
-    },
+      },
       {
         "name": "DownloadCompletedOutput.Builder",
         "implemented_methods": [
@@ -4823,15 +4822,15 @@
             "category": "",
             "change_type": "Addition",
             "data_returned": [
-                {
-                    "type": "android.adservices.ondevicepersonalization.Builder",
-                    "description": "An object of type android.adservices.ondevicepersonalization.Builder that might contain sensitive data, but is not sensitive itself",
-                    "possibly_sensitive": false
-                }
+              {
+                "type": "android.adservices.ondevicepersonalization.Builder",
+                "description": "An object of type android.adservices.ondevicepersonalization.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
             ],
-            "data_transmitted":[]
-        },
-        {
+            "data_transmitted": []
+          },
+          {
             "code": "Builder addRetainedKey(String)",
             "code_long": "android.adservices.ondevicepersonalization.Builder addRetainedKey(java.lang.String)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=133",
@@ -4839,15 +4838,15 @@
             "category": "",
             "change_type": "Addition",
             "data_returned": [
-                {
-                    "type": "android.adservices.ondevicepersonalization.Builder",
-                    "description": "An object of type android.adservices.ondevicepersonalization.Builder that might contain sensitive data, but is not sensitive itself",
-                    "possibly_sensitive": false
-                }
+              {
+                "type": "android.adservices.ondevicepersonalization.Builder",
+                "description": "An object of type android.adservices.ondevicepersonalization.Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
             ],
             "data_transmitted": []
-        },
-        {
+          },
+          {
             "code": "DownloadCompletedOutput build()",
             "code_long": "android.adservices.ondevicepersonalization.DownloadCompletedOutput build()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=140",
@@ -4855,15 +4854,15 @@
             "category": "",
             "change_type": "Addition",
             "data_returned": [
-                {
-                    "type": "android.adservices.ondevicepersonalization.DownloadCompletedOutput",
-                    "description": "An object of type android.adservices.ondevicepersonalization.DownloadCompletedOutput that might contain sensitive data, but is not sensitive itself",
-                    "possibly_sensitive": false
-                }
+              {
+                "type": "android.adservices.ondevicepersonalization.DownloadCompletedOutput",
+                "description": "An object of type android.adservices.ondevicepersonalization.DownloadCompletedOutput that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
             ],
             "data_transmitted": []
-        },
-        {
+          },
+          {
             "code": "void checkNotUsed()",
             "code_long": "android.adservices.ondevicepersonalization.void checkNotUsed()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=152",
@@ -4872,8 +4871,8 @@
             "change_type": "Addition",
             "data_returned": [],
             "data_transmitted": []
-        },
-        {
+          },
+          {
             "code": "void __metadata()",
             "code_long": "android.adservices.ondevicepersonalization.void __metadata()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=166",
@@ -4882,7 +4881,7 @@
             "change_type": "Addition",
             "data_returned": [],
             "data_transmitted": []
-        }
+          }
         ]
       },
       {
