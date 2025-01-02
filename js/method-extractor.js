@@ -16,29 +16,6 @@ const separators = ["(", ")", "{", "}", "[", "]", ";", ",", ".", "...", "@", "::
 
 const primitiveTypes = ["byte", "short", "int", "long", "float", "double", "char", "boolean"];
 
-/** 
- * Extracts data transmitted from the parameters of a method.
- * 
- * @param {string} parameters - The parameters of a method.
- * @returns {Array} - An array of objects representing the data transmitted.
- */
-function getDataTransmitted(parameters) {
-    const parameterTypes = parameters.split(",").map(param => param.trim().split(" ")[0]);
-    const dataTransmitted = [];
-    parameterTypes.forEach(type => {
-        dataTransmitted.push({
-            type: type,
-            description: `A ${type} into the application code`,
-            possibly_sensitive: false,
-            destinations: [{
-                resource: "Application code",
-                accessible_to_third_parties: false
-            }]
-        });
-    });
-    return dataTransmitted;
-}
-
 /**
  * Extracts data returned from the return type of a method.
  * 
@@ -73,8 +50,11 @@ function extractFullyQualifiedName(className, imports) {
         return className;
     }
 
-    const name = className.replace("String", "java.lang.String")
-        .replace("void", "").replace("Object", "java.lang.Object")
+    const name = className
+        .replace("String", "java.lang.String")
+        .replace("void", "")
+        .replace("Object", "java.lang.Object")
+        .replace("List", "java.util.List")
 
     const explicitImport = imports.find((imp) => imp.endsWith(`.${className}`));
     if (explicitImport) {
@@ -104,7 +84,7 @@ function extractMethodHeaders(javaCode, baseUrl) {
             fullyQualifiedReturnType: fullyQualifiedReturnType,
             lineLink: getMethodLink(baseUrl, javaCode, match.index),
             dataReturned: getDataReturned(fullyQualifiedReturnType),
-            dataTransmitted: getDataTransmitted(parameters.trim())
+            dataTransmitted: []
         });
     }
 
@@ -175,7 +155,7 @@ function getCodeLong(methodSignature, imports, packageName) {
     const fullyQualifiedReturnType = getFullyQualifiedReturnType(methodSignature, imports, packageName)
     const fullyQualifiedParameters = getFullyQualifiedParameters(methodSignature, imports, packageName)
     const methodName = getMethodName(methodSignature)
-    return fullyQualifiedReturnType + " " + methodName + "("+fullyQualifiedParameters+")";
+    return fullyQualifiedReturnType + " " + methodName + "(" + fullyQualifiedParameters + ")";
 
 }
 
@@ -199,7 +179,7 @@ function getFullyQualifiedReturnType(methodSignature, imports, packageName) {
 function getReturnType(methodSignature) {
     return methodSignature
         .split(" ")
-        .filter(word => !separators.some(separator => word.includes(separator)))[0]; 
+        .filter(word => !separators.some(separator => word.includes(separator)))[0];
 }
 
 function isMethodConstructor(methodSignature) {
