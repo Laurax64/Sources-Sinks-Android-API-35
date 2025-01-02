@@ -1,4 +1,3 @@
-
 const keywords = [
     "abstract", "continue", "for", "new", "switch",
     "assert", "default", "if", "package", "synchronized",
@@ -35,24 +34,36 @@ function getDataTransmitted(parameters) {
                 resource: "Application code",
                 accessible_to_third_parties: false
             }]
-        })
-    })
+        });
+    });
     return dataTransmitted;
 }
 
+/**
+ * Extracts data returned from the return type of a method.
+ * 
+ * @param {string} returnType - The return type of a method.
+ * @returns {Array} - An array of objects representing the data returned.
+ */
 function getDataReturned(returnType) {
     const dataReturned = [];
     if (returnType && returnType !== "void") {
         dataReturned.push({
-            "type": returnType,
-            "description": `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`,
-            "possibly_sensitive": false
+            type: returnType,
+            description: `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`,
+            possibly_sensitive: false
         });
     }
     return dataReturned;
 }
 
-
+/**
+ * Extracts the fully qualified name of a class.
+ * 
+ * @param {string} className - The name of the class.
+ * @param {Array} imports - The list of imports.
+ * @returns {string} - The fully qualified name of the class.
+ */
 function extractFullyQualifiedName(className, imports) {
     if (!className) {
         return "";
@@ -63,23 +74,20 @@ function extractFullyQualifiedName(className, imports) {
     }
 
     const name = className.replace("String", "java.lang.String")
-        .replace("void", "")
-        .replace("Object", "java.lang.Object")
-        .replace("OutputStream", "java.io.OutputStream");
-
-    if (name.startsWith("List")) {
-        return `java.util.${name}`;
-    }
+        .replace("void", "").replace("Object", "java.lang.Object")
 
     const explicitImport = imports.find((imp) => imp.endsWith(`.${className}`));
     if (explicitImport) {
         return explicitImport;
     }
 
+    const wildcardImport = imports.find((imp) => imp.endsWith(".*"));
+    if (wildcardImport) {
+        return `${wildcardImport.replace(".*", "")}.${className}`;
+    }
+
     return name;
 }
-
-
 
 function extractMethodHeaders(javaCode, baseUrl) {
     const packageName = getPackageName(javaCode);
@@ -125,9 +133,8 @@ function getClassName(javaCode) {
 }
 
 function getMethodHeaders(cleanedCode) {
-    const methodPattern = /(?<modifiers>\b(public|private|protected|static|final|synchronized|native|\s)+\b)\s*(?<returnType>[\w<>\[\]]+)\s+(?<methodName>[\w<>]+)\s*\((?<parameters>[^)]*)\)\s*(?<exceptions>(throws\s+[\w<>\[\],\s]+)?)\s*{/g;
+    const methodPattern = /(?<modifiers>\b(public|private|protected|static|final|synchronized|native|\s)*\b)?\s*(?<returnType>[\w<>\[\]]+)?\s+(?<methodName>[\w<>]+)\s*\((?<parameters>[^)]*)\)\s*(?<exceptions>(throws\s+[\w<>\[\],\s]+)?)\s*{/g;
     return [...cleanedCode.matchAll(methodPattern)];
-
 }
 
 function getMethodLink(baseUrl, javaCode, matchIndex) {
@@ -168,7 +175,7 @@ function getCodeLong(methodSignature, imports, packageName) {
     const fullyQualifiedReturnType = getFullyQualifiedReturnType(methodSignature, imports, packageName)
     const fullyQualifiedParameters = getFullyQualifiedParameters(methodSignature, imports, packageName)
     const methodName = getMethodName(methodSignature)
-    return fullyQualifiedReturnType + " " + methodName + fullyQualifiedParameters
+    return fullyQualifiedReturnType + " " + methodName + "("+fullyQualifiedParameters+")";
 
 }
 
@@ -191,12 +198,8 @@ function getFullyQualifiedReturnType(methodSignature, imports, packageName) {
 
 function getReturnType(methodSignature) {
     return methodSignature
-        .split(" ") // Split the method signature into words
-        .filter(word =>
-            !word.startsWith("@") && // Exclude annotations
-            !keywords.includes(word) && // Exclude keywords
-            !separators.some(separator => word.includes(separator)) // Exclude words with separators
-        )[0]; // Get the first word that remains
+        .split(" ")
+        .filter(word => !separators.some(separator => word.includes(separator)))[0]; 
 }
 
 function isMethodConstructor(methodSignature) {
@@ -204,20 +207,25 @@ function isMethodConstructor(methodSignature) {
 }
 
 function getMethodName(methodSignature) {
-    const returnType = getReturnType(methodSignature)
-    console.log("returnType: " + returnType)
-    const parameters = methodSignature.match(/\(([^)]*)\)/)[0]  // e.g. "(String param1, List<String> param2)"
-    console.log("parameters: " + parameters)
-    const name = methodSignature.replace(returnType, "").replace(parameters, "").split(" ").filter(word => !keywords.includes(word))[0]
+    const returnType = getReturnType(methodSignature);
+    const parameters = methodSignature.match(/\(([^)]*)\)/)[0];
+    const withoutReturnTypeAndParams = methodSignature.replace(returnType, "").replace(parameters, "").trim();
 
-    console.log("name: " + name)
-    return name;
+    const potentialName = withoutReturnTypeAndParams.split(" ").find(
+        word => !keywords.includes(word) && !separators.some(separator => word.includes(separator))
+    );
+
+    console.log("name:", potentialName);
+    return potentialName || "";
 }
+
 
 function getFullyQualifiedParameters(methodSignature, imports, packageName) {
     const parameters = methodSignature.match(/\(([^)]*)\)/)[0].split(" ") // e.g. "(String param1, List<String> param2)"
-    const fullyQualifiedParameters = parameters.map(
-        param => extractFullyQualifiedName(param, imports, packageName)
+    const fullyQualifiedParameters = parameters.filter(
+        param => !keywords.includes(param) && !separators.some(separator => param.includes(separator))
+    ).map(
+        cleanedParam => extractFullyQualifiedName(cleanedParam, imports, packageName)
     ).join(", ");
     return fullyQualifiedParameters;
 }
@@ -246,4 +254,3 @@ function processJavaCode() {
         document.getElementById("outputJson").textContent = `Error: ${error.message}\n${error.stack}`;
     }
 }
-
