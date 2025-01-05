@@ -159,3 +159,18 @@ Landroid/adservices/ondevicepersonalization/RenderOutput;-><init>(Ljava/lang/Str
 Landroid/adservices/ondevicepersonalization/RenderOutput;->__metadata()V,blocked
 
 Landroid/adservices/ondevicepersonalization/RenderOutput$Builder;->checkNotUsed()V,blocked
+
+Landroid/adservices/ondevicepersonalization/RequestLogRecord;-><init>(Landroid/os/Parcel;)V,blocked
+Landroid/adservices/ondevicepersonalization/RequestLogRecord;-><init>(Ljava/util/List;JJ)V,blocked
+Landroid/adservices/ondevicepersonalization/RequestLogRecord;->__metadata()V,blocked
+Landroid/adservices/ondevicepersonalization/RequestLogRecord;->getRequestId()J,blocked
+Landroid/adservices/ondevicepersonalization/RequestLogRecord;->getTimeMillis()J,blocked
+Landroid/adservices/ondevicepersonalization/RequestLogRecord$1;->createFromParcel(Landroid/os/Parcel;)Landroid/adservices/ondevicepersonalization/RequestLogRecord;,blocked
+Landroid/adservices/ondevicepersonalization/RequestLogRecord$1;->newArray(I)[Landroid/adservices/ondevicepersonalization/RequestLogRecord;,blocked
+
+Landroid/adservices/ondevicepersonalization/RequestLogRecord$BaseBuilder;-><init>()V,blocked
+Landroid/adservices/ondevicepersonalization/RequestLogRecord$BaseBuilder;->setTimeMillis(J)Landroid/adservices/ondevicepersonalization/RequestLogRecord$Builder;,blocked
+
+Landroid/adservices/ondevicepersonalization/RequestLogRecord$Builder;->checkNotUsed()V,blocked
+Landroid/adservices/ondevicepersonalization/RequestLogRecord$Builder;->setRequestId(J)Landroid/adservices/ondevicepersonalization/RequestLogRecord$Builder;,blocked
+Landroid/adservices/ondevicepersonalization/RequestLogRecord$Builder;->setTimeMillis(J)Landroid/adservices/ondevicepersonalization/RequestLogRecord$Builder;,blocked

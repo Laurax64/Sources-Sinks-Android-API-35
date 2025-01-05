@@ -7250,11 +7250,177 @@
       },
       {
         "name": "RequestLogRecord",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Instant getTime()",
+            "codeLong": "java.time.Instant getTime()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=65",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.time.Instant",
+                "description": "An object of type Instant that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "List<ContentValues> getRows()",
+            "codeLong": "java.util.List<ContentValues> getRows()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=109",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<ContentValues>",
+                "description": "An object of type List<ContentValues> that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object o)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=135",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this RequestLogRecord",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=153",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(android.os.Parcel dest, int flags)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=166",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=177",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "RequestLogRecord.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "codeLong": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=227",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setRows(List<ContentValues> value)",
+            "codeLong": "android.adservices.ondevicepersonalization.RequestLogRecord.Builder setRows(java.util.List<ContentValues>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=234",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RequestLogRecord.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addRow(ContentValues value)",
+            "codeLong": "android.adservices.ondevicepersonalization.RequestLogRecord.Builder addRow(ContentValues)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=243",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RequestLogRecord.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setTimeMillis(long value)",
+            "codeLong": "android.adservices.ondevicepersonalization.RequestLogRecord.Builder setTimeMillis(long)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=269",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RequestLogRecord.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "RequestLogRecord build()",
+            "codeLong": "android.adservices.ondevicepersonalization.RequestLogRecord build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RequestLogRecord.java;l=277",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RequestLogRecord",
+                "description": "An object of type RequestLogRecord that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "RequestToken",
