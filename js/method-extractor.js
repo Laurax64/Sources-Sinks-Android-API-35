@@ -100,6 +100,7 @@ function extractFullyQualifiedName(shortName, imports, classType, packageName) {
         .replace("String", "java.lang.String")  // Replace String
         .replace("Object", "java.lang.Object") // Replace Object
         .replace("Integer", "java.lang.Integer")  // Replace Integer
+        .replace("Intent", "android.content.Intent")
 
     const explicitImport = imports.find((imp) => imp.endsWith(`.${trimmedShortName}`));
     if (explicitImport) {

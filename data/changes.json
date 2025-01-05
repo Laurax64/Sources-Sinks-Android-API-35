@@ -6500,15 +6500,15 @@
             "dataTransmitted": []
           },
           {
-            "code": "IBinder onBind(         Intent intent)",
-            "codeLong": "android.os.IBinder onBind(, , , , , , , , , android.content.Intent, intent)",
+            "code": "IBinder onBind(Intent intent)",
+            "codeLong": "android.os.IBinder onBind(android.content.Intent)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=81",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
-                "type": "IBinder",
+                "type": "android.os.IBinder",
                 "description": "An object of type IBinder that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
@@ -6516,15 +6516,15 @@
             "dataTransmitted": []
           },
           {
-            "code": "KeyValueStore getRemoteData(         RequestToken requestToken)",
-            "codeLong": "KeyValueStore getRemoteData(, , , , , , , , , RequestToken, requestToken)",
+            "code": "KeyValueStore getRemoteData(RequestToken requestToken)",
+            "codeLong": "android.adservices.ondevicepersonalization.KeyValueStore getRemoteData(RequestToken)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=119",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
-                "type": "KeyValueStore",
+                "type": "android.adservices.ondevicepersonalization.KeyValueStore",
                 "description": "An object of type KeyValueStore that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
@@ -6532,15 +6532,15 @@
             "dataTransmitted": []
           },
           {
-            "code": "MutableKeyValueStore getLocalData(         RequestToken requestToken)",
-            "codeLong": "MutableKeyValueStore getLocalData(, , , , , , , , , RequestToken, requestToken)",
+            "code": "MutableKeyValueStore getLocalData(RequestToken requestToken)",
+            "codeLong": "android.adservices.ondevicepersonalization.MutableKeyValueStore getLocalData(RequestToken)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=136",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
-                "type": "MutableKeyValueStore",
+                "type": "android.adservices.ondevicepersonalization.MutableKeyValueStore",
                 "description": "An object of type MutableKeyValueStore that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
@@ -6548,15 +6548,15 @@
             "dataTransmitted": []
           },
           {
-            "code": "LogReader getLogReader(         RequestToken requestToken)",
-            "codeLong": "LogReader getLogReader(, , , , , , , , , RequestToken, requestToken)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=151",
+            "code": "LogReader getLogReader(RequestToken requestToken)",
+            "codeLong": "android.adservices.ondevicepersonalization.LogReader getLogReader(android.adservices.ondevicepersonalization.RequestToken)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=149",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
-                "type": "LogReader",
+                "type": "android.adservices.ondevicepersonalization.LogReader",
                 "description": "An object of type LogReader that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
@@ -6564,15 +6564,15 @@
             "dataTransmitted": []
           },
           {
-            "code": "EventUrlProvider getEventUrlProvider(         RequestToken requestToken)",
-            "codeLong": "EventUrlProvider getEventUrlProvider(, , , , , , , , , RequestToken, requestToken)",
+            "code": "EventUrlProvider getEventUrlProvider(RequestToken requestToken)",
+            "codeLong": "android.adservices.ondevicepersonalization.EventUrlProvider getEventUrlProvider(android.adservices.ondevicepersonalization.RequestToken)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=166",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
-                "type": "EventUrlProvider",
+                "type": "android.adservices.ondevicepersonalization.EventUrlProvider",
                 "description": "An object of type EventUrlProvider that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
@@ -6580,15 +6580,15 @@
             "dataTransmitted": []
           },
           {
-            "code": "UserData getUserData(         RequestToken requestToken)",
-            "codeLong": "UserData getUserData(, , , , , , , , , RequestToken, requestToken)",
+            "code": "UserData getUserData(RequestToken requestToken)",
+            "codeLong": "android.adservices.ondevicepersonalization.UserData getUserData(android.adservices.ondevicepersonalization.RequestToken)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=178",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
-                "type": "UserData",
+                "type": "android.adservices.ondevicepersonalization.UserData",
                 "description": "An object of type UserData that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
@@ -6596,15 +6596,15 @@
             "dataTransmitted": []
           },
           {
-            "code": "FederatedComputeScheduler getFederatedComputeScheduler(\n                     RequestToken requestToken)",
-            "codeLong": "FederatedComputeScheduler getFederatedComputeScheduler(\n, , , , , , , , , , , , , , , , , , , , , RequestToken, requestToken)",
+            "code": "FederatedComputeScheduler getFederatedComputeScheduler(RequestToken requestToken)",
+            "codeLong": "android.adservices.ondevicepersonalization.FederatedComputeScheduler getFederatedComputeScheduler(android.adservices.ondevicepersonalization.RequestToken)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=193",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
-                "type": "FederatedComputeScheduler",
+                "type": "android.adservices.ondevicepersonalization.FederatedComputeScheduler",
                 "description": "An object of type FederatedComputeScheduler that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
@@ -6612,15 +6612,15 @@
             "dataTransmitted": []
           },
           {
-            "code": "ModelManager getModelManager(         RequestToken requestToken)",
-            "codeLong": "ModelManager getModelManager(, , , , , , , , , RequestToken, requestToken)",
+            "code": "ModelManager getModelManager(RequestToken requestToken)",
+            "codeLong": "android.adservices.ondevicepersonalization.ModelManager getModelManager(RequestToken)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=208",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
-                "type": "ModelManager",
+                "type": "android.adservices.ondevicepersonalization.ModelManager",
                 "description": "An object of type ModelManager that might contain sensitive data, but is not sensitive itself",
                 "possibly_sensitive": false
               }
@@ -6628,216 +6628,8 @@
             "dataTransmitted": []
           },
           {
-            "code": "void onRequest(\n                int operationCode,\n                         Bundle params,\n                         IIsolatedServiceCallback resultCallback)",
-            "codeLong": "void onRequest(\n, , , , , , , , , , , , , , , , operationCode,\n, , , , , , , , , , , , , , , , , , , , , , , , , android.os.Bundle, params,\n, , , , , , , , , , , , , , , , , , , , , , , , , android.adservices.ondevicepersonalization.aidl.IIsolatedServiceCallback, resultCallback)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=217",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          },
-          {
-            "code": "void performRequest(\n                int operationCode,\n                         Bundle params,\n                         IIsolatedServiceCallback resultCallback)",
-            "codeLong": "void performRequest(\n, , , , , , , , , , , , , , , , operationCode,\n, , , , , , , , , , , , , , , , , , , , , , , , , android.os.Bundle, params,\n, , , , , , , , , , , , , , , , , , , , , , , , , android.adservices.ondevicepersonalization.aidl.IIsolatedServiceCallback, resultCallback)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=233",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          },
-          {
-            "code": "else if(operationCode == Constants.OP_DOWNLOAD)",
-            "codeLong": "else (operationCode, ==, Constants.OP_DOWNLOAD)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=240",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "else",
-                "description": "An object of type else that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "else if(operationCode == Constants.OP_RENDER)",
-            "codeLong": "else (operationCode, ==, Constants.OP_RENDER)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=242",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "else",
-                "description": "An object of type else that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "else if(operationCode == Constants.OP_WEB_VIEW_EVENT)",
-            "codeLong": "else (operationCode, ==, Constants.OP_WEB_VIEW_EVENT)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=244",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "else",
-                "description": "An object of type else that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "else if(operationCode == Constants.OP_TRAINING_EXAMPLE)",
-            "codeLong": "else (operationCode, ==, Constants.OP_TRAINING_EXAMPLE)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=246",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "else",
-                "description": "An object of type else that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "else if(operationCode == Constants.OP_WEB_TRIGGER)",
-            "codeLong": "else (operationCode, ==, Constants.OP_WEB_TRIGGER)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=248",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "else",
-                "description": "An object of type else that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "void performOnWebTrigger(\n                         Bundle params,          IIsolatedServiceCallback resultCallback)",
-            "codeLong": "void performOnWebTrigger(\n, , , , , , , , , , , , , , , , , , , , , , , , , android.os.Bundle, params,, , , , , , , , , , android.adservices.ondevicepersonalization.aidl.IIsolatedServiceCallback, resultCallback)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=255",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          },
-          {
-            "code": "void performOnTrainingExample(\n                         Bundle params,          IIsolatedServiceCallback resultCallback)",
-            "codeLong": "void performOnTrainingExample(\n, , , , , , , , , , , , , , , , , , , , , , , , , android.os.Bundle, params,, , , , , , , , , , android.adservices.ondevicepersonalization.aidl.IIsolatedServiceCallback, resultCallback)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=281",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          },
-          {
-            "code": "void performOnWebViewEvent(\n                         Bundle params,          IIsolatedServiceCallback resultCallback)",
-            "codeLong": "void performOnWebViewEvent(\n, , , , , , , , , , , , , , , , , , , , , , , , , android.os.Bundle, params,, , , , , , , , , , android.adservices.ondevicepersonalization.aidl.IIsolatedServiceCallback, resultCallback)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=316",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          },
-          {
-            "code": "void performRender(\n                         Bundle params,          IIsolatedServiceCallback resultCallback)",
-            "codeLong": "void performRender(\n, , , , , , , , , , , , , , , , , , , , , , , , , android.os.Bundle, params,, , , , , , , , , , android.adservices.ondevicepersonalization.aidl.IIsolatedServiceCallback, resultCallback)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=341",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          },
-          {
-            "code": "void performDownload(\n                         Bundle params,          IIsolatedServiceCallback resultCallback)",
-            "codeLong": "void performDownload(\n, , , , , , , , , , , , , , , , , , , , , , , , , android.os.Bundle, params,, , , , , , , , , , android.adservices.ondevicepersonalization.aidl.IIsolatedServiceCallback, resultCallback)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=367",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          },
-          {
-            "code": "IIsolatedModelService getIsolatedModelService(         Bundle params)",
-            "codeLong": "android.adservices.ondevicepersonalization.aidl.IIsolatedModelService getIsolatedModelService(, , , , , , , , , android.os.Bundle, params)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=406",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "IIsolatedModelService",
-                "description": "An object of type IIsolatedModelService that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "IFederatedComputeService getFederatedComputeService(         Bundle params)",
-            "codeLong": "android.adservices.ondevicepersonalization.aidl.IFederatedComputeService getFederatedComputeService(, , , , , , , , , android.os.Bundle, params)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=421",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "IFederatedComputeService",
-                "description": "An object of type IFederatedComputeService that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "IDataAccessService getDataAccessService(         Bundle params)",
-            "codeLong": "android.adservices.ondevicepersonalization.aidl.IDataAccessService getDataAccessService(, , , , , , , , , android.os.Bundle, params)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=438",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "IDataAccessService",
-                "description": "An object of type IDataAccessService that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "void performExecute(\n                         Bundle params,          IIsolatedServiceCallback resultCallback)",
-            "codeLong": "void performExecute(\n, , , , , , , , , , , , , , , , , , , , , , , , , android.os.Bundle, params,, , , , , , , , , , android.adservices.ondevicepersonalization.aidl.IIsolatedServiceCallback, resultCallback)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=452",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          },
-          {
             "code": "void sendError(IIsolatedServiceCallback resultCallback, int errorCode, Throwable t)",
-            "codeLong": "void sendError(IIsolatedServiceCallback, resultCallback,, errorCode,, Throwable, t)",
+            "codeLong": "",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=485",
             "class": "Non-Sensitive",
             "category": "",
@@ -6847,7 +6639,7 @@
           },
           {
             "code": "void onResult(T result)",
-            "codeLong": "void onResult(T, result)",
+            "codeLong": "void onResult(T)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=510",
             "class": "Non-Sensitive",
             "category": "",
@@ -6856,18 +6648,8 @@
             "dataTransmitted": []
           },
           {
-            "code": "void onError(IsolatedServiceException e)",
-            "codeLong": "void onError(IsolatedServiceException, e)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=532",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          },
-          {
             "code": "void sendError(int isolatedServiceErrorCode, Throwable t)",
-            "codeLong": "void sendError(int, isolatedServiceErrorCode,, Throwable, t)",
+            "codeLong": "void sendError(int, Throwable)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedService.java;l=536",
             "class": "Non-Sensitive",
             "category": "",
