@@ -5681,7 +5681,7 @@
           },
           {
             "code": "Builder setRenderingConfig(RenderingConfig value)",
-            "codeLong": "android.adservices.ondevicepersonalization.ExecuteOutput.Builder setRequestLogRecord(android.adservices.ondevicepersonalization.RenderingConfig)",
+            "codeLong": "android.adservices.ondevicepersonalization.ExecuteOutput.Builder setRenderingConfig(android.adservices.ondevicepersonalization.RenderingConfig)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/ExecuteOutput.java;l=251",
             "class": "Non-Sensitive",
             "category": "",
@@ -6661,39 +6661,592 @@
       },
       {
         "name": "LogReader",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "List<RequestLogRecord> getRequests(Instant startTime, Instant endTime)",
+            "codeLong": "java.util.List<android.adservices.ondevicepersonalization.RequestLogRecord> getRequests(java.time.Instant, java.time.Instant)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/LogReader.java;l=66",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<android.adservices.ondevicepersonalization.RequestLogRecord>",
+                "description": "An object of type List<RequestLogRecord> that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "List<EventLogRecord> getJoinedEvents(Instant startTime, Instant endTime)",
+            "codeLong": "java.util.List<android.adservices.ondevicepersonalization.EventLogRecord> getJoinedEvents(java.time.Instant, java.time.Instant)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/LogReader.java;l=103",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<android.adservices.ondevicepersonalization.EventLogRecord",
+                "description": "An object of type List<EventLogRecord> that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "ModelManager",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "void run(InferenceInput input, Executor executor, OutcomeReceiver<InferenceOutput, Exception> receiver)",
+            "codeLong": "void run(android.adservices.ondevicepersonalization.InferenceInput, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.adservices.ondevicepersonalization.InferenceOutput, java.lang.Exception>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/ModelManager.java;l=64",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "OnDevicePersonalizationManager",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "void execute(ComponentName service, PersistableBundle params, Executor executor, OutcomeReceiver<ExecuteResult, Exception> receiver)",
+            "codeLong": "void execute(android.content.ComponentName, android.os.PersistableBundle, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.adservices.ondevicepersonalization.ExecuteResult, java.lang.Exception>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=178",
+            "class": "",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void requestSurfacePackage(SurfacePackageToken surfacePackageToken, IBinder surfaceViewHostToken, int displayId, int width, int height, Executor executor,  OutcomeReceiver<SurfaceControlViewHost.SurfacePackage, Exception> receiver)",
+            "codeLong": "void requestSurfacePackage(android.adservices.ondevicepersonalization.SurfacePackageToken, android.os.IBinder, int, int, int, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.view.SurfaceControlViewHost.SurfacePackage, java.lang.Exception>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=496",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String convertMessage(int errorCode)",
+            "codeLong": "java.lang.String convertMessage(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=632",
+            "class": "Non-Sensitive",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "An error message which might contain information directly related to a crash",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int translateErrorCode(int errorCode, Context context)",
+            "codeLong": "int translateErrorCode(int, android.content.Context)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=656",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.int",
+                "description": "A legacy error codes",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Exception createException(int errorCode, int isolatedServiceErrorCode, byte[] serializedExceptionInfo, Context context)",
+            "codeLong": "java.lang.Exception createException(int, int, byte[], android.content.Context)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=683",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.Exception",
+                "description": "An object of type Exception that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Exception createException(int errorCode, int isolatedServiceErrorCode, byte[] serializedExceptionInfo, Context context, boolean translateToLegacyErrorCode)",
+            "codeLong": "java.lang.Exception createException(int, int, byte[], android.content.Context, boolean)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=696",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.Exception",
+                "description": "An object of type Exception that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void logApiCallStats(IOnDevicePersonalizationManagingService service, String sdkPackageName, int apiName, long latencyMillis, long rpcCallLatencyMillis, long rpcReturnLatencyMillis, int responseCode)",
+            "codeLong": "void logApiCallStats(android.adservices.ondevicepersonalization.aidl.IOnDevicePersonalizationManagingService, java.lang.String, int, long, long, long, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=757",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "OnDevicePersonalizationManager.ExecuteResult",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "SurfacePackageToken getSurfacePackageToken()",
+            "codeLong": "android.adservices.ondevicepersonalization.SurfacePackageToken getSurfacePackageToken()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=121",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.SurfacePackageToken",
+                "description": "An object of type SurfacePackageToken that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "byte[] getOutputData()",
+            "codeLong": "byte[] getOutputData()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=131",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "byte[]",
+                "description": "The output data that was returned by the IsolatedService",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "RenderingConfig",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "List<String> getKeys()",
+            "codeLong": "java.util.List<java.lang.String> getKeys()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderingConfig.java;l=80",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<java.lang.String>",
+                "description": "A List of keys in the REMOTE_DATA table that identify the content to be rendered",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object o)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderingConfig.java;l=86",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.boolean",
+                "description": "Whether the given object is equal to this RenderingConfig",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderingConfig.java;l=102",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(android.os.Parcel dest, int flags)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderingConfig.java;l=113",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderingConfig.java;l=122",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "RenderingConfig.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "codeLong": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderingConfig.java;l=166",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setKeys(List<String> value)",
+            "codeLong": "ndroid.adservices.ondevicepersonalization.RenderingConfig setKeys(java.util.List<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderingConfig.java;l=175",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "ndroid.adservices.ondevicepersonalization.RenderingConfig",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addKey(String value)",
+            "codeLong": "ndroid.adservices.ondevicepersonalization.RenderingConfig addKey(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderingConfig.java;l=184",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "RenderingConfig build()",
+            "codeLong": "android.adservices.ondevicepersonalization.RenderingConfig build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderingConfig.java;l=191",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RenderingConfig",
+                "description": "An object of type RenderingConfig that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "RenderInput",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "RenderInput(RenderInputParcel parcel)",
+            "codeLong": "RenderInput(android.adservices.ondevicepersonalization.RenderInputParcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderInput.java;l=45",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getWidth()",
+            "codeLong": "int getWidth()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderInput.java;l=75",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The width of the slot, might be related to user settings",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getHeight()",
+            "codeLong": "int getHeight()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderInput.java;l=82",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The height of the slot, might be related to user settings",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "RenderingConfig getRenderingConfig()",
+            "codeLong": "android.adservices.ondevicepersonalization.RenderingConfig getRenderingConfig()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderInput.java;l=90",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RenderingConfig",
+                "description": "An object of type RenderingConfig that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object o)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderInput.java;l=95",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this RenderInput",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderInput.java;l=112",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.int",
+                "description": "An hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "RenderOutput",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "String getContent()",
+            "codeLong": "java.lang.String getContent()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=95",
+            "class": "Sensitive Source",
+            "category": "Web Browsing",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The HTML content to be rendered in a webview",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getTemplateId()",
+            "codeLong": "java.lang.String getTemplateId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=105",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "A key in the REMOTE_DATA table that points to an Apache Velocity template",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "PersistableBundle getTemplateParams()",
+            "codeLong": "android.os.PersistableBundle getTemplateParams()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=114",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.os.PersistableBundle",
+                "description": "An object of type PersistableBundle that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object o)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=120",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.boolean",
+                "description": "Whether the given object is equal to this RenderOutput",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=138",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "RenderOutput.Builder",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "code": "Builder()",
+            "codeLong": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=162",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setContent(String value)",
+            "codeLong": "android.adservices.ondevicepersonalization.RenderOutput.Builder setContent(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=171",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RenderOutput.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setTemplateId(String value)",
+            "codeLong": "android.adservices.ondevicepersonalization.RenderOutput.Builder setTemplateId(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=184",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RenderOutput.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setTemplateParams(PersistableBundle value)",
+            "codeLong": "Builder setTemplateParams(android.os.PersistableBundle)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=196",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RenderOutput.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "RenderOutput build()",
+            "codeLong": "android.adservices.ondevicepersonalization.RenderOutput build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/RenderOutput.java;l=204",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RenderOutput",
+                "description": "An object of type RenderOutput that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "RequestLogRecord",

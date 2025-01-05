@@ -95,12 +95,14 @@ function removeParameterNames(parameters) {
  */
 function extractFullyQualifiedName(shortName, imports, classType, packageName) {
     var trimmedShortName = shortName.trim()
-        .replace("Map", "java.util.Map")  // Replace Map
-        .replace("List", "java.util.List")  // Replace List
-        .replace("String", "java.lang.String")  // Replace String
-        .replace("Object", "java.lang.Object") // Replace Object
-        .replace("Integer", "java.lang.Integer")  // Replace Integer
+        .replace("Map", "java.util.Map")  
+        .replace("List", "java.util.List") 
+        .replace("String", "java.lang.String") 
+        .replace("Object", "java.lang.Object") 
+        .replace("Integer", "java.lang.Integer")  
         .replace("Intent", "android.content.Intent")
+        .replace("Instant", "java.time.Instant")
+        .replace("Exception", "java.lang.Exception")
 
     const explicitImport = imports.find((imp) => imp.endsWith(`.${trimmedShortName}`));
     if (explicitImport) {
@@ -151,7 +153,8 @@ function cleanCode(javaCode) {
     return javaCode
         .replace(/\/\*[\s\S]*?\*\//g, match => " ".repeat(match.length))  // Multi-line comments
         .replace(/\/\/[^\n]*/g, match => " ".repeat(match.length))  // Single-line comments
-        .replace(/@\S+/g, match => " ".repeat(match.length))  // Annotations only on lines
+        .replace(/@\S+/g, match => " ".repeat(match.length))  // Annotations      
+        .replace(/new[\s\S]*?/g, match => " ".repeat(match.length)) // Lines with new keyword
 }
 
 /**
@@ -233,7 +236,7 @@ function formatAsJson(className, methodHeaders) {
     return {
         name: className,
         implemented_methods: methodHeaders.map(method => ({
-            code: method.code.replace(/ +/g, " ").replace(/\( +/g,"(").replace(/\b(public|private|protected) /g, ""),
+            code: method.code.replace(/ +/g, " ").replace(/\( +/g,"(").replace(/\n +/g, " ").replace(/\b(public|private|protected) /g, ""),
             codeLong: method.codeLong.replace(/\b(public|private|protected) /g, ""),
             link: method.lineLink,
             class: "Non-Sensitive",
