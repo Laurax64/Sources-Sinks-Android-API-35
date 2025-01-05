@@ -47,13 +47,13 @@ function pushData(parsedData, packageName, implemented_methods) {
       parsedData.push({
         package: packageName, // Explicitly set the package name
         code: method.code,
-        code_long: method.code_long,
+        codeLong: method.codeLong,
         link: method.link,
         class: method.class,
         category: method.category || null,
-        change_type: method.change_type,
-        data_returned: method.data_returned || [],
-        data_transmitted: method.data_transmitted || []
+        changeType: method.changeType,
+        dataReturned: method.dataReturned || [],
+        dataTransmitted: method.dataTransmitted || []
       })
     );
   }
@@ -117,7 +117,7 @@ function createTableRow(item) {
   row.appendChild(codeCell);
 
   const changeTypeCell = document.createElement('td');
-  changeTypeCell.textContent = item.change_type;
+  changeTypeCell.textContent = item.changeType;
   row.appendChild(changeTypeCell);
 
   const categoriesCell = document.createElement('td');
@@ -143,7 +143,7 @@ function applyFilters() {
   const selectedClass = document.getElementById('class').value;
   const selectedCategory = document.getElementById('category').value;
   const filteredData = apiData.filter(item => {
-    const matchChangeType = changeType ? item.change_type === changeType : true;
+    const matchChangeType = changeType ? item.changype === changeType : true;
     const matchClass = selectedClass ? item.class === selectedClass : true;
     const matchCategory = selectedCategory ? item.category === selectedCategory : true;
     console.log(selectedCategory)
@@ -160,8 +160,8 @@ function applyFilters() {
  * @returns {string} - The formatted data returned description with line breaks.
  */
 function getDataReturnedDescription(item) {
-  if (item.data_returned && item.data_returned.length > 0) {
-    return item.data_returned.map(data => data.description).join("<br>");
+  if (item.dataReturned && item.dataReturned.length > 0) {
+    return item.dataReturned.map(data => data.description).join("<br>");
   }
   return "None";
 }
@@ -173,8 +173,8 @@ function getDataReturnedDescription(item) {
  * @returns {string} - The formatted data transmitted description with line breaks.
  */
 function getDataTransmittedDescription(item) {
-  if (item.data_transmitted && item.data_transmitted.length > 0) {
-    return item.data_transmitted.map(data => data.description).join("<br>");
+  if (item.dataTransmitted && item.dataTransmitted.length > 0) {
+    return item.dataTransmitted.map(data => data.description).join("<br>");
   }
   return "None";
 }

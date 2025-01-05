@@ -22,8 +22,29 @@
   <button onclick="processJavaCode()">Process Code</button>
 
   <!-- Output JSON -->
-  <h2>Output JSON:</h2>
+  <h2>Output JSON: 
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+  </h2>
   <pre id="outputJson">Processed JSON will appear here...</pre>
+
+  <script>
+    function copyToClipboard() {
+      const outputElement = document.getElementById('outputJson');
+      const range = document.createRange();
+      range.selectNode(outputElement);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+
+      try {
+        document.execCommand('copy');
+        alert('Output JSON copied to clipboard!');
+      } catch (err) {
+        alert('Failed to copy JSON to clipboard.');
+      }
+      
+      window.getSelection().removeAllRanges();
+    }
+  </script>
 
   <script src="js/method-extractor.js"></script>
 </body>

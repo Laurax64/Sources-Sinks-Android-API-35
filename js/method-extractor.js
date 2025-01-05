@@ -1,3 +1,8 @@
+/**
+ * A list of Java keywords.
+ * 
+ * @type {Array}
+ */
 const keywords = [
     "abstract", "continue", "for", "new", "switch",
     "assert", "default", "if", "package", "synchronized",
@@ -12,23 +17,28 @@ const keywords = [
     "_"
 ];
 
-const separators = ["(", ")", "{", "}", "[", "]", ";", ",", ".", "...", "@", "::"]
-
-const primitiveTypes = ["byte", "short", "int", "long", "float", "double", "char", "boolean"];
-
+/**
+ * A list of access modifiers in Java.
+ * 
+ * @type {Array}
+ */
 const accessModifiers = ["public", "private", "protected"];
 
 /**
  * Extracts data returned from the return type of a method.
  * 
  * @param {string} returnType - The return type of a method.
+ * @param {Array} imports - The list of imports.
+ * @param {string} packageName - The name of the package.
+ * @param {string} className - The name of the class containing the method.
  * @returns {Array} - An array of objects representing the data returned.
  */
-function getDataReturned(returnType) {
+function getDataReturned(returnType, imports, packageName, className) {
+
     const dataReturned = [];
     if (returnType && returnType !== "void" && !accessModifiers.some(modifier => returnType == modifier)) {
         dataReturned.push({
-            type: returnType,
+            type: extractFullyQualifiedName(returnType, imports, returnType, packageName, className),
             description: `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`,
             possibly_sensitive: false
         });
@@ -37,97 +47,164 @@ function getDataReturned(returnType) {
 }
 
 /**
- * Extracts the fully qualified name of a class.
+ * Extracts method information from the Java code.
  * 
- * @param {string} shortName - The name of the class.
- * @param {Array} imports - The list of imports.
- * @returns {string} - The fully qualified name of the class.
+ * @param {string} javaCode - The source code of the Java class.
+ * @param {string} baseUrl - The base URL for generating method links.
+ * @param {string} className - The name of the Java class.
+ * @returns {Array} - An array of method objects with method details like code, data returned, etc.
  */
-function extractFullyQualifiedName(shortName, imports, classType, packageName) {
-    if (!shortName || accessModifiers.some(modifier => shortName == modifier )) {
-        return "";
-    }
-
-    if (primitiveTypes.includes(shortName)) {   
-        return shortName;
-    }
-
-    const name = shortName
-        .replace("String", "java.lang.String")
-        .replace("Object", "java.lang.Object")
-        .replace("List", "java.util.List")
-
-    const explicitImport = imports.find((imp) => imp.endsWith(`.${shortName}`));
-    if (explicitImport) {
-        return explicitImport;
-    }
-
-    const wildcardImport = imports.find((imp) => imp.endsWith(".*"));
-    if (wildcardImport) {
-        return `${wildcardImport.replace(".*", "")}.${shortName}`;
-    }
-
-    if (shortName === classType) {
-        return `${packageName}.${shortName}`;
-    }
-
-    return name;
-}
-
-function extractMethodHeaders(javaCode, baseUrl, className) {
+function extractMethodInformation(javaCode, baseUrl, className) {
     const packageName = getPackageName(javaCode);
     const imports = getImports(javaCode);
-    const cleanedCode = removeDocumentation(javaCode);
+    const cleanedCode = cleanCode(javaCode);
     const methodHeaders = getMethodHeaders(cleanedCode);
 
     const methods = [];
     for (const match of methodHeaders) {
         const { returnType, methodName, parameters } = match.groups;
-        const fullyQualifiedReturnType = extractFullyQualifiedName(returnType.trim(), imports, className, packageName);
         methods.push({
-            methodSignature: `${returnType} ${methodName}(${parameters})`,
-            fullyQualifiedReturnType: fullyQualifiedReturnType,
+            code: `${returnType} ${methodName}(${parameters})`,
+            codeLong: getCodeLong(returnType, methodName, parameters, imports, packageName, className),
             lineLink: getMethodLink(baseUrl, javaCode, match.index),
-            dataReturned: getDataReturned(returnType.trim()),
+            dataReturned: getDataReturned(returnType, imports, packageName, className),
             dataTransmitted: []
         });
     }
-
     return methods;
 }
 
+/**
+ * Removes the names of the parameters from a parameter list, leaving only the types.
+ * 
+ * @param {string} parameters - The list of method parameters as a string.
+ * @returns {string} - The parameter list with only the types, without the parameter names.
+ */
+function removeParameterNames(parameters) {
+    return parameters.replace(/\s+\w+(?=\s*(?:,|\)|$))/g, ""); 
+}
 
+/**
+ * Extracts the fully qualified name of a type.
+ * 
+ * @param {string} shortName - The short name of the type to get the fully qualified name for.
+ * @param {Array} imports - The list of imports.
+ * @param {string} classType - The type of the class.
+ * @param {string} packageName - The name of the package.
+ * @returns {string} - The fully qualified name of the class.
+ */
+function extractFullyQualifiedName(shortName, imports, classType, packageName) {
+    var trimmedShortName = shortName.trim()
+        .replace("Map", "java.util.Map")  // Replace Map
+        .replace("List", "java.util.List")  // Replace List
+        .replace("String", "java.lang.String")  // Replace String
+        .replace("Object", "java.lang.Object") // Replace Object
+        .replace("Integer", "java.lang.Integer")  // Replace Integer
+
+    const explicitImport = imports.find((imp) => imp.endsWith(`.${trimmedShortName}`));
+    if (explicitImport) {
+        return explicitImport
+    }
+
+    const wildcardImport = imports.find((imp) => imp.endsWith(".*"));
+    if (wildcardImport) {
+        return `${wildcardImport.replace(".*", "")}.${trimmedShortName}`;
+    }
+
+    if (trimmedShortName === classType) {
+        return `${packageName}.${trimmedShortName}`;
+    }
+
+    return trimmedShortName.trim();
+}
+
+/**
+ * Extracts the package name from the Java code.
+ * 
+ * @param {string} javaCode - The source code of the Java class.
+ * @returns {string | null} - The package name if found, otherwise null.
+ */
 function getPackageName(javaCode) {
     const packageMatch = javaCode.match(/package\s+([\w.]+);/);
     return packageMatch ? packageMatch[1] : null;
 }
 
+/**
+ * Extracts all import statements from the Java code.
+ * 
+ * @param {string} javaCode - The source code of the Java class.
+ * @returns {Array} - An array of import statements found in the Java code.
+ */
 function getImports(javaCode) {
     const importMatches = [...javaCode.matchAll(/import\s+([\w.*]+);/g)];
     return importMatches.map((match) => match[1]);
 }
 
-function removeDocumentation(javaCode) {
-    return javaCode.replace(/\/\*[\s\S]*?\*\//g, match => " ".repeat(match.length)); // Multi-line comments
+/**
+ * Cleans the Java code by removing comments and annotations.
+ * 
+ * @param {string} javaCode - The source code of the Java class.
+ * @returns {string} - The cleaned code with comments and annotations removed.
+ */
+function cleanCode(javaCode) {
+    return javaCode
+        .replace(/\/\*[\s\S]*?\*\//g, match => " ".repeat(match.length))  // Multi-line comments
+        .replace(/\/\/[^\n]*/g, match => " ".repeat(match.length))  // Single-line comments
+        .replace(/@\S+/g, match => " ".repeat(match.length))  // Annotations only on lines
 }
 
-
+/**
+ * Extracts the class name from the Java code.
+ * 
+ * @param {string} javaCode - The source code of the Java class.
+ * @returns {string} - The class name, or "UnknownClass" if not found.
+ */
 function getClassName(javaCode) {
-    const cleanedCode = removeDocumentation(javaCode);
+    const cleanedCode = cleanCode(javaCode);
     const classMatch = cleanedCode.match(/\bclass\s+(\w+)/);
     return classMatch ? classMatch[1] : "UnknownClass";
 }
 
+/**
+ * Extracts method headers from the cleaned Java code.
+ * 
+ * @param {string} cleanedCode - The cleaned Java code.
+ * @returns {Array} - An array of objects representing matched method headers with groups for access modifiers, return type, method name, parameters, and exceptions.
+ */
 function getMethodHeaders(cleanedCode) {
-    const methodPattern = /(?<modifiers>\b(public|private|protected|static|final|synchronized|native|\s)*\b)?\s*(?<returnType>[\w<>\[\]]+)?\s+(?<methodName>[\w<>]+)\s*\((?<parameters>[^)]*)\)\s*(?<exceptions>(throws\s+[\w<>\[\],\s]+)?)\s*{/g;
+    const methodPatternParts = [
+        /(?<accessModifier>public|private|protected|default)?\s*/,     // Access modifier (optional)
+        /(?<returnType>\w+(\<[^>]+\>)?(\[\])*)\s+/,                    // Return type (basic types, generics, arrays)
+        /(?<methodName>\w+)\s*/,                                       // Method name
+        /\((?<parameters>[^)]*)\)/,                                    // Parameters (anything inside parentheses)
+        /(?<exceptions>\s+throws\s+[\w.,<> ]+)?/,                      // Exceptions (optional)
+    ];
+        
+    const methodPattern = new RegExp(methodPatternParts.map(part => part.source).join(''), 'g');
+    
     return [...cleanedCode.matchAll(methodPattern)];
 }
 
+/**
+ * Generates a link to the line number of a method in the Java code.
+ * 
+ * @param {string} baseUrl - The base URL for generating the method link.
+ * @param {string} javaCode - The source code of the Java class.
+ * @param {number} matchIndex - The match index of the method header in the cleaned code.
+ * @returns {string} - A URL linking to the line number of the method.
+ */
 function getMethodLink(baseUrl, javaCode, matchIndex) {
     const lineNumber = calculateLineNumber(javaCode, matchIndex);
     return `${baseUrl};l=${lineNumber}`;
 }
 
+/**
+ * Calculates the line number in the Java code corresponding to a match index.
+ * 
+ * @param {string} javaCode - The source code of the Java class.
+ * @param {number} matchIndex - The match index to find the corresponding line number.
+ * @returns {number} - The line number corresponding to the match index.
+ */
 function calculateLineNumber(javaCode, matchIndex) {
     const lines = javaCode.split("\n");
     let currentPos = 0;
@@ -142,99 +219,71 @@ function calculateLineNumber(javaCode, matchIndex) {
     return -1;
 }
 
-function formatAsJson(className, methodHeaders, packageName, imports) {
+/**
+ * Formats the extracted method information as a JSON object.
+ * 
+ * @param {string} className - The name of the class.
+ * @param {Array} methodHeaders - An array of method headers extracted from the Java code.
+ * @param {string} packageName - The name of the package.
+ * @param {Array} imports - A list of import statements.
+ * @returns {Object} - A JSON object containing the class name and method details.
+ */
+function formatAsJson(className, methodHeaders) {
     return {
         name: className,
         implemented_methods: methodHeaders.map(method => ({
-            code: method.methodSignature,
-            code_long: getCodeLong(method.methodSignature, imports, packageName, className),
+            code: method.code.replace(/ +/g, " ").replace(/\( +/g,"(").replace(/\b(public|private|protected) /g, ""),
+            codeLong: method.codeLong.replace(/\b(public|private|protected) /g, ""),
             link: method.lineLink,
             class: "Non-Sensitive",
             category: "",
-            change_type: "Addition",
-            data_returned: method.dataReturned,
-            data_transmitted: method.dataTransmitted
+            changeType: "Addition",
+            dataReturned: method.dataReturned,
+            dataTransmitted: method.dataTransmitted
         }))
     };
 }
 
-function getCodeLong(methodSignature, imports, packageName, className) {
-    const fullyQualifiedReturnType = getFullyQualifiedReturnType(methodSignature, imports, packageName, className)
-    const fullyQualifiedParameters = getFullyQualifiedParameters(methodSignature, imports, packageName, className)
-    const methodName = getMethodName(methodSignature)
-    return fullyQualifiedReturnType + " " + methodName + "(" + fullyQualifiedParameters + ")";
-
+/**
+ * Generates a fully qualified method signature with return type, method name, and fully qualified parameter types.
+ * 
+ * @param {string} returnType - The return type of the method.
+ * @param {string} name - The name of the method.
+ * @param {string} parameters - The list of method parameters.
+ * @param {Array} imports - A list of imports from the Java code.
+ * @param {string} packageName - The name of the package.
+ * @param {string} className - The name of the class.
+ * @returns {string} - A fully qualified method signature.
+ */
+function getCodeLong(returnType, name, parameters, imports, packageName, className) {
+    const fullyQualifiedReturnType = extractFullyQualifiedName(returnType, imports, className, packageName)
+    const fullyQualifiedParameters = removeParameterNames(extractFullyQualifiedName(parameters, imports, className, packageName))
+    return fullyQualifiedReturnType + " " + name + "(" + fullyQualifiedParameters + ")";
 }
 
 /**
- * Extracts the fully qualified return type of a method.
+ * Processes the Java code entered in the input field, extracting method information and formatting it as JSON.
+ * Displays the formatted JSON or an error message in the output.
  * 
- * @param {String} methodSignature 
- * @param {String} imports 
- * @param {String} packageName 
- * @returns The fully qualified return type of the method.
+ * @returns {void} - No return value. This function updates the DOM with the formatted JSON or error message.
  */
-function getFullyQualifiedReturnType(methodSignature, imports, packageName, className) {
-    if (isMethodConstructor(methodSignature)) {
-        return "";
-    }
-
-    return extractFullyQualifiedName(getReturnType(methodSignature), imports, className, packageName);
-
-}
-
-function getReturnType(methodSignature) {
-    return methodSignature
-        .split(" ")
-        .filter(word => !separators.some(separator => word.includes(separator)))[0];
-}
-
-function isMethodConstructor(methodSignature) {
-    return getMethodName(methodSignature) === getClassName(methodSignature);
-}
-
-function getMethodName(methodSignature) {
-    const returnType = getReturnType(methodSignature);
-    const parameters = methodSignature.match(/\(([^)]*)\)/)[0];
-    const withoutReturnTypeAndParams = methodSignature.replace(returnType, "").replace(parameters, "").trim();
-
-    const potentialName = withoutReturnTypeAndParams.split(" ").find(
-        word => !keywords.includes(word) && !separators.some(separator => word.includes(separator))
-    );
-
-    console.log("name:", potentialName);
-    return potentialName || "";
-}
-
-
-function getFullyQualifiedParameters(methodSignature, imports, packageName, classType) {
-    const parameters = methodSignature.match(/\(([^)]*)\)/)[0].split(" ") // e.g. "(String param1, List<String> param2)"
-    const fullyQualifiedParameters = parameters.filter(
-        param => !keywords.includes(param) && !separators.some(separator => param.includes(separator))
-    ).map(
-        cleanedParam => extractFullyQualifiedName(cleanedParam, imports, classType, packageName)
-    ).join(", ");
-    return fullyQualifiedParameters;
-}
-
-
 function processJavaCode() {
     const javaCode = document.getElementById("javaCode").value;
     const baseUrl = document.getElementById("baseUrl").value;
-    if (!javaCode.trim()) {
+    if (!javaCode) {
         document.getElementById("outputJson").textContent = "Please paste some Java code to process.";
         return;
     }
-    if (!baseUrl.trim()) {
+    if (!baseUrl) {
         document.getElementById("outputJson").textContent = "Please provide the base URL.";
         return;
     }
     try {
         const packageName = getPackageName(javaCode);
         const className = getClassName(javaCode);
-        const methodHeaders = extractMethodHeaders(javaCode, baseUrl, className)
+        const methodHeaders = extractMethodInformation(javaCode, baseUrl, className)
         const imports = getImports(javaCode);
-        const formattedJson = formatAsJson(className, methodHeaders, packageName, imports);
+        const formattedJson = formatAsJson(className, methodHeaders);
 
         document.getElementById("outputJson").textContent = JSON.stringify(formattedJson, null, 4);
     } catch (error) {

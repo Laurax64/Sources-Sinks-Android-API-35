@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    kotlin("js") version "1.9.0" // Use the latest Kotlin version
 }
 
 repositories {
@@ -7,14 +7,16 @@ repositories {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib"
-    implementation 'org.json:json:20210307'
+    implementation(kotlin("stdlib-js"))
 }
 
-compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
-}
-
-compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+kotlin {
+    js(IR) {
+        browser {
+            // Multiple outputs configuration
+            webpackTask {
+                output.filename = "[name].js" // Each file will have a separate JS output
+            }
+        }
+    }
 }
