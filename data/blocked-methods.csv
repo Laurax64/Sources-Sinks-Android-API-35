@@ -184,3 +184,10 @@ Landroid/adservices/ondevicepersonalization/RequestToken;->getUserData()Landroid
 
 Landroid/adservices/ondevicepersonalization/SurfacePackageToken;-><init>(Ljava/lang/String;)V,blocked
 Landroid/adservices/ondevicepersonalization/SurfacePackageToken;->getTokenString()Ljava/lang/String;,blocked
+
+Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;-><init>([B[B)V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;->__metadata()V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;-><init>(Landroid/os/Parcel;)V,blocked
+
+Landroid/adservices/ondevicepersonalization/TrainingExampleRecord$Builder;->checkNotUsed()V,blocked
+
