@@ -1,5 +1,3 @@
-
-
 /**
  * Exports the current data in changes.json to FlowDroid format as a text file.
  */
