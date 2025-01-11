@@ -32,8 +32,6 @@ function parseApiData(data) {
   return parsedData;
 }
 
-
-
 /**
  * Pushes the implemented_method's data to the given parsedData field.
  * 
