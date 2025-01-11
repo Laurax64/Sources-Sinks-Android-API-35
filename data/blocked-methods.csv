@@ -191,3 +191,10 @@ Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;-><init>(Landr
 
 Landroid/adservices/ondevicepersonalization/TrainingExampleRecord$Builder;->checkNotUsed()V,blocked
 
+Landroid/adservices/ondevicepersonalization/TrainingExamplesInput;-><init>(Landroid/adservices/ondevicepersonalization/TrainingExamplesInputParcel;)V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingExamplesInput;-><init>(Ljava/lang/String;Ljava/lang/String;[BLjava/lang/String;)V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingExamplesInput;->__metadata()V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingExamplesInput;->getCollectionUri()Ljava/lang/String;,blocked
+
+
+

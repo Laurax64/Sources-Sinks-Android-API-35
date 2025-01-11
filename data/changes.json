@@ -7558,7 +7558,129 @@
       },
       {
         "name": "TrainingExamplesInput",
-        "implemented_methods": []
+        "implemented_methods": [
+          {
+            "name": "TrainingExamplesInput",
+            "implemented_methods": [
+              {
+                "code": "TrainingExamplesInput(TrainingExamplesInputParcel parcel)",
+                "codeLong": "TrainingExamplesInput(android.adservices.ondevicepersonalization.TrainingExamplesInputParcel)",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=57",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [],
+                "dataTransmitted": []
+              },
+              {
+                "code": "TrainingExamplesInput(String populationName, String taskName, byte[] resumptionToken, String collectionName)",
+                "codeLong": "TrainingExamplesInput(java.lang.String, java.lang.String, byte[], java.lang.String)",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=63",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [],
+                "dataTransmitted": []
+              },
+              {
+                "code": "String getPopulationName()",
+                "codeLong": "java.lang.String getPopulationName()",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=96",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [
+                  {
+                    "type": "java.lang.String",
+                    "description": "The name of the federated compute population (a collection of devices that specific task groups can run on)",
+                    "possibly_sensitive": false
+                  }
+                ],
+                "dataTransmitted": []
+              },
+              {
+                "code": "String getTaskName()",
+                "codeLong": "java.lang.String getTaskName()",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=105",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [
+                  {
+                    "type": "java.lang.String",
+                    "description": "The name of the task within the federated compute population",
+                    "possibly_sensitive": false
+                  }
+                ],
+                "dataTransmitted": []
+              },
+              {
+                "code": "byte[] getResumptionToken()",
+                "codeLong": "byte[] getResumptionToken()",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=115",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [
+                  {
+                    "type": "byte[]",
+                    "description": "Token used to support the resumption of training",
+                    "possibly_sensitive": false
+                  }
+                ],
+                "dataTransmitted": []
+              },
+              {
+                "code": "String getCollectionName()",
+                "codeLong": "java.lang.String getCollectionName()",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=121",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [
+                  {
+                    "type": "java.lang.String",
+                    "description": "The data collection name to use to create training examples",
+                    "possibly_sensitive": false
+                  }
+                ],
+                "dataTransmitted": []
+              },
+              {
+                "code": "boolean equals(Object o)",
+                "codeLong": "boolean equals(java.lang.Object)",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=126",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [
+                  {
+                    "type": "boolean",
+                    "description": "Whether the given object is equal to this TrainingExamplesInput",
+                    "possibly_sensitive": false
+                  }
+                ],
+                "dataTransmitted": []
+              },
+              {
+                "code": "int hashCode()",
+                "codeLong": "int hashCode()",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=140",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [
+                  {
+                    "type": "int",
+                    "description": "A hash code value",
+                    "possibly_sensitive": false
+                  }
+                ],
+                "dataTransmitted": []
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "TrainingExamplesOutput",
