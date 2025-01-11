@@ -45,48 +45,13 @@ Landroid/adservices/ondevicepersonalization/InferenceOutput;->__metadata()V,bloc
 
 Landroid/adservices/ondevicepersonalization/InferenceOutput$Builder;->checkNotUsed()V,blocked
 
-Landroid/adservices/ondevicepersonalization/IsolatedService;->-$$Nest$sfgetTAG()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService;->-$$Nest$sfgetsLogger()Lcom/android/ondevicepersonalization/internal/util/LoggerFactory$Logger;,blocked
 Landroid/adservices/ondevicepersonalization/IsolatedService;-><clinit>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService;->TAG:Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService;->sLogger:Lcom/android/ondevicepersonalization/internal/util/LoggerFactory$Logger;,blocked
 
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda0;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda10;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda11;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda12;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda13;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda14;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda1;-><init>()V,blocked
-
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda2;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda3;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda4;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda5;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda6;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda7;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda8;-><init>()V,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder$$ExternalSyntheticLambda9;-><init>()V,blocked
 
 Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;-><init>(Landroid/adservices/ondevicepersonalization/IsolatedService;)V,blocked
 Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->getDataAccessService(Landroid/os/Bundle;)Landroid/adservices/ondevicepersonalization/aidl/IDataAccessService;,blocked
 Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->getFederatedComputeService(Landroid/os/Bundle;)Landroid/adservices/ondevicepersonalization/aidl/IFederatedComputeService;,blocked
 Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->getIsolatedModelService(Landroid/os/Bundle;)Landroid/adservices/ondevicepersonalization/aidl/IIsolatedModelService;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$getDataAccessService$12()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$getFederatedComputeService$11()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$getIsolatedModelService$10()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performDownload$8()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performDownload$9(Landroid/adservices/ondevicepersonalization/DownloadCompletedOutput;)Landroid/adservices/ondevicepersonalization/DownloadCompletedOutputParcel;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performExecute$13()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performExecute$14(Landroid/adservices/ondevicepersonalization/ExecuteOutput;)Landroid/adservices/ondevicepersonalization/ExecuteOutputParcel;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performOnTrainingExample$2()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performOnTrainingExample$3(Landroid/adservices/ondevicepersonalization/TrainingExamplesOutput;)Landroid/adservices/ondevicepersonalization/TrainingExamplesOutputParcel;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performOnWebTrigger$0()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performOnWebTrigger$1(Landroid/adservices/ondevicepersonalization/WebTriggerOutput;)Landroid/adservices/ondevicepersonalization/WebTriggerOutputParcel;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performOnWebViewEvent$4()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performOnWebViewEvent$5(Landroid/adservices/ondevicepersonalization/EventOutput;)Landroid/adservices/ondevicepersonalization/EventOutputParcel;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performRender$6()Ljava/lang/String;,blocked
-Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->lambda$performRender$7(Landroid/adservices/ondevicepersonalization/RenderOutput;)Landroid/adservices/ondevicepersonalization/RenderOutputParcel;,blocked
 Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->onRequest(ILandroid/os/Bundle;Landroid/adservices/ondevicepersonalization/aidl/IIsolatedServiceCallback;)V,blocked
 Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->performDownload(Landroid/os/Bundle;Landroid/adservices/ondevicepersonalization/aidl/IIsolatedServiceCallback;)V,blocked
 Landroid/adservices/ondevicepersonalization/IsolatedService$ServiceBinder;->performExecute(Landroid/os/Bundle;Landroid/adservices/ondevicepersonalization/aidl/IIsolatedServiceCallback;)V,blocked
