@@ -177,24 +177,3 @@ function getDataTransmittedDescription(item) {
   return "None";
 }
 
-/**
- * Triggers the download of the current `apiData` as a JSON file named 'changes.json'.
- */
-function downloadJSON() {
-  if (!apiData || apiData.length === 0) {
-    alert('No data available to download');
-    return;
-  }
-  // Pretty-printing the JSON  
-  const jsonData = JSON.stringify(apiData, null, 2);
-  const blob = new Blob([jsonData], { type: 'application/json' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = 'changes.json';
-  link.click();
-}
-
-// Event Listeners for filter changes
-document.getElementById('change-type').addEventListener('change', applyFilters);
-document.getElementById('class').addEventListener('change', applyFilters);
-document.getElementById('category').addEventListener('change', applyFilters);
