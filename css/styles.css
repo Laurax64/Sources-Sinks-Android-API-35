@@ -4,23 +4,28 @@ select {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   background-color: white;
   margin: 20px;
+  padding: 20px; /* You can adjust this value */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  table-layout: fixed; /* Ensures that table columns take up available space evenly */
+  word-wrap: break-word; /* Prevents text from overflowing */
+  overflow: hidden; /* Prevents overflow */
 }
 
-th,
-td {
-
+th, td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+  word-wrap: break-word; /* Ensures long text will wrap */
+  overflow: hidden; /* Prevents any content from spilling out */
+  text-overflow: ellipsis; /* Adds ellipsis for long text if wrapping doesn't fit */
 }
 
 th {
@@ -48,4 +53,15 @@ pre {
   display: none;
   gap: 30px;
   flex-direction: row;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  table {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  th, td {
+    padding: 6px; /* Adjust padding for smaller screens */
+  }
 }

@@ -13,7 +13,7 @@ fetch('data/json/changes.json')
   })
 
 /**
- * Parses the given data to extract all implemented methods and compiles them into a flat array format.
+ * Parses the given data to extract all implemented accesible methods and compiles them into a flat array format.
  * 
  * @param {Array} data - The package objects to be parsed.
  * @returns {Array} - The objects containting the implemented methods details.
@@ -144,7 +144,6 @@ function applyFilters() {
     const matchChangeType = changeType ? item.changype === changeType : true;
     const matchClass = selectedClass ? item.class === selectedClass : true;
     const matchCategory = selectedCategory ? item.category === selectedCategory : true;
-    console.log(selectedCategory)
     return matchChangeType && matchClass && matchCategory;
   });
 
