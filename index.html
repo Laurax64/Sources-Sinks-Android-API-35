@@ -28,21 +28,21 @@
 
   <!-- Filters -->
   <div class="filters">
-    <select id="change-type" title="Change Type">
+    <select id="change-type" title="Change Type" onchange="applyFilters()">
       <option value="">All Change Types</option>
       <option value="Addition">Addition</option>
       <option value="Modification">Modification</option>
       <option value="Deletion">Deletion</option>
     </select>
 
-    <select id="class" title="Class">
+    <select id="class" title="Class" onchange="applyFilters()">
       <option value="">All Classes</option>
       <option value="Sensitive Source">Sensitive Source</option>
       <option value="Sensitive Sink">Sensitive Sink</option>
       <option value="Non-Sensitive">Non-Sensitive</option>
     </select>
 
-    <select id="category" title="Category">
+    <select id="category" title="Category" onchange="applyFilters()">
       <option value="">All Categories</option>
       <option value="Location">Location</option>
       <option value="Personal Info">Personal Info</option>
