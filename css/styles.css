@@ -65,3 +65,7 @@ pre {
     padding: 6px; /* Adjust padding for smaller screens */
   }
 }
+#outputJson {
+  overflow-x: auto; /* Enables horizontal scrolling */
+}
+
