@@ -1,25 +1,16 @@
-fetchDataAndPopulate();
-
 /**
- * Fetches data from 'changes.json', process it, and populates the tables.
+ * The array containing the fetched data from 'changes.json'.
  */
-function fetchDataAndPopulate() {
-  try {
-    const response =fetch('data/json/changes.json');
-    const json = response.json();
+let apiData = [];
 
-    // Parse the API data
-    let apiData = parseApiData(json);
-
-    // Apply filters and populate the tables
-    applyFilters();
-
-    // Return the fetched and processed data, if needed elsewhere
-    return apiData;
-  } catch (error) {
-    console.error('Error fetching and processing data:', error);
-  }
-}
+// Fetch the data from 'changes.json' and store it in apiData and populate the tables with the fetched data.
+fetch('data/json/changes.json')
+  .then((response) => response.json())
+  .then((json) => {
+    apiData = json;
+    apiData = parseApiData(apiData);
+    populateTables(apiData);
+  })
 
 /**
  * Parses the given data to extract all implemented accesible methods and compiles them into a flat array format.
@@ -184,4 +175,3 @@ function getDataTransmittedDescription(item) {
   }
   return "None";
 }
-
