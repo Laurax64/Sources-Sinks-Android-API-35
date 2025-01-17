@@ -1,8 +1,8 @@
 /**
  * Exports the current data in changes.json to FlowDroid format as a text file.
  */
-function exportFlowDroid() {
-    fetch('data/changes.json')
+function exportFlowDroid() { 
+    fetch('data/json/changes.json')
       .then((response) => response.json())
       .then((data) => {
         const parsedData = parseApiData(data);
@@ -17,7 +17,7 @@ function exportFlowDroid() {
   }
   
 /**
- * Groups methods by their `code_long` and determines their FlowDroid annotation (_SOURCE_, _SINK_, or _BOTH_),
+ * Groups methods by their `codeLong` and determines their FlowDroid annotation (_SOURCE_, _SINK_, or _BOTH_),
  * while including package names.
  * 
  * @param {Array} parsedData - The parsed data containing methods.
@@ -27,13 +27,14 @@ function groupByCodeLong(parsedData) {
     const annotations = {};
   
     parsedData.forEach(item => {
+      console.log(item)
       const annotation = item.class === "Sensitive Source" ? "_SOURCE_" :
         item.class === "Sensitive Sink" ? "_SINK_" : null;
   
       if (annotation) {
-        const key = `${item.package}.${item.code_long}`; // Unique key includes package and method
+        const key = `${item.package}.${item.codeLong}`;
         if (!annotations[key]) {
-          annotations[key] = { annotations: new Set(), packageName: item.package, codeLong: item.code_long };
+          annotations[key] = { annotations: new Set(), packageName: item.package, codeLong: item.codeLong};
         }
         annotations[key].annotations.add(annotation);
       }
@@ -45,19 +46,18 @@ function groupByCodeLong(parsedData) {
 /**
  * Formats the grouped annotations into FlowDroid's required text format, including package names.
  * 
- * @param {Object} methodAnnotations - An object mapping `code_long` to annotations, with package names.
+ * @param {Object} methodAnnotations - An object mapping `codeLong` to annotations, with package names.
  * @returns {string} - A formatted string for FlowDroid output.
  */
 function formatFlowDroidAnnotations(methodAnnotations) {
     return Object.entries(methodAnnotations).map(([key, value]) => {
+    //  console.log(value)
       const { codeLong, packageName } = value;
       const annotation = value.annotations.size > 1 ? "_BOTH_" : [...value.annotations][0];
       return `<${packageName}: ${codeLong}> -> ${annotation}`;
     }).join('\n');
   }
   
-  
-
 /**
  * Saves the formatted text to a file and triggers its download.
  * 

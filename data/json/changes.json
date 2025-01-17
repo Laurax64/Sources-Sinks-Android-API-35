@@ -4,15 +4,15 @@
     "changed_classes": [
       {
         "name": "Manifest.permission",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "R.attr",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "R.color",
-        "implemented_methods": []
+        "implementedMethods": []
       }
     ]
   },
@@ -21,17 +21,17 @@
     "added_interfaces": [
       {
         "name": "BrailleDisplayController",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "BrailleDisplayController.BrailleDisplayCallback",
-        "implemented_methods": []
+        "implementedMethods": []
       }
     ],
     "changed_classes": [
       {
         "name": "AccessibilityService",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "BrailleDisplayController getBrailleDisplayController()",
             "codeLong": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
@@ -57,7 +57,7 @@
     "changed_classes": [
       {
         "name": "AdIdManager",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void getAdId(Executor, AdServicesOutcomeReceiver<AdId, Exception>)",
             "codeLong": "void getAdId(java.util.concurrent.Executor, android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>)",
@@ -83,7 +83,7 @@
     "added_classes": [
       {
         "name": "AdSelectionFromOutcomesConfig",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "AdSelectionFromOutcomesConfig(AdTechIdentifier, List<Long>, AdSelectionSignals, Uri)",
             "codeLong": "AdSelectionFromOutcomesConfig(android.adservices.common.AdTechIdentifier, java.util.List<java.lang.Long>, android.adservices.common.AdSelectionSignals, android.net.Uri)",
@@ -242,7 +242,7 @@
       },
       {
         "name": "AdSelectionFromOutcomesConfig.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -385,7 +385,7 @@
       },
       {
         "name": "AdWithBid",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "AdWithBid(AdData, double)",
             "codeLong": "AdWithBid(android.adservices.common.AdData, double)",
@@ -502,7 +502,7 @@
       },
       {
         "name": "AddAdSelectionFromOutcomesOverrideRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "AddAdSelectionFromOutcomesOverrideRequest(AdSelectionFromOutcomesConfig, String, AdSelectionSignals)",
             "codeLong": "AddAdSelectionFromOutcomesOverrideRequest(android.adservices.adselection.AdSelectionFromOutcomesConfig, java.lang.String, android.adservices.common.AdSelectionSignals)",
@@ -565,7 +565,7 @@
       },
       {
         "name": "DecisionLogic",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "DecisionLogic(String)",
             "codeLong": "DecisionLogic(java.lang.String)",
@@ -680,7 +680,7 @@
       },
       {
         "name": "GetAdSelectionDataOutcome",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "GetAdSelectionDataOutcome(long, byte[])",
             "codeLong": "GetAdSelectionDataOutcome(long, byte[])",
@@ -743,7 +743,7 @@
       },
       {
         "name": "GetAdSelectionDataRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "GetAdSelectionDataRequest(AdTechIdentifier, Uri, SellerConfiguration)",
             "codeLong": "GetAdSelectionDataRequest(android.adservices.common.AdTechIdentifier, android.net.Uri, android.adservices.adselection.SellerConfiguration)",
@@ -806,7 +806,7 @@
       },
       {
         "name": "GetAdSelectionDataRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -869,7 +869,7 @@
       },
       {
         "name": "PerBuyerDecisionLogic",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "PerBuyerDecisionLogic(Map<AdTechIdentifier, DecisionLogic>)",
             "codeLong": "PerBuyerDecisionLogic(java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic>)",
@@ -991,7 +991,7 @@
       },
       {
         "name": "PersistAdSelectionResultRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "PersistAdSelectionResultRequest(long, AdTechIdentifier, byte[])",
             "codeLong": "PersistAdSelectionResultRequest(long, android.adservices.common.AdTechIdentifier, byte[])",
@@ -1070,7 +1070,7 @@
       },
       {
         "name": "PersistAdSelectionResultRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -1165,7 +1165,7 @@
       },
       {
         "name": "RemoveAdSelectionFromOutcomesOverrideRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "RemoveAdSelectionFromOutcomesOverrideRequest(AdSelectionFromOutcomesConfig)",
             "codeLong": "RemoveAdSelectionFromOutcomesOverrideRequest(android.adservices.adselection.AdSelectionFromOutcomesConfig)",
@@ -1196,7 +1196,7 @@
       },
       {
         "name": "ReportEventRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "ReportEventRequest(Builder)",
             "codeLong": "ReportEventRequest(android.adservices.adselection.ReportEventRequest.Builder)",
@@ -1291,7 +1291,7 @@
       },
       {
         "name": "ReportEventRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder(long, String, String, int)",
             "codeLong": "Builder(long, java.lang.String, java.lang.String, int)",
@@ -1402,7 +1402,7 @@
       },
       {
         "name": "SetAppInstallAdvertisersRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "SetAppInstallAdvertisersRequest(Set<AdTechIdentifier>)",
             "codeLong": "SetAppInstallAdvertisersRequest(java.util.Set<android.adservices.commonAdTechIdentifier>)",
@@ -1433,7 +1433,7 @@
       },
       {
         "name": "SetAppInstallAdvertisersRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -1480,7 +1480,7 @@
       },
       {
         "name": "SignedContextualAds",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "SignedContextualAds(AdTechIdentifier, Uri, List<AdWithBid>, byte[])",
             "codeLong": "SignedContextualAds(android.adservices.common.AdTechIdentifier, android.net.Uri, java.util.List<android.adservices.adselection.AdWithBid>, byte[])",
@@ -1636,7 +1636,7 @@
           },
           {
             "code": "String toString()",
-            "codeLong": "java.lang.String toString())",
+            "codeLong": "java.lang.String toString()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/SignedContextualAds.java;drc=ed6c1c454c9efed06c2c9957a8451f5c8261e0d6;l=174",
             "class": "Non-Sensitive",
             "category": "",
@@ -1654,7 +1654,7 @@
       },
       {
         "name": "SignedContextualAds.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -1759,7 +1759,7 @@
       },
       {
         "name": "UpdateAdCounterHistogramRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "UpdateAdCounterHistogramRequest(Builder)",
             "codeLong": "UpdateAdCounterHistogramRequest(android.adservices.adselection.UpdateAdCounterHistogramRequest.Builder)",
@@ -1870,7 +1870,7 @@
       },
       {
         "name": "UpdateAdCounterHistogramRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder(long, int, AdTechIdentifier)",
             "codeLong": "Builder(long, int, android.adservices.common.AdTechIdentifier)",
@@ -1951,7 +1951,7 @@
     "changed_classes": [
       {
         "name": "AdSelectionConfig",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Map<AdTechIdentifier, SignedContextualAds> getPerBuyerSignedContextualAds()",
             "codeLong": "java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.SignedContextualAds> getPerBuyerSignedContextualAds()",
@@ -1972,7 +1972,7 @@
       },
       {
         "name": "AdSelectionConfig.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder setPerBuyerSignedContextualAds(Map<AdTechIdentifier, SignedContextualAds>)",
             "codeLong": "android.adservices.adselection.AdSelectionConfig.Builder setPerBuyerSignedContextualAds(java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.SignedContextualAds>)",
@@ -1993,7 +1993,7 @@
       },
       {
         "name": "AdSelectionManager",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void getAdSelectionData(GetAdSelectionDataRequest, Executor, OutcomeReceiver<GetAdSelectionDataOutcome, Exception>)",
             "codeLong": "void getAdSelectionData(android.adservices.adselection.GetAdSelectionDataRequest, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.adservices.adselection.GetAdSelectionDataOutcome, java.lang.Exception>)",
@@ -2138,7 +2138,7 @@
       },
       {
         "name": "AdSelectionOutcome",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "boolean hasOutcome()",
             "codeLong": "boolean hasOutcome()",
@@ -2159,7 +2159,7 @@
       },
       {
         "name": "AddAdSelectionOverrideRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "AddAdSelectionOverrideRequest(AdSelectionConfig, String, AdSelectionSignals, PerBuyerDecisionLogic)",
             "codeLong": "AddAdSelectionOverrideRequest(android.adservices.adselection.AdSelectionConfig, java.lang.String,  android.adservices.common.AdSelectionSignals, android.adservices.adselection.PerBuyerDecisionLogic)",
@@ -2190,7 +2190,7 @@
       },
       {
         "name": "ReportImpressionRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "ReportImpressionRequest(long)",
             "codeLong": "ReportImpressionRequest(long)",
@@ -2205,7 +2205,7 @@
       },
       {
         "name": "TestAdSelectionManager",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void overrideAdSelectionFromOutcomesConfigRemoteInfo(AddAdSelectionFromOutcomesOverrideRequest, Executor, OutcomeReceiver<Object, Exception>)",
             "codeLong": "void overrideAdSelectionFromOutcomesConfigRemoteInfo(android.adservices.adselection.AddAdSelectionFromOutcomesOverrideRequest, java.util.concurrent.Executor, android.os.OutcomeReceiver<java.lang.Object, java.lang.Exception>)",
@@ -2245,7 +2245,7 @@
     "added_classes": [
       {
         "name": "AdFilters",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "AdFilters(Builder)",
             "codeLong": "AdFilters(android.adservices.common.AdFilters.Builder)",
@@ -2424,7 +2424,7 @@
       },
       {
         "name": "AdFilters.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -2487,7 +2487,7 @@
       },
       {
         "name": "AppInstallFilters",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "AppInstallFilters(Builder)",
             "codeLong": "AppInstallFilters(android.adservices.common.AppInstallFilters.Builder)",
@@ -2649,7 +2649,7 @@
       },
       {
         "name": "AppInstallFilters.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -2696,7 +2696,7 @@
       },
       {
         "name": "FrequencyCapFilters",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "FrequencyCapFilters(Builder)",
             "codeLong": "FrequencyCapFilters(android.adservices.common.FrequencyCapFilters.Builder)",
@@ -2955,7 +2955,7 @@
       },
       {
         "name": "FrequencyCapFilters.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -3050,7 +3050,7 @@
       },
       {
         "name": "KeyedFrequencyCap",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "KeyedFrequencyCap(Builder)",
             "codeLong": "",
@@ -3245,7 +3245,7 @@
       },
       {
         "name": "KeyedFrequencyCap.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder(int, int, Duration)",
             "codeLong": "",
@@ -3326,13 +3326,13 @@
     "added_interfaces": [
       {
         "name": "AdServicesOutcomeReceiver",
-        "implemented_methods": []
+        "implementedMethods": []
       }
     ],
     "changed_classes": [
       {
         "name": "AdData",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Set<Integer> getAdCounterKeys()",
             "codeLong": "",
@@ -3385,7 +3385,7 @@
       },
       {
         "name": "AdData.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder setAdCounterKeys(Set<Integer>)",
             "codeLong": "",
@@ -3438,7 +3438,7 @@
       },
       {
         "name": "AdServicesPermissions",
-        "implemented_methods": []
+        "implementedMethods": []
       }
     ]
   },
@@ -3447,7 +3447,7 @@
     "added_classes": [
       {
         "name": "FetchAndJoinCustomAudienceRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "FetchAndJoinCustomAudienceRequest(FetchAndJoinCustomAudienceRequest.Builder)",
             "codeLong": "FetchAndJoinCustomAudienceRequest(android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder)",
@@ -3591,7 +3591,7 @@
       },
       {
         "name": "FetchAndJoinCustomAudienceRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder(Uri)",
             "codeLong": "Builder(android.net.Uri)",
@@ -3702,7 +3702,7 @@
       },
       {
         "name": "PartialCustomAudience",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "PartialCustomAudience(PartialCustomAudience.Builder)",
             "codeLong": "PartialCustomAudience(android.adservices.customaudience.PartialCustomAudience.Builder)",
@@ -3866,7 +3866,7 @@
       },
       {
         "name": "PartialCustomAudience.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder(String)",
             "codeLong": "Builder(java.lang.String)",
@@ -3945,7 +3945,7 @@
       },
       {
         "name": "ScheduleCustomAudienceUpdateRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "ScheduleCustomAudienceUpdateRequest(ScheduleCustomAudienceUpdateRequest.Builder)",
             "codeLong": "ScheduleCustomAudienceUpdateRequest(android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder)",
@@ -4073,7 +4073,7 @@
       },
       {
         "name": "ScheduleCustomAudienceUpdateRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder(Uri, Duration, List<PartialCustomAudience>)",
             "codeLong": "",
@@ -4169,7 +4169,7 @@
     "changed_classes": [
       {
         "name": "AddCustomAudienceOverrideRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "long getBiddingLogicJsVersion()",
             "codeLong": "long getBiddingLogicJsVersion()",
@@ -4190,7 +4190,7 @@
       },
       {
         "name": "AddCustomAudienceOverrideRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder setBiddingLogicJsVersion(long)",
             "codeLong": "android.adservices.customaudience.AddCustomAudienceOverrideRequest.Builder setBiddingLogicJsVersion(long)",
@@ -4211,7 +4211,7 @@
       },
       {
         "name": "CustomAudience",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "int getAuctionServerRequestFlags()",
             "codeLong": "int getAuctionServerRequestFlags()",
@@ -4232,7 +4232,7 @@
       },
       {
         "name": "CustomAudience.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "CustomAudience.Builder setAuctionServerRequestFlags(int)",
             "codeLong": "android.adservices.customaudience.CustomAudience.Builder getAuctionServerRequestFlags()",
@@ -4253,7 +4253,7 @@
       },
       {
         "name": "CustomAudienceManager",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void fetchAndJoinCustomAudience(FetchAndJoinCustomAudienceRequest, Executor, OutcomeReceiver<Object, Exception>)",
             "codeLong": "void fetchAndJoinCustomAudience(android.adservices.customaudience.FetchAndJoinCustomAudienceRequest, java.util.concurrent.Executor, android.os.OutcomeReceiver<java.lang.Object, java.lang.Exception>)",
@@ -4283,7 +4283,7 @@
     "added_classes": [
       {
         "name": "SourceRegistrationRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "SourceRegistrationRequest(Builder)",
             "codeLong": "SourceRegistrationRequest(android.adservices.measurement.SourceRegistrationRequest.Builder)",
@@ -4398,7 +4398,7 @@
       },
       {
         "name": "SourceRegistrationRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder(List<Uri>)",
             "codeLong": "Builder(java.util.List<android.net.Uri>)",
@@ -4447,7 +4447,7 @@
     "changed_classes": [
       {
         "name": "MeasurementManager",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void deleteRegistrations(DeletionRequest, Executor, AdServicesOutcomeReceiver<Object, Exception>)",
             "codeLong": "",
@@ -4537,7 +4537,7 @@
     "added_interfaces": [
       {
         "name": "IsolatedWorker",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "default void onExecute(ExecuteInput, OutcomeReceiver<ExecuteOutput, IsolatedServiceException>",
             "codeLong": "",
@@ -4602,17 +4602,17 @@
       },
       {
         "name": "KeyValueStore",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "MutableKeyValueStore",
-        "implemented_methods": []
+        "implementedMethods": []
       }
     ],
     "added_classes": [
       {
         "name": "AppInfo",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "boolean isInstalled() ",
             "codeLong": "boolean isInstalled() ",
@@ -4707,7 +4707,7 @@
       },
       {
         "name": "DownloadCompletedInput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "KeyValueStore getDownloadedContents()",
             "codeLong": "android.adservices.ondevicepersonalization.KeyValueStore getDownloadedContents()",
@@ -4760,7 +4760,7 @@
       },
       {
         "name": "DownloadCompletedOutput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "List<String> getRetainedKeys()",
             "codeLong": "java.util.List<java.lang.String> getRetainedKeys()",
@@ -4813,7 +4813,7 @@
       },
       {
         "name": "DownloadCompletedOutput.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -4908,7 +4908,7 @@
       },
       {
         "name": "EventInput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "EventInput(@NonNull EventInputParcel parcel)",
             "codeLong": "EventInput(android.adservices.ondevicepersonalization.EventInputParcel)",
@@ -4997,7 +4997,7 @@
       },
       {
         "name": "EventLogRecord",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Instant getTime()",
             "codeLong": "java.time.Instant getTime()",
@@ -5192,7 +5192,7 @@
       },
       {
         "name": "EventLogRecord.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "android.adservices.ondevicepersonalization.EventLogRecord.Builder()",
@@ -5335,7 +5335,7 @@
       },
       {
         "name": "EventOutput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "EventOutput(EventLogRecord eventLogRecord)",
             "codeLong": "EventOutput(android.adservices.ondevicepersonalization.EventLogRecord)",
@@ -5398,7 +5398,7 @@
       },
       {
         "name": "EventOutput.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -5477,7 +5477,7 @@
       },
       {
         "name": "EventUrlProvider",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Uri createEventTrackingUrlWithResponse(PersistableBundle eventParams, byte[] responseData, String mimeType)",
             "codeLong": "android.net.Uri createEventTrackingUrlWithResponse(android.os.PersistableBundle, byte[], java.lang.String)",
@@ -5514,7 +5514,7 @@
       },
       {
         "name": "ExecuteInput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "String getAppPackageName()",
             "codeLong": "java.lang.String getAppPackageName()",
@@ -5551,7 +5551,7 @@
       },
       {
         "name": "ExecuteOutput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "RequestLogRecord getRequestLogRecord()",
             "codeLong": "android.adservices.ondevicepersonalization.RequestLogRecord getRequestLogRecord()",
@@ -5652,7 +5652,7 @@
       },
       {
         "name": "ExecuteOutput.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -5773,7 +5773,7 @@
       },
       {
         "name": "FederatedComputeInput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "String getPopulationName()",
             "codeLong": "java.lang.String getPopulationName()",
@@ -5826,7 +5826,7 @@
       },
       {
         "name": "FederatedComputeInput.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -5883,7 +5883,7 @@
       },
       {
         "name": "FederatedComputeScheduler",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void schedule(Params params, FederatedComputeInput input)",
             "codeLong": "void schedule(android.adservices.ondevicepersonalization.FederatedComputeScheduler.Params, android.adservices.ondevicepersonalization.FederatedComputeInput)",
@@ -5960,11 +5960,11 @@
       },
       {
         "name": "FederatedComputeScheduler.Params",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "InferenceInput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Params getParams()",
             "codeLong": "Params getParams()",
@@ -6065,7 +6065,7 @@
       },
       {
         "name": "InferenceInput.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -6160,7 +6160,7 @@
       },
       {
         "name": "InferenceInput.Params",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "KeyValueStore getKeyValueStore()",
             "codeLong": "android.adservices.ondevicepersonalization.KeyValueStore getKeyValueStore()",
@@ -6277,7 +6277,7 @@
       },
       {
         "name": "InferenceInput.Params.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder(KeyValueStore keyValueStore, String)",
             "codeLong": "Builder(android.adservices.ondevicepersonalization.KeyValueStore, java.lang.String)",
@@ -6372,7 +6372,7 @@
       },
       {
         "name": "InferenceOutput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Map<Integer, Object> getDataOutputs()",
             "codeLong": "java.util.Map<java.lang.Integer, java.lang.Object> getDataOutputs()",
@@ -6425,7 +6425,7 @@
       },
       {
         "name": "InferenceOutput.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -6488,7 +6488,7 @@
       },
       {
         "name": "IsolatedService",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void onCreate()",
             "codeLong": "void onCreate()",
@@ -6661,7 +6661,7 @@
       },
       {
         "name": "LogReader",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "List<RequestLogRecord> getRequests(Instant startTime, Instant endTime)",
             "codeLong": "java.util.List<android.adservices.ondevicepersonalization.RequestLogRecord> getRequests(java.time.Instant, java.time.Instant)",
@@ -6698,7 +6698,7 @@
       },
       {
         "name": "ModelManager",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void run(InferenceInput input, Executor executor, OutcomeReceiver<InferenceOutput, Exception> receiver)",
             "codeLong": "void run(android.adservices.ondevicepersonalization.InferenceInput, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.adservices.ondevicepersonalization.InferenceOutput, java.lang.Exception>)",
@@ -6713,7 +6713,7 @@
       },
       {
         "name": "OnDevicePersonalizationManager",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void execute(ComponentName service, PersistableBundle params, Executor executor, OutcomeReceiver<ExecuteResult, Exception> receiver)",
             "codeLong": "void execute(android.content.ComponentName, android.os.PersistableBundle, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.adservices.ondevicepersonalization.ExecuteResult, java.lang.Exception>)",
@@ -6812,7 +6812,7 @@
       },
       {
         "name": "OnDevicePersonalizationManager.ExecuteResult",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "SurfacePackageToken getSurfacePackageToken()",
             "codeLong": "android.adservices.ondevicepersonalization.SurfacePackageToken getSurfacePackageToken()",
@@ -6849,7 +6849,7 @@
       },
       {
         "name": "RenderingConfig",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "List<String> getKeys()",
             "codeLong": "java.util.List<java.lang.String> getKeys()",
@@ -6928,7 +6928,7 @@
       },
       {
         "name": "RenderingConfig.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -6991,7 +6991,7 @@
       },
       {
         "name": "RenderInput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "RenderInput(RenderInputParcel parcel)",
             "codeLong": "RenderInput(android.adservices.ondevicepersonalization.RenderInputParcel)",
@@ -7086,7 +7086,7 @@
       },
       {
         "name": "RenderOutput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "String getContent()",
             "codeLong": "java.lang.String getContent()",
@@ -7171,7 +7171,7 @@
       },
       {
         "name": "RenderOutput.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -7250,7 +7250,7 @@
       },
       {
         "name": "RequestLogRecord",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Instant getTime()",
             "codeLong": "java.time.Instant getTime()",
@@ -7345,7 +7345,7 @@
       },
       {
         "name": "RequestLogRecord.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -7424,15 +7424,15 @@
       },
       {
         "name": "RequestToken",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "SurfacePackageToken",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "TrainingExampleRecord",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "byte[] getTrainingExample()",
             "codeLong": "byte[] getTrainingExample()",
@@ -7495,7 +7495,7 @@
       },
       {
         "name": "TrainingExampleRecord.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder()",
             "codeLong": "Builder()",
@@ -7558,169 +7558,164 @@
       },
       {
         "name": "TrainingExamplesInput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
-            "name": "TrainingExamplesInput",
-            "implemented_methods": [
+            "code": "TrainingExamplesInput(TrainingExamplesInputParcel parcel)",
+            "codeLong": "TrainingExamplesInput(android.adservices.ondevicepersonalization.TrainingExamplesInputParcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=57",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "TrainingExamplesInput(String populationName, String taskName, byte[] resumptionToken, String collectionName)",
+            "codeLong": "TrainingExamplesInput(java.lang.String, java.lang.String, byte[], java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=63",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getPopulationName()",
+            "codeLong": "java.lang.String getPopulationName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=96",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
               {
-                "code": "TrainingExamplesInput(TrainingExamplesInputParcel parcel)",
-                "codeLong": "TrainingExamplesInput(android.adservices.ondevicepersonalization.TrainingExamplesInputParcel)",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=57",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [],
-                "dataTransmitted": []
-              },
-              {
-                "code": "TrainingExamplesInput(String populationName, String taskName, byte[] resumptionToken, String collectionName)",
-                "codeLong": "TrainingExamplesInput(java.lang.String, java.lang.String, byte[], java.lang.String)",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=63",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [],
-                "dataTransmitted": []
-              },
-              {
-                "code": "String getPopulationName()",
-                "codeLong": "java.lang.String getPopulationName()",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=96",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [
-                  {
-                    "type": "java.lang.String",
-                    "description": "The name of the federated compute population (a collection of devices that specific task groups can run on)",
-                    "possibly_sensitive": false
-                  }
-                ],
-                "dataTransmitted": []
-              },
-              {
-                "code": "String getTaskName()",
-                "codeLong": "java.lang.String getTaskName()",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=105",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [
-                  {
-                    "type": "java.lang.String",
-                    "description": "The name of the task within the federated compute population",
-                    "possibly_sensitive": false
-                  }
-                ],
-                "dataTransmitted": []
-              },
-              {
-                "code": "byte[] getResumptionToken()",
-                "codeLong": "byte[] getResumptionToken()",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=115",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [
-                  {
-                    "type": "byte[]",
-                    "description": "Token used to support the resumption of training",
-                    "possibly_sensitive": false
-                  }
-                ],
-                "dataTransmitted": []
-              },
-              {
-                "code": "String getCollectionName()",
-                "codeLong": "java.lang.String getCollectionName()",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=121",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [
-                  {
-                    "type": "java.lang.String",
-                    "description": "The data collection name to use to create training examples",
-                    "possibly_sensitive": false
-                  }
-                ],
-                "dataTransmitted": []
-              },
-              {
-                "code": "boolean equals(Object o)",
-                "codeLong": "boolean equals(java.lang.Object)",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=126",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [
-                  {
-                    "type": "boolean",
-                    "description": "Whether the given object is equal to this TrainingExamplesInput",
-                    "possibly_sensitive": false
-                  }
-                ],
-                "dataTransmitted": []
-              },
-              {
-                "code": "int hashCode()",
-                "codeLong": "int hashCode()",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=140",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [
-                  {
-                    "type": "int",
-                    "description": "A hash code value",
-                    "possibly_sensitive": false
-                  }
-                ],
-                "dataTransmitted": []
+                "type": "java.lang.String",
+                "description": "The name of the federated compute population (a collection of devices that specific task groups can run on)",
+                "possibly_sensitive": false
               }
-            ]
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getTaskName()",
+            "codeLong": "java.lang.String getTaskName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=105",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The name of the task within the federated compute population",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "byte[] getResumptionToken()",
+            "codeLong": "byte[] getResumptionToken()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=115",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "byte[]",
+                "description": "Token used to support the resumption of training",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getCollectionName()",
+            "codeLong": "java.lang.String getCollectionName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=121",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The data collection name to use to create training examples",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object o)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=126",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this TrainingExamplesInput",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingExamplesInput.java;l=140",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
           }
         ]
       },
       {
         "name": "TrainingExamplesOutput",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "TrainingExamplesOutput.Builder",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "TrainingInterval",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "TrainingInterval.Builder",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "UserData",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "WebTriggerInput",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "WebTriggerOutput",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "WebTriggerOutput.Builder",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "IsolatedServiceException",
-        "implemented_methods": []
+        "implementedMethods": []
       },
       {
         "name": "OnDevicePersonalizationException",
-        "implemented_methods": []
+        "implementedMethods": []
       }
     ]
   },
@@ -7876,7 +7871,7 @@
     "changed_classes": [
       {
         "name": "IkeSession",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void dump(PrintWriter)",
             "codeLong": "",
@@ -7891,7 +7886,7 @@
       },
       {
         "name": "IkeSessionParams",
-        "implemented_methods": []
+        "implementedMethods": []
       }
     ]
   },
@@ -8020,7 +8015,7 @@
     "changed_classes": [
       {
         "name": "Properties",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void storeToXML(OutputStream, String, Charset)",
             "codeLong": "void storeToXML(java.io.OutputStream, java.lang.String, java.nio.charset.Charset)",

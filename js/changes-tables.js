@@ -18,14 +18,13 @@ fetch('data/json/changes.json')
  * @param {Array} data - The package objects to be parsed.
  * @returns {Array} - The objects containting the implemented methods details.
  */
-
 function parseApiData(data) {
   const parsedData = [];
   const keysToProcess = ["changed_classes", "added_interfaces", "changed_interfaces", "added_classes"];
   keysToProcess.forEach(key => {
     data.forEach(pkg => {
       pkg[key]?.forEach(item => {
-        pushData(parsedData, pkg.package, item.implemented_methods); // Pass package name here
+        pushData(parsedData, pkg.package+"."+item.name, item.implementedMethods);
       });
     });
   });
@@ -37,11 +36,11 @@ function parseApiData(data) {
  * 
  * @param {Array} parsedData - The array to push the data to.
  * @param {String} packageName - The package name to push.
- * @param {Array} implemented_methods - The implemented_methods to push.
+ * @param {Array} implementedMethods - The implementedMethods to push.
  */
-function pushData(parsedData, packageName, implemented_methods) {
-  if (implemented_methods) {
-    implemented_methods.forEach(method =>
+function pushData(parsedData, packageName, implementedMethods) {
+  if (implementedMethods) {
+    implementedMethods.forEach(method =>
       parsedData.push({
         package: packageName, // Explicitly set the package name
         code: method.code,
@@ -68,7 +67,7 @@ function populateTables(filteredData) {
   const tableBodies = {
     'sensitive-sources': document.querySelector('#sensitive-sources tbody'),
     'sensitive-sinks': document.querySelector('#sensitive-sinks tbody'),
-    'non-sensitive': document.querySelector('#non-sensitive tbody')
+    'non-sensitives': document.querySelector('#non-sensitives tbody')
   }
 
   // Clear existing table rows
@@ -90,7 +89,7 @@ function populateTables(filteredData) {
         break;
       case "Non-Sensitive":
       default:
-        tableId = 'non-sensitive';
+        tableId = 'non-sensitives';
         break;
     }
     const tableBody = tableBodies[tableId];
