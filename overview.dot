@@ -1,0 +1,52 @@
+digraph {
+	graph [rankdir = TB  ]
+	node[shape = rectangle]
+	
+    { rank=same; index_html; method_extractor_html;}
+    { rank=same; changes_tables_js; flow_droid_js; method_extractor_js; statistics_js; json_download_js; }
+    { rank=same; hidden_api_csv; blocked_methods_csv; blocked_changes_csv; changes_json}
+    { rank=same; user; developer; github_pages }
+   
+    user [label = User, color = pink] 
+    developer[label = Developer, color = pink]
+    github_pages [label = "GitHub Pages\n(hosting)" color = lightblue]
+	
+	index_html [label = "index.html\n(changes and statistics interface)", color = blue]
+	method_extractor_html [label="method-extractor.html\n(method extraction interface)", color = blue]
+	 
+	changes_tables_js [label = "changes-tables.js\n(table population)", color = gray]
+	flow_droid_js [label = "flow-droid.js\n(FlowDroid conversion)", color = gray]
+	method_extractor_js [label="method-extractor.js\n(method extraction)",  color = gray]
+	statistics_js [label = "statistics.js\n(bar chart generation)",  color = gray]
+	json_download_js[label = "json-download.js\n(changes.json download)",  color = gray]
+	
+	hidden_api_csv [label = "hidden-api-flags.csv\n(non-SDK interfaces lists)", color = green]
+	blocked_methods_csv [label = "blocked-methods.csv\n(all blocked methods)", color = green]
+	blocked_changes_csv [label = "blocked-changes.csv\n(changed blocked methods)", color = green]
+
+	changes_json [label = "changes.json\n(findings)" color = purple]
+    
+	android_code_search [label = "Android Code Search" color = lightGreen] 
+	
+
+  	user -> index_html 
+  	developer -> method_extractor_html 
+  	developer -> android_code_search 
+  	github_pages -> index_html
+	
+  	index_html -> method_extractor_html
+	index_html -> changes_tables_js
+	index_html -> flow_droid_js
+	index_html -> statistics_js
+	index_html -> json_download_js
+	method_extractor_html -> method_extractor_js
+	
+    changes_tables_js -> changes_json
+	flow_droid_js -> changes_json
+	statistics_js -> changes_json
+	json_download_js -> changes_json
+	
+	blocked_changes_csv -> hidden_api_csv 
+	blocked_changes_csv -> blocked_methods_csv
+	
+}
