@@ -6,4 +6,4 @@
 The hidden API CSV file is sourced from [Android's official developer guide on non-SDK interface restrictions](https://developer.android.com/guide/app-compatibility/restrictions-non-sdk-interfaces). I do not claim ownership or authorship of this file.  
 
 ## Architecture
-![alt text](image.png)
+![alt text](architecture-diagram.png)
