@@ -8723,26 +8723,26 @@
         "name": "GetTopicsResponse",
         "implementedMethods": [
           {
-              "code": "List<EncryptedTopic> getEncryptedTopics()",
-              "codeLong": "java.util.List<EncryptedTopic> getEncryptedTopics()",
-              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/topics/GetTopicsResponse.java;l=49",
-              "class": "Non-Sensitive",
-              "category": "",
-              "changeType": "Addition",
-              "dataReturned": [
-                {
-                  "type": "java.util.List<android.adservices.topics.EncryptedTopic>",
-                  "description": "A list of objects of type EncryptedTopic that might contain sensitive data, but are not sensitive itself",
-                  "possibly_sensitive": false
-                }
-              ],
-              "dataTransmitted": []
-            }
+            "code": "List<EncryptedTopic> getEncryptedTopics()",
+            "codeLong": "java.util.List<EncryptedTopic> getEncryptedTopics()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/topics/GetTopicsResponse.java;l=49",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<android.adservices.topics.EncryptedTopic>",
+                "description": "A list of objects of type EncryptedTopic that might contain sensitive data, but are not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
         ]
       },
-      { 
-        "name":"GetTopicsResponse.Builder",
-        "implementedMethods":[
+      {
+        "name": "GetTopicsResponse.Builder",
+        "implementedMethods": [
           {
             "code": "Builder(List<Topic>, List<EncryptedTopic>)",
             "codeLong": "Builder(java.util.List<Topic>, java.util.List<android.adservices.topics.EncryptedTopic>)",
@@ -8752,24 +8752,297 @@
             "changeType": "Addition",
             "dataReturned": [],
             "dataTransmitted": []
-        },
-        {
-          "code": "Builder(List<Topic>)",
-          "codeLong": "Builder(java.util.List<android.adservices.topics.Topic>)",
-          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/topics/GetTopicsResponse.java;l=85",
-          "class": "Non-Sensitive",
-          "category": "",
-          "changeType": "Modification",
-          "dataReturned": [],
-          "dataTransmitted": []
-      }
-
+          },
+          {
+            "code": "Builder(List<Topic>)",
+            "codeLong": "Builder(java.util.List<android.adservices.topics.Topic>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/topics/GetTopicsResponse.java;l=85",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
         ]
       }
     ]
   },
   {
-    "package": "android.app"
+    "package": "android.app",
+    "added_classes": [
+      {
+        "name": "ApplicationStartInfo",
+        "implemented_methods": [
+       
+          {
+            "code": "int getStartupState()",
+            "codeLong": "int getStartupState()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=490",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "An app's startup state, e.g., 1 indicating process startup has failed",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "long getMonoticCreationTimeMs()",
+            "codeLong": "long getMonoticCreationTimeMs()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=499",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "long",
+                "description": "Monotonic elapsed time persisted across reboots",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getPid()",
+            "codeLong": "int getPid()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=508",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The app startup process id",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getRealUid()",
+            "codeLong": "int getRealUid()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=521",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The kernel user identifier of the process",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getPackageUid()",
+            "codeLong": "int getPackageUid()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=531",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The kernel user identifier that is assigned at the package installation time",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getDefiningUid()",
+            "codeLong": "int getDefiningUid()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=545",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The defining kernel user identifier",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getProcessName()",
+            "codeLong": "java.lang.String getProcessName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=563",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The actual process name it was running with",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getReason()",
+            "codeLong": "int getReason()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=572",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The reason code of what triggered the process's start",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Map<Integer, java.lang.Long> getStartupTimestamps()",
+            "codeLong": "java.util.Map<java.lang.Integer, java.lang.Long> getStartupTimestamps()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=595",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.Map<java.lang.Integer, Long>",
+                "description": "Various clock monotonic timestamps in nanoseconds throughout the startup process",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getStartType()",
+            "codeLong": "int getStartType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=608",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The state of the app at startup",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Intent getIntent()",
+            "codeLong": "android.content.Intent getIntent()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=621",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.Intent",
+                "description": "An object of type Intent that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getLaunchMode()",
+            "codeLong": "int getLaunchMode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=639",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "An instruction on how the activity should be launched",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean wasForceStopped()",
+            "codeLong": "boolean wasForceStopped()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=653",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether this is the first process launch for the app since it was force-stopped",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=658",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=663",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=969",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this ApplicationStartInfo",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ApplicationStartInfo.java;l=983",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.app.admin"
