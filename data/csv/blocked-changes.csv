@@ -130,3 +130,8 @@ Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;->__metadata()
 Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;-><init>(Landroid/os/Parcel;)V,blocked
 
 Landroid/adservices/ondevicepersonalization/TrainingExampleRecord$Builder;->checkNotUsed()V,blocked
+
+Landroid/adservices/ondevicepersonalization/TrainingExamplesOutput;-><init>(Ljava/util/List;)V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingExamplesOutput;->__metadata()V,blocked
+
+Landroid/adservices/ondevicepersonalization/TrainingExamplesOutput$Builder;->checkNotUsed()V,blocked

@@ -15,12 +15,49 @@ function processJavaCode() {
         document.getElementById("outputJson").textContent = "Please provide the base URL.";
         return;
     }
-    const classOrInterfaceName = extractClassOrInterfaceName(javaCode);
-    const changesInformation = extractChangesInformation(javaCode, baseUrl, classOrInterfaceName)
+    const cleanedJavaCode = replaceCommentWithSpaces(javaCode)
+    const classOrInterfaceName = extractClassOrInterfaceName(cleanedJavaCode);
+    const changesInformation = extractChangesInformation(cleanedJavaCode, baseUrl, classOrInterfaceName)
     const formattedJson = formatAsJson(classOrInterfaceName, changesInformation);
 
     document.getElementById("outputJson").textContent = JSON.stringify(formattedJson, null, 4);
 }
+
+/**
+ * Replaces lines containing comments with parentheses with spaces,
+ * preserving line numbers and line lengths.
+ * 
+ * @param {string} javaCode - The Java code to process.
+ * @returns {string} - The modified Java code with comment lines replaced by spaces.
+ */
+function replaceCommentWithSpaces(javaCode) {
+    const lines = javaCode.split("\n");
+    const updatedLines = lines.map(line => {
+    
+        // Check if the line contains a single-line comment with parentheses
+        if (/^\s*\/\/.*\([^\)]*\)/.test(line)) {
+            console.log("single line comment:")
+            console.log(line)
+
+            return " ".repeat(line.length); // Replace entire line with spaces
+        }
+        
+        // Check if the line contains a multi-line comment with parentheses
+        if (/\/\*.*\([^\)]*\).*?\*\//.test(line)) {
+            console.log("multiline comment:")
+            console.log(line)
+            return " ".repeat(line.length); // Replace entire line with spaces
+        }
+
+        // If line doesn't match, keep it as is
+        return line;
+    });
+
+    // Rejoin the lines to form the modified code
+    return updatedLines.join("\n");
+}
+
+
 
 /**
  * Extracts the class or interface name from the given Java code.
@@ -44,79 +81,63 @@ function extractClassOrInterfaceName(javaCode) {
 function extractChangesInformation(javaCode, baseUrl, classOrInterfaceName) {
     const packageName = getPackageName(javaCode);
     const imports = getImports(javaCode);
-    const changeInformation = getChangesInformation(javaCode, classOrInterfaceName)
+    const changesInformations = extractChangesInformations(javaCode)
 
     const methods = [];
-    for (const header of changeInformation) {
-        const returnType = (header.groups.returnType??"").trim();
+    for (const header of changesInformations) {
+        const returnType = (header.groups.returnType ?? "").trim();
         const changeName = header.groups.changeName.trim();
         const parametersRaw = header.groups.parameters.trim();
         const parameters = parametersRaw
-            .split(',') 
+            .split(',')
             .map(param => {
                 const parts = param.trim().split(/\s+/).map(part => part.trim()).filter(word => !word.includes("@"))
-                 // Return only the parameter Type
-                 return parts[0]  
+                // Return only the parameter Type
+                return parts[0]
             })
         methods.push({
             code: `${returnType} ${changeName}(${parameters.join(", ")})`.trim(),
-            codeLong: getCodeLong(returnType??"", changeName, parameters, imports, packageName,  classOrInterfaceName),
+            codeLong: getCodeLong(returnType ?? "", changeName, parameters, imports, packageName, classOrInterfaceName),
             lineLink: getMethodLink(baseUrl, javaCode, header.index),
-            dataReturned: getDataReturned(returnType, imports, packageName,  classOrInterfaceName),
+            dataReturned: getDataReturned(returnType, imports, packageName, classOrInterfaceName),
             dataTransmitted: []
         });
     }
     return methods;
 }
 
-function getChangesInformation(javaCode, classOrInterfaceName) {
-    const constructorInformation = extractConstructorInformation(javaCode, classOrInterfaceName)
-    const methodInformation = extractMethodInformations(javaCode)
-    const information = constructorInformation.concat(methodInformation)
-    return information
-}
-
 /**
- * Extracts method headers from the Java code.
+ * Extracts headers from the Java code.
  * 
  * @param {string} javaCode - The Java code.
  * @returns {Array} - An array of objects representing matched method headers with groups for the return type, method name and parameters
  */
-function extractConstructorInformation(javaCode, classOrInterfaceName) {
-    const match = [
-        /(?<accessModifier>public|private|protected|default)\s*/, // Access modifier (optional)
-        new RegExp(`(?<changeName>${classOrInterfaceName})`),      // Constructor name
-        /\((?<parameters>[^)]*)\)/,                                // Parameters (anything inside parentheses)
+function extractChangesInformations(javaCode) {
+    const constructorMatch = [
+        /(?<accessModifier>public|private|protected|default)\s/,  // Access modifier (optional)
+        /(?<changeName>[A-Z]\w+)/,                                // Constructor name
+        /\((?<parameters>[^)]*)\)/,                               // Parameters (anything inside parentheses)
     ];
 
-    const methodPattern = new RegExp(match.map(part => part.source).join(''), 'g');
-
-    var headers = [...javaCode.matchAll(methodPattern)];
-    return headers;
-}
-
-
-/**
- * Extracts method headers from the Java code.
- * 
- * @param {string} javaCode - The Java code.
- * @returns {Array} - An array of objects representing matched method headers with groups for the return type, method name and parameters
- */
-function extractMethodInformations(javaCode) {
- 
-    const match = [
+    const methodMatch = [
         /(?<accessModifier>public|private|protected|default)?\s*/,     // Access modifier (optional)
         /(?<returnType>\w+(\<[^>]+\>)?(\[\])*)\s+/,                    // Return type (basic types, generics, arrays)
-        /(?<changeName>[a-z]\w+)\s*/,                                       // Method name
+        /(?<changeName>[a-z]\w+)/,                                     // Method name
         /\((?<parameters>[^)]*)\)/,                                    // Parameters (anything inside parentheses)
         /(?<exceptions>\s+throws\s+[\w.,<> ]+)?/,                      // Exceptions (optional)
     ];
 
-    const methodPattern = new RegExp(match.map(part => part.source).join(''), 'g');
+    const combinedPattern = [
+        constructorMatch.map(part => part.source).join(''),
+        methodMatch.map(part => part.source).join('')
+    ].join('|'); 
 
-    var headers = [...javaCode.matchAll(methodPattern)];
-    return headers;  
+    const pattern = new RegExp(combinedPattern, 'g');
+
+    var headers = [...javaCode.matchAll(pattern)];
+    return headers;
 }
+
 
 
 
@@ -131,7 +152,7 @@ function extractMethodInformations(javaCode) {
  */
 function getDataReturned(returnType, imports, packageName, classOrInterfaceName) {
     const dataReturned = [];
-    if (returnType && returnType !== "void" ) {
+    if (returnType && returnType !== "void") {
         dataReturned.push({
             type: extractFullyQualifiedName(returnType, imports, classOrInterfaceName, packageName),
             description: `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`,
@@ -153,14 +174,14 @@ function getDataReturned(returnType, imports, packageName, classOrInterfaceName)
  */
 function extractFullyQualifiedName(name, imports, classOrInterfaceName, packageName) {
 
-    if(name == classOrInterfaceName) {
+    if (name == classOrInterfaceName) {
         return `${packageName}.${classOrInterfaceName}`
     }
 
-   const explicitImport = imports.find((imp) => imp.endsWith(`.${name}`));
-   if (explicitImport) {
-       return explicitImport;
-   }
+    const explicitImport = imports.find((imp) => imp.endsWith(`.${name}`));
+    if (explicitImport) {
+        return explicitImport;
+    }
 
     const fullyQualifiedMap = {
         Map: "java.util.Map",
@@ -277,7 +298,7 @@ function formatAsJson(classOrInterfaceName, changesInformation) {
  */
 function getCodeLong(returnType, name, parameters, imports, packageName, classOrInterfaceName) {
     const fullyQualifiedReturnType = extractFullyQualifiedName(returnType, imports, classOrInterfaceName, packageName)
-    const fullyQualifiedParameters = parameters.map(parameter =>  
+    const fullyQualifiedParameters = parameters.map(parameter =>
         extractFullyQualifiedName(parameter, imports, classOrInterfaceName, packageName)
     ).join(", ")
     return (fullyQualifiedReturnType + " " + name + "(" + fullyQualifiedParameters + ")").trim();
@@ -292,11 +313,11 @@ function copyToClipboard() {
     window.getSelection().addRange(range);
 
     try {
-      document.execCommand('copy');
-      alert('Output JSON copied to clipboard!');
+        document.execCommand('copy');
+        alert('Output JSON copied to clipboard!');
     } catch (err) {
-      alert('Failed to copy JSON to clipboard.');
+        alert('Failed to copy JSON to clipboard.');
     }
-    
+
     window.getSelection().removeAllRanges();
-  }
+}

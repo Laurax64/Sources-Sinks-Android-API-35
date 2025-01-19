@@ -5,8 +5,8 @@ let apiData = [];
 
 // Fetch the data from 'changes.json' and store it in apiData and populate the tables with the fetched data.
 fetch('data/json/changes.json')
-  .then((response) => response.json())
-  .then((json) => {
+  .then(response => response.json())
+  .then(json => {
     apiData = json;
     apiData = parseApiData(apiData);
     populateTables(apiData);
