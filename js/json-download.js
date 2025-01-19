@@ -2,7 +2,6 @@
  * Triggers the download of 'changes.json'.
  */
 function downloadJSON() {
-
   fetch('data/json/changes.json')
     .then((response) => response.json())
     .then((json) => {

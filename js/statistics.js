@@ -65,8 +65,6 @@ function showSinksChart() {
   });
 }
 
-
-
 function showClassesChart(){
   const classesCounts = createClassesCounts(apiData);
 
@@ -134,7 +132,7 @@ function createClassesCounts(apiData) {
 function generateDataset(categories, classType, counts) {
   return categories.map(category => ({
     label: category,
-    data: [counts[classType][category]], // Data should be an array
+    data: [counts[classType][category]], 
     backgroundColor: getColorForCategory(category)
   }));
 }

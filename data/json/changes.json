@@ -7679,7 +7679,7 @@
       },
       {
         "name": "TrainingExamplesOutput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "List<TrainingExampleRecord> getTrainingExampleRecords()",
             "codeLong": "java.util.List<TrainingExampleRecord> getTrainingExampleRecords()",
@@ -7795,7 +7795,7 @@
       },
       {
         "name": "TrainingInterval",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "int getSchedulingMode()",
             "codeLong": "int getSchedulingMode()",
@@ -7927,7 +7927,7 @@
       },
       {
         "name": "UserData",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Duration getTimezoneUtcOffset()",
             "codeLong": "java.time.Duration getTimezoneUtcOffset()",
@@ -8150,7 +8150,7 @@
       },
       {
         "name": "WebTriggerInput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Uri getDestinationUrl()",
             "codeLong": "android.net.Uri getDestinationUrl()",

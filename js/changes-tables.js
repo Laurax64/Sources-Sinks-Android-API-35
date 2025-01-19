@@ -5,8 +5,9 @@ let apiData = [];
 
 // Fetch the data from 'changes.json' and store it in apiData and populate the tables with the fetched data.
 fetch('data/json/changes.json')
-  .then(response => response.json())
-  .then(json => {
+.then((response) => response.json())
+.then((json) => {
+
     apiData = json;
     apiData = parseApiData(apiData);
     populateTables(apiData);
@@ -32,7 +33,7 @@ function parseApiData(data) {
 }
 
 /**
- * Pushes the implemented_method's data to the given parsedData field.
+ * Pushes the implementedMethod's data to the given parsedData field.
  * 
  * @param {Array} parsedData - The array to push the data to.
  * @param {String} packageName - The package name to push.
@@ -140,7 +141,7 @@ function applyFilters() {
   const selectedClass = document.getElementById('class').value;
   const selectedCategory = document.getElementById('category').value;
   const filteredData = apiData.filter(item => {
-    const matchChangeType = changeType ? item.changype === changeType : true;
+    const matchChangeType = changeType ? item.changeType === changeType : true;
     const matchClass = selectedClass ? item.class === selectedClass : true;
     const matchCategory = selectedCategory ? item.category === selectedCategory : true;
     return matchChangeType && matchClass && matchCategory;
