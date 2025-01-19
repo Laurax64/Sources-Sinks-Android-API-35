@@ -99,7 +99,7 @@ function extractChangesInformation(javaCode, baseUrl, classOrInterfaceName) {
             code: `${returnType} ${changeName}(${parameters.join(", ")})`.trim(),
             codeLong: getCodeLong(returnType ?? "", changeName, parameters, imports, packageName, classOrInterfaceName),
             lineLink: getMethodLink(baseUrl, javaCode, header.index),
-            dataReturned: getDataReturned(returnType, imports, packageName, classOrInterfaceName),
+            dataReturned: getDataReturned(returnType, imports, packageName, changeName, classOrInterfaceName),
             dataTransmitted: []
         });
     }
@@ -150,8 +150,8 @@ function extractChangesInformations(javaCode) {
  * @param {string} classOrInterfaceName - The name of the class containing the method.
  * @returns {Array} - An array of objects representing the data returned.
  */
-function getDataReturned(returnType, imports, packageName, methodName, classOrInterfaceName) {
-    const javaBaseTypesAndWrappers = [
+function getDataReturned(returnType, imports, packageName, changeName, classOrInterfaceName) {
+    const commonCriticalTypes = [
         "byte", "Byte",
         "short", "Short",
         "int", "Integer",
@@ -159,21 +159,25 @@ function getDataReturned(returnType, imports, packageName, methodName, classOrIn
         "float", "Float",
         "double", "Double",
         "char", "Character",
-        "boolean", "Boolean"
+        "boolean", "Boolean",
+        "String"
     ]
     const dataReturned = [];
     if (returnType && returnType != "void") {
-        const description = ""
-        if (returnType == int && methodName == "hashCode") {
+        var description = ""
+        if (changeName == "hashCode") {
             description = "A hash code value"
         }
-        else if (returnType == "boolean" && methodName == "equals") {
+        else if (changeName == "equals") {
             description = `Whether the given object is equal to this ${classOrInterfaceName}`
         }
-        else if (!javaBaseTypesAndWrappers.includes(returnType)) {
+        else if (changeName == "describeContents") {
+            description = `0 which indicates, that the contents are not meant to cross compilation boundaries`
+        }
+        else if (!commonCriticalTypes.includes(returnType)) {
             description  = `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`
         }
-
+        
         dataReturned.push({
             type: extractFullyQualifiedName(returnType, imports, classOrInterfaceName, packageName),
             description: description ,

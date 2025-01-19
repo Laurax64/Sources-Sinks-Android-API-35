@@ -141,3 +141,22 @@ Landroid/adservices/ondevicepersonalization/TrainingInterval;->__metadata()V,blo
 Landroid/adservices/ondevicepersonalization/TrainingInterval;->schedulingModeToString(I)Ljava/lang/String;,blocked
 
 Landroid/adservices/ondevicepersonalization/TrainingInterval$Builder;->checkNotUsed()V,blocked
+
+Landroid/adservices/ondevicepersonalization/UserData;-><clinit>()V,blocked
+Landroid/adservices/ondevicepersonalization/UserData;-><init>(IIJILjava/lang/String;Landroid/net/NetworkCapabilities;ILjava/util/Map;)V,blocked
+Landroid/adservices/ondevicepersonalization/UserData;-><init>(Landroid/os/Parcel;)V,blocked
+Landroid/adservices/ondevicepersonalization/UserData;->__metadata()V,blocked
+Landroid/adservices/ondevicepersonalization/UserData;->getTimezoneUtcOffsetMins()I,blocked
+
+Landroid/adservices/ondevicepersonalization/UserData$Builder;-><init>()V,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->addAppInfo(Ljava/lang/String;Landroid/adservices/ondevicepersonalization/AppInfo;)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->build()Landroid/adservices/ondevicepersonalization/UserData;,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->checkNotUsed()V,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->setAppInfos(Ljava/util/Map;)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->setAvailableStorageBytes(J)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->setBatteryPercentage(I)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->setCarrier(Ljava/lang/String;)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->setDataNetworkType(I)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->setNetworkCapabilities(Landroid/net/NetworkCapabilities;)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->setOrientation(I)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
+Landroid/adservices/ondevicepersonalization/UserData$Builder;->setTimezoneUtcOffsetMins(I)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked

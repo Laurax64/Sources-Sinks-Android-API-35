@@ -7927,7 +7927,226 @@
       },
       {
         "name": "UserData",
-        "implementedMethods": []
+        "implemented_methods": [
+          {
+            "code": "Duration getTimezoneUtcOffset()",
+            "codeLong": "java.time.Duration getTimezoneUtcOffset()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=140",
+            "class": "Sensitive Source",
+            "category": "Location",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.time.Duration",
+                "description": "The device timezone +/- offset from UTC.",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getOrientation()",
+            "codeLong": "int getOrientation()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=212",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The device orientation.",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "long getAvailableStorageBytes()",
+            "codeLong": "long getAvailableStorageBytes()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=220",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "long",
+                "description": "The available space on device in bytes",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getBatteryPercentage()",
+            "codeLong": "int getBatteryPercentage()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=228",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "Battery percentage",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getCarrier()",
+            "codeLong": "java.lang.String getCarrier()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=236",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The Service Provider Name (SPN)",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "NetworkCapabilities getNetworkCapabilities()",
+            "codeLong": "android.net.NetworkCapabilities getNetworkCapabilities()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=251",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.net.NetworkCapabilities",
+                "description": "An object of type NetworkCapabilities that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getDataNetworkType()",
+            "codeLong": "int getDataNetworkType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=260",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A constant indicating the radio technology (network type) currently in use on the device for data transmission",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Map<String,AppInfo> getAppInfos()",
+            "codeLong": "java.util.Map<java.lang.String, android.adservices.ondevicepersonalization.AppInfo> getAppInfos()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=268",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.Map<java.lang.String, android.adservices.ondevicepersonalization.AppInfo>",
+                "description": "A map from package name to app information for installed and uninstalled apps. The package names can be sensitive by themselves.",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=274",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this UserData",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=297",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(android.os.Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=315",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=334",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "UserData[] newArray(int)",
+            "codeLong": "android.adservices.ondevicepersonalization.UserData[] newArray(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=385",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.UserData[]",
+                "description": "An object of type UserData[] that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "UserData createFromParcel(android.os.Parcel)",
+            "codeLong": "android.adservices.ondevicepersonalization.UserData createFromParcel(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/UserData.java;l=390",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.UserData",
+                "description": "An object of type UserData that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "WebTriggerInput",
