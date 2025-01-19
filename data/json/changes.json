@@ -8155,7 +8155,7 @@
             "code": "Uri getDestinationUrl()",
             "codeLong": "android.net.Uri getDestinationUrl()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerInput.java;l=76",
-            "class": "Sensitiv Source",
+            "class": "Sensitive Source",
             "category": "Web Browsing",
             "changeType": "Addition",
             "dataReturned": [
@@ -8171,7 +8171,7 @@
             "code": "String getAppPackageName()",
             "codeLong": "java.lang.String getAppPackageName()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerInput.java;l=83",
-            "class": "Sensitiv Source",
+            "class": "Sensitive Source",
             "category": "App Activity",
             "changeType": "Addition",
             "dataReturned": [
@@ -8187,7 +8187,7 @@
             "code": "byte[] getData()",
             "codeLong": "byte[] getData()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerInput.java;l=92",
-            "class": "Sensitiv Source",
+            "class": "Sensitive Source",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
