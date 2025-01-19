@@ -8235,7 +8235,7 @@
       },
       {
         "name": "WebTriggerOutput",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "android.adservices.ondevicepersonalizationRequestLogRecord getRequestLogRecord()",
             "codeLong": "android.adservices.ondevicepersonalization.RequestLogRecord getRequestLogRecord()",
@@ -8386,7 +8386,7 @@
         "implementedMethods": [
           {
             "name": "IsolatedServiceException",
-            "implemented_methods": [
+            "implementedMethods": [
               {
                 "code": "IsolatedServiceException(int)",
                 "codeLong": "IsolatedServiceException(int)",
@@ -8406,7 +8406,7 @@
         "implementedMethods": [
           {
             "name": "OnDevicePersonalizationException",
-            "implemented_methods": [
+            "implementedMethods": [
               {
                 "code": "OnDevicePersonalizationException(int, String, Throwable)",
                 "codeLong": "OnDevicePersonalizationException(int, java.lang.String, Throwable)",
@@ -8444,7 +8444,7 @@
     "added_classes": [
       {
         "name": "ProtectedSignalsManager",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "ProtectedSignalsManager get(android.content.Context)",
             "codeLong": "android.adservices.signals.ProtectedSignalsManager get(android.content.Context)",
@@ -8487,7 +8487,7 @@
       },
       {
         "name": "UpdateSignalsRequest",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Uri getUpdateUri()",
             "codeLong": "android.net.Uri getUpdateUri()",
@@ -8556,7 +8556,7 @@
       },
       {
         "name": "UpdateSignalsRequest.Builder",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "Builder(Uri)",
             "codeLong": "Builder(android.net.Uri)",
