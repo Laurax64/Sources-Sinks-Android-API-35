@@ -2149,7 +2149,7 @@
             "dataReturned": [
               {
                 "type": "boolean",
-                "description": "Whether this whether this AdSelectionOutcome object contains results or is empty",
+                "description": "Whether this AdSelectionOutcome contains results or is empty",
                 "possibly_sensitive": false
               }
             ],
@@ -7795,11 +7795,135 @@
       },
       {
         "name": "TrainingInterval",
-        "implementedMethods": []
+        "implemented_methods": [
+          {
+            "code": "int getSchedulingMode()",
+            "codeLong": "int getSchedulingMode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingInterval.java;l=123",
+            "class": "Non-Sensitive",
+            "category": "Blocked",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The scheduling mode for this task",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Duration getMinimumInterval()",
+            "codeLong": "java.time.Duration getMinimumInterval()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingInterval.java;l=140",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.time.Duration",
+                "description": "The minimum time interval between two training runs",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingInterval.java;l=146",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this TrainingInterval",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingInterval.java;l=163",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "TrainingInterval.Builder",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "code": "Builder()",
+            "codeLong": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingInterval.java;l=183",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setSchedulingMode(int)",
+            "codeLong": "android.adservices.ondevicepersonalization.TrainingInterval.Builder setSchedulingMode(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingInterval.java;l=191",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.TrainingInterval.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setMinimumInterval(Duration)",
+            "codeLong": "android.adservices.ondevicepersonalization.TrainingInterval.Builder setMinimumInterval(java.time.Duration)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingInterval.java;l=211",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.TrainingInterval.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "TrainingInterval build()",
+            "codeLong": "android.adservices.ondevicepersonalization.TrainingInterval build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/TrainingInterval.java;l=219",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.TrainingInterval",
+                "description": "An object of type TrainingInterval that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "UserData",

@@ -33,7 +33,7 @@ function processJavaCode() {
 function replaceCommentWithSpaces(javaCode) {
     const lines = javaCode.split("\n");
     const updatedLines = lines.map(line => {
-    
+
         // Check if the line contains a single-line comment with parentheses
         if (/^\s*\/\/.*\([^\)]*\)/.test(line)) {
             console.log("single line comment:")
@@ -41,7 +41,7 @@ function replaceCommentWithSpaces(javaCode) {
 
             return " ".repeat(line.length); // Replace entire line with spaces
         }
-        
+
         // Check if the line contains a multi-line comment with parentheses
         if (/\/\*.*\([^\)]*\).*?\*\//.test(line)) {
             console.log("multiline comment:")
@@ -130,7 +130,7 @@ function extractChangesInformations(javaCode) {
     const combinedPattern = [
         constructorMatch.map(part => part.source).join(''),
         methodMatch.map(part => part.source).join('')
-    ].join('|'); 
+    ].join('|');
 
     const pattern = new RegExp(combinedPattern, 'g');
 
@@ -150,12 +150,33 @@ function extractChangesInformations(javaCode) {
  * @param {string} classOrInterfaceName - The name of the class containing the method.
  * @returns {Array} - An array of objects representing the data returned.
  */
-function getDataReturned(returnType, imports, packageName, classOrInterfaceName) {
+function getDataReturned(returnType, imports, packageName, methodName, classOrInterfaceName) {
+    const javaBaseTypesAndWrappers = [
+        "byte", "Byte",
+        "short", "Short",
+        "int", "Integer",
+        "long", "Long",
+        "float", "Float",
+        "double", "Double",
+        "char", "Character",
+        "boolean", "Boolean"
+    ]
     const dataReturned = [];
-    if (returnType && returnType !== "void") {
+    if (returnType && returnType != "void") {
+        const description = ""
+        if (returnType == int && methodName == "hashCode") {
+            description = "A hash code value"
+        }
+        else if (returnType == "boolean" && methodName == "equals") {
+            description = `Whether the given object is equal to this ${classOrInterfaceName}`
+        }
+        else if (!javaBaseTypesAndWrappers.includes(returnType)) {
+            description  = `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`
+        }
+
         dataReturned.push({
             type: extractFullyQualifiedName(returnType, imports, classOrInterfaceName, packageName),
-            description: `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`,
+            description: description ,
             possibly_sensitive: false
         });
     }

@@ -135,3 +135,9 @@ Landroid/adservices/ondevicepersonalization/TrainingExamplesOutput;-><init>(Ljav
 Landroid/adservices/ondevicepersonalization/TrainingExamplesOutput;->__metadata()V,blocked
 
 Landroid/adservices/ondevicepersonalization/TrainingExamplesOutput$Builder;->checkNotUsed()V,blocked
+
+Landroid/adservices/ondevicepersonalization/TrainingInterval;-><init>(ILjava/time/Duration;)V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingInterval;->__metadata()V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingInterval;->schedulingModeToString(I)Ljava/lang/String;,blocked
+
+Landroid/adservices/ondevicepersonalization/TrainingInterval$Builder;->checkNotUsed()V,blocked
