@@ -164,3 +164,15 @@ Landroid/adservices/ondevicepersonalization/UserData$Builder;->setTimezoneUtcOff
 Landroid/adservices/ondevicepersonalization/WebTriggerInput;-><init>(Landroid/adservices/ondevicepersonalization/WebTriggerInputParcel;)V,blocked
 Landroid/adservices/ondevicepersonalization/WebTriggerInput;-><init>(Landroid/net/Uri;Ljava/lang/String;[B)V,blocked
 Landroid/adservices/ondevicepersonalization/WebTriggerInput;->__metadata()V,blocked
+
+Landroid/adservices/ondevicepersonalization/WebTriggerOutput;-><init>(Landroid/adservices/ondevicepersonalization/RequestLogRecord;Ljava/util/List;)V,blocked
+Landroid/adservices/ondevicepersonalization/WebTriggerOutput;->__metadata()V,blocked
+
+Landroid/adservices/ondevicepersonalization/WebTriggerOutput$Builder;->checkNotUsed()V,blocked
+
+Landroid/adservices/ondevicepersonalization/IsolatedServiceException;->getErrorCode()I,blocked
+
+Landroid/adservices/ondevicepersonalization/OnDevicePersonalizationException;-><init>(I)V,blocked
+Landroid/adservices/ondevicepersonalization/OnDevicePersonalizationException;-><init>(ILjava/lang/String;)V,blocked
+Landroid/adservices/ondevicepersonalization/OnDevicePersonalizationException;-><init>(ILjava/lang/Throwable;)V,blocked
+

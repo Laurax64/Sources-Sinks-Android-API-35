@@ -8235,19 +8235,209 @@
       },
       {
         "name": "WebTriggerOutput",
-        "implementedMethods": []
+        "implemented_methods": [
+          {
+            "code": "android.adservices.ondevicepersonalizationRequestLogRecord getRequestLogRecord()",
+            "codeLong": "android.adservices.ondevicepersonalization.RequestLogRecord getRequestLogRecord()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerOutput.java;l=94",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.RequestLogRecord",
+                "description": "An object of type RequestLogRecord that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "List<EventLogRecord> getEventLogRecords()",
+            "codeLong": "java.util.List<android.adservices.ondevicepersonalization.EventLogRecord> getEventLogRecords()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerOutput.java;l=107",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<android.adservices.ondevicepersonalization.EventLogRecord>",
+                "description": "An object of type List<EventLogRecord> that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerOutput.java;l=113",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this WebTriggerOutput",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerOutput.java;l=130",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "WebTriggerOutput.Builder",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "code": "Builder()",
+            "codeLong": "Builder()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerOutput.java;l=152",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setRequestLogRecord(RequestLogRecord)",
+            "codeLong": "android.adservices.ondevicepersonalization.WebTriggerOutput.Builder setRequestLogRecord(ndroid.adservices.ondevicepersonalization.RequestLogRecord)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerOutput.java;l=162",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.WebTriggerOutput.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setEventLogRecords(List<EventLogRecord>)",
+            "codeLong": "android.adservices.ondevicepersonalization.WebTriggerOutput.Builder setEventLogRecords(java.util.List<ndroid.adservices.ondevicepersonalization.EventLogRecord>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerOutput.java;l=178",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.WebTriggerOutput.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addEventLogRecord(EventLogRecord)",
+            "codeLong": "android.adservices.ondevicepersonalization.WebTriggerOutput.Builder addEventLogRecord(ndroid.adservices.ondevicepersonalization.EventLogRecord)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerOutput.java;l=187",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.WebTriggerOutput.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "WebTriggerOutput build()",
+            "codeLong": "android.adservices.ondevicepersonalization.WebTriggerOutput build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerOutput.java;l=194",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.ondevicepersonalization.WebTriggerOutput",
+                "description": "An object of type WebTriggerOutput that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "IsolatedServiceException",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "name": "IsolatedServiceException",
+            "implemented_methods": [
+              {
+                "code": "IsolatedServiceException(int)",
+                "codeLong": "IsolatedServiceException(int)",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedServiceException.java;l=41",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [],
+                "dataTransmitted": []
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "OnDevicePersonalizationException",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "name": "OnDevicePersonalizationException",
+            "implemented_methods": [
+           
+  
+              {
+                "code": "OnDevicePersonalizationException(int, String, Throwable)",
+                "codeLong": "OnDevicePersonalizationException(int, java.lang.String, Throwable)",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationException.java;l=143",
+                "class": "Non-Sensitive",
+                "category": "",
+                "changeType": "Addition",
+                "dataReturned": [],
+                "dataTransmitted": []
+              },
+              {
+                "code": "int getErrorCode()",
+                "codeLong": "int getErrorCode()",
+                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationException.java;l=150",
+                "class": "Sensitive Source",
+                "category": "App Info and Performance",
+                "changeType": "Addition",
+                "dataReturned": [
+                  {
+                    "type": "int",
+                    "description": "The error code for this exception.",
+                    "possibly_sensitive": true
+                  }
+                ],
+                "dataTransmitted": []
+              }
+            ]
+          }
+        ]
       }
     ]
   },
