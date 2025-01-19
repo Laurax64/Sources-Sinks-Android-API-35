@@ -8608,7 +8608,7 @@
     "added_classes": [
       {
         "name": "EncryptedTopic",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "EncryptedTopic(byte[], String, byte[])",
             "codeLong": "EncryptedTopic(byte[], java.lang.String, byte[])",
@@ -8715,6 +8715,55 @@
             ],
             "dataTransmitted": []
           }
+        ]
+      }
+    ],
+    "changed_classes": [
+      {
+        "name": "GetTopicsResponse",
+        "implementedMethods": [
+          {
+              "code": "List<EncryptedTopic> getEncryptedTopics()",
+              "codeLong": "java.util.List<EncryptedTopic> getEncryptedTopics()",
+              "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/topics/GetTopicsResponse.java;l=49",
+              "class": "Non-Sensitive",
+              "category": "",
+              "changeType": "Addition",
+              "dataReturned": [
+                {
+                  "type": "java.util.List<android.adservices.topics.EncryptedTopic>",
+                  "description": "A list of objects of type EncryptedTopic that might contain sensitive data, but are not sensitive itself",
+                  "possibly_sensitive": false
+                }
+              ],
+              "dataTransmitted": []
+            }
+        ]
+      },
+      { 
+        "name":"GetTopicsResponse.Builder",
+        "implementedMethods":[
+          {
+            "code": "Builder(List<Topic>, List<EncryptedTopic>)",
+            "codeLong": "Builder(java.util.List<Topic>, java.util.List<android.adservices.topics.EncryptedTopic>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/topics/GetTopicsResponse.java;l=96",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+        },
+        {
+          "code": "Builder(List<Topic>)",
+          "codeLong": "Builder(java.util.List<android.adservices.topics.Topic>)",
+          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/topics/GetTopicsResponse.java;l=85",
+          "class": "Non-Sensitive",
+          "category": "",
+          "changeType": "Modification",
+          "dataReturned": [],
+          "dataTransmitted": []
+      }
+
         ]
       }
     ]
