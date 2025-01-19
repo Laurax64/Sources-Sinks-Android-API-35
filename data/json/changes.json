@@ -8772,7 +8772,7 @@
     "added_classes": [
       {
         "name": "ApplicationStartInfo",
-        "implemented_methods": [
+        "implementedMethods": [
        
           {
             "code": "int getStartupState()",
