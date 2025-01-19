@@ -160,3 +160,7 @@ Landroid/adservices/ondevicepersonalization/UserData$Builder;->setDataNetworkTyp
 Landroid/adservices/ondevicepersonalization/UserData$Builder;->setNetworkCapabilities(Landroid/net/NetworkCapabilities;)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
 Landroid/adservices/ondevicepersonalization/UserData$Builder;->setOrientation(I)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
 Landroid/adservices/ondevicepersonalization/UserData$Builder;->setTimezoneUtcOffsetMins(I)Landroid/adservices/ondevicepersonalization/UserData$Builder;,blocked
+
+Landroid/adservices/ondevicepersonalization/WebTriggerInput;-><init>(Landroid/adservices/ondevicepersonalization/WebTriggerInputParcel;)V,blocked
+Landroid/adservices/ondevicepersonalization/WebTriggerInput;-><init>(Landroid/net/Uri;Ljava/lang/String;[B)V,blocked
+Landroid/adservices/ondevicepersonalization/WebTriggerInput;->__metadata()V,blocked
