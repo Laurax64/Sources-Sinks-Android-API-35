@@ -176,3 +176,13 @@ Landroid/adservices/ondevicepersonalization/OnDevicePersonalizationException;-><
 Landroid/adservices/ondevicepersonalization/OnDevicePersonalizationException;-><init>(ILjava/lang/String;)V,blocked
 Landroid/adservices/ondevicepersonalization/OnDevicePersonalizationException;-><init>(ILjava/lang/Throwable;)V,blocked
 
+Landroid/adservices/signals/ProtectedSignalsManager;-><clinit>()V,blocked
+Landroid/adservices/signals/ProtectedSignalsManager;-><init>(Landroid/content/Context;)V,blocked
+Landroid/adservices/signals/ProtectedSignalsManager;->getCallerPackageName()Ljava/lang/String;,blocked
+Landroid/adservices/signals/ProtectedSignalsManager;->getService()Landroid/adservices/signals/IProtectedSignalsService;,blocked
+Landroid/adservices/signals/ProtectedSignalsManager;->initialize(Landroid/content/Context;)Landroid/adservices/signals/ProtectedSignalsManager;,blocked
+Landroid/adservices/signals/ProtectedSignalsManager$1;->onFailure(Landroid/adservices/common/FledgeErrorResponse;)V,blocked
+Landroid/adservices/signals/ProtectedSignalsManager$1;->onSuccess()V,blocked
+
+Landroid/adservices/signals/UpdateSignalsRequest;-><init>(Landroid/net/Uri;)V,blocked
+Landroid/adservices/signals/UpdateSignalsRequest;-><init>(Landroid/net/Uri;Landroid/adservices/signals/UpdateSignalsRequest-IA;)V,blocked

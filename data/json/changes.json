@@ -6738,7 +6738,7 @@
             "code": "String convertMessage(int errorCode)",
             "codeLong": "java.lang.String convertMessage(int)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=632",
-            "class": "Non-Sensitive",
+            "class": "Sensitive Source",
             "category": "App Info and Performance",
             "changeType": "Addition",
             "dataReturned": [
@@ -8407,8 +8407,6 @@
           {
             "name": "OnDevicePersonalizationException",
             "implemented_methods": [
-           
-  
               {
                 "code": "OnDevicePersonalizationException(int, String, Throwable)",
                 "codeLong": "OnDevicePersonalizationException(int, java.lang.String, Throwable)",
@@ -8442,7 +8440,168 @@
     ]
   },
   {
-    "package": "android.adservices.signals"
+    "package": "android.adservices.signals",
+    "added_classes": [
+      {
+        "name": "ProtectedSignalsManager",
+        "implemented_methods": [
+          {
+            "code": "ProtectedSignalsManager get(android.content.Context)",
+            "codeLong": "android.adservices.signals.ProtectedSignalsManager get(android.content.Context)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/ProtectedSignalsManager.java;l=70",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.signals.ProtectedSignalsManager",
+                "description": "An object of type ProtectedSignalsManager that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void updateSignals(UpdateSignalsRequest, Executor, OutcomeReceiver<Object, Exception>)",
+            "codeLong": "void updateSignals(android.adservices.signals.UpdateSignalsRequest, java.util.concurrent.Executor, android.os.OutcomeReceiver<java.lang.Object, java.lang.Exception>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/ProtectedSignalsManager.java;l=190",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "An error message which might contain information directly related to a crash",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesible_to_third_parties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "UpdateSignalsRequest",
+        "implemented_methods": [
+          {
+            "code": "Uri getUpdateUri()",
+            "codeLong": "android.net.Uri getUpdateUri()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/UpdateSignalsRequest.java;l=47",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.net.Uri",
+                "description": "The URI from which the signal updates will be fetched.",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/UpdateSignalsRequest.java;l=56",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this UpdateSignalsRequest",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/UpdateSignalsRequest.java;l=66",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String toString()",
+            "codeLong": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/UpdateSignalsRequest.java;l=74",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "This UpdateSignals object as a String, sensitive since UpdateSignals might contain sensitive data",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "UpdateSignalsRequest.Builder",
+        "implemented_methods": [
+          {
+            "code": "Builder(Uri)",
+            "codeLong": "Builder(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/UpdateSignalsRequest.java;l=86",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setUpdateUri(Uri)",
+            "codeLong": "android.adservices.signals.UpdateSignalsRequest.Builder setUpdateUri(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/UpdateSignalsRequest.java;l=97",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.signals.UpdateSignalsRequest.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "UpdateSignalsRequest build()",
+            "codeLong": "android.adservices.signals.UpdateSignalsRequest build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/UpdateSignalsRequest.java;l=109",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.adservices.signals.UpdateSignalsRequest",
+                "description": "An object of type UpdateSignalsRequest that might contain sensitive data, but is not sensitive itself",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.adservices.topics"
