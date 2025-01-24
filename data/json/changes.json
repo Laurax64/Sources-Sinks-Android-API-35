@@ -69,7 +69,7 @@
               {
                 "type": "android.adservices.adid.AdId",
                 "description": "An object of type AdId that might contain sensitive data, but is not sensitive itself",
-                "possiblySensitive":false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9137,8 +9137,8 @@
         ]
       },
       {
-        "name":"AutomaticZenRule.Builder",
-        "implementedMethods":[
+        "name": "AutomaticZenRule.Builder",
+        "implementedMethods": [
           {
             "code": "Builder(AutomaticZenRule)",
             "codeLong": "Builder(android.app.AutomaticZenRule)",
