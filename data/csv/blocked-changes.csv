@@ -125,9 +125,14 @@ Landroid/adservices/ondevicepersonalization/RequestToken;->getUserData()Landroid
 Landroid/adservices/ondevicepersonalization/SurfacePackageToken;-><init>(Ljava/lang/String;)V,blocked
 Landroid/adservices/ondevicepersonalization/SurfacePackageToken;->getTokenString()Ljava/lang/String;,blocked
 
+Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;-><clinit>()V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;-><init>(Landroid/os/Parcel;)V,blocked
 Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;-><init>([B[B)V,blocked
 Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;->__metadata()V,blocked
-Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;-><init>(Landroid/os/Parcel;)V,blocked
+
+Landroid/adservices/ondevicepersonalization/TrainingExampleRecord$1;-><init>()V,blocked
+Landroid/adservices/ondevicepersonalization/TrainingExampleRecord$1;->createFromParcel(Landroid/os/Parcel;)Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;,blocked
+Landroid/adservices/ondevicepersonalization/TrainingExampleRecord$1;->newArray(I)[Landroid/adservices/ondevicepersonalization/TrainingExampleRecord;,blocked
 
 Landroid/adservices/ondevicepersonalization/TrainingExampleRecord$Builder;->checkNotUsed()V,blocked
 
@@ -215,3 +220,5 @@ Landroid/app/ApplicationStartInfo;->timestampsEquals(Landroid/app/ApplicationSta
 Landroid/app/ApplicationStartInfo;->writeToProto(Landroid/util/proto/ProtoOutputStream;J)V,blocked
 Landroid/app/ApplicationStartInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/ApplicationStartInfo;,blocked
 Landroid/app/ApplicationStartInfo$1;->newArray(I)[Landroid/app/ApplicationStartInfo;,blocked
+
+Landroid/app/AutomaticZenRule$Builder;->setCreationTime(J)Landroid/app/AutomaticZenRule$Builder;,blocked

@@ -5,8 +5,8 @@ let apiData = [];
 
 // Fetch the data from 'changes.json' and store it in apiData and populate the tables with the fetched data.
 fetch('data/json/changes.json')
-.then((response) => response.json())
-.then((json) => {
+.then(response => response.json())
+.then(json => {
 
     apiData = json;
     apiData = parseApiData(apiData);
@@ -21,14 +21,16 @@ fetch('data/json/changes.json')
  */
 function parseApiData(data) {
   const parsedData = [];
-  const keysToProcess = ["changed_classes", "added_interfaces", "changed_interfaces", "added_classes"];
+  const keysToProcess = ["changedClasses", "addedInterfaces", "changedInterfaces", "addedClasses"];
   keysToProcess.forEach(key => {
     data.forEach(pkg => {
       pkg[key]?.forEach(item => {
-        pushData(parsedData, pkg.package+"."+item.name, item.implementedMethods);
+        console.log(`Processing package: ${pkg.package}, class/interface: ${item.name}`);
+        pushData(parsedData, pkg.package + "." + item.name, item.implementedMethods);
       });
     });
   });
+  console.log('Parsed Data:', parsedData);
   return parsedData;
 }
 
@@ -41,7 +43,8 @@ function parseApiData(data) {
  */
 function pushData(parsedData, packageName, implementedMethods) {
   if (implementedMethods) {
-    implementedMethods.forEach(method =>
+    implementedMethods.forEach(method => {
+      console.log(`Processing method: ${method.code} in package: ${packageName}`);
       parsedData.push({
         package: packageName, // Explicitly set the package name
         code: method.code,
@@ -52,8 +55,8 @@ function pushData(parsedData, packageName, implementedMethods) {
         changeType: method.changeType,
         dataReturned: method.dataReturned || [],
         dataTransmitted: method.dataTransmitted || []
-      })
-    );
+      });
+    });
   }
 }
 

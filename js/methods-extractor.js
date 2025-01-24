@@ -175,7 +175,7 @@ function getDataReturned(returnType, imports, packageName, changeName, classOrIn
             description = `0 which indicates, that the contents are not meant to cross compilation boundaries`
         }
         else if (!commonCriticalTypes.includes(returnType)) {
-            description  = `An object of type ${returnType} that might contain sensitive data, but is not sensitive itself`
+            description  = `An object of type ${returnType} that doesn't contain sensitive data that can be accessed without calling another function`
         }
         
         dataReturned.push({

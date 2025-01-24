@@ -1,7 +1,7 @@
 [
   {
     "package": "android",
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "Manifest.permission",
         "implementedMethods": []
@@ -18,7 +18,7 @@
   },
   {
     "package": "android.accessibilityservice",
-    "added_interfaces": [
+    "addedInterfaces": [
       {
         "name": "BrailleDisplayController",
         "implementedMethods": []
@@ -28,22 +28,22 @@
         "implementedMethods": []
       }
     ],
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "AccessibilityService",
         "implementedMethods": [
           {
             "code": "BrailleDisplayController getBrailleDisplayController()",
             "codeLong": "android.accessibilityservice.BrailleDisplayController getBrailleDisplayController()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/accessibilityservice/AccessibilityService.java;drc=46b645ecb4e797a7291d540ff7fc802819dd953f;l=3661",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/accessibilityservice/AccessibilityService.java;l=3661",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
                 "type": "android.accessibilityservice.BrailleDisplayController",
-                "description": "An object of type BrailleDisplayControllerImpl that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "description": "An object of type BrailleDisplayController that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -54,22 +54,22 @@
   },
   {
     "package": "android.adservices.adid",
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "AdIdManager",
         "implementedMethods": [
           {
             "code": "void getAdId(Executor, AdServicesOutcomeReceiver<AdId, Exception>)",
             "codeLong": "void getAdId(java.util.concurrent.Executor, android.adservices.common.AdServicesOutcomeReceiver<android.adservices.adid.AdId, java.lang.Exception>)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adid/AdIdManager.java;drc=913c7c595935c9c4392a9f2282ff5ae85073308e;l=120",
-            "class": "Sensitive Source",
-            "category": "Device or other IDs",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adid/AdIdManager.java;l=120",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
                 "type": "android.adservices.adid.AdId",
-                "description": "The device's advertising ID",
-                "possibly_sensitive": true
+                "description": "An object of type AdId that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive":false
               }
             ],
             "dataTransmitted": []
@@ -80,14 +80,14 @@
   },
   {
     "package": "android.adservices.adselection",
-    "added_classes": [
+    "addedClasses": [
       {
         "name": "AdSelectionFromOutcomesConfig",
         "implementedMethods": [
           {
             "code": "AdSelectionFromOutcomesConfig(AdTechIdentifier, List<Long>, AdSelectionSignals, Uri)",
             "codeLong": "AdSelectionFromOutcomesConfig(android.adservices.common.AdTechIdentifier, java.util.List<java.lang.Long>, android.adservices.common.AdSelectionSignals, android.net.Uri)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=58",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;l=58",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
@@ -97,7 +97,7 @@
           {
             "code": "AdSelectionFromOutcomesConfig(Parcel)",
             "codeLong": "AdSelectionFromOutcomesConfig(android.os.Parcel)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=74",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;l=74",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
@@ -107,7 +107,7 @@
           {
             "code": "AdTechIdentifier getSeller()",
             "codeLong": "android.adservices.common.AdTechIdentifier getSeller()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=88",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;l=88",
             "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
@@ -115,7 +115,7 @@
               {
                 "type": "android.adservices.common.AdTechIdentifier",
                 "description": "An ad tech identifier of the seller, for example, www.example-ssp.com",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -123,7 +123,7 @@
           {
             "code": "List<Long> getAdSelectionIds()",
             "codeLong": "java.util.list<java.lang.Long> getAdSelectionIds()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=97",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/AdSelectionFromOutcomesConfig.java;l=97",
             "class": "Sensitive Source",
             "category": "Device or other IDs",
             "changeType": "Addition",
@@ -131,7 +131,7 @@
               {
                 "type": "java.util.list<java.lang.Long>",
                 "description": "The ad selection IDs, which are used to identify ads that might be shown to the user",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -147,7 +147,7 @@
               {
                 "type": "android.adservices.common.AdSelectionSignals",
                 "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -163,7 +163,7 @@
               {
                 "type": "android.net.Uri",
                 "description": "The URI used to retrieve the JS code containing the seller/SSP selectOutcome function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -180,11 +180,11 @@
               {
                 "type": "android.os.Parcel",
                 "description": "A parcel into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accessible_to_third_parties": false
+                    "accessibleToThirdParties": false
                   }
                 ]
               }
@@ -201,7 +201,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -217,7 +217,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this AdSelectionFromOutcomesConfig",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -233,7 +233,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -264,18 +264,18 @@
               {
                 "type": "This AdSelectionFromOutcomesConfig.Builder",
                 "description": "This AdSelectionFromOutcomesConfig.Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": [
               {
                 "type": "android.adservices.common.AdTechIdentifier",
                 "description": "An ad tech identifier of the seller into the application code",
-                "possibly_sensitive": false,
+                "possiblySensitive": false,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               }
@@ -292,18 +292,18 @@
               {
                 "type": "AdSelectionFromOutcomesConfig.Builder",
                 "description": "This AdSelectionFromOutcomesConfig.Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": [
               {
                 "type": "java.util.List<java.lang.Long>",
                 "description": "The ad selection IDs into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accessible_to_third_parties": false
+                    "accessibleToThirdParties": false
                   }
                 ]
               }
@@ -320,18 +320,18 @@
               {
                 "type": "AdSelectionFromOutcomesConfig.Builder",
                 "description": "This AdSelectionFromOutcomesConfig.Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": [
               {
                 "type": "android.adservices.common.AdSelectionSignals",
                 "description": "Ad selection signals into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               }
@@ -348,18 +348,18 @@
               {
                 "type": "This AdSelectionFromOutcomesConfig.Builder",
                 "description": "This AdSelectionFromOutcomesConfig.Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": [
               {
                 "type": "android.net.Uri",
                 "description": "The URI used to retrieve the JS code containing the seller/SSP selectOutcome function into the application code",
-                "possibly_sensitive": false,
+                "possiblySensitive": false,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               }
@@ -376,7 +376,7 @@
               {
                 "type": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
                 "description": "An object of type AdSelectionFromOutcomesConfig that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -398,7 +398,7 @@
               {
                 "type": "android.adservices.common.AdData",
                 "description": "Data specific to an ad that is necessary for ad selection and rendering into the application code",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ]
           },
@@ -414,7 +414,7 @@
               {
                 "type": "android.adservices.common.AdData",
                 "description": "Data specific to an ad that is necessary for ad selection and rendering into the application code",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ]
           },
@@ -429,7 +429,7 @@
               {
                 "type": "android.adservices.common.AdData",
                 "description": "Data specific to an ad that is necessary for ad selection and rendering into the application code",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -445,7 +445,7 @@
               {
                 "type": "double",
                 "description": "The amount of money an advertiser has bid during the ad selection process to show an ad",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -461,7 +461,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -477,7 +477,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this AdWithBid",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -493,7 +493,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -524,7 +524,7 @@
               {
                 "type": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
                 "description": "An object of type AdSelectionFromOutcomesConfig that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -540,7 +540,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The outcome selection logic that will be executed during ad outcome selection, TODO: Improve description",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -556,7 +556,7 @@
               {
                 "type": "android.adservices.common.AdSelectionSignals",
                 "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -597,7 +597,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -623,7 +623,7 @@
               {
                 "type": "java.lang.String",
                 "description": "Ad selection decision logic that could have been provided by the buyer or seller",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -639,7 +639,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -655,7 +655,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this DecisionLogic",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -671,7 +671,7 @@
               {
                 "type": "java.lang.String",
                 "description": "Ad selection decision logic that could have been provided by the buyer or seller",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -702,7 +702,7 @@
               {
                 "type": "long",
                 "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -718,7 +718,7 @@
               {
                 "type": "long",
                 "description": "The id that uniquely identifies ad selection data",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -734,7 +734,7 @@
               {
                 "type": "long",
                 "description": "The ad selection data that is collected from device",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -765,7 +765,7 @@
               {
                 "type": "android.adservices.common.AdTechIdentifier",
                 "description": "An ad tech identifier of the seller, for example, www.example-ssp.com",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -781,7 +781,7 @@
               {
                 "type": "android.net.Uri",
                 "description": "The coordinator origin Uri where the public keys for encryption are fetched from",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -797,7 +797,7 @@
               {
                 "type": "android.adservices.adselection.SellerConfiguration",
                 "description": "The seller ad tech's requested payload configuration",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -828,7 +828,7 @@
               {
                 "type": "android.adservices.adselection.GetAdSelectionDataRequest.Builder",
                 "description": "An object of type GetAdSelectionDataRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -844,7 +844,7 @@
               {
                 "type": "android.adservices.adselection.GetAdSelectionDataRequest",
                 "description": "An object of type GetAdSelectionDataRequest that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -860,7 +860,7 @@
               {
                 "type": "android.adservices.adselection.GetAdSelectionDataRequest.Builder",
                 "description": "An object of type GetAdSelectionDataRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -901,7 +901,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -918,22 +918,22 @@
               {
                 "type": "android.os.Parcel",
                 "description": "A parcel into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accessible_to_third_parties": false
+                    "accessibleToThirdParties": false
                   }
                 ]
               },
               {
                 "type": "java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic>",
                 "description": "A map into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accessible_to_third_parties": false
+                    "accessibleToThirdParties": false
                   }
                 ]
               }
@@ -950,7 +950,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -966,7 +966,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this PerBuyerDecisionLogic",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -982,7 +982,7 @@
               {
                 "type": "java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic>",
                 "description": "Map of buyers and their decision logic to be fetched during ad selection",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1013,7 +1013,7 @@
               {
                 "type": "long",
                 "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -1029,7 +1029,7 @@
               {
                 "type": "long",
                 "description": "The id that uniquely identifies ad selection data",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -1045,7 +1045,7 @@
               {
                 "type": "android.adservices.common.AdTechIdentifier",
                 "description": "An ad tech identifier of the seller, for example, www.example-ssp.com",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1061,7 +1061,7 @@
               {
                 "type": "byte[]",
                 "description": "An ad selection result",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -1092,7 +1092,7 @@
               {
                 "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
                 "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1108,7 +1108,7 @@
               {
                 "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
                 "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1124,7 +1124,7 @@
               {
                 "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
                 "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1140,7 +1140,7 @@
               {
                 "type": "android.adservices.adselection.PersistAdSelectionResultRequest.Builder",
                 "description": "This PersistAdSelectionResultRequest.Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1156,7 +1156,7 @@
               {
                 "type": "android.adservices.adselection.PersistAdSelectionResultRequest",
                 "description": "An object of type PersistAdSelectionResultRequest that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1187,7 +1187,7 @@
               {
                 "type": "android.adservices.adselection.AdSelectionFromOutcomesConfig",
                 "description": "An object of type AdSelectionFromOutcomesConfig that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1218,7 +1218,7 @@
               {
                 "type": "long",
                 "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -1234,7 +1234,7 @@
               {
                 "type": "java.lang.String",
                 "description": "A key for the type of ad event to be reported",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1250,7 +1250,7 @@
               {
                 "type": "android.view.InputEvent",
                 "description": "An object of type InputEvent that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1266,7 +1266,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The ad event data",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -1282,7 +1282,7 @@
               {
                 "type": "int",
                 "description": "The bitfield of reporting destinations to report to (buyer, seller, or both)",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1313,7 +1313,7 @@
               {
                 "type": "android.adservices.adselection.ReportEventRequest.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1329,7 +1329,7 @@
               {
                 "type": "android.adservices.adselection.ReportEventRequest.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1345,7 +1345,7 @@
               {
                 "type": "android.adservices.adselection.ReportEventRequest.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1361,7 +1361,7 @@
               {
                 "type": "android.adservices.adselection.ReportEventRequest.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1377,7 +1377,7 @@
               {
                 "type": "android.adservices.adselection.ReportEventRequest.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1393,7 +1393,7 @@
               {
                 "type": "android.adservices.adselection.ReportEventRequest",
                 "description": "An object of type ReportEventRequest that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1424,7 +1424,7 @@
               {
                 "type": "java.util.Set<android.adservices.common.AdTechIdentifier>",
                 "description": "A set of objects of type AdTechIdentifier that might contain sensitive data, but are not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1455,7 +1455,7 @@
               {
                 "type": "android.adservices.adselection.SetAppInstallAdvertisersRequest.Builder",
                 "description": "An object of type SetAppInstallAdvertisersRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1471,7 +1471,7 @@
               {
                 "type": "android.adservices.adselection.SetAppInstallAdvertisersRequest",
                 "description": "An object of type SetAppInstallAdvertisersRequest that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1512,7 +1512,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1529,12 +1529,12 @@
               {
                 "type": "Parcel",
                 "description": "The Parcel to which the object should be written into the application code",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               },
               {
                 "type": "int",
                 "description": "Additional flags about how the object should be written into the application code",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ]
           },
@@ -1549,7 +1549,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this SignedContextualAds",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1565,7 +1565,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1581,7 +1581,7 @@
               {
                 "type": "android.adservices.common.AdTechIdentifier",
                 "description": "An object of type AdTechIdentfier",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1597,7 +1597,7 @@
               {
                 "type": "android.net.Uri",
                 "description": "The URI used to retrieve the updateBid() and reportWin() function used during the ad selection and reporting process",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1613,7 +1613,7 @@
               {
                 "type": "java.util.List<android.adservices.adselection.AdWithBid>",
                 "description": "A list of objects of type AdWithBid that might contain sensitive data, but are not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1629,7 +1629,7 @@
               {
                 "type": "byte[]",
                 "description": "A copy of the signature for the contextual ads object",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1645,7 +1645,7 @@
               {
                 "type": "java.lang.String",
                 "description": "This SignedContextualAds object as a String, not sensitive since SignedContextualAds doesn't contain sensitive data",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1686,7 +1686,7 @@
               {
                 "type": "android.adservices.adselection.SignedContextualAds.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1702,7 +1702,7 @@
               {
                 "type": "android.adservices.adselection.SignedContextualAds.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1718,7 +1718,7 @@
               {
                 "type": "android.adservices.adselection.SignedContextualAds.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1734,7 +1734,7 @@
               {
                 "type": "android.adservices.adselection.SignedContextualAds.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1750,7 +1750,7 @@
               {
                 "type": "android.adservices.adselection.SignedContextualAds",
                 "description": "An object of type SignedContextualAds that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1781,7 +1781,7 @@
               {
                 "type": "long",
                 "description": "An ad selection ID, which is used to identify an ad that might be shown to the user",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -1797,7 +1797,7 @@
               {
                 "type": "long",
                 "description": "The ad event type, e.g., view or click",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -1813,7 +1813,7 @@
               {
                 "type": "android.adservices.common.AdTechIdentifier",
                 "description": "An object of type AdTechIdentfier",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1829,7 +1829,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this UpdateAdCounterHistogramRequest",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1845,7 +1845,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1861,7 +1861,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The ad event type, e.g., view or click",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -1892,7 +1892,7 @@
               {
                 "type": "android.adservices.adselection.UpdateAdCounterHistogramRequest.Builder",
                 "description": "An object of type UpdateAdCounterHistogramRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1908,7 +1908,7 @@
               {
                 "type": "android.adservices.adselection.UpdateAdCounterHistogramRequest.Builder",
                 "description": "An object of type UpdateAdCounterHistogramRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1924,7 +1924,7 @@
               {
                 "type": "android.adservices.adselection.UpdateAdCounterHistogramRequest.Builder",
                 "description": "An object of type UpdateAdCounterHistogramRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1940,7 +1940,7 @@
               {
                 "type": "android.adservices.adselection.UpdateAdCounterHistogramRequest",
                 "description": "An object of type UpdateAdCounterHistogramRequest that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1948,7 +1948,7 @@
         ]
       }
     ],
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "AdSelectionConfig",
         "implementedMethods": [
@@ -1963,7 +1963,7 @@
               {
                 "type": "java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.SignedContextualAds>",
                 "description": "A map of buyers and corresponding contextual ads",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1984,7 +1984,7 @@
               {
                 "type": "android.adservices.adselection.AdSelectionConfig.Builder",
                 "description": "An object of type AdSelectionConfig.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2006,22 +2006,22 @@
               {
                 "type": "byte[]",
                 "description": "Custom audience data from device to send into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               },
               {
                 "type": "long",
                 "description": "An ad selection ID, which is used to identify an ad that might be shown to the user into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               }
@@ -2039,33 +2039,33 @@
               {
                 "type": "android.adservices.adselection.PersistAdSelectionResultInput",
                 "description": "An object of type PersistAdSelectionResultInput into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               },
               {
                 "type": "android.adservices.common.CallerMetadata",
                 "description": "An object of type CallerMetadata into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               },
               {
                 "type": "android.adservices.common.PersistAdSelectionResultCallback",
                 "description": "An object of type PersistAdSelectionResultCallback into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               }
@@ -2083,22 +2083,22 @@
               {
                 "type": "android.adservices.adselection.ReportInteractionInput",
                 "description": "An object of type ReportInteractionInput into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               },
               {
                 "type": "android.adservices.adselection.ReportInteractionCallback",
                 "description": "An object of type ReportInteractionCallback into the application code",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Application code",
-                    "accesible_to_third_parties": false
+                    "accesibleToThirdParties": false
                   }
                 ]
               }
@@ -2150,7 +2150,7 @@
               {
                 "type": "boolean",
                 "description": "Whether this AdSelectionOutcome contains results or is empty",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2181,7 +2181,7 @@
               {
                 "type": "android.adservices.adselection.PerBuyerDecisionLogic",
                 "description": "An object of type PerBuyerDecisionLogic that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2242,7 +2242,7 @@
   },
   {
     "package": "android.adservices.common",
-    "added_classes": [
+    "addedClasses": [
       {
         "name": "AdFilters",
         "implementedMethods": [
@@ -2277,7 +2277,7 @@
               {
                 "type": "android.adservices.common.FrequencyCapFilters",
                 "description": "An object of type FrequencyCapFilters that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2293,7 +2293,7 @@
               {
                 "type": "android.adservices.common.AppInstallFilters",
                 "description": "An object of type AppInstallFilters that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2309,7 +2309,7 @@
               {
                 "type": "int",
                 "description": "The estimated size of the ad filters of this AdFilters object",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2325,7 +2325,7 @@
               {
                 "type": "org.json.JSONObject",
                 "description": "The ad filters of this AdFilters object",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2341,7 +2341,7 @@
               {
                 "type": "android.adservices.common.AdFilters",
                 "description": "An object of type AdFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2367,7 +2367,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2383,7 +2383,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this AdFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2399,7 +2399,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2415,7 +2415,7 @@
               {
                 "type": "java.lang.String",
                 "description": "This AdFilters object as a String, not sensitive since AdFilters does not contain sensitive data",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2446,7 +2446,7 @@
               {
                 "type": "android.adservices.common.AdFilters.Builder",
                 "description": "An object of type AdFilters.Builder",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2462,7 +2462,7 @@
               {
                 "type": "android.adservices.common.AdFilters.Builder",
                 "description": "An object of type AdFilters.Builder",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2478,7 +2478,7 @@
               {
                 "type": "android.adservices.common.AdFilters",
                 "description": "An object of type AdFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2534,7 +2534,7 @@
               {
                 "type": "int",
                 "description": "The estimated size of the package names this ad is filtered on",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2550,7 +2550,7 @@
               {
                 "type": "org.json.JSONObject",
                 "description": "The package names this ad is filtered on",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2566,7 +2566,7 @@
               {
                 "type": "android.adservices.common.AppInstallFilters",
                 "description": "An object of type AppInstallFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2592,7 +2592,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2608,7 +2608,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this AppInstallFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2624,7 +2624,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2640,7 +2640,7 @@
               {
                 "type": "java.lang.String",
                 "description": "This AppInstallFilters object as a String, not sensitive since AppInstallFilters does not contain sensitive data",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2671,7 +2671,7 @@
               {
                 "type": "android.adservices.common.AppInstallFilters.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2687,7 +2687,7 @@
               {
                 "type": "android.adservices.common.AppInstallFilters",
                 "description": "An object of type AppInstallFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2728,7 +2728,7 @@
               {
                 "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
                 "description": "A list of objects of type KeyedFrequencyCap",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2744,7 +2744,7 @@
               {
                 "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
                 "description": "A list of objects of type KeyedFrequencyCap",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2760,7 +2760,7 @@
               {
                 "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
                 "description": "A list of objects of type KeyedFrequencyCap",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2776,7 +2776,7 @@
               {
                 "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
                 "description": "A list of objects of type KeyedFrequencyCap",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2792,7 +2792,7 @@
               {
                 "type": "int",
                 "description": "The estimated total size of the frequency caps lists",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2808,7 +2808,7 @@
               {
                 "type": "int",
                 "description": "The estimated total size of the give frequency caps list",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2824,7 +2824,7 @@
               {
                 "type": "org.json.JSONObject",
                 "description": "The frequency caps lists",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2840,7 +2840,7 @@
               {
                 "type": "org.json.JSONObject",
                 "description": "A frequency caps list",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2856,7 +2856,7 @@
               {
                 "type": "android.adservices.common.FrequencyCapFilters",
                 "description": "An object of type FrequencyCapFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2872,7 +2872,7 @@
               {
                 "type": "java.util.List<android.adservices.common.KeyedFrequencyCap>",
                 "description": "A frequency caps list",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2898,7 +2898,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2914,7 +2914,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this FrequencyCapFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2930,7 +2930,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2946,7 +2946,7 @@
               {
                 "type": "java.lang.String",
                 "description": "This FrequencyCapFilters object as a String, not sensitive since FrequencyCapFilters does not contain sensitive data",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2977,7 +2977,7 @@
               {
                 "type": "android.adservices.common.FrequencyCapFilters.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -2993,7 +2993,7 @@
               {
                 "type": "android.adservices.common.FrequencyCapFilters.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3009,7 +3009,7 @@
               {
                 "type": "android.adservices.common.FrequencyCapFilters.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3025,7 +3025,7 @@
               {
                 "type": "android.adservices.common.FrequencyCapFilters.Builder",
                 "description": "This Builder object that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3041,7 +3041,7 @@
               {
                 "type": "android.adservices.common.FrequencyCapFilters",
                 "description": "An object of type FrequencyCapFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3082,7 +3082,7 @@
               {
                 "type": "int",
                 "description": "An identifier which defines any criteria which may have previously been counted and persisted on the device",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3098,7 +3098,7 @@
               {
                 "type": "int",
                 "description": "The maximum count of ad event (e.g., click or view) occurrences allowed within a given time interval",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3114,7 +3114,7 @@
               {
                 "type": "int",
                 "description": "The interval over which the ad event frequency cap is calculated",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3130,7 +3130,7 @@
               {
                 "type": "int",
                 "description": "The total estimated size of the key, duration, and the maxCount field of this KeyedFrequencyCap object",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3146,7 +3146,7 @@
               {
                 "type": "org.json.JSONObject",
                 "description": "The key, duration, and the maxCount of this KeyedFrequencyCap object",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3162,7 +3162,7 @@
               {
                 "type": "android.adservices.common.KeyedFrequencyCap",
                 "description": "An object of type KeyedFrequencyCap",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3188,7 +3188,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3204,7 +3204,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this KeyedFrequencyCap object",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3220,7 +3220,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3236,7 +3236,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The key, duration, and the maxCount of this KeyedFrequencyCap object",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3267,7 +3267,7 @@
               {
                 "type": "android.adservices.common.KeyedFrequencyCap.Builder",
                 "description": "An object of type KeyedFrequencyCap.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3283,7 +3283,7 @@
               {
                 "type": "android.adservices.common.KeyedFrequencyCap.Builder",
                 "description": "An object of type KeyedFrequencyCap.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3299,7 +3299,7 @@
               {
                 "type": "android.adservices.common.KeyedFrequencyCap.Builder",
                 "description": "An object of type KeyedFrequencyCap.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3315,7 +3315,7 @@
               {
                 "type": "android.adservices.common.KeyedFrequencyCap",
                 "description": "An object of type KeyedFrequencyCap that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3323,13 +3323,13 @@
         ]
       }
     ],
-    "added_interfaces": [
+    "addedInterfaces": [
       {
         "name": "AdServicesOutcomeReceiver",
         "implementedMethods": []
       }
     ],
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "AdData",
         "implementedMethods": [
@@ -3344,7 +3344,7 @@
               {
                 "type": "java.util.Set<java.lang.Integer>",
                 "description": "Keys used in counting ad events(e.g., click or view)",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3360,7 +3360,7 @@
               {
                 "type": "android.adservices.common.AdFilters",
                 "description": "An object of type AdFilters",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3376,7 +3376,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The ad render id for server auctions",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3397,7 +3397,7 @@
               {
                 "type": "android.adservices.common.AdData.Builder",
                 "description": "An object of type AdData.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3413,7 +3413,7 @@
               {
                 "type": "android.adservices.common.AdData.Builder",
                 "description": "An object of type AdData.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3429,7 +3429,7 @@
               {
                 "type": "android.adservices.common.AdData.Builder",
                 "description": "An object of type AdData.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3444,7 +3444,7 @@
   },
   {
     "package": "android.adservices.customaudience",
-    "added_classes": [
+    "addedClasses": [
       {
         "name": "FetchAndJoinCustomAudienceRequest",
         "implementedMethods": [
@@ -3469,7 +3469,7 @@
               {
                 "type": "android.net.Uri",
                 "description": "A URI for a custom audience a user might be added to. A custom audience is an abstract grouping of users with similar demonstrated interests.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3485,7 +3485,7 @@
               {
                 "type": "java.lang.String",
                 "description": "A name for a custom audience a user might be added to. A custom audience is an abstract grouping of users with similar demonstrated interests.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3501,7 +3501,7 @@
               {
                 "type": "java.time.Instant",
                 "description": "The time instant by which by which joining the custom audience will be delayed. Sensitive if it depends on the user's personal information.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3517,7 +3517,7 @@
               {
                 "type": "java.time.Instant",
                 "description": "The time instant by which the membership to the custom audience will expire. Sensitive if it depends on the user's personal information.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3533,7 +3533,7 @@
               {
                 "type": "android.adservices.common.AdSelectionSignals",
                 "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3549,7 +3549,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this FetchAndJoinCustomAudienceRequest",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3565,7 +3565,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3582,7 +3582,7 @@
                 "type": "java.lang.String",
                 "description": "The custom audience request, which might contain user bidding signals, e.g., the user's coarse location",
                 "link": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3613,7 +3613,7 @@
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
                 "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3629,7 +3629,7 @@
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
                 "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3645,7 +3645,7 @@
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
                 "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3661,7 +3661,7 @@
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
                 "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3677,7 +3677,7 @@
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest.Builder",
                 "description": "An object of type FetchAndJoinCustomAudienceRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3693,7 +3693,7 @@
               {
                 "type": "android.adservices.customaudience.FetchAndJoinCustomAudienceRequest",
                 "description": "An object of type FetchAndJoinCustomAudienceRequest that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3734,7 +3734,7 @@
               {
                 "type": "java.lang.String",
                 "description": "A name for a custom audience a user might be added to. A custom audience is an abstract grouping of users with similar demonstrated interests.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3750,7 +3750,7 @@
               {
                 "type": "java.time.Instant",
                 "description": "The time instant by which joining the custom audience will be delayed. Sensitive if it depends on the user's personal information.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3766,7 +3766,7 @@
               {
                 "type": "java.time.Instant",
                 "description": "The time instant by which the membership to the custom audience will expire. Sensitive if it depends on the user's personal information.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3782,7 +3782,7 @@
               {
                 "type": "android.adservices.common.AdSelectionSignals",
                 "description": "An object of type AdSelectionSignals that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3798,7 +3798,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3814,7 +3814,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this PartialCustomAudience",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3831,7 +3831,7 @@
                 "type": "java.lang.String",
                 "description": "The custom audience request, which might contain user bidding signals, e.g., the user's coarse location",
                 "source": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3847,7 +3847,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3888,7 +3888,7 @@
               {
                 "type": "android.adservices.customaudience.PartialCustomAudience.Builder",
                 "description": "An object of type PartialCustomAudience.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3904,7 +3904,7 @@
               {
                 "type": "android.adservices.customaudience.PartialCustomAudience.Builder",
                 "description": "An object of type PartialCustomAudience.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3920,7 +3920,7 @@
               {
                 "type": "android.adservices.customaudience.PartialCustomAudience.Builder",
                 "description": "An object of type PartialCustomAudience.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3936,7 +3936,7 @@
               {
                 "type": "android.adservices.customaudience.PartialCustomAudience",
                 "description": "An object of type PartialCustomAudience that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3967,7 +3967,7 @@
               {
                 "type": "java.net.Uri",
                 "description": "The URI from which the update for the buyer's custom audiences will be fetched. A custom audience is an abstract grouping of users with similar demonstrated interests.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -3983,7 +3983,7 @@
               {
                 "type": "java.time.Duration",
                 "description": "The minimum duration that the update will be deferred before the service fetches updates for the buyer ad tech's custom audiences.",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -3999,7 +3999,7 @@
               {
                 "type": "java.util.List<android.adservices.customaudience.PartialCustomAudience>",
                 "description": "A list of objects of type PartialCustomAudience that might contain sensitive data, but are not sensitive themselves",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4015,7 +4015,7 @@
               {
                 "type": "boolean",
                 "description": "Whether any pending scheduled updates should be canceled and replaced.",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4031,7 +4031,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4047,7 +4047,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this ScheduleCustomAudienceUpdateRequest",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4064,7 +4064,7 @@
                 "type": "java.lang.String",
                 "description": "A human-readable representation of ScheduleCustomAudienceUpdateRequest containing a partial custom audience list.",
                 "source": "https://developers.google.com/privacy-sandbox/private-advertising/protected-audience/android",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -4110,7 +4110,7 @@
               {
                 "type": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder",
                 "description": "An object of type ScheduleCustomAudienceUpdateRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4126,7 +4126,7 @@
               {
                 "type": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder",
                 "description": "An object of type ScheduleCustomAudienceUpdateRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4142,7 +4142,7 @@
               {
                 "type": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest.Builder",
                 "description": "An object of type ScheduleCustomAudienceUpdateRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4158,7 +4158,7 @@
               {
                 "type": "android.adservices.customaudience.ScheduleCustomAudienceUpdateRequest",
                 "description": "An object of type ScheduleCustomAudienceUpdateRequest that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4166,7 +4166,7 @@
         ]
       }
     ],
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "AddCustomAudienceOverrideRequest",
         "implementedMethods": [
@@ -4181,7 +4181,7 @@
               {
                 "type": "long",
                 "description": "A version value for ad bidding logic",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4202,7 +4202,7 @@
               {
                 "type": "android.adservices.customaudience.AddCustomAudienceOverrideRequest.Builder",
                 "description": "An object of type AddCustomAudienceOverrideRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4223,7 +4223,7 @@
               {
                 "type": "int",
                 "description": "Flag indicating whether ads for this custom audience can be omitted",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4244,7 +4244,7 @@
               {
                 "type": "android.adservices.customaudience.CustomAudience.Builder",
                 "description": "An object of type CustomAudience.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4280,7 +4280,7 @@
   },
   {
     "package": "android.adservices.measurement",
-    "added_classes": [
+    "addedClasses": [
       {
         "name": "SourceRegistrationRequest",
         "implementedMethods": [
@@ -4315,7 +4315,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this SourceRegistrationRequest",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4331,7 +4331,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4347,7 +4347,7 @@
               {
                 "type": "java.util.List<android.net.Uri>",
                 "description": "Registration URIs to fetch sources, TODO: Improve description",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4363,7 +4363,7 @@
               {
                 "type": "android.view.InputEvent getInputEvent() or null",
                 "description": "An object of type InputEvent for a click event or null for a view event",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -4379,7 +4379,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4420,7 +4420,7 @@
               {
                 "type": "android.adservices.measurement.SourceRegistrationRequest.Builder",
                 "description": "An object of type SourceRegistrationRequest.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4436,7 +4436,7 @@
               {
                 "type": "android.adservices.measurement.SourceRegistrationRequest",
                 "description": "An object of type SourceRegistrationRequest that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4444,7 +4444,7 @@
         ]
       }
     ],
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "MeasurementManager",
         "implementedMethods": [
@@ -4534,7 +4534,7 @@
   },
   {
     "package": "android.adservices.ondevicepersonalization",
-    "added_interfaces": [
+    "addedInterfaces": [
       {
         "name": "IsolatedWorker",
         "implementedMethods": [
@@ -4609,7 +4609,7 @@
         "implementedMethods": []
       }
     ],
-    "added_classes": [
+    "addedClasses": [
       {
         "name": "AppInfo",
         "implementedMethods": [
@@ -4624,7 +4624,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the app is installed",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -4640,7 +4640,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this AppInfo",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4656,7 +4656,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4682,7 +4682,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4698,7 +4698,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4719,7 +4719,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.KeyValueStore",
                 "description": "An object of type KeyValueStore that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4735,7 +4735,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this DownloadCompletedInput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4751,7 +4751,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4772,7 +4772,7 @@
               {
                 "type": "java.util.List<java.lang.String>",
                 "description": "The keys to be retained in the REMOTE_DATA table",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4788,7 +4788,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this DownloadCompletedOutput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4804,7 +4804,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4835,7 +4835,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.DownloadCompletedOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4851,7 +4851,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.DownloadCompletedOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4867,14 +4867,14 @@
               {
                 "type": "android.adservices.ondevicepersonalization.DownloadCompletedOutput",
                 "description": "An object of type DownloadCompletedOutput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
           },
           {
             "code": "void checkNotUsed()",
-            "codeLong": " checkNotUsed()",
+            "codeLong": "void checkNotUsed()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/DownloadCompletedOutput.java;l=152",
             "class": "Non-Sensitive",
             "category": "",
@@ -4884,11 +4884,11 @@
               {
                 "type": "java.lang.String",
                 "description": "That this Builder has been reused but shouldn't be reused to device log",
-                "possibly_sensitive": false,
+                "possiblySensitive": false,
                 "destinations": [
                   {
                     "resource": "Device Log",
-                    "accesible_to_third_parties": true
+                    "accesibleToThirdParties": true
                   }
                 ]
               }
@@ -4940,7 +4940,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RequestLogRecord",
                 "description": "An object of type RequestLogRecord that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4956,7 +4956,7 @@
               {
                 "type": "android.os.PersistableBundle",
                 "description": "An object of type PersistableBundle that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4972,7 +4972,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this EventInput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -4988,7 +4988,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5009,7 +5009,7 @@
               {
                 "type": "Instant",
                 "description": "An object of type Instant that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5035,7 +5035,7 @@
               {
                 "type": "int",
                 "description": "The index of the row in an existing RequestLogRecord that this payload should be associated with",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5051,7 +5051,7 @@
               {
                 "type": "int",
                 "description": "The service-assigned identifier that identifies this payload.",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5067,7 +5067,7 @@
               {
                 "type": "ContentValues",
                 "description": "An object of type ContentValues that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5083,7 +5083,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RequestLogRecord",
                 "description": "An object of type RequestLogRecord that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5099,7 +5099,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this EventLogRecord",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5115,7 +5115,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5141,7 +5141,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5167,7 +5167,7 @@
               {
                 "type": "android.adservices.ondevicepersonalizationEventLogRecord[]",
                 "description": "An object of type EventLogRecord[] that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5183,7 +5183,7 @@
               {
                 "type": "EventLogRecord",
                 "description": "An object of type EventLogRecord that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5214,7 +5214,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.EventLogRecord.Builder",
                 "description": "An object of type EventLogRecord.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5230,7 +5230,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.EventLogRecord.Builder",
                 "description": "An object of type EventLogRecord.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5246,7 +5246,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.EventLogRecord.Builder",
                 "description": "An object of type EventLogRecord.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5262,7 +5262,7 @@
               {
                 "type": "Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5278,7 +5278,7 @@
               {
                 "type": "Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5294,7 +5294,7 @@
               {
                 "type": "EventLogRecord",
                 "description": "An object of type EventLogRecord that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5311,11 +5311,11 @@
               {
                 "type": "java.lang.String",
                 "description": "That this Builder has been reused but shouldn't be reused to device log",
-                "possibly_sensitive": false,
+                "possiblySensitive": false,
                 "destinations": [
                   {
                     "resource": "Device Log",
-                    "accesible_to_third_parties": true
+                    "accesibleToThirdParties": true
                   }
                 ]
               }
@@ -5357,7 +5357,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.EventLogRecord",
                 "description": "An object of type EventLogRecord that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5373,7 +5373,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this EventOutput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5389,7 +5389,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5420,7 +5420,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.EventOutput.Builder",
                 "description": "An object of type EventOutput.Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5436,7 +5436,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.EventOutput",
                 "description": "An object of type EventOutput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5453,11 +5453,11 @@
               {
                 "type": "java.lang.String",
                 "description": "That this Builder has been reused but shouldn't be reused to device log",
-                "possibly_sensitive": false,
+                "possiblySensitive": false,
                 "destinations": [
                   {
                     "resource": "Device Log",
-                    "accesible_to_third_parties": true
+                    "accesibleToThirdParties": true
                   }
                 ]
               }
@@ -5489,7 +5489,7 @@
               {
                 "type": "Uri",
                 "description": "An object of type Uri that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5505,7 +5505,7 @@
               {
                 "type": "Uri",
                 "description": "An object of type Uri that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5526,7 +5526,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The package name of the calling app",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -5542,7 +5542,7 @@
               {
                 "type": "android.os.PersistableBundle",
                 "description": "An object of type PersistableBundle that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5563,7 +5563,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RequestLogRecord",
                 "description": "An object of type RequestLogRecord that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5579,7 +5579,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RenderingConfig",
                 "description": "An object of type RenderingConfig that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5595,7 +5595,7 @@
               {
                 "type": "List<EventLogRecord>",
                 "description": "An object of type List<EventLogRecord> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5611,7 +5611,7 @@
               {
                 "type": "byte[]",
                 "description": "A byte array that an IsolatedService may optionally return to a calling app, by setting this field to a non-null value",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -5627,7 +5627,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this ExecuteOutput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5643,7 +5643,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5674,7 +5674,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.ExecuteOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5690,7 +5690,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.ExecuteOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5706,7 +5706,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.ExecuteOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5722,7 +5722,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.ExecuteOutput.Builder.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5738,7 +5738,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.ExecuteOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5754,7 +5754,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.ExecuteOutput",
                 "description": "An object of type ExecuteOutput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5785,7 +5785,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The name of a collection of devices that specific task groups can run on",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -5801,7 +5801,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this FederatedComputeInput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5817,7 +5817,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5848,7 +5848,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.FederatedComputeInput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5864,7 +5864,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.FederatedComputeInput",
                 "description": "An object of type FederatedComputeInput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5915,7 +5915,7 @@
               {
                 "type": "int",
                 "description": "The failed error code from the IFederatedComputeService to appropriate API surface error code",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5951,7 +5951,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingInterval",
                 "description": "An object of type TrainingInterval that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5976,7 +5976,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput.Params",
                 "description": "An object of type Params that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -5992,7 +5992,7 @@
               {
                 "type": "java.lang.Object[]",
                 "description": "An array of input data.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -6008,7 +6008,7 @@
               {
                 "type": "int",
                 "description": "The input data size.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -6024,7 +6024,7 @@
               {
                 "type": "InferenceOutput",
                 "description": "An object of type InferenceOutput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6040,7 +6040,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this InferenceInput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6056,7 +6056,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6087,7 +6087,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6103,7 +6103,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6119,7 +6119,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6135,7 +6135,7 @@
               {
                 "type": "Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6151,7 +6151,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput",
                 "description": "An object of type InferenceInput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6172,7 +6172,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization",
                 "description": "An object of type KeyValueStore that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6188,7 +6188,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The key of the table where the corresponding value stores a pre-trained model.",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6204,7 +6204,7 @@
               {
                 "type": "int",
                 "description": "The delegate to run model inference.",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6220,7 +6220,7 @@
               {
                 "type": "int",
                 "description": "The type of the pre-trained model",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6236,7 +6236,7 @@
               {
                 "type": "int",
                 "description": "The number of threads used for intraop parallelism on CPU, must be positive number",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6252,7 +6252,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this InferenceInput.Params",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6268,7 +6268,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6299,7 +6299,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput.Params.Builder Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6315,7 +6315,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput.Params.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6331,7 +6331,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput.Params.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6347,7 +6347,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput.Params.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6363,7 +6363,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceInput.Params",
                 "description": "An object of type Params that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6384,7 +6384,7 @@
               {
                 "type": "Object>",
                 "description": "An object of type Object> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6400,7 +6400,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this InferenceOutput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6416,7 +6416,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6447,7 +6447,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6463,7 +6463,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6479,7 +6479,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.InferenceOutput",
                 "description": "An object of type InferenceOutput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6510,7 +6510,7 @@
               {
                 "type": "android.os.IBinder",
                 "description": "An object of type IBinder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6526,7 +6526,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.KeyValueStore",
                 "description": "An object of type KeyValueStore that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6542,7 +6542,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.MutableKeyValueStore",
                 "description": "An object of type MutableKeyValueStore that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6558,7 +6558,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.LogReader",
                 "description": "An object of type LogReader that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6574,7 +6574,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.EventUrlProvider",
                 "description": "An object of type EventUrlProvider that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6590,7 +6590,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.UserData",
                 "description": "An object of type UserData that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6606,7 +6606,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.FederatedComputeScheduler",
                 "description": "An object of type FederatedComputeScheduler that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6622,7 +6622,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.ModelManager",
                 "description": "An object of type ModelManager that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6673,7 +6673,7 @@
               {
                 "type": "java.util.List<android.adservices.ondevicepersonalization.RequestLogRecord>",
                 "description": "An object of type List<RequestLogRecord> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6689,7 +6689,7 @@
               {
                 "type": "java.util.List<android.adservices.ondevicepersonalization.EventLogRecord",
                 "description": "An object of type List<EventLogRecord> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6745,7 +6745,7 @@
               {
                 "type": "java.lang.String",
                 "description": "An error message which might contain information directly related to a crash",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -6761,7 +6761,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.int",
                 "description": "A legacy error codes",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6777,7 +6777,7 @@
               {
                 "type": "java.lang.Exception",
                 "description": "An object of type Exception that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -6793,7 +6793,7 @@
               {
                 "type": "java.lang.Exception",
                 "description": "An object of type Exception that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6824,7 +6824,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.SurfacePackageToken",
                 "description": "An object of type SurfacePackageToken that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6840,7 +6840,7 @@
               {
                 "type": "byte[]",
                 "description": "The output data that was returned by the IsolatedService",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -6861,7 +6861,7 @@
               {
                 "type": "java.util.List<java.lang.String>",
                 "description": "A List of keys in the REMOTE_DATA table that identify the content to be rendered",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -6877,7 +6877,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.boolean",
                 "description": "Whether the given object is equal to this RenderingConfig",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6893,7 +6893,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6919,7 +6919,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6950,7 +6950,7 @@
               {
                 "type": "ndroid.adservices.ondevicepersonalization.RenderingConfig",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6966,7 +6966,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -6982,7 +6982,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RenderingConfig",
                 "description": "An object of type RenderingConfig that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7013,7 +7013,7 @@
               {
                 "type": "int",
                 "description": "The width of the slot, might be related to user settings",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -7029,7 +7029,7 @@
               {
                 "type": "int",
                 "description": "The height of the slot, might be related to user settings",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -7045,7 +7045,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RenderingConfig",
                 "description": "An object of type RenderingConfig that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7061,7 +7061,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this RenderInput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7077,7 +7077,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.int",
                 "description": "An hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7098,7 +7098,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The HTML content to be rendered in a webview",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -7114,7 +7114,7 @@
               {
                 "type": "java.lang.String",
                 "description": "A key in the REMOTE_DATA table that points to an Apache Velocity template",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -7130,7 +7130,7 @@
               {
                 "type": "android.os.PersistableBundle",
                 "description": "An object of type PersistableBundle that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7146,7 +7146,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.boolean",
                 "description": "Whether the given object is equal to this RenderOutput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7162,7 +7162,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7193,7 +7193,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RenderOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7209,7 +7209,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RenderOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7225,7 +7225,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RenderOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7241,7 +7241,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RenderOutput",
                 "description": "An object of type RenderOutput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7262,7 +7262,7 @@
               {
                 "type": "java.time.Instant",
                 "description": "An object of type Instant that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7278,7 +7278,7 @@
               {
                 "type": "java.util.List<ContentValues>",
                 "description": "An object of type List<ContentValues> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7294,7 +7294,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this RequestLogRecord",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7310,7 +7310,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7336,7 +7336,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7367,7 +7367,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RequestLogRecord.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7383,7 +7383,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RequestLogRecord.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7399,7 +7399,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RequestLogRecord.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7415,7 +7415,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RequestLogRecord",
                 "description": "An object of type RequestLogRecord that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7444,7 +7444,7 @@
               {
                 "type": "byte[]",
                 "description": "A training example",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -7460,7 +7460,7 @@
               {
                 "type": "byte[]",
                 "description": "The resumption token byte arrays corresponding to training examples",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -7486,7 +7486,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7517,7 +7517,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingExampleRecord.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7533,7 +7533,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingExampleRecord.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7549,7 +7549,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingExampleRecord",
                 "description": "An object of type TrainingExampleRecord that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7590,7 +7590,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The name of the federated compute population (a collection of devices that specific task groups can run on)",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7606,7 +7606,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The name of the task within the federated compute population",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7622,7 +7622,7 @@
               {
                 "type": "byte[]",
                 "description": "Token used to support the resumption of training",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7638,7 +7638,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The data collection name to use to create training examples",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7654,7 +7654,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this TrainingExamplesInput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7670,7 +7670,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7691,7 +7691,7 @@
               {
                 "type": "java.util.List<TrainingExampleRecord>",
                 "description": "An object of type List<TrainingExampleRecord> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7707,7 +7707,7 @@
               {
                 "type": "boolean",
                 "description": "An object of type boolean that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7723,7 +7723,7 @@
               {
                 "type": "int",
                 "description": "An object of type int that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7754,7 +7754,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingExamplesOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7770,7 +7770,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingExamplesOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7786,7 +7786,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingExamplesOutput",
                 "description": "An object of type TrainingExamplesOutput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7807,7 +7807,7 @@
               {
                 "type": "int",
                 "description": "The scheduling mode for this task",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7823,7 +7823,7 @@
               {
                 "type": "java.time.Duration",
                 "description": "The minimum time interval between two training runs",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7839,7 +7839,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this TrainingInterval",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7855,7 +7855,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7886,7 +7886,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingInterval.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7902,7 +7902,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingInterval.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7918,7 +7918,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.TrainingInterval",
                 "description": "An object of type TrainingInterval that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -7939,7 +7939,7 @@
               {
                 "type": "java.time.Duration",
                 "description": "The device timezone +/- offset from UTC.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -7955,7 +7955,7 @@
               {
                 "type": "int",
                 "description": "The device orientation.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -7971,7 +7971,7 @@
               {
                 "type": "long",
                 "description": "The available space on device in bytes",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -7987,7 +7987,7 @@
               {
                 "type": "int",
                 "description": "Battery percentage",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8003,7 +8003,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The Service Provider Name (SPN)",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8019,7 +8019,7 @@
               {
                 "type": "android.net.NetworkCapabilities",
                 "description": "An object of type NetworkCapabilities that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8035,7 +8035,7 @@
               {
                 "type": "int",
                 "description": "A constant indicating the radio technology (network type) currently in use on the device for data transmission",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8051,7 +8051,7 @@
               {
                 "type": "java.util.Map<java.lang.String, android.adservices.ondevicepersonalization.AppInfo>",
                 "description": "A map from package name to app information for installed and uninstalled apps. The package names can be sensitive by themselves.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8067,7 +8067,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this UserData",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8083,7 +8083,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8109,7 +8109,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8125,7 +8125,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.UserData[]",
                 "description": "An object of type UserData[] that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8141,7 +8141,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.UserData",
                 "description": "An object of type UserData that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8162,7 +8162,7 @@
               {
                 "type": "android.net.Uri",
                 "description": "The destination URL (landing page) where the web trigger event occurred",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8178,7 +8178,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The package name of the app where the web trigger event occurred",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8194,7 +8194,7 @@
               {
                 "type": "byte[]",
                 "description": "Additional data returned by the server as part of the web trigger registration",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8210,7 +8210,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this WebTriggerInput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8226,7 +8226,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8247,7 +8247,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.RequestLogRecord",
                 "description": "An object of type RequestLogRecord that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8263,7 +8263,7 @@
               {
                 "type": "java.util.List<android.adservices.ondevicepersonalization.EventLogRecord>",
                 "description": "An object of type List<EventLogRecord> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8279,7 +8279,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this WebTriggerOutput",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8295,7 +8295,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8326,7 +8326,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.WebTriggerOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8342,7 +8342,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.WebTriggerOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8358,7 +8358,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.WebTriggerOutput.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8374,7 +8374,7 @@
               {
                 "type": "android.adservices.ondevicepersonalization.WebTriggerOutput",
                 "description": "An object of type WebTriggerOutput that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8428,7 +8428,7 @@
                   {
                     "type": "int",
                     "description": "The error code for this exception.",
-                    "possibly_sensitive": true
+                    "possiblySensitive": true
                   }
                 ],
                 "dataTransmitted": []
@@ -8441,7 +8441,7 @@
   },
   {
     "package": "android.adservices.signals",
-    "added_classes": [
+    "addedClasses": [
       {
         "name": "ProtectedSignalsManager",
         "implementedMethods": [
@@ -8456,7 +8456,7 @@
               {
                 "type": "android.adservices.signals.ProtectedSignalsManager",
                 "description": "An object of type ProtectedSignalsManager that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8473,11 +8473,11 @@
               {
                 "type": "java.lang.String",
                 "description": "An error message which might contain information directly related to a crash",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Device Log",
-                    "accesible_to_third_parties": true
+                    "accesibleToThirdParties": true
                   }
                 ]
               }
@@ -8499,7 +8499,7 @@
               {
                 "type": "android.net.Uri",
                 "description": "The URI from which the signal updates will be fetched.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8515,7 +8515,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this UpdateSignalsRequest",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8531,7 +8531,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8547,7 +8547,7 @@
               {
                 "type": "java.lang.String",
                 "description": "This UpdateSignals object as a String, sensitive since UpdateSignals might contain sensitive data",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8578,7 +8578,7 @@
               {
                 "type": "android.adservices.signals.UpdateSignalsRequest.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8594,7 +8594,7 @@
               {
                 "type": "android.adservices.signals.UpdateSignalsRequest",
                 "description": "An object of type UpdateSignalsRequest that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8605,7 +8605,7 @@
   },
   {
     "package": "android.adservices.topics",
-    "added_classes": [
+    "addedClasses": [
       {
         "name": "EncryptedTopic",
         "implementedMethods": [
@@ -8630,7 +8630,7 @@
               {
                 "type": "byte[]",
                 "description": "Encrypted topic that appear to be of interest to the user, based on their activity",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8646,7 +8646,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The key identifier for the used encryption key",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8662,7 +8662,7 @@
               {
                 "type": "byte[]",
                 "description": "The encapsulated key generated during HPKE setup.",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8678,7 +8678,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this EncryptedTopic",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8694,7 +8694,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8710,7 +8710,7 @@
               {
                 "type": "java.lang.String",
                 "description": "This EncryptedTopic object as a String, sensitive since EncryptedTopic might contain sensitive data",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8718,7 +8718,7 @@
         ]
       }
     ],
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "GetTopicsResponse",
         "implementedMethods": [
@@ -8733,7 +8733,7 @@
               {
                 "type": "java.util.List<android.adservices.topics.EncryptedTopic>",
                 "description": "A list of objects of type EncryptedTopic that might contain sensitive data, but are not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8769,11 +8769,10 @@
   },
   {
     "package": "android.app",
-    "added_classes": [
+    "addedClasses": [
       {
         "name": "ApplicationStartInfo",
         "implementedMethods": [
-       
           {
             "code": "int getStartupState()",
             "codeLong": "int getStartupState()",
@@ -8785,7 +8784,7 @@
               {
                 "type": "int",
                 "description": "An app's startup state, e.g., 1 indicating process startup has failed",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8801,7 +8800,7 @@
               {
                 "type": "long",
                 "description": "Monotonic elapsed time persisted across reboots",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8817,7 +8816,7 @@
               {
                 "type": "int",
                 "description": "The app startup process id",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8833,7 +8832,7 @@
               {
                 "type": "int",
                 "description": "The kernel user identifier of the process",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8849,7 +8848,7 @@
               {
                 "type": "int",
                 "description": "The kernel user identifier that is assigned at the package installation time",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8865,7 +8864,7 @@
               {
                 "type": "int",
                 "description": "The defining kernel user identifier",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8881,7 +8880,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The actual process name it was running with",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8897,7 +8896,7 @@
               {
                 "type": "int",
                 "description": "The reason code of what triggered the process's start",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8913,7 +8912,7 @@
               {
                 "type": "java.util.Map<java.lang.Integer, Long>",
                 "description": "Various clock monotonic timestamps in nanoseconds throughout the startup process",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8929,7 +8928,7 @@
               {
                 "type": "int",
                 "description": "The state of the app at startup",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8945,7 +8944,7 @@
               {
                 "type": "android.content.Intent",
                 "description": "An object of type Intent that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8961,7 +8960,7 @@
               {
                 "type": "int",
                 "description": "An instruction on how the activity should be launched",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8977,7 +8976,7 @@
               {
                 "type": "boolean",
                 "description": "Whether this is the first process launch for the app since it was force-stopped",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -8993,7 +8992,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9019,7 +9018,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this ApplicationStartInfo",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9035,7 +9034,351 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AutomaticZenRule",
+        "implementedMethods": [
+          {
+            "code": "ZenDeviceEffects getDeviceEffects()",
+            "codeLong": "android.service.notification.ZenDeviceEffects getDeviceEffects()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=328",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.service.notification.ZenDeviceEffects",
+                "description": "An object of type ZenDeviceEffects that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getIconResId()",
+            "codeLong": "int getIconResId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=471",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The resource id of the drawable icon for this zen rule",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getTriggerDescription()",
+            "codeLong": "java.lang.String getTriggerDescription()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=450",
+            "class": "Sensitive Source",
+            "category": "Calendar",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The user's visible description of when this rule is active, e.g., Mon-Fri, 9pm-7am",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getType()",
+            "codeLong": "int getType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=432",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The type of the zen rule, e.g., theater, bedtime, or calendar events",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean isManualInvocationAllowed()",
+            "codeLong": "boolean isManualInvocationAllowed()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=489",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether this zen rule can be manually activated by the user even when the triggering condition for the rule is not met",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void setDeviceEffects(ZenDeviceEffects)",
+            "codeLong": "void setDeviceEffects(android.service.notification.ZenDeviceEffects)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=395",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name":"AutomaticZenRule.Builder",
+        "implementedMethods":[
+          {
+            "code": "Builder(AutomaticZenRule)",
+            "codeLong": "Builder(android.app.AutomaticZenRule)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=695",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder(String, Uri)",
+            "codeLong": "Builder(java.lang.String, android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=712",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setName(String)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setName(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=720",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setOwner(ComponentName)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setOwner(android.content.ComponentName)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=736",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setConditionId(Uri)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setConditionId(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=744",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setInterruptionFilter(int)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setInterruptionFilter(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=752",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setEnabled(boolean)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setEnabled(boolean)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=761",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setConfigurationActivity(ComponentName)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setConfigurationActivity(android.content.ComponentName)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=778",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setZenPolicy(ZenPolicy)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setZenPolicy(android.service.notification.ZenPolicy)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=790",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setDeviceEffects(ZenDeviceEffects)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setDeviceEffects(android.service.notification.ZenDeviceEffects)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=804",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setType(int)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setType(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=812",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setTriggerDescription(String)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setTriggerDescription(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=824",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setIconResId(int)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setIconResId(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=832",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setManualInvocationAllowed(boolean)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setManualInvocationAllowed(boolean)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=841",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setPackage(String)",
+            "codeLong": "android.app.AutomaticZenRule.Builder setPackage(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=859",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule.Builder",
+                "description": "An object of type Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "AutomaticZenRule build()",
+            "codeLong": "android.app.AutomaticZenRule build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=864",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.AutomaticZenRule",
+                "description": "An object of type AutomaticZenRule that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9184,7 +9527,7 @@
   },
   {
     "package": "android.net.ipsec.ike",
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "IkeSession",
         "implementedMethods": [
@@ -9328,7 +9671,7 @@
   },
   {
     "package": "java.util",
-    "changed_classes": [
+    "changedClasses": [
       {
         "name": "Properties",
         "implementedMethods": [
@@ -9344,11 +9687,11 @@
               {
                 "type": "java.lang.String",
                 "description": "XML file containing properties (key-value pairs) to, e.g., external file storage.",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "External File Storage",
-                    "accesible_to_third_parties": true
+                    "accesibleToThirdParties": true
                   }
                 ]
               }
