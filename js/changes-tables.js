@@ -1,71 +1,69 @@
 /**
  * The array containing the fetched data from 'changes.json'.
  */
-let apiData = [];
+let apiData = []
 
-// Fetch the data from 'changes.json' and store it in apiData and populate the tables with the fetched data.
+// Fetch the data from changes.json and store it in apiData and populate the tables with the fetched data.
 fetch('data/json/changes.json')
-.then(response => response.json())
-.then(json => {
-
-    apiData = json;
-    apiData = parseApiData(apiData);
-    populateTables(apiData);
-  })
+  .then(response => response.json())
+  .then(json => {
+    apiData = json
+    apiData = parseApiData()
+    populateTables(apiData)
+  }
+)
 
 /**
- * Parses the given data to extract all implemented accesible methods and compiles them into a flat array format.
+ * Extracts all implemented methods from apiData and parses its data into an array.
  * 
- * @param {Array} data - The package objects to be parsed.
- * @returns {Array} - The objects containting the implemented methods details.
+ * @returns {Array<object>} The objects containting the implemented methods details
  */
-function parseApiData(data) {
-  const parsedData = [];
-  const keysToProcess = ["changedClasses", "addedInterfaces", "changedInterfaces", "addedClasses"];
-  keysToProcess.forEach(key => {
-    data.forEach(pkg => {
-      pkg[key]?.forEach(item => {
-        console.log(`Processing package: ${pkg.package}, class/interface: ${item.name}`);
-        pushData(parsedData, pkg.package + "." + item.name, item.implementedMethods);
-      });
-    });
-  });
-  console.log('Parsed Data:', parsedData);
-  return parsedData;
+function parseApiData() {
+  const parsedData = []
+  const keysToProcess = ["addedClasses", "changedClasses", "addedInterfaces", "changedInterfaces",]
+  keysToProcess.forEach(key =>
+    apiData.forEach(package =>
+      package[key]?.forEach(classOrInterface =>
+        pushData(
+          parsedData,
+          package.package + "." + classOrInterface.name,
+          classOrInterface.implementedMethods
+        )
+      )
+    )
+  )
+  return parsedData
 }
 
 /**
  * Pushes the implementedMethod's data to the given parsedData field.
  * 
- * @param {Array} parsedData - The array to push the data to.
- * @param {String} packageName - The package name to push.
- * @param {Array} implementedMethods - The implementedMethods to push.
+ * @param {Array<object>} parsedData The array to push the data to
+ * @param {string} classOrInterfaceImport The class or interface import, e.g., android.app.AutomaticZenRule
  */
-function pushData(parsedData, packageName, implementedMethods) {
-  if (implementedMethods) {
-    implementedMethods.forEach(method => {
-      console.log(`Processing method: ${method.code} in package: ${packageName}`);
-      parsedData.push({
-        package: packageName, // Explicitly set the package name
+function pushData(parsedData, classOrInterfaceImport, implementedMethods) {
+  implementedMethods.forEach(method =>
+    parsedData.push(
+      {
+        classOrInterfaceImport: classOrInterfaceImport,
         code: method.code,
         codeLong: method.codeLong,
         link: method.link,
         class: method.class,
-        category: method.category || null,
+        category: method.category,
         changeType: method.changeType,
-        dataReturned: method.dataReturned || [],
-        dataTransmitted: method.dataTransmitted || []
-      });
-    });
-  }
+        dataReturned: method.dataReturned,
+        dataTransmitted: method.dataTransmitted
+      }
+    )
+  )
 }
 
 
 /**
- * Populates the tables with the filtered data.
- * The function will clear existing table rows and insert new ones based on the data passed.
+ * Clears the existing table rows and inserts new ones based on the data passed.
  * 
- * @param {Array} filteredData - The data to populate the tables with.
+ * @param {Array} filteredData The data to populate the tables with.
  */
 function populateTables(filteredData) {
   const tableBodies = {
@@ -77,80 +75,80 @@ function populateTables(filteredData) {
   // Clear existing table rows
   Object.values(tableBodies).forEach(tableBody => {
     while (tableBody.firstChild) {
-      tableBody.removeChild(tableBody.firstChild);
+      tableBody.removeChild(tableBody.firstChild)
     }
   })
 
   filteredData.forEach(item => {
 
-    let tableId;
+    let tableId
     switch (item.class) {
       case "Sensitive Source":
-        tableId = 'sensitive-sources';
-        break;
+        tableId = 'sensitive-sources'
+        break
       case "Sensitive Sink":
-        tableId = 'sensitive-sinks';
-        break;
+        tableId = 'sensitive-sinks'
+        break
       case "Non-Sensitive":
       default:
-        tableId = 'non-sensitives';
-        break;
+        tableId = 'non-sensitives'
+        break
     }
-    const tableBody = tableBodies[tableId];
-    tableBody.appendChild(createTableRow(item));
+    const tableBody = tableBodies[tableId]
+    tableBody.appendChild(createTableRow(item))
   })
 }
 
 /**
  * Creates a table row for a given item of data.
  * 
- * @param {Object} item - The data item to create a row for.
- * @returns {HTMLTableRowElement} - The created table row element.
+ * @param {Object} item The data item to create a row for
+ * @returns {HTMLTableRowElement} The created table row element
  */
 function createTableRow(item) {
-  const row = document.createElement('tr');
+  const row = document.createElement('tr')
 
-  const codeCell = document.createElement('td');
-  const linkElement = document.createElement('a');
-  linkElement.href = item.link;
-  linkElement.textContent = item.code;
-  codeCell.appendChild(linkElement);
-  row.appendChild(codeCell);
+  const codeCell = document.createElement('td')
+  const linkElement = document.createElement('a')
+  linkElement.href = item.link
+  linkElement.textContent = item.code
+  codeCell.appendChild(linkElement)
+  row.appendChild(codeCell)
 
-  const changeTypeCell = document.createElement('td');
-  changeTypeCell.textContent = item.changeType;
-  row.appendChild(changeTypeCell);
+  const changeTypeCell = document.createElement('td')
+  changeTypeCell.textContent = item.changeType
+  row.appendChild(changeTypeCell)
 
-  const categoriesCell = document.createElement('td');
-  categoriesCell.textContent = item.category ? item.category : "";
-  row.appendChild(categoriesCell);
+  const categoriesCell = document.createElement('td')
+  categoriesCell.textContent = item.category ? item.category : ""
+  row.appendChild(categoriesCell)
 
-  const dataReturnedCell = document.createElement('td');
-  dataReturnedCell.innerHTML = getDataReturnedDescription(item);
-  row.appendChild(dataReturnedCell);
+  const dataReturnedCell = document.createElement('td')
+  dataReturnedCell.innerHTML = getDataReturnedDescription(item)
+  row.appendChild(dataReturnedCell)
 
-  const dataTransmittedCell = document.createElement('td');
-  dataTransmittedCell.innerHTML = getDataTransmittedDescription(item);
-  row.appendChild(dataTransmittedCell);
+  const dataTransmittedCell = document.createElement('td')
+  dataTransmittedCell.innerHTML = getDataTransmittedDescription(item)
+  row.appendChild(dataTransmittedCell)
 
-  return row;
+  return row
 }
 
 /**
  * Filters the data based on user-selected filters and repopulates the tables with the filtered data.
  */
 function applyFilters() {
-  const changeType = document.getElementById('change-type').value;
-  const selectedClass = document.getElementById('class').value;
-  const selectedCategory = document.getElementById('category').value;
+  const changeType = document.getElementById('change-type').value
+  const selectedClass = document.getElementById('class').value
+  const selectedCategory = document.getElementById('category').value
   const filteredData = apiData.filter(item => {
-    const matchChangeType = changeType ? item.changeType === changeType : true;
-    const matchClass = selectedClass ? item.class === selectedClass : true;
-    const matchCategory = selectedCategory ? item.category === selectedCategory : true;
-    return matchChangeType && matchClass && matchCategory;
-  });
+    const matchChangeType = changeType ? item.changeType === changeType : true
+    const matchClass = selectedClass ? item.class === selectedClass : true
+    const matchCategory = selectedCategory ? item.category === selectedCategory : true
+    return matchChangeType && matchClass && matchCategory
+  })
 
-  populateTables(filteredData);
+  populateTables(filteredData)
 }
 
 /**
@@ -161,9 +159,9 @@ function applyFilters() {
  */
 function getDataReturnedDescription(item) {
   if (item.dataReturned && item.dataReturned.length > 0) {
-    return item.dataReturned.map(data => data.description).join("<br>");
+    return item.dataReturned.map(data => data.description).join("<br>")
   }
-  return "None";
+  return "None"
 }
 
 /**
@@ -174,7 +172,7 @@ function getDataReturnedDescription(item) {
  */
 function getDataTransmittedDescription(item) {
   if (item.dataTransmitted && item.dataTransmitted.length > 0) {
-    return item.dataTransmitted.map(data => data.description).join("<br>");
+    return item.dataTransmitted.map(data => data.description).join("<br>")
   }
-  return "None";
+  return "None"
 }

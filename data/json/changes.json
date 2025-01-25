@@ -694,7 +694,7 @@
           {
             "code": "long getAdSelectionId()",
             "codeLong": "long getAdSelectionId()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataOutcome.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=47",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataOutcome.java;l=47",
             "class": "Sensitive Source",
             "category": "Device or other IDs",
             "changeType": "Addition",
@@ -710,7 +710,7 @@
           {
             "code": "long getAdSelectionDataId()",
             "codeLong": "long getAdSelectionDataId()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataOutcome.java;drc=3eff0769f5abc295fff55d363fba425b11948766;l=54",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataOutcome.java;l=54",
             "class": "Sensitive Source",
             "category": "Device or other IDs",
             "changeType": "Addition",

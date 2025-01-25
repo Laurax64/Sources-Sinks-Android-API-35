@@ -1,8 +1,5 @@
 /**
  * Processes the Java code entered in the input field, extracting the change information and formatting it as JSON.
- * Displays the formatted JSON or an error message in the output.
- * 
- * @returns {void} - No return value. This function updates the DOM with the formatted JSON or error message.
  */
 function processJavaCode() {
     const javaCode = document.getElementById("javaCode").value;
@@ -15,49 +12,50 @@ function processJavaCode() {
         document.getElementById("outputJson").textContent = "Please provide the base URL.";
         return;
     }
-    const cleanedJavaCode = replaceCommentWithSpaces(javaCode)
+    const cleanedJavaCode = replaceCommentsWithSpaces(javaCode)
     const classOrInterfaceName = extractClassOrInterfaceName(cleanedJavaCode);
     const changesInformation = extractChangesInformation(cleanedJavaCode, baseUrl, classOrInterfaceName)
     const formattedJson = formatAsJson(classOrInterfaceName, changesInformation);
 
     document.getElementById("outputJson").textContent = JSON.stringify(formattedJson, null, 4);
 }
-
 /**
- * Replaces lines containing comments with parentheses with spaces,
- * preserving line numbers and line lengths.
+ * Replaces lines containing comments with parentheses with spaces, preserving line numbers and line lengths.
  * 
- * @param {string} javaCode - The Java code to process.
- * @returns {string} - The modified Java code with comment lines replaced by spaces.
+ * @param {string} javaCode The Java code to process.
+ * @returns {string} The modified Java code with comment lines replaced by spaces.
  */
-function replaceCommentWithSpaces(javaCode) {
+function replaceCommentsWithSpaces(javaCode) {
     const lines = javaCode.split("\n");
     const updatedLines = lines.map(line => {
 
-        // Check if the line contains a single-line comment with parentheses
+        // Check if the line starts with '\\' (escaped backslash) and contains parentheses
         if (/^\s*\/\/.*\([^\)]*\)/.test(line)) {
-            console.log("single line comment:")
+            console.log("Escaped backslash comment (starts with '//'")
             console.log(line)
 
-            return " ".repeat(line.length); // Replace entire line with spaces
+            return " ".repeat(line.trim.length); // Replace entire line with spaces
         }
 
-        // Check if the line contains a multi-line comment with parentheses
-        if (/\/\*.*\([^\)]*\).*?\*\//.test(line)) {
-            console.log("multiline comment:")
+        // Check if the line starts with '/*' (multi-line comment opening) and contains parentheses
+        if (/^\s*\/\*/.test(line) && /\([^\)]*\)/.test(line)) {
+            console.log("Multi-line comment (starts with '/*'):")
             console.log(line)
-            return " ".repeat(line.length); // Replace entire line with spaces
+            return " ".repeat(line.trim.length);  // Replace the entire line with spaces
         }
 
-        // If line doesn't match, keep it as is
-        return line;
-    });
+        // Check if the line starts with '*' (multi-line comment continuation) and contains parentheses
+        if (/^\s*\*/.test(line) && /\([^\)]*\)/.test(line)) {
+            console.log("Multi-line comment continuation (starts with '*'):")
+            console.log(line)
+            return " ".repeat(line.trim.length);  // Replace the entire line with spaces
+        }
+        return line
+    })
 
     // Rejoin the lines to form the modified code
-    return updatedLines.join("\n");
+    return updatedLines.join("\n")
 }
-
-
 
 /**
  * Extracts the class or interface name from the given Java code.
@@ -144,23 +142,16 @@ function extractChangesInformations(javaCode) {
 /**
  * Extracts data returned from the return type of a method.
  * 
- * @param {string} returnType - The return type of a method.
- * @param {Array} imports - The list of imports.
- * @param {string} packageName - The name of the package.
- * @param {string} classOrInterfaceName - The name of the class containing the method.
- * @returns {Array} - An array of objects representing the data returned.
+ * @param {string} returnType - The return type of a method
+ * @param {Array} imports - The list of imports
+ * @param {string} packageName - The name of the package
+ * @param {string} classOrInterfaceName - The name of the class containing the method
+ * 
+ * @returns {Array} - An array of objects representing the data returned
  */
 function getDataReturned(returnType, imports, packageName, changeName, classOrInterfaceName) {
-    const commonCriticalTypes = [
-        "byte", "Byte",
-        "short", "Short",
-        "int", "Integer",
-        "long", "Long",
-        "float", "Float",
-        "double", "Double",
-        "char", "Character",
-        "boolean", "Boolean",
-        "String"
+    const commonSensitiveTypes = [
+        "byte", "Byte", "short", "Short", "int", "Integer", "long", "Long", "float", "Float", "double", "Double", "char", "Character", "boolean", "Boolean", "String"
     ]
     const dataReturned = [];
     if (returnType && returnType != "void") {
@@ -174,13 +165,13 @@ function getDataReturned(returnType, imports, packageName, changeName, classOrIn
         else if (changeName == "describeContents") {
             description = `0 which indicates, that the contents are not meant to cross compilation boundaries`
         }
-        else if (!commonCriticalTypes.includes(returnType)) {
-            description  = `An object of type ${returnType} that doesn't contain sensitive data that can be accessed without calling another function`
+        else if (!commonSensitiveTypes.includes(returnType)) {
+            description = `An object of type ${returnType} that doesn't contain sensitive data that can be accessed without calling another function`
         }
-        
+
         dataReturned.push({
             type: extractFullyQualifiedName(returnType, imports, classOrInterfaceName, packageName),
-            description: description ,
+            description: description,
             possibly_sensitive: false
         });
     }
