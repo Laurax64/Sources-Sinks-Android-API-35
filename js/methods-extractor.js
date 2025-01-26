@@ -12,40 +12,41 @@ function processJavaCode() {
         document.getElementById("outputJson").textContent = "Please provide the base URL.";
         return;
     }
-    const cleanedJavaCode = replaceCommentsWithSpaces(javaCode)
+    const cleanedJavaCode = removeComments(javaCode)
     const classOrInterfaceName = extractClassOrInterfaceName(cleanedJavaCode);
     const changesInformation = extractChangesInformation(cleanedJavaCode, baseUrl, classOrInterfaceName)
     const formattedJson = formatAsJson(classOrInterfaceName, changesInformation);
 
     document.getElementById("outputJson").textContent = JSON.stringify(formattedJson, null, 4);
 }
+
 /**
  * Replaces lines containing comments with parentheses with spaces, preserving line numbers and line lengths.
  * 
  * @param {string} javaCode The Java code to process.
  * @returns {string} The modified Java code with comment lines replaced by spaces.
  */
-function replaceCommentsWithSpaces(javaCode) {
+function removeComments(javaCode) {
     const lines = javaCode.split("\n");
     const updatedLines = lines.map(line => {
 
-        // Check if the line starts with '\\' (escaped backslash) and contains parentheses
-        if (/^\s*\/\/.*\([^\)]*\)/.test(line)) {
+        // Check if the line starts with '\\' (escaped backslash)
+        if (/^\s*\/\//.test(line)) {
             console.log("Escaped backslash comment (starts with '//'")
             console.log(line)
 
             return " ".repeat(line.trim.length); // Replace entire line with spaces
         }
 
-        // Check if the line starts with '/*' (multi-line comment opening) and contains parentheses
-        if (/^\s*\/\*/.test(line) && /\([^\)]*\)/.test(line)) {
+        // Check if the line starts with '/*' (multi-line comment opening)
+        if (/^\s*\/\*/.test(line)) {
             console.log("Multi-line comment (starts with '/*'):")
             console.log(line)
             return " ".repeat(line.trim.length);  // Replace the entire line with spaces
         }
 
-        // Check if the line starts with '*' (multi-line comment continuation) and contains parentheses
-        if (/^\s*\*/.test(line) && /\([^\)]*\)/.test(line)) {
+        // Check if the line starts with '*' (multi-line comment continuation)
+        if (/^\s*\*/.test(line)) {
             console.log("Multi-line comment continuation (starts with '*'):")
             console.log(line)
             return " ".repeat(line.trim.length);  // Replace the entire line with spaces
