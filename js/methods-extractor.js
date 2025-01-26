@@ -14,7 +14,7 @@ function processJavaCode() {
     }
     const cleanedJavaCode = removeComments(javaCode)
     const classOrInterfaceName = extractClassOrInterfaceName(cleanedJavaCode);
-    const changesInformation = extractChangesInformation(cleanedJavaCode, baseUrl, classOrInterfaceName)
+    const changesInformation = extractChangesInformations(cleanedJavaCode, baseUrl, classOrInterfaceName)
     const formattedJson = formatAsJson(classOrInterfaceName, changesInformation);
 
     document.getElementById("outputJson").textContent = JSON.stringify(formattedJson, null, 4);
@@ -68,50 +68,53 @@ function extractClassOrInterfaceName(javaCode) {
  * @param {string} javaCode - The source code of the Java class.
  * @param {string} baseUrl - The base URL for generating method links.
  * @param {string} classOrInterfaceName - The name of the Java class.
- * @returns {Array} - An array of method objects with method details like code, data returned, etc.
+ * @returns {Array} Objects containing the code, codeLong, link, dataReturned and dataTransmitted for each change
  */
-function extractChangesInformation(javaCode, baseUrl, classOrInterfaceName) {
+function extractChangesInformations(javaCode, baseUrl, classOrInterfaceName) {
     const packageName = getPackageName(javaCode);
     const imports = getImports(javaCode);
-    const changesInformations = extractChangesInformations(javaCode, classOrInterfaceName)
+    const headers = extractHeaders(javaCode, classOrInterfaceName)
 
-    const methods = [];
-    for (const header of changesInformations) {
-        const returnType = (header.groups.returnType ?? "").trim();
-        const changeName = header.groups.changeName.trim();
-        const parametersRaw = header.groups.parameters.trim();
+    const changesInformations = [];
+    for (const header of headers) {
+        const returnType = (header.groups.returnType ?? "").trim()
+        const changeName = header.groups.changeName
+        const parametersRaw = header.groups.parameters
         const parameters = parametersRaw
             .split(',')
             .map(param => {
-                const parts = param.trim().split(/\s+/).map(part => part.trim()).filter(word => !word.includes("@"))
-                // Return only the parameter Type
+                const parts = param
+                    .trim()         // Remove any leading/trailing whitespace from the parameter
+                    .split(/\s+/)   // Split the parameter into parts based on whitespace
+                    .map(part => part.trim())  // Remove any leading/trailing whitespace from each part
+                    .filter(word => !word.includes("@"))   // Remove annotations
                 return parts[0]
             })
-        methods.push({
+
+        changesInformations.push({
             code: `${returnType} ${changeName}(${parameters.join(", ")})`.trim(),
             codeLong: getCodeLong(returnType ?? "", changeName, parameters, imports, packageName, classOrInterfaceName),
-            lineLink: getMethodLink(baseUrl, javaCode, header.index),
+            link: getMethodLink(baseUrl, javaCode, header.index),
             dataReturned: getDataReturned(returnType, imports, packageName, changeName, classOrInterfaceName),
             dataTransmitted: []
         });
     }
-    return methods;
+    return changesInformations;
 }
 
 /**
- * Extracts headers from the Java code.
+ * Extracts the change headers from the Java code.
  * 
- * @param {string} javaCode - The Java code.
- * @returns {Array} - An array of objects representing matched method headers with groups for the return type, method name and parameters
+ * @param {string} javaCode The Java code.
+ * @returns {Array} Headers object with groups for the return type, change name and parameters
  */
-function extractChangesInformations(javaCode, classOrInterfaceName) {
+function extractHeaders(javaCode, classOrInterfaceName) {
     const constructorMatch = [
         /(?<accessModifier>public|private|protected|default)\s/,
         new RegExp(`(?<changeName>${classOrInterfaceName})`),
         /\((?<parameters>[^)]*)\)/,
 
     ];
-
 
     const methodMatch = [
         /(?<accessModifier>public|private|protected|default)\s/,
@@ -148,7 +151,8 @@ function extractChangesInformations(javaCode, classOrInterfaceName) {
  */
 function getDataReturned(returnType, imports, packageName, changeName, classOrInterfaceName) {
     const commonSensitiveTypes = [
-        "byte", "Byte", "short", "Short", "int", "Integer", "long", "Long", "float", "Float", "double", "Double", "char", "Character", "boolean", "Boolean", "String"
+        "byte", "Byte", "short", "Short", "int", "Integer", "long", "Long", "float", "Float", "double", "Double",
+        "char", "Character", "boolean", "Boolean", "String"
     ]
     const dataReturned = [];
     if (returnType && returnType != "void") {
@@ -163,7 +167,8 @@ function getDataReturned(returnType, imports, packageName, changeName, classOrIn
             description = `0 which indicates, that the contents are not meant to cross compilation boundaries`
         }
         else if (!commonSensitiveTypes.includes(returnType)) {
-            description = `An object of type ${returnType} that doesn't contain sensitive data that can be accessed without calling another function`
+            description = `An object of type ${returnType} that does not contain sensitive data that can be accessed 
+            without calling another function`
         }
 
         dataReturned.push({
