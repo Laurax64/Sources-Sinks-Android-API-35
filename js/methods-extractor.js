@@ -295,7 +295,7 @@ function formatAsJson(classOrInterfaceName, changesInformation) {
         implemented_methods: changesInformation.map(change => ({
             code: change.code,
             codeLong: change.codeLong,
-            link: change.lineLink,
+            link: change.link,
             class: "Non-Sensitive",
             category: "",
             changeType: "Addition",
