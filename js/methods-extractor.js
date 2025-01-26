@@ -21,10 +21,10 @@ function processJavaCode() {
 }
 
 /**
- * Replaces lines containing comments with parentheses with spaces, preserving line numbers and line lengths.
+ * Replaces all comments in the given Java code.
  * 
- * @param {string} javaCode The Java code to process.
- * @returns {string} The modified Java code with comment lines replaced by spaces.
+ * @param {string} javaCode The Java code to process
+ * @returns {string} The given Java code without comments
  */
 function removeComments(javaCode) {
     const lines = javaCode.split("\n");
@@ -32,24 +32,17 @@ function removeComments(javaCode) {
 
         // Check if the line starts with '\\' (escaped backslash)
         if (/^\s*\/\//.test(line)) {
-            console.log("Escaped backslash comment (starts with '//'")
-            console.log(line)
-
-            return " ".repeat(line.trim.length); // Replace entire line with spaces
+            return " ".repeat(line.trim.length);
         }
 
         // Check if the line starts with '/*' (multi-line comment opening)
         if (/^\s*\/\*/.test(line)) {
-            console.log("Multi-line comment (starts with '/*'):")
-            console.log(line)
-            return " ".repeat(line.trim.length);  // Replace the entire line with spaces
+            return " ".repeat(line.trim.length);
         }
 
         // Check if the line starts with '*' (multi-line comment continuation)
         if (/^\s*\*/.test(line)) {
-            console.log("Multi-line comment continuation (starts with '*'):")
-            console.log(line)
-            return " ".repeat(line.trim.length);  // Replace the entire line with spaces
+            return " ".repeat(line.trim.length);
         }
         return line
     })
@@ -61,11 +54,11 @@ function removeComments(javaCode) {
 /**
  * Extracts the class or interface name from the given Java code.
  * 
- * @param {string} javaCode - The source code of the Java class.
- * @returns {string} - The class or interface name
+ * @param {string} javaCode The source code of the Java class.
+ * @returns {string} The class or interface name
  */
 function extractClassOrInterfaceName(javaCode) {
-    const match = javaCode.match(/\b(class|interface)\s+([A-Z][a-zA-Z]*)/);
+    const match = javaCode.match(/(class|interface)\s+([A-Z]\w*)/);
     return match[2]
 }
 
@@ -80,7 +73,7 @@ function extractClassOrInterfaceName(javaCode) {
 function extractChangesInformation(javaCode, baseUrl, classOrInterfaceName) {
     const packageName = getPackageName(javaCode);
     const imports = getImports(javaCode);
-    const changesInformations = extractChangesInformations(javaCode)
+    const changesInformations = extractChangesInformations(javaCode, classOrInterfaceName)
 
     const methods = [];
     for (const header of changesInformations) {
@@ -111,19 +104,21 @@ function extractChangesInformation(javaCode, baseUrl, classOrInterfaceName) {
  * @param {string} javaCode - The Java code.
  * @returns {Array} - An array of objects representing matched method headers with groups for the return type, method name and parameters
  */
-function extractChangesInformations(javaCode) {
+function extractChangesInformations(javaCode, classOrInterfaceName) {
     const constructorMatch = [
-        /(?<accessModifier>public|private|protected|default)\s/,  // Access modifier (optional)
-        /(?<changeName>[A-Z]\w+)/,                                // Constructor name
-        /\((?<parameters>[^)]*)\)/,                               // Parameters (anything inside parentheses)
+        /(?<accessModifier>public|private|protected|default)\s/,
+        new RegExp(`(?<changeName>${classOrInterfaceName})`),
+        /\((?<parameters>[^)]*)\)/,
+
     ];
 
+
     const methodMatch = [
-        /(?<accessModifier>public|private|protected|default)?\s*/,     // Access modifier (optional)
-        /(?<returnType>\w+(\<[^>]+\>)?(\[\])*)\s+/,                    // Return type (basic types, generics, arrays)
-        /(?<changeName>[a-z]\w+)/,                                     // Method name
-        /\((?<parameters>[^)]*)\)/,                                    // Parameters (anything inside parentheses)
-        /(?<exceptions>\s+throws\s+[\w.,<> ]+)?/,                      // Exceptions (optional)
+        /(?<accessModifier>public|private|protected|default)\s/,
+        /(?<returnType>\w+(\<[^>]+\>)?(\[\])*)\s+/,
+        /(?<changeName>[a-z]\w+)/,
+        /\((?<parameters>[^)]*)\)/,
+        /(?<exceptions>\s+throws\s+[\w.,<> ]+)?/,
     ];
 
     const combinedPattern = [
@@ -134,6 +129,7 @@ function extractChangesInformations(javaCode) {
     const pattern = new RegExp(combinedPattern, 'g');
 
     var headers = [...javaCode.matchAll(pattern)];
+
     return headers;
 }
 
