@@ -9387,7 +9387,7 @@
       },
       {
         "name": "ComponentCaller",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "int getUid()",
             "codeLong": "int getUid()",
@@ -9472,7 +9472,7 @@
       },
       {
         "name": "Notification.TvExtender",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "TvExtender()",
             "codeLong": "TvExtender()",
