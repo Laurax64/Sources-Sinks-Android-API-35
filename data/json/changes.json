@@ -9744,7 +9744,19 @@
             "category": "App Info and Performance",
             "changeType": "Addition",
             "dataReturned": [],
-            "dataTransmitted": []
+            "dataTransmitted": [
+              {
+                "type": "boolean",
+                "description": "Whether the activities below this one in the task can also start other activities or finish the task",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "App User Interface",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
           },
           {
             "code": "void setIntent(Intent)",
