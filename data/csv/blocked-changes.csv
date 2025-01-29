@@ -224,3 +224,5 @@ Landroid/app/ApplicationStartInfo$1;->newArray(I)[Landroid/app/ApplicationStartI
 Landroid/app/AutomaticZenRule$Builder;->setCreationTime(J)Landroid/app/AutomaticZenRule$Builder;,blocked
 
 Landroid/app/ComponentCaller;-><init>(Landroid/os/IBinder;Landroid/os/IBinder;)V,blocked
+
+Landroid/app/Notification$TvExtender;->visitUris(Ljava/util/function/Consumer;)V,blocked

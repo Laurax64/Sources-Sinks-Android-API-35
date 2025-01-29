@@ -9469,6 +9469,239 @@
             "dataTransmitted": []
           }
         ]
+      },
+      {
+        "name": "Notification.TvExtender",
+        "implemented_methods": [
+          {
+            "code": "TvExtender()",
+            "codeLong": "TvExtender()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13386",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "TvExtender(Notification)",
+            "codeLong": "TvExtender(android.app.Notification)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13395",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Notification.Builder extend(Notification.Builder) {",
+            "codeLong": "android.app.Notification.Builder extend(Notification.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13414",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.Notification.Builder",
+                "description": "An object of type Notification.Builder that doesn't contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean isAvailableOnTv()",
+            "codeLong": "boolean isAvailableOnTv()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13436",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether this notification should be shown on TV",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "TvExtender setChannel(String)",
+            "codeLong": "android.app.Notification.TvExtender setChannel(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13448",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.Notification.TvExtender",
+                "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "TvExtender setChannelId(String)",
+            "codeLong": "android.app.Notification.TvExtender setChannelId(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=99",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.Notification.TvExtender",
+                "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getChannel()",
+            "codeLong": "java.lang.String getChannel()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=110",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The id of the channel this notification posts to on TV",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getChannelId()",
+            "codeLong": "java.lang.String getChannelId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13477",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The id of the channel this notification posts to on TV",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "TvExtender setContentIntent(PendingIntent)",
+            "codeLong": "android.app.Notification.TvExtender setContentIntent(PendingIntent)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13493",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.Notification.TvExtender",
+                "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "PendingIntent getContentIntent()",
+            "codeLong": "android.app.PendingIntent getContentIntent()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13505",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.PendingIntent",
+                "description": "An object of type PendingIntent that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "TvExtender setDeleteIntent(PendingIntent)",
+            "codeLong": "android.app.Notification.TvExtender setDeleteIntent(PendingIntent)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13518",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.Notification.TvExtender",
+                "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "PendingIntent getDeleteIntent()",
+            "codeLong": "android.app.PendingIntent getDeleteIntent()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13530",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.PendingIntent",
+                "description": "An object of type PendingIntent that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "TvExtender setSuppressShowOverApps(boolean)",
+            "codeLong": "android.app.Notification.TvExtender setSuppressShowOverApps(boolean)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13542",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.Notification.TvExtender",
+                "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean getSuppressShowOverApps()",
+            "codeLong": "boolean getSuppressShowOverApps()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13554",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether this notification should not show messages over top of apps outside of the launcher",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean isSuppressShowOverApps()",
+            "codeLong": "boolean isSuppressShowOverApps()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=13562",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether this notification should not show messages over top of apps outside of the launcher",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       }
     ]
   },
