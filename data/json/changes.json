@@ -9384,6 +9384,91 @@
             "dataTransmitted": []
           }
         ]
+      },
+      {
+        "name": "ComponentCaller",
+        "implemented_methods": [
+          {
+            "code": "int getUid()",
+            "codeLong": "int getUid()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ComponentCaller.java;l=84",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The uid of the calling app or -1 if the current component cannot access the identity of the calling app or the caller is invalid",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getPackage()",
+            "codeLong": "java.lang.String getPackage()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ComponentCaller.java;l=122",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The package name of the calling app or null if the current component cannot access the identity of the calling app or the caller is invalid",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int checkContentUriPermission(Uri, int)",
+            "codeLong": "int checkContentUriPermission(android.net.Uri, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ComponentCaller.java;l=157",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "Whether this activity caller is allowed to access the given URI",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ComponentCaller.java;l=163",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this ComponentCaller",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ComponentCaller.java;l=172",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       }
     ]
   },
