@@ -9399,7 +9399,7 @@
               {
                 "type": "int",
                 "description": "The uid of the calling app or -1 if the current component cannot access the identity of the calling app or the caller is invalid",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9415,7 +9415,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The package name of the calling app or null if the current component cannot access the identity of the calling app or the caller is invalid",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9431,7 +9431,7 @@
               {
                 "type": "int",
                 "description": "Whether this activity caller is allowed to access the given URI",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9447,7 +9447,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this ComponentCaller",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9463,7 +9463,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9504,7 +9504,7 @@
               {
                 "type": "android.app.Notification.Builder",
                 "description": "An object of type Notification.Builder that doesn't contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9520,7 +9520,7 @@
               {
                 "type": "boolean",
                 "description": "Whether this notification should be shown on TV",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9536,7 +9536,7 @@
               {
                 "type": "android.app.Notification.TvExtender",
                 "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9552,7 +9552,7 @@
               {
                 "type": "android.app.Notification.TvExtender",
                 "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9568,7 +9568,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The id of the channel this notification posts to on TV",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9584,7 +9584,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The id of the channel this notification posts to on TV",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9600,7 +9600,7 @@
               {
                 "type": "android.app.Notification.TvExtender",
                 "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9616,7 +9616,7 @@
               {
                 "type": "android.app.PendingIntent",
                 "description": "An object of type PendingIntent that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9632,7 +9632,7 @@
               {
                 "type": "android.app.Notification.TvExtender",
                 "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9648,7 +9648,7 @@
               {
                 "type": "android.app.PendingIntent",
                 "description": "An object of type PendingIntent that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9664,7 +9664,7 @@
               {
                 "type": "android.app.Notification.TvExtender",
                 "description": "An object of type TvExtender that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9680,7 +9680,7 @@
               {
                 "type": "boolean",
                 "description": "Whether this notification should not show messages over top of apps outside of the launcher",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9696,7 +9696,7 @@
               {
                 "type": "boolean",
                 "description": "Whether this notification should not show messages over top of apps outside of the launcher",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
