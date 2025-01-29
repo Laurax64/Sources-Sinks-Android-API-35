@@ -291,7 +291,7 @@ function calculateLineNumber(javaCode, matchIndex) {
 function formatAsJson(classOrInterfaceName, changesInformation) {
     return {
         name: classOrInterfaceName,
-        implemented_methods: changesInformation.map(change => ({
+        implementedMethods: changesInformation.map(change => ({
             code: change.code,
             codeLong: change.codeLong,
             link: change.link,

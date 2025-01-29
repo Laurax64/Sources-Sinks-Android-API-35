@@ -9705,7 +9705,7 @@
       },
       {
         "name": "Activity",
-        "implemented_methods": [
+        "implementedMethods": [
           {
             "code": "void onActivityResult(int, int, Intent, ComponentCaller)",
             "codeLong": "void onActivityResult(int, int, android.content.Intent, android.app.ComponentCaller)",
