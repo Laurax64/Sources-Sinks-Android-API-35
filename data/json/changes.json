@@ -9042,101 +9042,6 @@
         ]
       },
       {
-        "name": "AutomaticZenRule",
-        "implementedMethods": [
-          {
-            "code": "ZenDeviceEffects getDeviceEffects()",
-            "codeLong": "android.service.notification.ZenDeviceEffects getDeviceEffects()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=328",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "android.service.notification.ZenDeviceEffects",
-                "description": "An object of type ZenDeviceEffects that doesn't contain sensitive data that can be accessed without calling another function",
-                "possiblySensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "int getIconResId()",
-            "codeLong": "int getIconResId()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=471",
-            "class": "Sensitive Source",
-            "category": "App Activity",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "int",
-                "description": "The resource id of the drawable icon for this zen rule",
-                "possiblySensitive": true
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "String getTriggerDescription()",
-            "codeLong": "java.lang.String getTriggerDescription()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=450",
-            "class": "Sensitive Source",
-            "category": "Calendar",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "java.lang.String",
-                "description": "The user's visible description of when this rule is active, e.g., Mon-Fri, 9pm-7am",
-                "possiblySensitive": true
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "int getType()",
-            "codeLong": "int getType()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=432",
-            "class": "Sensitive Source",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "int",
-                "description": "The type of the zen rule, e.g., theater, bedtime, or calendar events",
-                "possiblySensitive": true
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "boolean isManualInvocationAllowed()",
-            "codeLong": "boolean isManualInvocationAllowed()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=489",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [
-              {
-                "type": "boolean",
-                "description": "Whether this zen rule can be manually activated by the user even when the triggering condition for the rule is not met",
-                "possiblySensitive": false
-              }
-            ],
-            "dataTransmitted": []
-          },
-          {
-            "code": "void setDeviceEffects(ZenDeviceEffects)",
-            "codeLong": "void setDeviceEffects(android.service.notification.ZenDeviceEffects)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=395",
-            "class": "Non-Sensitive",
-            "category": "",
-            "changeType": "Addition",
-            "dataReturned": [],
-            "dataTransmitted": []
-          }
-        ]
-      },
-      {
         "name": "AutomaticZenRule.Builder",
         "implementedMethods": [
           {
@@ -9702,7 +9607,9 @@
             "dataTransmitted": []
           }
         ]
-      },
+      }
+    ],
+    "changedClasses": [
       {
         "name": "Activity",
         "implementedMethods": [
@@ -9814,6 +9721,330 @@
                 "possibly_sensitive": false
               }
             ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "ActivityManager",
+        "implementedMethods": [
+          {
+            "code": "void addApplicationStartInfoCompletionListener(Executor, Consumer<ApplicationStartInfo>)",
+            "codeLong": "void addApplicationStartInfoCompletionListener(java.util.concurrent.Executor, java.util.function.Consumer<android.app.ApplicationStartInfo>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ActivityManager.java;l=4459",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void addStartInfoTimestamp(int, long)",
+            "codeLong": "void addStartInfoTimestamp(int, long)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ActivityManager.java;l=4550",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "List<ApplicationStartInfo> getHistoricalProcessStartReasons(int)",
+            "codeLong": "java.util.List<ApplicationStartInfo> getHistoricalProcessStartReasons(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ActivityManager.java;l=4372",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<ApplicationStartInfo>",
+                "description": "An object of type List<ApplicationStartInfo> that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void removeApplicationStartInfoCompletionListener(Consumer<ApplicationStartInfo> )",
+            "codeLong": "void removeApplicationStartInfoCompletionListener(java.util.function.Consumer<android.app.ApplicationStartInfo>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/ActivityManager.java;l=4510",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AutomaticZenRule",
+        "implementedMethods": [
+          {
+            "code": "ZenDeviceEffects getDeviceEffects()",
+            "codeLong": "android.service.notification.ZenDeviceEffects getDeviceEffects()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=328",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.service.notification.ZenDeviceEffects",
+                "description": "An object of type ZenDeviceEffects that doesn't contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getIconResId()",
+            "codeLong": "int getIconResId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=471",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The resource id of the drawable icon for this zen rule",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getTriggerDescription()",
+            "codeLong": "java.lang.String getTriggerDescription()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=450",
+            "class": "Sensitive Source",
+            "category": "Calendar",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The user's visible description of when this rule is active, e.g., Mon-Fri, 9pm-7am",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getType()",
+            "codeLong": "int getType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=432",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The type of the zen rule, e.g., theater, bedtime, or calendar events",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean isManualInvocationAllowed()",
+            "codeLong": "boolean isManualInvocationAllowed()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=489",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether this zen rule can be manually activated by the user even when the triggering condition for the rule is not met",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void setDeviceEffects(ZenDeviceEffects)",
+            "codeLong": "void setDeviceEffects(android.service.notification.ZenDeviceEffects)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AutomaticZenRule.java;l=395",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "GrammaticalInflectionManager",
+        "implementedMethods": [
+          {
+            "code": "int getSystemGrammaticalGender()",
+            "codeLong": "int getSystemGrammaticalGender()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/GrammaticalInflectionManager.java;l=138",
+            "class": "Sensitive Source",
+            "category": "Personal Info",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The system grammatical gender",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "Instrumentation",
+        "implementedMethods": [
+          {
+            "code": "void callActivityOnNewIntent(Activity, Intent, ComponentCaller)",
+            "codeLong": "void callActivityOnNewIntent(Activity, android.content.Intent, ComponentCaller)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Instrumentation.java;l=1649",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "LocaleConfiguration",
+        "implementedMethods": [
+          {
+            "code": "Locale getDefaultLocale()",
+            "codeLong": "java.util.Locale getDefaultLocale()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/LocaleConfig.java;l=264",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.Locale",
+                "description": "The locale the strings in values/strings.xml are in if specified, otherwise null",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "Notification.Builder",
+        "implementedMethods": [
+          {
+            "code": "RemoteViews createBigContentView()",
+            "codeLong": "android.widget.RemoteViews createBigContentView()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=6740",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.widget.RemoteViews",
+                "description": "An object of type RemoteViews that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "RemoteViews createContentView()",
+            "codeLong": "android.widget.RemoteViews createContentView()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=6619",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.widget.RemoteViews",
+                "description": "An object of type RemoteViews that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "RemoteViews createHeadsUpContentView()",
+            "codeLong": "android.widget.RemoteViews createHeadsUpContentView()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=6921",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.widget.RemoteViews",
+                "description": "An object of type RemoteViews that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "Notification.Style()",
+        "implementedMethods": [
+          {
+            "code": "Style()",
+            "codeLong": "Style()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;drc=7e0204e0a3db8d7c9746ddca0c9c5d5098039a23;l=8021",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "Notification.WearableExtender",
+        "implementedMethods": [
+          {
+            "code": "Bitmap getBackground()",
+            "codeLong": "android.graphics.Bitmap getBackground()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=12549",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Deletion",
+            "dataReturned": [
+                {
+                    "type": "android.graphics.Bitmap",
+                    "description": "A background image to be displayed behind the notification content, sensitive if it relates to a user setting or even an individual app or device",
+                    "possibly_sensitive": true
+                }
+            ],
+            "dataTransmitted": []
+        }
+        ]
+      }
+    ],
+    "changedInterfaces": [
+      {
+        "name": "AppOpsManager.OnOpActiveChangedListener",
+        "implementedMethods": [
+          {
+            "code": "void onOpActiveChanged(String, int, String, String, int, boolean, int, int)",
+            "codeLong": "void onOpActiveChanged(java.lang.String, int, java.lang.String, java.lang.String, int, boolean, int, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AppOpsManager.java;l=7609",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AppOpsManager.OnOpChangedListener",
+        "implementedMethods": [
+          {
+            "code": "void onOpChanged(String, String, int, String)",
+            "codeLong": "void onOpChanged(java.lang.String, java.lang.String, int, java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/AppOpsManager.java;l=7539",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
             "dataTransmitted": []
           }
         ]

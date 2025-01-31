@@ -1,3 +1,4 @@
+
 const classes = ["Sensitive Source", "Sensitive Sink", "Non-Sensitive"]
 const categories = [
   "Location", "Personal Info", "Financial Info", "Health and Fitness", "Messages",
@@ -7,8 +8,17 @@ const categories = [
 
 const createCounts = () => Object.fromEntries(categories.map(category => [category, 0]));
 
-function showSourcesChart() {
-  const counts = createSourcesCounts(apiData);
+let sourcesChart, sinksChart, classesChart;
+
+function destroyChart(chart) {
+  if (chart) {
+    chart.destroy();
+  }
+}
+
+function showSourcesChart(filteredData) {
+  destroyChart(sourcesChart);
+  const counts = createSourcesCounts(filteredData);
 
   // Extract categories from the counts object
   const categories = Object.keys(counts["Sensitive Source"]);
@@ -21,7 +31,7 @@ function showSourcesChart() {
   }];
 
   // Create the chart
-  new Chart(document.getElementById('sources-chart'), {
+  sourcesChart = new Chart(document.getElementById('sources-chart'), {
     type: 'bar',
     data: {
       labels: categories,
@@ -30,14 +40,15 @@ function showSourcesChart() {
     options: {
       responsive: true,
       plugins: {
-        legend: { display: false } 
+        legend: { display: false }
       },
     }
   });
 }
 
-function showSinksChart() {
-  const counts = createSinkCounts(apiData);
+function showSinksChart(filteredData) {
+  destroyChart(sinksChart);
+  const counts = createSinkCounts(filteredData);
 
   // Extract categories from the counts object
   const categories = Object.keys(counts["Sensitive Sink"]);
@@ -50,7 +61,7 @@ function showSinksChart() {
   }];
 
   // Create the chart
-  new Chart(document.getElementById('sinks-chart'), {
+  sinksChart = new Chart(document.getElementById('sinks-chart'), {
     type: 'bar',
     data: {
       labels: categories,
@@ -59,19 +70,20 @@ function showSinksChart() {
     options: {
       responsive: true,
       plugins: {
-        legend: { display: false } 
+        legend: { display: false }
       },
     }
   });
 }
 
-function showClassesChart(){
-  const classesCounts = createClassesCounts(apiData);
+function showClassesChart(filteredData) {
+  destroyChart(classesChart);
+  const classesCounts = createClassesCounts(filteredData);
 
   const classes = Object.keys(classesCounts);
   const dataset = generateClassesDataset(classes, classesCounts);
 
-  new Chart(document.getElementById('all-classes-chart'), {
+  classesChart = new Chart(document.getElementById('all-classes-chart'), {
     type: 'bar',
     data: {
       labels: classes,
@@ -80,51 +92,51 @@ function showClassesChart(){
     options: {
       responsive: true,
       plugins: {
-        legend: { display: false}
+        legend: { display: false }
       },
     }
   });
 }
 
-function createSourcesCounts(apiData) {
+function createSourcesCounts(filteredData) {
   const counts = {
     "Sensitive Source": createCounts(),
   };
 
-  apiData.forEach(item => {
-    const category = item.category || "Undefined";
+  filteredData.forEach(item => {
+    const category = item.category || "Undefined"
     if (item.class === "Sensitive Source") {
-      counts["Sensitive Source"][category]++;
+        counts["Sensitive Source"][category]++
     }
   });
   return counts;
 }
 
-function createSinkCounts(apiData) {
+function createSinkCounts(filteredData) {
   const counts = {
     "Sensitive Sink": createCounts(),
   };
 
-  apiData.forEach(item => {
-    const category = item.category || "Undefined";
+  filteredData.forEach(item => {
+    const category = item.category || "Undefined"
     if (item.class === "Sensitive Sink") {
-      counts["Sensitive Sink"][category]++;
+      counts["Sensitive Sink"][category]++
     }
   });
   return counts;
 }
 
-function createClassesCounts(apiData) {
+function createClassesCounts(filteredData) {
   const counts = {
     "Sensitive Source": 0,
     "Sensitive Sink": 0,
     "Non-Sensitive": 0
   };
 
-  apiData.forEach(item => {
+  filteredData.forEach(item => {
     if (counts.hasOwnProperty(item.class)) {
       counts[item.class]++;
-    }
+      }
   });
   return counts;
 }
@@ -132,7 +144,7 @@ function createClassesCounts(apiData) {
 function generateDataset(categories, classType, counts) {
   return categories.map(category => ({
     label: category,
-    data: [counts[classType][category]], 
+    data: [counts[classType][category]],
     backgroundColor: getColorForCategory(category)
   }));
 }
@@ -189,14 +201,47 @@ function toggleChartVisibility() {
   const chartsWrapper = document.getElementById('charts-wrapper');
   const toggleButton = document.getElementById('toggle-chart-button');
   if (chartsWrapper.style.display === 'none' || chartsWrapper.style.display === '') {
-    chartsWrapper.style.display = 'flex'; 
-    showSourcesChart();
-    showSinksChart();
-    showClassesChart();
+    const filteredData = extractFilteredData()
+    chartsWrapper.style.display = 'flex';
+    showSourcesChart(filteredData);
+    showSinksChart(filteredData);
+    showClassesChart(filteredData);
     toggleButton.textContent = 'Hide Statistics';
   } else {
     chartsWrapper.style.display = 'none';
+    destroyChart(sourcesChart);
+    destroyChart(sinksChart);
+    destroyChart(classesChart);
     toggleButton.textContent = 'Show Statistics';
+  }
+}
+
+function extractFilteredData() {
+  const selectedChangeType = document.getElementById('change-type').value
+  const selectedClass = document.getElementById('class').value
+  const selectedCategory = document.getElementById('category').value
+  return apiData.filter(item => {
+    const matchChangeType = selectedChangeType ? item.changeType === selectedChangeType : true
+    const matchClass = selectedClass ? item.class === selectedClass : true
+    const matchCategory = selectedCategory ? item.category === selectedCategory : true
+    return matchChangeType && matchClass && matchCategory
+  })
+}
+
+/**
+ * Redraws the charts when the user filters by changeType.
+ */
+function redrawCharts() {
+  const filteredData = extractFilteredData()
+  const chartsWrapper = document.getElementById('charts-wrapper');
+  destroyChart(sourcesChart);
+  destroyChart(sinksChart);
+  destroyChart(classesChart);
+  if (chartsWrapper.style.display != 'none' && chartsWrapper.style.display != '') {
+    chartsWrapper.style.display = 'flex';
+    showSourcesChart(filteredData);
+    showSinksChart(filteredData);
+    showClassesChart(filteredData);
   }
 }
 

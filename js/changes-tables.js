@@ -138,16 +138,16 @@ function createTableRow(item) {
  * Filters the data based on user-selected filters and repopulates the tables with the filtered data.
  */
 function applyFilters() {
-  const changeType = document.getElementById('change-type').value
+  const selectedChangeType = document.getElementById('change-type').value
   const selectedClass = document.getElementById('class').value
   const selectedCategory = document.getElementById('category').value
   const filteredData = apiData.filter(item => {
-    const matchChangeType = changeType ? item.changeType === changeType : true
+    const matchChangeType = selectedChangeType ? item.changeType === selectedChangeType : true
     const matchClass = selectedClass ? item.class === selectedClass : true
     const matchCategory = selectedCategory ? item.category === selectedCategory : true
     return matchChangeType && matchClass && matchCategory
   })
-
+  redrawCharts()
   populateTables(filteredData)
 }
 
