@@ -10007,14 +10007,146 @@
             "category": "App Activity",
             "changeType": "Deletion",
             "dataReturned": [
-                {
-                    "type": "android.graphics.Bitmap",
-                    "description": "A background image to be displayed behind the notification content, sensitive if it relates to a user setting or even an individual app or device",
-                    "possibly_sensitive": true
-                }
+              {
+                "type": "android.graphics.Bitmap",
+                "description": "A background image to be displayed behind the notification content, sensitive if it relates to a user setting or even an individual app or device",
+                "possibly_sensitive": true
+              }
             ],
             "dataTransmitted": []
-        }
+          },
+          {
+            "code": "WearableExtender setBackground(Bitmap)",
+            "codeLong": "WearableExtender setBackground(android.graphics.Bitmap)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Notification.java;l=12525",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Deletion",
+            "dataReturned": [
+              {
+                "type": "WearableExtender",
+                "description": "An object of type WearableExtender that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "Whether wearable extender backgrounds are blocked, which can be data directly related to a crash",
+                "possibly_sensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "NotificationChannel",
+        "implementedMethods": [
+          {
+            "code": "VibrationEffect getVibrationEffect()",
+            "codeLong": "android.os.VibrationEffect getVibrationEffect()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/NotificationChannel.java;l=998",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.os.VibrationEffect",
+                "description": "An object of type VibrationEffect that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void setVibrationEffect(VibrationEffect)",
+            "codeLong": "void setVibrationEffect(android.os.VibrationEffect)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/NotificationChannel.java;l=767",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "NotificationManager",
+        "implementedMethods": [
+          {
+            "code": "boolean areAutomaticZenRulesUserManaged()",
+            "codeLong": "boolean areAutomaticZenRulesUserManaged()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/NotificationManager.java;l=1300",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether users can independently and fully manage zen rules",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getAutomaticZenRuleState(String)",
+            "codeLong": "int getAutomaticZenRuleState(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/NotificationManager.java;l=1430",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "Whether Do Not Disturb should be turned on",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "PictureInPictureUiState",
+        "implementedMethods": [
+          {
+            "code": "boolean isTransitioningToPip()",
+            "codeLong": "boolean isTransitioningToPip()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/PictureInPictureUiState.java;l=95",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the app is going to enter Picture-in-Picture (PiP) mode",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "Service",
+        "implementedMethods": [
+          {
+            "code": "void onTimeout(int, int)",
+            "codeLong": "void onTimeout(int, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/Service.java;l=1224",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
         ]
       }
     ],
@@ -10052,7 +10184,10 @@
     ]
   },
   {
-    "package": "android.app.admin"
+    "package": "android.app.admin",
+    "changedClasses":[
+      
+    ]
   },
   {
     "package": "android.app.appsearch"
