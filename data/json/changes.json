@@ -10185,8 +10185,70 @@
   },
   {
     "package": "android.app.admin",
-    "changedClasses":[
-      
+    "changedClasses": [
+      {
+        "name": "DevicePolicyManager",
+        "implementedMethods": [
+          {
+            "code": "int getContentProtectionPolicy(ComponentName)",
+            "codeLong": "int getContentProtectionPolicy(android.content.ComponentName)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/admin/DevicePolicyManager.java;l=4329",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The current content protection policy",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Set<Integer> getSubscriptionIds()",
+            "codeLong": "Set<java.lang.Integer> getSubscriptionIds()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/admin/DevicePolicyManager.java;l=17747",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "Set<java.lang.Integer>",
+                "description": "Ids of all managed subscriptions currently downloaded by an admin on the device",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean isMtePolicyEnforced()",
+            "codeLong": "boolean isMtePolicyEnforced()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/admin/DevicePolicyManager.java;l=4233",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether MTE is currently enabled on the device",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void setContentProtectionPolicy(ComponentName, int)",
+            "codeLong": "void setContentProtectionPolicy(android.content.ComponentName, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/admin/DevicePolicyManager.java;l=4300",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+        }
+        ]
+      }
     ]
   },
   {
