@@ -226,3 +226,12 @@ Landroid/app/AutomaticZenRule$Builder;->setCreationTime(J)Landroid/app/Automatic
 Landroid/app/ComponentCaller;-><init>(Landroid/os/IBinder;Landroid/os/IBinder;)V,blocked
 
 Landroid/app/Notification$TvExtender;->visitUris(Ljava/util/function/Consumer;)V,blocked
+
+Landroid/app/appsearch/EnterpriseGlobalSearchSession;-><init>(Landroid/app/appsearch/aidl/IAppSearchManager;Landroid/os/UserHandle;Landroid/app/appsearch/aidl/AppSearchAttributionSource;)V,blocked
+Landroid/app/appsearch/EnterpriseGlobalSearchSession;->createEnterpriseGlobalSearchSession(Landroid/app/appsearch/aidl/IAppSearchManager;Landroid/os/UserHandle;Landroid/app/appsearch/aidl/AppSearchAttributionSource;Ljava/util/concurrent/Executor;Ljava/util/function/Consumer;)V,blocked
+
+Landroid/app/appsearch/SchemaVisibilityConfig;-><clinit>()V,blocked
+Landroid/app/appsearch/SchemaVisibilityConfig;-><init>(Ljava/util/List;Ljava/util/List;Landroid/app/appsearch/safeparcel/PackageIdentifierParcel;)V,blocked
+
+Landroid/app/appsearch/SchemaVisibilityConfig$Builder;-><init>(Landroid/app/appsearch/SchemaVisibilityConfig;)V,blocked
+Landroid/app/appsearch/SchemaVisibilityConfig$Builder;->resetIfBuilt()V,blocked

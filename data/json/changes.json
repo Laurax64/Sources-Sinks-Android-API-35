@@ -10246,13 +10246,211 @@
             "changeType": "Addition",
             "dataReturned": [],
             "dataTransmitted": []
-        }
+          }
         ]
       }
     ]
   },
   {
-    "package": "android.app.appsearch"
+    "package": "android.app.appsearch",
+    "addedClasses": [
+      {
+        "name": "SchemaVisibilityConfig",
+        "implementedMethods": [
+          {
+            "code": "List<PackageIdentifier> getAllowedPackages()",
+            "codeLong": "java.util.List<PackageIdentifier> getAllowedPackages()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=80",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<PackageIdentifier>",
+                "description": "An object of type List<PackageIdentifier> that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Set<Set<Integer>> getRequiredPermissions()",
+            "codeLong": "java.util.Set<java.util.Set<java.lang.Integer>> getRequiredPermissions()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=97",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.Set<java.util.Set<java.lang.Integer>>",
+                "description": "An array of Integers representing Android Permissions that the caller must hold to access the schema this SchemaVisibilityConfig represents",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "PackageIdentifier getPubliclyVisibleTargetPackage()",
+            "codeLong": "PackageIdentifier getPubliclyVisibleTargetPackage()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=119",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "PackageIdentifier",
+                "description": "An object of type PackageIdentifier that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=127",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=132",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this SchemaVisibilityConfig",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=150",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "SchemaVisibilityConfig.Builder",
+        "implementedMethods": [
+          {
+            "code": "Builder addAllowedPackage(PackageIdentifier)",
+            "codeLong": "android.app.appsearch.SchemaVisibilityConfig.Builder addAllowedPackage(android.app.appsearch.PackageIdentifier)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=186",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder clearAllowedPackages()",
+            "codeLong": "android.app.appsearch.SchemaVisibilityConfig.Builder clearAllowedPackages()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=196",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addRequiredPermissions(Set<Integer>)",
+            "codeLong": "android.app.appsearch.SchemaVisibilityConfig.Builder addRequiredPermissions(java.util.Set<java.lang.Integer>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=220",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder clearRequiredPermissions()",
+            "codeLong": "android.app.appsearch.SchemaVisibilityConfig.Builder clearRequiredPermissions()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=232",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setPubliclyVisibleTargetPackage(PackageIdentifier)",
+            "codeLong": "android.app.appsearch.SchemaVisibilityConfig.Builder setPubliclyVisibleTargetPackage(android.app.appsearch.PackageIdentifier)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=259",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "SchemaVisibilityConfig build()",
+            "codeLong": "android.app.appsearch.SchemaVisibilityConfig build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SchemaVisibilityConfig.java;l=280",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SchemaVisibilityConfig",
+                "description": "An object of type SchemaVisibilityConfig that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.app.appsearch.observer"
