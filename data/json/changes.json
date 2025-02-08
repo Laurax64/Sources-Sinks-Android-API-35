@@ -8472,7 +8472,7 @@
             "dataTransmitted": [
               {
                 "type": "java.lang.String",
-                "description": "An error message which might contain information directly related to a crash",
+                "description": "An error message which might contain information directly related to a crash to the device log",
                 "possiblySensitive": true,
                 "destinations": [
                   {
@@ -9654,7 +9654,7 @@
             "dataTransmitted": [
               {
                 "type": "boolean",
-                "description": "Whether the activities below this one in the task can also start other activities or finish the task",
+                "description": "Whether the activities below this one in the task can also start other activities or finish the task to the app's user interface",
                 "possiblySensitive": true,
                 "destinations": [
                   {
@@ -10032,7 +10032,7 @@
             "dataTransmitted": [
               {
                 "type": "java.lang.String",
-                "description": "Whether wearable extender backgrounds are blocked, which can be data directly related to a crash",
+                "description": "Whether wearable extender backgrounds are blocked, which can be data directly related to a crash, to the device log",
                 "possibly_sensitive": true,
                 "destinations": [
                   {
@@ -11051,7 +11051,7 @@
             "dataTransmitted": [
               {
                 "type": "java.lang.String",
-                "description": "When the maximum supported length of the search source log tag is 100 characters and the search source log tag",
+                "description": "When the maximum supported length of the search source log tag is 100 characters and the search source log tag to the device log",
                 "possiblySensitive": true,
                 "destinations": [
                   {
@@ -11305,7 +11305,123 @@
     ]
   },
   {
-    "package": "android.app.job"
+    "package": "android.app.job",
+    "changedClasses": [
+      {
+        "name": "JobInfo",
+        "implementedMethods": [
+          {
+            "code": "Set<String> getDebugTags()",
+            "codeLong": "java.util.Set<java.lang.String> getDebugTags()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/apex/jobscheduler/framework/java/android/app/job/JobInfo.java;l=775",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.Set<java.lang.String>",
+                "description": "Debug tags, to help track what this job is for, could contain personally identifiable information when developers make a mistake.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getTraceTag()",
+            "codeLong": "java.lang.String getTraceTag()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/apex/jobscheduler/framework/java/android/app/job/JobInfo.java;l=793",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "A tag that will be used in android.os.Trace, could contain personally identifiable information when developers make a mistake.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "JobInfo.Builder",
+        "implementedMethods": [
+          {
+            "code": "Builder addDebugTag(String)",
+            "codeLong": "android.app.job.JobInfo.Builder addDebugTag(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/apex/jobscheduler/framework/java/android/app/job/JobInfo.java;l=1353",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.job.JobInfo.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "A message when the debug tag is invalid to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "Builder removeDebugTag(String)",
+            "codeLong": "android.app.job.JobInfo.Builder removeDebugTag(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/apex/jobscheduler/framework/java/android/app/job/JobInfo.java;l=1372",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.job.JobInfo.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setTraceTag(String)",
+            "codeLong": "android.app.job.JobInfo.Builder setTraceTag(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/apex/jobscheduler/framework/java/android/app/job/JobInfo.java;l=2206",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.job.JobInfo.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "A message when the trace tag is invalid to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.app.role"
