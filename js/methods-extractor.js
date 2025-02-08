@@ -203,6 +203,7 @@ function extractFullyQualifiedName(name, imports, classOrInterfaceName, packageN
     const fullyQualifiedMap = {
         Map: "java.util.Map",
         List: "java.util.List",
+        Collection: "java.util.Collection",
         String: "java.lang.String",
         Object: "java.lang.Object",
         Integer: "java.lang.Integer",
@@ -215,7 +216,7 @@ function extractFullyQualifiedName(name, imports, classOrInterfaceName, packageN
     };
 
     var fullyQualifiedName = name.replace(
-        /\b(Map|List|String|Object|Integer|Long|Intent|Instant|Exception|Context|Builder)\b/g,
+        /\b(Map|List|Collection|String|Object|Integer|Long|Intent|Instant|Exception|Context|Builder)\b/g,
         match => fullyQualifiedMap[match]
     );
 
