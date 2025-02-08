@@ -11285,7 +11285,24 @@
     ]
   },
   {
-    "package": "android.app.appsearch.observer"
+    "package": "android.app.appsearch.observer",
+    "changedClasses": [
+      {
+        "name": "ObserverSpec",
+        "implementedMethods": [
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/observer/ObserverSpec.java;l=131",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.app.job"
