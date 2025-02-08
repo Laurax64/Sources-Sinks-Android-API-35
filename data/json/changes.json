@@ -11112,27 +11112,175 @@
       },
       {
         "name": "SearchSuggestionSpec.Builder",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "code": "Builder addFilterProperties(String, Collection<String>)",
+            "codeLong": "android.app.appsearch.SearchSuggestionSpec.Builder addFilterProperties(java.lang.String, java.util.Collection<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SearchSuggestionSpec.java;l=388",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SearchSuggestionSpec.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addFilterPropertyPaths(String, Collection<PropertyPath>)",
+            "codeLong": "android.app.appsearch.SearchSuggestionSpec.Builder addFilterPropertyPaths(java.lang.String, java.util.Collection<PropertyPath>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SearchSuggestionSpec.java;l=422",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SearchSuggestionSpec.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "SetSchemaRequest",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "code": "Map<String, PackageIdentifier> getPubliclyVisibleSchemas()",
+            "codeLong": "java.util.Map<java.lang.String, android.app.appsearch.PackageIdentifier> getPubliclyVisibleSchemas()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SetSchemaRequest.java;l=310",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.Map<java.lang.String, PackageIdentifier>",
+                "description": "A mapping of publicly visible schemas to the PackageIdentifier specifying the package the schemas are from.",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Map<String, Set<android.app.appsearch.SchemaVisibilityConfig>> getSchemasVisibleToConfigs()",
+            "codeLong": "java.util.Map<java.lang.String, java.util.Set<android.app.appsearch.SchemaVisibilityConfig>> getSchemasVisibleToConfigs()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SetSchemaRequest.java;l=324",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.Map<java.lang.String, java.util.Set<android.app.appsearch.SchemaVisibilityConfig>>",
+                "description": "A mapping of schema types to the set of SchemaVisibilityConfig that have access to that schema type.",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "SetSchemaRequest.Builder",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "code": "Builder setPubliclyVisibleSchema(String, PackageIdentifier)",
+            "codeLong": "android.app.appsearch.SetSchemaRequest.Builder setPubliclyVisibleSchema(java.lang.String, android.app.appsearch.PackageIdentifier)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SetSchemaRequest.java;l=594",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SetSchemaRequest.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addSchemaTypeVisibleToConfig(String, SchemaVisibilityConfig)",
+            "codeLong": "android.app.appsearch.SetSchemaRequest.Builder addSchemaTypeVisibleToConfig(java.lang.String, android.app.appsearch.SchemaVisibilityConfig)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SetSchemaRequest.java;l=629",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SetSchemaRequest.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder clearSchemaTypeVisibleToConfigs(String)",
+            "codeLong": "android.app.appsearch.SetSchemaRequest.Builder clearSchemaTypeVisibleToConfigs(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SetSchemaRequest.java;l=648",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.app.appsearch.SetSchemaRequest.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "SetSchemaResponse",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SetSchemaResponse.java;l=311",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "SetSchemaResponse.MigrationFailure",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SetSchemaResponse.java;l=426",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
       },
       {
         "name": "StorageInfo",
-        "implementedMethods": []
+        "implementedMethods": [
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/StorageInfo.java;l=122",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
       }
     ]
   },
