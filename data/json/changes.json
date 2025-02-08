@@ -11427,7 +11427,260 @@
     "package": "android.app.role"
   },
   {
-    "package": "android.app.sdksandbox"
+    "package": "android.app.sdksandbox",
+    "addedClasses": [
+      {
+        "name": "AppOwnedSdkSandboxInterface",
+        "implementedMethods": [
+          {
+            "code": "AppOwnedSdkSandboxInterface(String, long, IBinder)",
+            "codeLong": "AppOwnedSdkSandboxInterface(java.lang.String, long, android.os.IBinder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/AppOwnedSdkSandboxInterface.java;l=60",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getName()",
+            "codeLong": "java.lang.String getName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/AppOwnedSdkSandboxInterface.java;l=79",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The name used to register the AppOwnedSdkSandboxInterface",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "long getVersion()",
+            "codeLong": "long getVersion()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/AppOwnedSdkSandboxInterface.java;l=89",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "long",
+                "description": "The version used to register the AppOwnedSdkSandboxInterface",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "IBinder getInterface()",
+            "codeLong": "android.os.IBinder getInterface()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/AppOwnedSdkSandboxInterface.java;l=103",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.os.IBinder",
+                "description": "An object of type IBinder that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/AppOwnedSdkSandboxInterface.java;l=109",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/AppOwnedSdkSandboxInterface.java;l=115",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ],
+    "changedClasses": [
+      {
+        "name": "RequestSurfacePackageException",
+        "implementedMethods": [
+          {
+            "code": "RequestSurfacePackageException(int, String)",
+            "codeLong": "RequestSurfacePackageException(int, java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/RequestSurfacePackageException.java;l=43",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "RequestSurfacePackageException(int, String, Throwable)",
+            "codeLong": "RequestSurfacePackageException(int, java.lang.String, java.lang.Throwable)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/RequestSurfacePackageException.java;l=60",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "RequestSurfacePackageException(int, String, Throwable, Bundle)",
+            "codeLong": "RequestSurfacePackageException(int, java.lang.String, java.lang.Throwable, android.os.Bundle)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/RequestSurfacePackageException.java;l=79",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Bundle getExtraErrorInformation()",
+            "codeLong": "android.os.Bundle getExtraErrorInformation()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/RequestSurfacePackageException.java;l=104",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.os.Bundle",
+                "description": "An object of type Bundle that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getRequestSurfacePackageErrorCode() ",
+            "codeLong": "int getRequestSurfacePackageErrorCode() ",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/RequestSurfacePackageException.java;l=93",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The result code this exception was constructed with.",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "SdkSandboxManager",
+        "implementedMethods": [
+          {
+            "code": "List<AppOwnedSdkSandboxInterface> getAppOwnedSdkSandboxInterfaces()",
+            "codeLong": "java.util.List<android.app.sdksandbox.AppOwnedSdkSandboxInterface> getAppOwnedSdkSandboxInterfaces()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/SdkSandboxManager.java;l=470",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "String",
+                "description": "An error message which might contain information directly related to a crash to the device log",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void registerAppOwnedSdkSandboxInterface(AppOwnedSdkSandboxInterface)",
+            "codeLong": "void registerAppOwnedSdkSandboxInterface(AppOwnedSdkSandboxInterface)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/SdkSandboxManager.java;l=432",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "String",
+                "description": "An error message which might contain information directly related to a crash to the device log",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void unregisterAppOwnedSdkSandboxInterface(String)",
+            "codeLong": "void unregisterAppOwnedSdkSandboxInterface(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/SdkSandboxManager.java;l=451",
+            "class": "Non-Sensitive",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "String",
+                "description": "An error message which might contain information directly related to a crash to the device log",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void requestSurfacePackage(String, Bundle, Executor, OutcomeReceiver<Bundle, RequestSurfacePackageException>)",
+            "codeLong": "void requestSurfacePackage(java.lang.String, android.os.Bundle, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.os.Bundle, android.app.sdksandbox.RequestSurfacePackageException>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/SdkSandboxManager.java;l=618",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "String",
+                "description": "An error message which might contain information directly related to a crash to the device log",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.app.sdksandbox.sdkprovider"

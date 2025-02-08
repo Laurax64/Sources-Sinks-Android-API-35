@@ -235,3 +235,11 @@ Landroid/app/appsearch/SchemaVisibilityConfig;-><init>(Ljava/util/List;Ljava/uti
 
 Landroid/app/appsearch/SchemaVisibilityConfig$Builder;-><init>(Landroid/app/appsearch/SchemaVisibilityConfig;)V,blocked
 Landroid/app/appsearch/SchemaVisibilityConfig$Builder;->resetIfBuilt()V,blocked
+
+Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface;-><clinit>()V,blocked
+Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface;-><init>(Landroid/os/Parcel;)V,blocked
+Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface;-><init>(Landroid/os/Parcel;Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface-IA;)V,blocked
+
+Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface$1;-><init>()V,blocked
+Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface;,blocked
+Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface$1;->newArray(I)[Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface;,blocked

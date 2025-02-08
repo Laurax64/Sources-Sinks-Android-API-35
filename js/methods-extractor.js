@@ -209,6 +209,7 @@ function extractFullyQualifiedName(name, imports, classOrInterfaceName, packageN
         Object: "java.lang.Object",
         Integer: "java.lang.Integer",
         Long: "java.lang.Long",
+        Throwable: "java.lang.Throwable",
         Intent: "android.content.Intent",
         Instant: "java.time.Instant",
         Exception: "java.lang.Exception",
@@ -217,7 +218,7 @@ function extractFullyQualifiedName(name, imports, classOrInterfaceName, packageN
     };
 
     var fullyQualifiedName = name.replace(
-        /\b(Map|List|Collection|Set|String|Object|Integer|Long|Intent|Instant|Exception|Context|Builder)\b/g,
+        /\b(Map|List|Collection|Set|String|Object|Integer|Long|Throwable|Intent|Instant|Exception|Context|Builder)\b/g,
         match => fullyQualifiedMap[match]
     );
 
