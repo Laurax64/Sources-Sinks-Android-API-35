@@ -10516,7 +10516,7 @@
               }
             ],
             "dataTransmitted": []
-          },
+          }
         ]
       },
       {
@@ -11076,7 +11076,7 @@
             "changeType": "Addition",
             "dataReturned": [],
             "dataTransmitted": []
-        }
+          }
         ]
       },
       {
@@ -11090,24 +11090,24 @@
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
-                {
-                    "type": "java.util.Map<java.lang.String, java.util.List>",
-                    "description": "Map of schema and target properties to search over",
-                    "possibly_sensitive": false
-                }
+              {
+                "type": "java.util.Map<java.lang.String, java.util.List>",
+                "description": "Map of schema and target properties to search over",
+                "possibly_sensitive": false
+              }
             ],
             "dataTransmitted": []
-        },
-        {
-          "code": "void writeToParcel(Parcel, int)",
-          "codeLong": "void writeToParcel(android.os.Parcel, int)",
-          "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SearchSuggestionSpec.java;l=553",
-          "class": "Non-Sensitive",
-          "category": "",
-          "changeType": "Addition",
-          "dataReturned": [],
-          "dataTransmitted": []
-      }
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AppSearch/framework/java/external/android/app/appsearch/SearchSuggestionSpec.java;l=553",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
         ]
       },
       {
