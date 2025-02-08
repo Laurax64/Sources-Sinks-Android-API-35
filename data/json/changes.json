@@ -11683,7 +11683,80 @@
     ]
   },
   {
-    "package": "android.app.sdksandbox.sdkprovider"
+    "package": "android.app.sdksandbox.sdkprovider",
+    "changedClasses": [
+      {
+        "name": "SdkSandboxController",
+        "implementedMethods": [
+          {
+            "code": "List<AppOwnedSdkSandboxInterface> getAppOwnedSdkSandboxInterfaces()",
+            "codeLong": "java.util.List<android.app.sdksandbox.AppOwnedSdkSandboxInterface> getAppOwnedSdkSandboxInterfaces()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/sdkprovider/SdkSandboxController.java;l=115",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<AppOwnedSdkSandboxInterface>",
+                "description": "An object of type List<AppOwnedSdkSandboxInterface> that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "String",
+                "description": "An error message which might contain information directly related to a crash to the device log",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "String getClientPackageName()",
+            "codeLong": "java.lang.String getClientPackageName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/sdkprovider/SdkSandboxController.java;l=294",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The package name of the client app",
+                "possibly_sensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void loadSdk(String, Bundle, Executor, OutcomeReceiver<SandboxedSdk, LoadSdkException>)",
+            "codeLong": "void loadSdk(java.lang.String, android.os.Bundle, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.app.sdksandbox.SandboxedSdk, android.app.sdksandbox.LoadSdkException>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/sdkprovider/SdkSandboxController.java;l=170",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "String",
+                "description": "An error message which might contain information directly related to a crash to the device log",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.app.slice"
