@@ -162,7 +162,7 @@
             "dataReturned": [
               {
                 "type": "android.net.Uri",
-                "description": "The URI used to retrieve the JS code containing the seller/SSP selectOutcome function",
+                "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
                 "possiblySensitive": false
               }
             ],
@@ -354,7 +354,7 @@
             "dataTransmitted": [
               {
                 "type": "android.net.Uri",
-                "description": "The URI used to retrieve the JS code containing the seller/SSP selectOutcome function into the application code",
+                "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
                 "possiblySensitive": false,
                 "destinations": [
                   {
@@ -774,14 +774,14 @@
             "code": "Uri getCoordinatorOriginUri()",
             "codeLong": "android.net.Uri getCoordinatorOriginUri()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/GetAdSelectionDataRequest.java;drc=68f47c31e6b8502274aaf8060f243d34e63b7027;l=66",
-            "class": "Sensitive Source",
+            "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
                 "type": "android.net.Uri",
-                "description": "The coordinator origin Uri where the public keys for encryption are fetched from",
-                "possiblySensitive": true
+                "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -1596,7 +1596,7 @@
             "dataReturned": [
               {
                 "type": "android.net.Uri",
-                "description": "The URI used to retrieve the updateBid() and reportWin() function used during the ad selection and reporting process",
+                "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
                 "possiblySensitive": false
               }
             ],
@@ -3462,14 +3462,14 @@
             "code": "Uri getFetchUri()",
             "codeLong": "android.net.Uri getFetchUri()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=60",
-            "class": "Sensitive Source",
+            "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
                 "type": "android.net.Uri",
-                "description": "A URI for a custom audience a user might be added to. A custom audience is an abstract grouping of users with similar demonstrated interests.",
-                "possiblySensitive": true
+                "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8155,14 +8155,14 @@
             "code": "Uri getDestinationUrl()",
             "codeLong": "android.net.Uri getDestinationUrl()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/WebTriggerInput.java;l=76",
-            "class": "Sensitive Source",
-            "category": "Web Browsing",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
                 "type": "android.net.Uri",
-                "description": "The destination URL (landing page) where the web trigger event occurred",
-                "possiblySensitive": true
+                "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -8492,14 +8492,14 @@
             "code": "Uri getUpdateUri()",
             "codeLong": "android.net.Uri getUpdateUri()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/UpdateSignalsRequest.java;l=47",
-            "class": "Sensitive Source",
+            "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
                 "type": "android.net.Uri",
-                "description": "The URI from which the signal updates will be fetched.",
-                "possiblySensitive": true
+                "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -11759,7 +11759,104 @@
     ]
   },
   {
-    "package": "android.app.slice"
+    "package": "android.app.slice",
+    "changedClasses": [
+      {
+        "name": "Slice",
+        "implementedMethods": [
+          {
+            "code": "Slice(Parcel)",
+            "codeLong": "Slice(android.os.Parcel)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=274",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=325",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "List<String> getHints()",
+            "codeLong": "java.util.List<java.lang.String> getHints()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=309",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.util.List<java.lang.String>",
+                "description": "All hints associated with this slice, e.g., 'no_tint'. This could indicate a setting that the user has changed.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "List<SliceItem> getItems()",
+            "codeLong": "java.util.List<android.app.slice.SliceItem> getItems()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=302",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.util.List<android.app.slice.SliceItem>",
+                "description": "An object of type List<SliceItem> that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "SliceSpec getSpec()",
+            "codeLong": "SliceSpec getSpec()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=288",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "SliceSpec",
+                "description": "An object of type SliceSpec that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Uri getUri()",
+            "codeLong": "android.net.Uri getUri()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=295",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.net.Uri",
+                "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
+                "possibly_sensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.app.usage"

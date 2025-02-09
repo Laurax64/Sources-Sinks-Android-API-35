@@ -173,7 +173,7 @@ function getDataReturned(returnType, imports, packageName, changeName, classOrIn
         dataReturned.push({
             type: extractFullyQualifiedName(returnType, imports, classOrInterfaceName, packageName),
             description: description,
-            possibly_sensitive: false
+            possiblySensitive: false
         });
     }
     return dataReturned;
