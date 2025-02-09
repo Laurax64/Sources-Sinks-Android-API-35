@@ -12530,6 +12530,412 @@
             ]
           }
         ]
+      },
+      {
+        "name": "SliceProvider",
+        "implementedMethods": [
+          {
+            "code": "SliceProvider(String...)",
+            "codeLong": "SliceProvider(java.lang.String...)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=185",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "SliceProvider()",
+            "codeLong": "SliceProvider()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=189",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getType(Uri)",
+            "codeLong": "java.lang.String getType(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=342",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The type of this content provider, in this case, 'vnd.android.slice'.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "The given URI to the device log when DEBUGis true. When mistakes happen in the management of the DEBUG field's value, the URI could be accesible to third parties.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "Slice onBindSlice(Uri, Set<SliceSpec>)",
+            "codeLong": "Slice onBindSlice(android.net.Uri, java.util.Set<android.app.slice.SliceSpec>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=216",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "Slice",
+                "description": "Always null",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "PendingIntent onCreatePermissionRequest(Uri)",
+            "codeLong": "android.app.PendingIntent onCreatePermissionRequest(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=297",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.PendingIntent",
+                "description": "An object of type PendingIntent that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Collection<Uri> onGetSliceDescendants(Uri)",
+            "codeLong": "java.util.Collection<android.net.Uri> onGetSliceDescendants(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=262",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.util.Collection<android.net.Uri>",
+                "description": "Always an empty list.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Uri onMapIntentToUri(Intent)",
+            "codeLong": "android.net.Uri onMapIntentToUri(android.content.Intent)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=279",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.net.Uri",
+                "description": "Always throws an exception instead of returning a URI.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "Exception with the message 'This provider has not implemented intent to uri mapping'",
+                "possiblySensitive": false,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void onSlicePinned(Uri)",
+            "codeLong": "void onSlicePinned(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=238",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void onSliceUnpinned(Uri)",
+            "codeLong": "void onSliceUnpinned(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=249",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int delete(Uri, String, String[])",
+            "codeLong": "int delete(android.net.Uri, java.lang.String, java.lang.String[])",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=309",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The number of rows affected by the deletion which is always 0.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "The given URI to the device log when DEBUG is true. When mistakes happen in the management of the DEBUG field's value, the URI could be accesible to third parties.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "Uri insert(Uri, ContentValues)",
+            "codeLong": "android.net.Uri insert(android.net.Uri, android.content.ContentValues)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=336",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.net.Uri",
+                "description": "Always null",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "The given URI to the device log when DEBUG is true. When mistakes happen in the management of the DEBUG field's value, the URI could be accesible to third parties.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "Cursor query(Uri, String[], Bundle, CancellationSignal)",
+            "codeLong": "android.database.Cursor query(android.net.Uri, java.lang.String[], android.os.Bundle, android.os.CancellationSignal)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=329",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.database.Cursor",
+                "description": "Always null",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "The given URI to the device log when DEBUG is true. When mistakes happen in the management of the DEBUG field's value, the URI could be accesible to third parties.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "Cursor query(Uri, String[], String, String[], String)",
+            "codeLong": "android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=315",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.database.Cursor",
+                "description": "Always null",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "The given URI to the device log when DEBUG is true. When mistakes happen in the management of the DEBUG field's value, the URI could be accesible to third parties.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "Cursor query(Uri, String[], String, String[], String, CancellationSignal)",
+            "codeLong": "android.database.Cursor query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, android.os.CancellationSignal)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=322",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.database.Cursor",
+                "description": "Always null",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "The given URI to the device log when DEBUG is true. When mistakes happen in the management of the DEBUG field's value, the URI could be accesible to third parties.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "int update(Uri, ContentValues, String, String[])",
+            "codeLong": "int update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[])",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceProvider.java;l=302",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The number of rows affected by the update which is always 0.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "The given URI to the device log when DEBUG is true. When mistakes happen in the management of the DEBUG field's value, the URI could be accesible to third parties.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SliceSpec",
+        "implementedMethods": [
+          {
+            "code": "SliceSpec(String, int)",
+            "codeLong": "SliceSpec(java.lang.String, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceSpec.java;l=52",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean canRender(SliceSpec)",
+            "codeLong": "boolean canRender(android.app.slice.SliceSpec)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceSpec.java;l=100",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Indicates that this spec can be used to render the specified spec",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceSpec.java;l=66",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getRevision()",
+            "codeLong": "int getRevision()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceSpec.java;l=86",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The revision of the version",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getType()",
+            "codeLong": "java.lang.String getType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceSpec.java;l=79",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The type of the version",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceSpec.java;l=71",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+        }
+        ]
       }
     ]
   },
