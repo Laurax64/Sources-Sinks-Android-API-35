@@ -8465,23 +8465,11 @@
             "code": "void updateSignals(UpdateSignalsRequest, Executor, OutcomeReceiver<Object, Exception>)",
             "codeLong": "void updateSignals(android.adservices.signals.UpdateSignalsRequest, java.util.concurrent.Executor, android.os.OutcomeReceiver<java.lang.Object, java.lang.Exception>)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/signals/ProtectedSignalsManager.java;l=190",
-            "class": "Sensitive Sink",
-            "category": "App Info and Performance",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Addition",
             "dataReturned": [],
-            "dataTransmitted": [
-              {
-                "type": "java.lang.String",
-                "description": "An error message which might contain information directly related to a crash to the device log",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              }
-            ]
+            "dataTransmitted": []
           }
         ]
       },
@@ -11594,23 +11582,11 @@
             "code": "List<AppOwnedSdkSandboxInterface> getAppOwnedSdkSandboxInterfaces()",
             "codeLong": "java.util.List<android.app.sdksandbox.AppOwnedSdkSandboxInterface> getAppOwnedSdkSandboxInterfaces()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/SdkSandboxManager.java;l=470",
-            "class": "Sensitive Sink",
-            "category": "App Info and Performance",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Addition",
             "dataReturned": [],
-            "dataTransmitted": [
-              {
-                "type": "String",
-                "description": "An error message which might contain information directly related to a crash to the device log",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              }
-            ]
+            "dataTransmitted": []
           },
           {
             "code": "void registerAppOwnedSdkSandboxInterface(AppOwnedSdkSandboxInterface)",
@@ -11620,19 +11596,7 @@
             "category": "App Info and Performance",
             "changeType": "Addition",
             "dataReturned": [],
-            "dataTransmitted": [
-              {
-                "type": "String",
-                "description": "An error message which might contain information directly related to a crash to the device log",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              }
-            ]
+            "dataTransmitted": []
           },
           {
             "code": "void unregisterAppOwnedSdkSandboxInterface(String)",
@@ -11666,8 +11630,8 @@
             "dataReturned": [],
             "dataTransmitted": [
               {
-                "type": "String",
-                "description": "An error message which might contain information directly related to a crash to the device log",
+                "type": "java.lang.String",
+                "description": "Error messages which contain information directly related to the size of the surface package to the device log",
                 "possiblySensitive": true,
                 "destinations": [
                   {
@@ -11692,8 +11656,8 @@
             "code": "List<AppOwnedSdkSandboxInterface> getAppOwnedSdkSandboxInterfaces()",
             "codeLong": "java.util.List<android.app.sdksandbox.AppOwnedSdkSandboxInterface> getAppOwnedSdkSandboxInterfaces()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/sdkprovider/SdkSandboxController.java;l=115",
-            "class": "Sensitive Sink",
-            "category": "App Info and Performance",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
@@ -11702,19 +11666,7 @@
                 "possibly_sensitive": false
               }
             ],
-            "dataTransmitted": [
-              {
-                "type": "String",
-                "description": "An error message which might contain information directly related to a crash to the device log",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              }
-            ]
+            "dataTransmitted": []
           },
           {
             "code": "String getClientPackageName()",
@@ -11740,19 +11692,7 @@
             "category": "App Info and Performance",
             "changeType": "Addition",
             "dataReturned": [],
-            "dataTransmitted": [
-              {
-                "type": "String",
-                "description": "An error message which might contain information directly related to a crash to the device log",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              }
-            ]
+            "dataTransmitted": []
           }
         ]
       }
@@ -12361,7 +12301,7 @@
             "codeLong": "java.util.Collection<android.net.Uri> getSliceDescendants(android.net.Uri)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=220",
             "class": "Sensitive Sink",
-            "category": "",
+            "category": "App Activity",
             "changeType": "Modification",
             "dataReturned": [
               {
@@ -12381,17 +12321,6 @@
                     "accesibleToThirdParties": true
                   }
                 ]
-              },
-              {
-                "type": "java.lang.String",
-                "description": "An error message which might contain information directly related to a crash to the device log.",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
               }
             ]
           },
@@ -12399,31 +12328,19 @@
             "code": "void grantSlicePermission(String, Uri)",
             "codeLong": "void grantSlicePermission(java.lang.String, android.net.Uri)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=433",
-            "class": "Sensitive Sink",
-            "category": "App Info and Performance",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Modification",
             "dataReturned": [],
-            "dataTransmitted": [
-              {
-                "type": "java.lang.String",
-                "description": "An error message which might contain information directly related to a crash to the device log.",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              }
-            ]
+            "dataTransmitted": []
           },
           {
             "code": "Uri mapIntentToUri(Intent)",
             "codeLong": "android.net.Uri mapIntentToUri(android.content.Intent)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=293",
             "class": "Sensitive Sink",
-            "category": "",
-            "changeType":"Modification",
+            "category": "App Activity",
+            "changeType": "Modification",
             "dataReturned": [
               {
                 "type": "android.net.Uri",
@@ -12442,17 +12359,6 @@
                     "accesibleToThirdParties": true
                   }
                 ]
-              },
-              {
-                "type": "String",
-                "description": "An error message which might contain information directly related to a crash to the device log.",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
               }
             ]
           },
@@ -12464,19 +12370,7 @@
             "category": "App Info and Performance",
             "changeType": "Modification",
             "dataReturned": [],
-            "dataTransmitted": [
-              {
-                "type": "java.lang.String",
-                "description": "An error message which might contain information directly related to a crash",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              }
-            ]
+            "dataTransmitted": []
           },
           {
             "code": "void revokeSlicePermission(String, Uri)",
@@ -12486,19 +12380,7 @@
             "category": "App Info and Performance",
             "changeType": "Modification",
             "dataReturned": [],
-            "dataTransmitted": [
-              {
-                "type": "java.lang.String",
-                "description": "An error message which might contain information directly related to a crash",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              }
-            ]
+            "dataTransmitted": []
           },
           {
             "code": "void unpinSlice(Uri)",
@@ -12508,19 +12390,7 @@
             "category": "",
             "changeType": "Modification",
             "dataReturned": [],
-            "dataTransmitted": [
-              {
-                "type": "java.lang.String",
-                "description": "An error message which might contain information directly related to a crash",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              }
-            ]
+            "dataTransmitted": []
           },
           {
             "code": "Slice bindSlice(Intent, Set<SliceSpec>)",
@@ -12547,17 +12417,6 @@
                     "accesibleToThirdParties": true
                   }
                 ]
-              },
-              {
-                "type": "String",
-                "description": "An error message which might contain information directly related to a crash to the device log.",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
               }
             ]
           },
@@ -12566,7 +12425,7 @@
             "codeLong": "android.app.slice.Slice bindSlice(android.net.Uri, java.util.Set<SliceSpec>)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=246",
             "class": "Sensitive Sink",
-            "category": "",
+            "category": "App Activity",
             "changeType": "Modification",
             "dataReturned": [
               {
@@ -12579,17 +12438,6 @@
               {
                 "type": "java.lang.String",
                 "description": "A URI that is created from the given intent to the device log. This could reveal information about the user's activity in the app.",
-                "possiblySensitive": true,
-                "destinations": [
-                  {
-                    "resource": "Device Log",
-                    "accesibleToThirdParties": true
-                  }
-                ]
-              },
-              {
-                "type": "String",
-                "description": "An error message which might contain information directly related to a crash to the device log.",
                 "possiblySensitive": true,
                 "destinations": [
                   {
