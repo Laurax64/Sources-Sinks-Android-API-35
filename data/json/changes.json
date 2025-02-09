@@ -13084,6 +13084,71 @@
           }
         ]
       }
+    ],
+    "changedClasses": [
+      {
+        "name": "StorageStats",
+        "implementedMethods": [
+          {
+            "code": "long getAppBytesByDataType(int)",
+            "codeLong": "long getAppBytesByDataType(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/usage/StorageStats.java;l=158",
+            "class": "Sensitive Source",
+            "category": "Files and Docs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "long",
+                "description": "The size of the specified data type. This includes files stored under the application code path.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "UsageEvents.Event",
+        "implementedMethods": [
+          {
+            "code": "PersistableBundle getExtras()",
+            "codeLong": "android.os.PersistableBundle getExtras()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/usage/UsageEvents.java;l=682",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.os.PersistableBundle",
+                "description": "An object of type PersistableBundle that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "UsageStatsManager",
+        "implementedMethods": [
+          {
+            "code": "UsageEvents queryEvents(UsageEventsQuery)",
+            "codeLong": "UsageEvents queryEvents(UsageEventsQuery)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/usage/UsageStatsManager.java;l=615",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+                {
+                    "type": "UsageEvents",
+                    "description": "An object of type UsageEvents that does contain sensitive data that can be accessed without calling another function",
+                    "possiblySensitive": true
+                }
+            ],
+            "dataTransmitted": []
+        }
+        ]
+      }
     ]
   },
   {
