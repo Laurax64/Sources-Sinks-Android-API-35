@@ -12422,14 +12422,14 @@
           },
           {
             "code": "android.app.slice.Slice bindSlice(Uri, Set<SliceSpec>)",
-            "codeLong": "android.app.slice.Slice bindSlice(android.net.Uri, java.util.Set<SliceSpec>)",
+            "codeLong": "android.app.slice.Slice bindSlice(android.net.Uri, java.util.Set<android.app.slice.SliceSpec>)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=246",
             "class": "Sensitive Sink",
             "category": "App Activity",
             "changeType": "Modification",
             "dataReturned": [
               {
-                "type": "Slice",
+                "type": "android.app.slice.Slice",
                 "description": "An object of type Slice that does not contain sensitive data that can be accessed without calling another function",
                 "possiblySensitive": false
               }
@@ -12442,6 +12442,87 @@
                 "destinations": [
                   {
                     "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SliceMetrics",
+        "implementedMethods": [
+          {
+            "code": "SliceMetrics(Context, Uri)",
+            "codeLong": "SliceMetrics(android.content.Context, android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceMetrics.java;l=49",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void logHidden()",
+            "codeLong": "void logHidden()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceMetrics.java;l=70",
+            "class": "Sensitive Sink",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "When the slice becomes invisible to the user to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log(not log cat)",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void logTouch(int, Uri)",
+            "codeLong": "void logTouch(int, android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceMetrics.java;l=91",
+            "class": "Sensitive Sink",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "When the slice is touched by the user to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log(not log cat)",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void logVisible()",
+            "codeLong": "void logVisible()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceMetrics.java;l=59",
+            "class": "Non-Sensitive",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "When the slice becomes visible to the user to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log(not log cat)",
                     "accesibleToThirdParties": true
                   }
                 ]
