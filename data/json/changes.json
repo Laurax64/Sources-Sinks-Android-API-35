@@ -11817,7 +11817,7 @@
               {
                 "type": "java.util.List<android.app.slice.SliceItem>",
                 "description": "An object of type List<SliceItem> that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -11828,12 +11828,12 @@
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=288",
             "class": "Non-Sensitive",
             "category": "",
-            "changeType": "Addition",
+            "changeType": "Modification",
             "dataReturned": [
               {
                 "type": "SliceSpec",
                 "description": "An object of type SliceSpec that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -11844,12 +11844,238 @@
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=295",
             "class": "Non-Sensitive",
             "category": "",
-            "changeType": "Addition",
+            "changeType": "Modification",
             "dataReturned": [
               {
                 "type": "android.net.Uri",
                 "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
-                "possibly_sensitive": false
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean isCallerNeeded()",
+            "codeLong": "boolean isCallerNeeded()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=340",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the caller for this slice is needed. This could indicate a setting that the user has changed.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=314",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "Slice.Builder",
+        "implementedMethods": [
+          {
+            "code": "Builder(Slice.Builder)",
+            "codeLong": "Builder(Slice.android.app.slice.Slice.Builder)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=374",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder(Uri, SliceSpec)",
+            "codeLong": "Builder(android.net.Uri, android.app.slice.SliceSpec)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=364",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addAction(PendingIntent, Slice, String)",
+            "codeLong": "android.app.slice.Slice.Builder addAction(android.app.PendingIntent, android.app.slice.Slice, java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=419",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addBundle(Bundle, String, List<String>)",
+            "codeLong": "android.app.slice.Slice.Builder addBundle(android.os.Bundle, java.lang.String, java.util.List<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=497",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addHints(List<String>)",
+            "codeLong": "android.app.slice.Slice.Builder addHints(java.util.List<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=397",
+            "class": "Non-Sensitive",
+            "category": "App Info and Performance",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ]
+          },
+          {
+            "code": "Builder addIcon(Icon, String, List<String>)",
+            "codeLong": "android.app.slice.Slice.Builder addIcon(android.graphics.drawable.Icon, java.lang.String, java.util.List<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=446",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addInt(int, String, List<String>)",
+            "codeLong": "android.app.slice.Slice.Builder addInt(int, java.lang.String, java.util.List<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=472",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addLong(long, String, List<String>)",
+            "codeLong": "android.app.slice.Slice.Builder addLong(long, java.lang.String, java.util.List<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=483",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addRemoteInput(RemoteInput, String, List<String>)",
+            "codeLong": "android.app.slice.Slice.Builder addRemoteInput(android.app.RemoteInput, java.lang.String, java.util.List<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=458",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addSubSlice(Slice, String)",
+            "codeLong": "android.app.slice.Slice.Builder addSubSlice(android.app.slice.Slice, java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=407",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder addText(java.lang.CharSequence, String, List<String>)",
+            "codeLong": "android.app.slice.Slice.Builder addText(CharSequence, java.lang.String, java.util.List<java.lang.String>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=435",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Slice build()",
+            "codeLong": "android.app.slice.Slice build()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=508",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice",
+                "description": "An object of type Slice that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setCallerNeeded(boolean)",
+            "codeLong": "android.app.slice.Slice.Builder setCallerNeeded(boolean)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/Slice.java;l=385",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
