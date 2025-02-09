@@ -243,3 +243,16 @@ Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface;-><init>(Landroid/os/Parcel;
 Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface$1;-><init>()V,blocked
 Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface;,blocked
 Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface$1;->newArray(I)[Landroid/app/sdksandbox/AppOwnedSdkSandboxInterface;,blocked
+
+Landroid/app/usage/UsageEventsQuery;-><clinit>()V,blocked
+Landroid/app/usage/UsageEventsQuery;-><init>(Landroid/app/usage/UsageEventsQuery$Builder;)V,blocked
+Landroid/app/usage/UsageEventsQuery;-><init>(Landroid/app/usage/UsageEventsQuery$Builder;Landroid/app/usage/UsageEventsQuery-IA;)V,blocked
+Landroid/app/usage/UsageEventsQuery;-><init>(Landroid/os/Parcel;)V,blocked
+Landroid/app/usage/UsageEventsQuery;-><init>(Landroid/os/Parcel;Landroid/app/usage/UsageEventsQuery-IA;)V,blocked
+Landroid/app/usage/UsageEventsQuery;->getUserId()I,blocked
+
+Landroid/app/usage/UsageEventsQuery$1;-><init>()V,blocked
+Landroid/app/usage/UsageEventsQuery$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/usage/UsageEventsQuery;,blocked
+Landroid/app/usage/UsageEventsQuery$1;->newArray(I)[Landroid/app/usage/UsageEventsQuery;,blocked
+
+Landroid/app/usage/UsageEventsQuery$Builder;->setUserId(I)Landroid/app/usage/UsageEventsQuery$Builder;,blocked
