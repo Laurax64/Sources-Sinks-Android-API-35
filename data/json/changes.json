@@ -12081,6 +12081,526 @@
             "dataTransmitted": []
           }
         ]
+      },
+      {
+        "name": "SliceItem",
+        "implementedMethods": [
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=277",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "PendingIntent getAction()",
+            "codeLong": "android.app.PendingIntent getAction()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=216",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.PendingIntent",
+                "description": "An object of type PendingIntent that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Bundle getBundle()",
+            "codeLong": "android.os.Bundle getBundle()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=202",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.os.Bundle",
+                "description": "An object of type Bundle that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getFormat()",
+            "codeLong": "java.lang.String getFormat()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=176",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The format of the slice item, e.g., 'image'. This could indicate a setting that the user has changed.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "List<String> getHints()",
+            "codeLong": "java.util.List<java.lang.String> getHints()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=158",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.util.List<java.lang.String>",
+                "description": "All hints associated with this slice item, e.g., 'no_tint'. This could indicate a setting that the user has changed.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Icon getIcon()",
+            "codeLong": "android.graphics.drawable.Icon getIcon()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=209",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.graphics.drawable.Icon",
+                "description": "An object of type Icon that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getInt()",
+            "codeLong": "int getInt()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=237",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The color held by this slice item. This could indicate a setting that the user has changed.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "long getLong()",
+            "codeLong": "long getLong()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=254",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "long",
+                "description": "The long held by this slice item. This could indicate a setting that the user has changed.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "RemoteInput getRemoteInput()",
+            "codeLong": "android.app.RemoteInput getRemoteInput()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=230",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.RemoteInput",
+                "description": "An object of type RemoteInput that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Slice getSlice()",
+            "codeLong": "Slice getSlice()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=244",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "Slice",
+                "description": "An object of type Slice that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getSubType()",
+            "codeLong": "java.lang.String getSubType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=188",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The subtype of this slice item, e.g., 'image'. This could indicate a setting that the user has changed.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "CharSequence getText()",
+            "codeLong": "java.lang.CharSequence getText()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=195",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "CharSequence",
+                "description": "The text held by this SliceItem. This text could contain sensitive information.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean hasHint(String)",
+            "codeLong": "boolean hasHint(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=262",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether this slice item contains the given hint. This could indicate a setting the user has changed.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceItem.java;l=282",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "SliceManager",
+        "implementedMethods": [
+          {
+            "code": "int checkSlicePermission(Uri, int, int)",
+            "codeLong": "int checkSlicePermission(android.net.Uri, int, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=416",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "Whether a particular process and user ID has been granted permission to access a specific slice URI. 0 indicates that the permission has been granted. This could indicate a setting that the user has changed.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "List<Uri> getPinnedSlices()",
+            "codeLong": "java.util.List<android.net.Uri> getPinnedSlices()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=201",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.util.List<android.net.Uri>",
+                "description": "The list of currently pinned slices for this app. Uri does not contain sensitive data that can be accessed without calling another function and therefore is not considered (directly) sensitive.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Set<SliceSpec> getPinnedSpecs(Uri)",
+            "codeLong": "java.util.Set<android.app.slice.SliceSpec> getPinnedSpecs(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=188",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.util.Set<android.app.slice.SliceSpec>",
+                "description": "An object of type Set<SliceSpec> that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Collection<Uri> getSliceDescendants(Uri)",
+            "codeLong": "java.util.Collection<android.net.Uri> getSliceDescendants(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=220",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "java.util.Collection<android.net.Uri>",
+                "description": "An object of type Collection<Uri> that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "The given URI for which the slice descendants are tried to be retrieved to the device log. This could reveal information about the user's activity in the app.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              },
+              {
+                "type": "java.lang.String",
+                "description": "An error message which might contain information directly related to a crash to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void grantSlicePermission(String, Uri)",
+            "codeLong": "void grantSlicePermission(java.lang.String, android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=433",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "An error message which might contain information directly related to a crash to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "Uri mapIntentToUri(Intent)",
+            "codeLong": "android.net.Uri mapIntentToUri(android.content.Intent)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=293",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType":"Modification",
+            "dataReturned": [
+              {
+                "type": "android.net.Uri",
+                "description": "An object of type Uri that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "A URI that is created from the given intent to the device log. This could reveal information about the user's activity in the app.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              },
+              {
+                "type": "String",
+                "description": "An error message which might contain information directly related to a crash to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void pinSlice(Uri, Set<SliceSpec>)",
+            "codeLong": "void pinSlice(android.net.Uri, java.util.Set<SliceSpec>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=139",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "An error message which might contain information directly related to a crash",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void revokeSlicePermission(String, Uri)",
+            "codeLong": "void revokeSlicePermission(java.lang.String, android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=455",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "An error message which might contain information directly related to a crash",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void unpinSlice(Uri)",
+            "codeLong": "void unpinSlice(android.net.Uri)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=162",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "An error message which might contain information directly related to a crash",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "Slice bindSlice(Intent, Set<SliceSpec>)",
+            "codeLong": "android.app.slice.Slice bindSlice(android.content.Intent, java.util.Set<SliceSpec>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=366",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.app.slice.Slice",
+                "description": "An object of type Slice that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "The given URI to a slice provider",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              },
+              {
+                "type": "String",
+                "description": "An error message which might contain information directly related to a crash to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "android.app.slice.Slice bindSlice(Uri, Set<SliceSpec>)",
+            "codeLong": "android.app.slice.Slice bindSlice(android.net.Uri, java.util.Set<SliceSpec>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=246",
+            "class": "Sensitive Sink",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "Slice",
+                "description": "An object of type Slice that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": [
+              {
+                "type": "java.lang.String",
+                "description": "A URI that is created from the given intent to the device log. This could reveal information about the user's activity in the app.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              },
+              {
+                "type": "String",
+                "description": "An error message which might contain information directly related to a crash to the device log.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   },
