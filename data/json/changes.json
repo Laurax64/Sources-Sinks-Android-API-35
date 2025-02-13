@@ -13152,7 +13152,76 @@
     ]
   },
   {
-    "package": "android.appwidget"
+    "package": "android.appwidget",
+    "changedClasses": [
+      {
+        "name": "AppWidgetManager",
+        "implementedMethods": [
+          {
+            "code": "RemoteViews getWidgetPreview(ComponentName, UserHandle, int)",
+            "codeLong": "android.widget.RemoteViews getWidgetPreview(android.content.ComponentName, android.os.UserHandle, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/appwidget/AppWidgetManager.java;l=1485",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.widget.RemoteViews",
+                "description": "An object of type RemoteViews that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void removeWidgetPreview(ComponentName, int)",
+            "codeLong": "void removeWidgetPreview(android.content.ComponentName, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/appwidget/AppWidgetManager.java;l=1508",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean setWidgetPreview(ComponentName, int, RemoteViews)",
+            "codeLong": "boolean setWidgetPreview(android.content.ComponentName, int, android.widget.RemoteViews)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/appwidget/AppWidgetManager.java;l=1459",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "true if the call was successful, false if it was rate-limited",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void notifyAppWidgetViewDataChanged(int, int)",
+            "codeLong": "void notifyAppWidgetViewDataChanged(int, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/appwidget/AppWidgetManager.java;l=907",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void notifyAppWidgetViewDataChanged(int[], int)",
+            "codeLong": "void notifyAppWidgetViewDataChanged(int[], int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/appwidget/AppWidgetManager.java;l=845",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.bluetooth"
