@@ -13133,20 +13133,20 @@
         "implementedMethods": [
           {
             "code": "UsageEvents queryEvents(UsageEventsQuery)",
-            "codeLong": "UsageEvents queryEvents(UsageEventsQuery)",
+            "codeLong": "android.app.usage.UsageEvents queryEvents(android.app.usage.UsageEventsQuery)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/usage/UsageStatsManager.java;l=615",
             "class": "Sensitive Source",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
-                {
-                    "type": "UsageEvents",
-                    "description": "An object of type UsageEvents that does contain sensitive data that can be accessed without calling another function",
-                    "possiblySensitive": true
-                }
+              {
+                "type": "android.app.usage.UsageEvents",
+                "description": "An object of type UsageEvents that does contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": true
+              }
             ],
             "dataTransmitted": []
-        }
+          }
         ]
       }
     ]
