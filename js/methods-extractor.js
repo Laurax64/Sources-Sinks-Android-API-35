@@ -206,6 +206,7 @@ function extractFullyQualifiedName(name, imports, classOrInterfaceName, packageN
         Collection: "java.util.Collection",
         Set: "java.util.Set",
         String: "java.lang.String",
+        CharSequence: "java.lang.CharSequence",
         Object: "java.lang.Object",
         Integer: "java.lang.Integer",
         Long: "java.lang.Long",
@@ -218,7 +219,7 @@ function extractFullyQualifiedName(name, imports, classOrInterfaceName, packageN
     };
 
     var fullyQualifiedName = name.replace(
-        /\b(Map|List|Collection|Set|String|Object|Integer|Long|Throwable|Intent|Instant|Exception|Context|Builder)\b/g,
+        /\b(Map|List|Collection|Set|String|CharSequence|Object|Integer|Long|Throwable|Intent|Instant|Exception|Context|Builder)\b/g,
         match => fullyQualifiedMap[match]
     );
 

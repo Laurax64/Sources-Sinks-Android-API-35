@@ -269,3 +269,25 @@ Landroid/bluetooth/BluetoothCodecType;->getNativeCodecType()I,blocked
 
 Landroid/companion/virtual/IVirtualDeviceManager;->getVirtualDevice(I)Landroid/companion/virtual/VirtualDevice;,blocked
 Landroid/companion/virtual/IVirtualDeviceManager;->unregisterVirtualDeviceListener(Landroid/companion/virtual/IVirtualDeviceListener;)V,blocked
+
+Landroid/content/UriRelativeFilter;-><init>(Landroid/content/UriRelativeFilterParcel;)V,blocked
+Landroid/content/UriRelativeFilter;-><init>(Landroid/os/Parcel;)V,blocked
+Landroid/content/UriRelativeFilter;-><init>(Lorg/xmlpull/v1/XmlPullParser;)V,blocked
+Landroid/content/UriRelativeFilter;->dumpDebug(Landroid/util/proto/ProtoOutputStream;J)V,blocked
+Landroid/content/UriRelativeFilter;->matchQuery(Landroid/os/PatternMatcher;Ljava/lang/String;)Z,blocked
+Landroid/content/UriRelativeFilter;->patternTypeToString()Ljava/lang/String;,blocked
+Landroid/content/UriRelativeFilter;->toParcel()Landroid/content/UriRelativeFilterParcel;,blocked
+Landroid/content/UriRelativeFilter;->uriPartToString()Ljava/lang/String;,blocked
+Landroid/content/UriRelativeFilter;->writeToParcel(Landroid/os/Parcel;I)V,blocked
+Landroid/content/UriRelativeFilter;->writeToXml(Lorg/xmlpull/v1/XmlSerializer;)V,blocked
+
+Landroid/content/UriRelativeFilterGroup;-><init>(Landroid/content/UriRelativeFilterGroupParcel;)V,blocked
+Landroid/content/UriRelativeFilterGroup;-><init>(Landroid/os/Parcel;)V,blocked
+Landroid/content/UriRelativeFilterGroup;-><init>(Lorg/xmlpull/v1/XmlPullParser;)V,blocked
+Landroid/content/UriRelativeFilterGroup;->dumpDebug(Landroid/util/proto/ProtoOutputStream;J)V,blocked
+Landroid/content/UriRelativeFilterGroup;->groupsToParcels(Ljava/util/List;)Ljava/util/List;,blocked
+Landroid/content/UriRelativeFilterGroup;->matchGroupsToUri(Ljava/util/List;Landroid/net/Uri;)Z,blocked
+Landroid/content/UriRelativeFilterGroup;->parcelsToGroups(Ljava/util/List;)Ljava/util/List;,blocked
+Landroid/content/UriRelativeFilterGroup;->toParcel()Landroid/content/UriRelativeFilterGroupParcel;,blocked
+Landroid/content/UriRelativeFilterGroup;->writeToParcel(Landroid/os/Parcel;I)V,blocked
+Landroid/content/UriRelativeFilterGroup;->writeToXml(Lorg/xmlpull/v1/XmlSerializer;)V,blocked
