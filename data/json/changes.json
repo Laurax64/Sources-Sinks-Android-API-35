@@ -13369,6 +13369,124 @@
           }
         ]
       }
+    ],
+    "changedClasses": [
+      {
+        "name": "BluetoothA2dp",
+        "implementedMethods": [
+          {
+            "code": "Collection<BluetoothCodecType> getSupportedCodecTypes()",
+            "codeLong": "java.util.Collection<android.bluetooth.BluetoothCodecType> getSupportedCodecTypes()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothA2dp.java;l=708",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.Collection<android.bluetooth.BluetoothCodecType>",
+                "description": "An object of type Collection<BluetoothCodecType> that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "BluetoothCodecConfig",
+        "implementedMethods": [
+          {
+            "code": "BluetoothCodecType getExtendedCodecType()",
+            "codeLong": "BluetoothCodecType getExtendedCodecType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecConfig.java;l=551",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.bluetooth.BluetoothCodecType",
+                "description": "An object of type BluetoothCodecType that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getCodecType()",
+            "codeLong": "int getCodecType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecConfig.java;l=546",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The source codec type of this config.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "BluetoothCodecConfig.Builder",
+        "implementedMethods": [
+          {
+            "code": "Builder setExtendedCodecType(BluetoothCodecType)",
+            "codeLong": "android.bluetooth.BluetoothCodecConfig.Builder setExtendedCodecType(android.bluetooth.BluetoothCodecType)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecConfig.java;l=860",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.bluetooth.BluetoothCodecConfig.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Builder setCodecType(int)",
+            "codeLong": "android.bluetooth.BluetoothCodecConfig.Builder setCodecType(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecConfig.java;l=849",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Modification",
+            "dataReturned": [
+              {
+                "type": "android.bluetooth.BluetoothCodecConfig.Builder",
+                "description": "An object of type Builder that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "BluetoothDevice",
+        "implementedMethods": [
+          {
+            "code": "int getAddressType()",
+            "codeLong": "int getAddressType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothDevice.java;l=3828",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+                {
+                    "type": "int",
+                    "description": "address type of this BluetoothAddress, one of ADDRESS_TYPE_PUBLIC, ADDRESS_TYPE_RANDOM, or ADDRESS_TYPE_UNKNOWN",
+                    "possiblySensitive": false
+                }
+            ],
+            "dataTransmitted": []
+        }
+        ]
+      }
     ]
   },
   {
