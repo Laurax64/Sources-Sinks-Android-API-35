@@ -13537,7 +13537,136 @@
     ]
   },
   {
-    "package": "android.companion.virtual"
+    "package": "android.companion.virtual",
+    "changedClasses": [
+      {
+        "name": "VirtualDevice",
+        "implementedMethods": [
+          {
+            "code": "int[] getDisplayIds()",
+            "codeLong": "int[] getDisplayIds()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/companion/virtual/VirtualDevice.java;l=142",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int[]",
+                "description": "IDs of all virtual displays that belong to this device",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "CharSequence getDisplayName()",
+            "codeLong": "CharSequence getDisplayName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/companion/virtual/VirtualDevice.java;l=131",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "CharSequence",
+                "description": "The human-readable name of the virtual device, if defined",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getPersistentDeviceId()",
+            "codeLong": "java.lang.String getPersistentDeviceId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/companion/virtual/VirtualDevice.java;l=115",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The persistent identifier of this virtual device",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean hasCustomSensorSupport()",
+            "codeLong": "boolean hasCustomSensorSupport()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/companion/virtual/VirtualDevice.java;l=161",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether this device may have custom sensors",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "VirtualDeviceManager",
+        "implementedMethods": [
+          {
+            "code": "VirtualDevice getVirtualDevice(int)",
+            "codeLong": "android.companion.virtual.VirtualDevice getVirtualDevice(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/companion/virtual/VirtualDeviceManager.java;l=259",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.companion.virtual.VirtualDevice",
+                "description": "An object of type VirtualDevice that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void registerVirtualDeviceListener(Executor, VirtualDeviceListener)",
+            "codeLong": "void registerVirtualDeviceListener(java.util.concurrent.Executor, android.companion.virtual.VirtualDeviceManager.VirtualDeviceListener)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/companion/virtual/VirtualDeviceManager.java;l=283",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ],
+    "addedInterfaces": [
+      {
+        "name": "VirtualDeviceListener",
+        "implementedMethods": [
+          {
+            "code": "void onVirtualDeviceCreated(int)",
+            "codeLong": "void onVirtualDeviceCreated(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/companion/virtual/VirtualDeviceManager.java;l=1328",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void onVirtualDeviceClosed(int)",
+            "codeLong": "void onVirtualDeviceClosed(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/companion/virtual/VirtualDeviceManager.java;l=1335",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.content"

@@ -266,3 +266,6 @@ Landroid/bluetooth/BluetoothCodecType;-><init>(Landroid/os/Parcel;)V,blocked
 Landroid/bluetooth/BluetoothCodecType;-><init>(Landroid/os/Parcel;Landroid/bluetooth/BluetoothCodecType-IA;)V,blocked
 Landroid/bluetooth/BluetoothCodecType;->createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothCodecType;,blocked
 Landroid/bluetooth/BluetoothCodecType;->getNativeCodecType()I,blocked
+
+Landroid/companion/virtual/IVirtualDeviceManager;->getVirtualDevice(I)Landroid/companion/virtual/VirtualDevice;,blocked
+Landroid/companion/virtual/IVirtualDeviceManager;->unregisterVirtualDeviceListener(Landroid/companion/virtual/IVirtualDeviceListener;)V,blocked
