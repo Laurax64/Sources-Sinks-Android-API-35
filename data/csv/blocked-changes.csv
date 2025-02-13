@@ -256,3 +256,13 @@ Landroid/app/usage/UsageEventsQuery$1;->createFromParcel(Landroid/os/Parcel;)Lan
 Landroid/app/usage/UsageEventsQuery$1;->newArray(I)[Landroid/app/usage/UsageEventsQuery;,blocked
 
 Landroid/app/usage/UsageEventsQuery$Builder;->setUserId(I)Landroid/app/usage/UsageEventsQuery$Builder;,blocked
+
+Landroid/bluetooth/BluetoothCodecType$1;-><init>()V,blocked
+Landroid/bluetooth/BluetoothCodecType$1;->createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothCodecType;,blocked
+Landroid/bluetooth/BluetoothCodecType$1;->newArray(I)[Landroid/bluetooth/BluetoothCodecType;,blocked
+Landroid/bluetooth/BluetoothCodecType;-><clinit>()V,blocked
+Landroid/bluetooth/BluetoothCodecType;-><init>(IJ)V,blocked
+Landroid/bluetooth/BluetoothCodecType;-><init>(Landroid/os/Parcel;)V,blocked
+Landroid/bluetooth/BluetoothCodecType;-><init>(Landroid/os/Parcel;Landroid/bluetooth/BluetoothCodecType-IA;)V,blocked
+Landroid/bluetooth/BluetoothCodecType;->createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothCodecType;,blocked
+Landroid/bluetooth/BluetoothCodecType;->getNativeCodecType()I,blocked

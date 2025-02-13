@@ -13161,13 +13161,13 @@
             "code": "RemoteViews getWidgetPreview(ComponentName, UserHandle, int)",
             "codeLong": "android.widget.RemoteViews getWidgetPreview(android.content.ComponentName, android.os.UserHandle, int)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/appwidget/AppWidgetManager.java;l=1485",
-            "class": "Non-Sensitive",
+            "class": "Sensitive Source",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
               {
                 "type": "android.widget.RemoteViews",
-                "description": "An object of type RemoteViews that does not contain sensitive data that can be accessed without calling another function",
+                "description": "An object of type RemoteViews that does contain a public field of type ApplicationInfo that contains sensitive data that can be accessed without calling another function",
                 "possiblySensitive": false
               }
             ],
@@ -13224,7 +13224,152 @@
     ]
   },
   {
-    "package": "android.bluetooth"
+    "package": "android.bluetooth",
+    "addedClasses": [
+      {
+        "name": "BluetoothCodecType",
+        "implementedMethods": [
+          {
+            "code": "boolean isMandatoryCodec()",
+            "codeLong": "boolean isMandatoryCodec()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecType.java;l=94",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the codec type is mandatory in the Bluetooth specification",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "long getCodecId()",
+            "codeLong": "long getCodecId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecType.java;l=114",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "long",
+                "description": "The codec unique identifier",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getCodecName()",
+            "codeLong": "java.lang.String getCodecName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecType.java;l=119",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The codec name",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String toString()",
+            "codeLong": "java.lang.String toString()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecType.java;l=134",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "The codec name",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int hashCode()",
+            "codeLong": "int hashCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecType.java;l=139",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "A hash code value",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "boolean equals(Object)",
+            "codeLong": "boolean equals(java.lang.Object)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecType.java;l=144",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the given object is equal to this BluetoothCodecType",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecType.java;l=159",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "BluetoothCodecType createFromType(int)",
+            "codeLong": "android.bluetooth.BluetoothCodecType createFromType(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecType.java;l=173",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.bluetooth.BluetoothCodecType",
+                "description": "An object of type BluetoothCodecType that does not contain sensitive data that can be accessed without calling another function",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/Bluetooth/framework/java/android/bluetooth/BluetoothCodecType.java;l=199",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.companion"
