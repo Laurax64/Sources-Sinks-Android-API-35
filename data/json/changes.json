@@ -3015,7 +3015,7 @@
           {
             "code": "String getName()",
             "codeLong": "java.lang.String getName()",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;drc=4ed4a7282c8ea594fd78db1a04757344aa932c13;l=70",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/customaudience/FetchAndJoinCustomAudienceRequest.java;l=70",
             "class": "Sensitive Source",
             "category": "",
             "changeType": "Addition",
@@ -7462,7 +7462,7 @@
             "dataReturned": [
               {
                 "type": "int",
-                "description": "The device orientation.",
+                "description": "The device orientation",
                 "possiblySensitive": true
               }
             ],
@@ -11865,8 +11865,8 @@
             "code": "void pinSlice(Uri, Set<SliceSpec>)",
             "codeLong": "void pinSlice(android.net.Uri, java.util.Set<SliceSpec>)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=139",
-            "class": "Sensitive Sink",
-            "category": "App Info and Performance",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Modification",
             "dataReturned": [],
             "dataTransmitted": []
@@ -11875,8 +11875,8 @@
             "code": "void revokeSlicePermission(String, Uri)",
             "codeLong": "void revokeSlicePermission(java.lang.String, android.net.Uri)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/app/slice/SliceManager.java;l=455",
-            "class": "Sensitive Sink",
-            "category": "App Info and Performance",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Modification",
             "dataReturned": [],
             "dataTransmitted": []
@@ -11908,7 +11908,7 @@
             "dataTransmitted": [
               {
                 "type": "java.lang.String",
-                "description": "The given URI to a slice provider",
+                "description": "The given URI to the device log",
                 "possiblySensitive": true,
                 "destinations": [
                   {
@@ -12070,7 +12070,7 @@
             "dataTransmitted": [
               {
                 "type": "java.lang.String",
-                "description": "The given URI to the device log when DEBUGis true. When mistakes happen in the management of the DEBUG field's value, the URI could be accesible to third parties.",
+                "description": "The given URI to the device log when DEBUG is true. When mistakes happen in the management of the DEBUG field's value, the URI could be accesible to third parties.",
                 "possiblySensitive": true,
                 "destinations": [
                   {
@@ -14499,7 +14499,7 @@
           {
             "code": "void storeToXML(OutputStream, String, Charset)",
             "codeLong": "void storeToXML(java.io.OutputStream, java.lang.String, java.nio.charset.Charset)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:libcore/ojluni/src/main/java/java/util/Properties.java;drc=b4d6320e2ae398b36f0aaafb2ecd83609d2d99af;l=1104",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:libcore/ojluni/src/main/java/java/util/Properties.java;l=1104",
             "class": "Sensitive Sink",
             "category": "Files and Docs",
             "changeType": "Addition",
