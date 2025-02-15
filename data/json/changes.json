@@ -11090,8 +11090,8 @@
             "code": "void registerAppOwnedSdkSandboxInterface(AppOwnedSdkSandboxInterface)",
             "codeLong": "void registerAppOwnedSdkSandboxInterface(AppOwnedSdkSandboxInterface)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/SdkSandboxManager.java;l=432",
-            "class": "Sensitive Sink",
-            "category": "App Info and Performance",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Addition",
             "dataReturned": [],
             "dataTransmitted": []
