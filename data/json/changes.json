@@ -11389,7 +11389,7 @@
                 "possiblySensitive": false
               }
             ],
-            "dataTransmitted":[]
+            "dataTransmitted": []
           },
           {
             "code": "Builder addIcon(Icon, String, List<String>)",
@@ -13528,6 +13528,50 @@
               {
                 "type": "int",
                 "description": "A hash code value",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ],
+    "changedClasses": [
+      {
+        "name": "AttributionSource",
+        "implementedMethods": [
+          {
+            "code": "int getDeviceId()",
+            "codeLong": "int getDeviceId()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/AttributionSource.java;l=547",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The device ID for this attribution source",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "AttributionSource.Builder",
+        "implementedMethods": [
+          {
+            "code": "Builder setDeviceId(int)",
+            "codeLong": "android.content.AttributionSource.Builder setDeviceId(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/AttributionSource.java;l=742",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.AttributionSource.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
                 "possiblySensitive": false
               }
             ],
