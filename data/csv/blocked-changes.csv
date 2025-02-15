@@ -448,3 +448,15 @@ Landroid/content/UriRelativeFilterGroup;->parcelsToGroups(Ljava/util/List;)Ljava
 Landroid/content/UriRelativeFilterGroup;->toParcel()Landroid/content/UriRelativeFilterGroupParcel;,blocked
 Landroid/content/UriRelativeFilterGroup;->writeToParcel(Landroid/os/Parcel;I)V,blocked
 Landroid/content/UriRelativeFilterGroup;->writeToXml(Lorg/xmlpull/v1/XmlSerializer;)V,blocked
+
+Landroid/content/pm/ArchivedActivityInfo;-><init>(Landroid/content/pm/ArchivedActivityParcel;)V,blocked
+Landroid/content/pm/ArchivedActivityInfo;->__metadata()V,blocked
+Landroid/content/pm/ArchivedActivityInfo;->bytesFromBitmap(Landroid/graphics/Bitmap;)[B,blocked
+Landroid/content/pm/ArchivedActivityInfo;->drawableFromCompressedBitmap([B)Landroid/graphics/drawable/Drawable;,blocked
+Landroid/content/pm/ArchivedActivityInfo;->drawableToBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;,blocked
+Landroid/content/pm/ArchivedActivityInfo;->drawableToBitmap(Landroid/graphics/drawable/Drawable;I)Landroid/graphics/Bitmap;,blocked
+Landroid/content/pm/ArchivedActivityInfo;->getParcel()Landroid/content/pm/ArchivedActivityParcel;,blocked
+
+Landroid/content/pm/ArchivedPackageInfo;-><init>(Landroid/content/pm/ArchivedPackageParcel;)V,blocked
+Landroid/content/pm/ArchivedPackageInfo;->__metadata()V,blocked
+Landroid/content/pm/ArchivedPackageInfo;->getParcel()Landroid/content/pm/ArchivedPackageParcel;,blocked

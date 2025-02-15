@@ -13578,14 +13578,683 @@
             "dataTransmitted": []
           }
         ]
+      },
+      {
+        "name": "ClipData.Item",
+        "implementedMethods": [
+          {
+            "code": "IntentSender getIntentSender()",
+            "codeLong": "android.content.IntentSender getIntentSender()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/ClipData.java;l=409",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.IntentSender",
+                "description": "An object of type IntentSender that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "ComponentCallbacks",
+        "implementedMethods": []
+      },
+      {
+        "name": "ComponentCallbacks2",
+        "implementedMethods": []
+      },
+      {
+        "name": "Context",
+        "implementedMethods": [
+          {
+            "code": "int checkContentUriPermissionFull(Uri, int, int, int)",
+            "codeLong": "int checkContentUriPermissionFull(android.net.Uri, int, int, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/Context.java;l=7033",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "Always throws an exception instead of returning an int; must be overridden by a subclass",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "ContextParams",
+        "implementedMethods": [
+          {
+            "code": "boolean shouldRegisterAttributionSource()",
+            "codeLong": "boolean shouldRegisterAttributionSource()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/ContextParams.java;l=109",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the attribution source associated with the Context being created should be registered.",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "ContextParams",
+        "implementedMethods": [
+          {
+            "code": "Builder setShouldRegisterAttributionSource(boolean)",
+            "codeLong": "android.content.ContextParams.Builder setShouldRegisterAttributionSource(boolean)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/ContextParams.java;l=187",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.ContextParams.Builder",
+                "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "Intent",
+        "implementedMethods": [
+          {
+            "code": "boolean isMismatchingFilter()",
+            "codeLong": "boolean isMismatchingFilter()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/Intent.java;l=12700",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "boolean",
+                "description": "Whether the intent mismatches all intent filters declared in the receiving component",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "IntentFilter",
+        "implementedMethods": [
+          {
+            "code": "void addUriRelativeFilterGroup(UriRelativeFilterGroup)",
+            "codeLong": "void addUriRelativeFilterGroup(android.content.UriRelativeFilterGroup)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/IntentFilter.java;l=1620",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void clearUriRelativeFilterGroups()",
+            "codeLong": "void clearUriRelativeFilterGroups()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/IntentFilter.java;l=1655",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int countUriRelativeFilterGroups()",
+            "codeLong": "int countUriRelativeFilterGroups()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/IntentFilter.java;l=1632",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The number of URI relative filter groups in the intent filter",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "UriRelativeFilterGroup getUriRelativeFilterGroup(int)",
+            "codeLong": "UriRelativeFilterGroup getUriRelativeFilterGroup(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/IntentFilter.java;l=1647",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "UriRelativeFilterGroup",
+                "description": "An object of type UriRelativeFilterGroup that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       }
     ]
   },
   {
-    "package": "android.content.om"
+    "package": "android.content.om",
+    "changedClasses": [
+      {
+        "name": "FabricatedOverlay",
+        "implementedMethods": [
+          {
+            "code": "void setNinePatchResourceValue(String, ParcelFileDescriptor, String)",
+            "codeLong": "void setNinePatchResourceValue(java.lang.String, android.os.ParcelFileDescriptor, java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/om/FabricatedOverlay.java;l=561",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "String",
+                "description": "The name of the resource to set, might contain sensitive data like a package name.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "void setResourceValue(String, AssetFileDescriptor, String)",
+            "codeLong": "void setResourceValue(java.lang.String, android.content.res.AssetFileDescriptor, java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/om/FabricatedOverlay.java;l=581",
+            "class": "Sensitive Sink",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": [
+              {
+                "type": "String",
+                "description": "The name of the resource to set, might contain sensitive data like a package name.",
+                "possiblySensitive": true,
+                "destinations": [
+                  {
+                    "resource": "Device Log",
+                    "accesibleToThirdParties": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
-    "package": "android.content.pm"
+    "package": "android.content.pm",
+    "addedClasses": [
+      {
+        "name": "ArchivedActivityInfo",
+        "implementedMethods": [
+          {
+            "code": "ArchivedActivityInfo(CharSequence, ComponentName)",
+            "codeLong": "ArchivedActivityInfo(java.lang.CharSequence, android.content.ComponentName)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedActivityInfo.java;l=56",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "CharSequence getLabel()",
+            "codeLong": "java.lang.CharSequence getLabel()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedActivityInfo.java;l=175",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.CharSequence",
+                "description": "The label for the activity",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ComponentName getComponentName()",
+            "codeLong": "android.content.ComponentName getComponentName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedActivityInfo.java;l=183",
+            "class": "Sensitive Source",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.ComponentName",
+                "description": "An object of type ComponentName that contains the package it exists in",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Drawable getIcon()",
+            "codeLong": "android.graphics.drawable.Drawable getIcon()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedActivityInfo.java;l=192",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.graphics.drawable.Drawable",
+                "description": "Icon of the activity in the app's locale. if null then the default icon would be shown in the launcher",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "Drawable getMonochromeIcon()",
+            "codeLong": "android.graphics.drawable.Drawable getMonochromeIcon()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedActivityInfo.java;l=200",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.graphics.drawable.Drawable",
+                "description": "Monochrome icon, if defined, of the activity.",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedActivityInfo setLabel(CharSequence)",
+            "codeLong": "android.content.pm.ArchivedActivityInfo setLabel(java.lang.CharSequence)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedActivityInfo.java;l=208",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedActivityInfo",
+                "description": "An object of type ArchivedActivityInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedActivityInfo setComponentName(ComponentName)",
+            "codeLong": "android.content.pm.ArchivedActivityInfo setComponentName(android.content.ComponentName)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedActivityInfo.java;l=219",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedActivityInfo",
+                "description": "An object of type ArchivedActivityInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedActivityInfo setIcon(Drawable)",
+            "codeLong": "android.content.pm.ArchivedActivityInfo setIcon(android.graphics.drawable.Drawable)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedActivityInfo.java;l=231",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedActivityInfo",
+                "description": "An object of type ArchivedActivityInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedActivityInfo setMonochromeIcon(Drawable)",
+            "codeLong": "android.content.pm.ArchivedActivityInfo setMonochromeIcon(android.graphics.drawable.Drawable)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedActivityInfo.java;l=240",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedActivityInfo",
+                "description": "An object of type ArchivedActivityInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "ArchivedPackageInfo",
+        "implementedMethods": [
+          {
+            "code": "ArchivedPackageInfo(String, SigningInfo, List<ArchivedActivityInfo>)",
+            "codeLong": "ArchivedPackageInfo(java.lang.String, android.content.pm.SigningInfo, java.util.List<android.content.pm.ArchivedActivityInfo>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=83",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getPackageName()",
+            "codeLong": "java.lang.String getPackageName()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=153",
+            "class": "Sensitive Source",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "Name of the package as used to identify it in the system; may contain the name of an app installed on the device",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "SigningInfo getSigningInfo()",
+            "codeLong": "android.content.pm.SigningInfo getSigningInfo()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=161",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.SigningInfo",
+                "description": "An object of type SigningInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getVersionCode()",
+            "codeLong": "int getVersionCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=170",
+            "class": "Non-Sensitive",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The version number of the package",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getVersionCodeMajor()",
+            "codeLong": "int getVersionCodeMajor()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=179",
+            "class": "Non-Sensitive",
+            "category": "App Activity",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The major version number of the package",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getTargetSdkVersion()",
+            "codeLong": "int getTargetSdkVersion()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=189",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "The SDK version number that the application is targeting",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getDefaultToDeviceProtectedStorage()",
+            "codeLong": "java.lang.String getDefaultToDeviceProtectedStorage()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=199",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "Whether the app should use device-protected storage (DPS) by default",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getRequestLegacyExternalStorage()",
+            "codeLong": "java.lang.String getRequestLegacyExternalStorage()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=210",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "Whether this app would like to run under the legacy storage model",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "String getUserDataFragile()",
+            "codeLong": "java.lang.String getUserDataFragile()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=220",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "Whether the user is prompted to keep the app's data on uninstall",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "List<ArchivedActivityInfo> getLauncherActivities()",
+            "codeLong": "java.util.List<android.content.pm.ArchivedActivityInfo> getLauncherActivities()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=231",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.util.List<android.content.pm.ArchivedActivityInfo>",
+                "description": "An object of type List<ArchivedActivityInfo> that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedPackageInfo setPackageName(String)",
+            "codeLong": "android.content.pm.ArchivedPackageInfo setPackageName(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=239",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedPackageInfo",
+                "description": "An object of type ArchivedPackageInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedPackageInfo setSigningInfo(SigningInfo)",
+            "codeLong": "android.content.pm.ArchivedPackageInfo setSigningInfo(android.content.pm.SigningInfo)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=250",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedPackageInfo",
+                "description": "An object of type ArchivedPackageInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedPackageInfo setVersionCode(int)",
+            "codeLong": "android.content.pm.ArchivedPackageInfo setVersionCode(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=262",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedPackageInfo",
+                "description": "An object of type ArchivedPackageInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedPackageInfo setVersionCodeMajor(int)",
+            "codeLong": "android.content.pm.ArchivedPackageInfo setVersionCodeMajor(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=272",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedPackageInfo",
+                "description": "An object of type ArchivedPackageInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedPackageInfo setTargetSdkVersion(int)",
+            "codeLong": "android.content.pm.ArchivedPackageInfo setTargetSdkVersion(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=283",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedPackageInfo",
+                "description": "An object of type ArchivedPackageInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedPackageInfo setDefaultToDeviceProtectedStorage(String)",
+            "codeLong": "android.content.pm.ArchivedPackageInfo setDefaultToDeviceProtectedStorage(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=294",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedPackageInfo",
+                "description": "An object of type ArchivedPackageInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedPackageInfo setRequestLegacyExternalStorage(String)",
+            "codeLong": "android.content.pm.ArchivedPackageInfo setRequestLegacyExternalStorage(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=306",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedPackageInfo",
+                "description": "An object of type ArchivedPackageInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedPackageInfo setUserDataFragile(String)",
+            "codeLong": "android.content.pm.ArchivedPackageInfo setUserDataFragile(java.lang.String)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=317",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedPackageInfo",
+                "description": "An object of type ArchivedPackageInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "ArchivedPackageInfo setLauncherActivities(List<ArchivedActivityInfo>)",
+            "codeLong": "android.content.pm.ArchivedPackageInfo setLauncherActivities(java.util.List<ArchivedActivityInfo>)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/ArchivedPackageInfo.java;l=329",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.ArchivedPackageInfo",
+                "description": "An object of type ArchivedPackageInfo that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
+      }
+    ]
   },
   {
     "package": "android.content.res"
