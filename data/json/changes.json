@@ -11186,8 +11186,8 @@
             "code": "void loadSdk(String, Bundle, Executor, OutcomeReceiver<SandboxedSdk, LoadSdkException>)",
             "codeLong": "void loadSdk(java.lang.String, android.os.Bundle, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.app.sdksandbox.SandboxedSdk, android.app.sdksandbox.LoadSdkException>)",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/sdksandbox/framework/java/android/app/sdksandbox/sdkprovider/SdkSandboxController.java;l=170",
-            "class": "Sensitive Sink",
-            "category": "App Info and Performance",
+            "class": "Non-Sensitive",
+            "category": "",
             "changeType": "Addition",
             "dataReturned": [],
             "dataTransmitted": []
