@@ -868,7 +868,7 @@
             "code": "Map<AdTechIdentifier, DecisionLogic> getPerBuyerLogicMap()",
             "codeLong": "java.util.Map<android.adservices.common.AdTechIdentifier, android.adservices.adselection.DecisionLogic> getPerBuyerLogicMap()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/AdServices/adservices/framework/java/android/adservices/adselection/PerBuyerDecisionLogic.java;l=109",
-            "class": "",
+            "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [
@@ -6225,8 +6225,8 @@
           {
             "code": "void execute(ComponentName service, PersistableBundle params, Executor executor, OutcomeReceiver<ExecuteResult, Exception> receiver)",
             "codeLong": "void execute(android.content.ComponentName, android.os.PersistableBundle, java.util.concurrent.Executor, android.os.OutcomeReceiver<android.adservices.ondevicepersonalization.ExecuteResult, java.lang.Exception>)",
-            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=178",
-            "class": "",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationManager.java;l=190",
+            "class": "Non-Sensitive",
             "category": "",
             "changeType": "Addition",
             "dataReturned": [],
