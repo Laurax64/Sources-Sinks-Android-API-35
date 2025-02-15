@@ -7893,19 +7893,14 @@
         "name": "IsolatedServiceException",
         "implementedMethods": [
           {
-            "name": "IsolatedServiceException",
-            "implementedMethods": [
-              {
-                "code": "IsolatedServiceException(int)",
-                "codeLong": "IsolatedServiceException(int)",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedServiceException.java;l=41",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [],
-                "dataTransmitted": []
-              }
-            ]
+            "code": "IsolatedServiceException(int)",
+            "codeLong": "IsolatedServiceException(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/IsolatedServiceException.java;l=41",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
           }
         ]
       },
@@ -7913,35 +7908,30 @@
         "name": "OnDevicePersonalizationException",
         "implementedMethods": [
           {
-            "name": "OnDevicePersonalizationException",
-            "implementedMethods": [
+            "code": "OnDevicePersonalizationException(int, String, Throwable)",
+            "codeLong": "OnDevicePersonalizationException(int, java.lang.String, Throwable)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationException.java;l=143",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getErrorCode()",
+            "codeLong": "int getErrorCode()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationException.java;l=150",
+            "class": "Sensitive Source",
+            "category": "App Info and Performance",
+            "changeType": "Addition",
+            "dataReturned": [
               {
-                "code": "OnDevicePersonalizationException(int, String, Throwable)",
-                "codeLong": "OnDevicePersonalizationException(int, java.lang.String, Throwable)",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationException.java;l=143",
-                "class": "Non-Sensitive",
-                "category": "",
-                "changeType": "Addition",
-                "dataReturned": [],
-                "dataTransmitted": []
-              },
-              {
-                "code": "int getErrorCode()",
-                "codeLong": "int getErrorCode()",
-                "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/OnDevicePersonalizationException.java;l=150",
-                "class": "Sensitive Source",
-                "category": "App Info and Performance",
-                "changeType": "Addition",
-                "dataReturned": [
-                  {
-                    "type": "int",
-                    "description": "The error code for this exception.",
-                    "possiblySensitive": true
-                  }
-                ],
-                "dataTransmitted": []
+                "type": "int",
+                "description": "The error code for this exception.",
+                "possiblySensitive": true
               }
-            ]
+            ],
+            "dataTransmitted": []
           }
         ]
       }
@@ -9198,7 +9188,7 @@
               {
                 "type": "android.app.Activity",
                 "description": "An object of type Activity that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9214,7 +9204,7 @@
               {
                 "type": "boolean",
                 "description": "Whether this is a child Activity of an ActivityGroup",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9255,7 +9245,7 @@
               {
                 "type": "java.util.List<ApplicationStartInfo>",
                 "description": "An object of type List<ApplicationStartInfo> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9381,7 +9371,7 @@
               {
                 "type": "int",
                 "description": "The system grammatical gender",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9417,7 +9407,7 @@
               {
                 "type": "java.util.Locale",
                 "description": "The locale the strings in values/strings.xml are in if specified, otherwise null",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9438,7 +9428,7 @@
               {
                 "type": "android.widget.RemoteViews",
                 "description": "An object of type RemoteViews that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9454,7 +9444,7 @@
               {
                 "type": "android.widget.RemoteViews",
                 "description": "An object of type RemoteViews that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9470,7 +9460,7 @@
               {
                 "type": "android.widget.RemoteViews",
                 "description": "An object of type RemoteViews that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9506,7 +9496,7 @@
               {
                 "type": "android.graphics.Bitmap",
                 "description": "A background image to be displayed behind the notification content, sensitive if it relates to a user setting or even an individual app or device",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9522,14 +9512,14 @@
               {
                 "type": "WearableExtender",
                 "description": "An object of type WearableExtender that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": [
               {
                 "type": "java.lang.String",
                 "description": "Whether wearable extender backgrounds are blocked, which can be data directly related to a crash, to the device log",
-                "possibly_sensitive": true,
+                "possiblySensitive": true,
                 "destinations": [
                   {
                     "resource": "Device Log",
@@ -9555,7 +9545,7 @@
               {
                 "type": "android.os.VibrationEffect",
                 "description": "An object of type VibrationEffect that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9586,7 +9576,7 @@
               {
                 "type": "boolean",
                 "description": "Whether users can independently and fully manage zen rules",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9602,7 +9592,7 @@
               {
                 "type": "int",
                 "description": "Whether Do Not Disturb should be turned on",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9623,7 +9613,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the app is going to enter Picture-in-Picture (PiP) mode",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9696,7 +9686,7 @@
               {
                 "type": "int",
                 "description": "The current content protection policy",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9712,7 +9702,7 @@
               {
                 "type": "Set<java.lang.Integer>",
                 "description": "Ids of all managed subscriptions currently downloaded by an admin on the device",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9728,7 +9718,7 @@
               {
                 "type": "boolean",
                 "description": "Whether MTE is currently enabled on the device",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9764,7 +9754,7 @@
               {
                 "type": "java.util.List<PackageIdentifier>",
                 "description": "An object of type List<PackageIdentifier> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9780,7 +9770,7 @@
               {
                 "type": "java.util.Set<java.util.Set<java.lang.Integer>>",
                 "description": "An array of Integers representing Android Permissions that the caller must hold to access the schema this SchemaVisibilityConfig represents",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -9796,7 +9786,7 @@
               {
                 "type": "PackageIdentifier",
                 "description": "An object of type PackageIdentifier that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9822,7 +9812,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the given object is equal to this SchemaVisibilityConfig",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9838,7 +9828,7 @@
               {
                 "type": "int",
                 "description": "A hash code value",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9859,7 +9849,7 @@
               {
                 "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9875,7 +9865,7 @@
               {
                 "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9891,7 +9881,7 @@
               {
                 "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9907,7 +9897,7 @@
               {
                 "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9923,7 +9913,7 @@
               {
                 "type": "android.app.appsearch.SchemaVisibilityConfig.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9939,7 +9929,7 @@
               {
                 "type": "android.app.appsearch.SchemaVisibilityConfig",
                 "description": "An object of type SchemaVisibilityConfig that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -9977,7 +9967,7 @@
               {
                 "type": "java.util.List<java.lang.String>",
                 "description": "The list of parent types of this schema for polymorphism",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10008,7 +9998,7 @@
               {
                 "type": "android.app.appsearch.AppSearchSchema.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10029,7 +10019,7 @@
               {
                 "type": "java.util.List<java.lang.String>",
                 "description": "List of indexable nested properties for the nested document",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10050,7 +10040,7 @@
               {
                 "type": "android.app.appsearch.AppSearchSchema.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10066,7 +10056,7 @@
               {
                 "type": "android.app.appsearch.AppSearchSchema.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10082,7 +10072,7 @@
               {
                 "type": "android.app.appsearch.AppSearchSchema.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10098,7 +10088,7 @@
               {
                 "type": "android.app.appsearch.AppSearchSchema.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10129,7 +10119,7 @@
               {
                 "type": "BuilderType",
                 "description": "An object of type BuilderType that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10145,7 +10135,7 @@
               {
                 "type": "BuilderType",
                 "description": "An object of type BuilderType that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10161,7 +10151,7 @@
               {
                 "type": "BuilderType",
                 "description": "An object of type BuilderType that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10177,7 +10167,7 @@
               {
                 "type": "BuilderType",
                 "description": "An object of type BuilderType that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10213,7 +10203,7 @@
               {
                 "type": "java.util.Map<java.lang.String, PackageIdentifier>",
                 "description": "An object of type Map<String, PackageIdentifier> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10229,7 +10219,7 @@
               {
                 "type": "java.util.Map<java.lang.String, Set<android.app.appsearch.SchemaVisibilityConfig>>",
                 "description": "A mapping of schema types to the set of SchemaVisibilityConfig that have access to that schema type",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10260,7 +10250,7 @@
               {
                 "type": "android.app.appsearch.GetSchemaResponse.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10276,7 +10266,7 @@
               {
                 "type": "android.app.appsearch.GetSchemaResponse.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10312,7 +10302,7 @@
               {
                 "type": "java.util.List<android.app.appsearch.GenericDocument>",
                 "description": "An object of type List<GenericDocument> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10333,7 +10323,7 @@
               {
                 "type": "android.app.appsearch.PutDocumentsRequest.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10349,7 +10339,7 @@
               {
                 "type": "android.app.appsearch.PutDocumentsRequest.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10430,7 +10420,7 @@
               {
                 "type": "java.util.Map<java.lang.String, java.util.List<java.lang.String>>",
                 "description": "Map of schema and target properties to search over",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10446,7 +10436,7 @@
               {
                 "type": "java.lang.String",
                 "description": "A tag to indicate the source of this search, or null if not set",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10462,7 +10452,7 @@
               {
                 "type": "boolean",
                 "description": "Whether the LIST_FILTER_HAS_PROPERTY_FUNCTION feature is enabled",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10493,7 +10483,7 @@
               {
                 "type": "android.app.appsearch.SearchSpec.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10509,7 +10499,7 @@
               {
                 "type": "android.app.appsearch.SearchSpec.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10525,7 +10515,7 @@
               {
                 "type": "android.app.appsearch.SearchSpec.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10541,7 +10531,7 @@
               {
                 "type": "android.app.appsearch.SearchSpec.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": [
@@ -10589,7 +10579,7 @@
               {
                 "type": "java.util.Map<java.lang.String, java.util.List>",
                 "description": "Map of schema and target properties to search over",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10620,7 +10610,7 @@
               {
                 "type": "android.app.appsearch.SearchSuggestionSpec.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10636,7 +10626,7 @@
               {
                 "type": "android.app.appsearch.SearchSuggestionSpec.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10657,7 +10647,7 @@
               {
                 "type": "java.util.Map<java.lang.String, PackageIdentifier>",
                 "description": "A mapping of publicly visible schemas to the PackageIdentifier specifying the package the schemas are from.",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10673,7 +10663,7 @@
               {
                 "type": "java.util.Map<java.lang.String, java.util.Set<android.app.appsearch.SchemaVisibilityConfig>>",
                 "description": "A mapping of schema types to the set of SchemaVisibilityConfig that have access to that schema type.",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10694,7 +10684,7 @@
               {
                 "type": "android.app.appsearch.SetSchemaRequest.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10710,7 +10700,7 @@
               {
                 "type": "android.app.appsearch.SetSchemaRequest.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10726,7 +10716,7 @@
               {
                 "type": "android.app.appsearch.SetSchemaRequest.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10854,7 +10844,7 @@
               {
                 "type": "android.app.job.JobInfo.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": [
@@ -10882,7 +10872,7 @@
               {
                 "type": "android.app.job.JobInfo.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10898,7 +10888,7 @@
               {
                 "type": "android.app.job.JobInfo.Builder",
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": [
@@ -10949,7 +10939,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The name used to register the AppOwnedSdkSandboxInterface",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10965,7 +10955,7 @@
               {
                 "type": "long",
                 "description": "The version used to register the AppOwnedSdkSandboxInterface",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10981,7 +10971,7 @@
               {
                 "type": "android.os.IBinder",
                 "description": "An object of type IBinder that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -10997,7 +10987,7 @@
               {
                 "type": "int",
                 "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -11060,7 +11050,7 @@
               {
                 "type": "android.os.Bundle",
                 "description": "An object of type Bundle that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -11076,7 +11066,7 @@
               {
                 "type": "int",
                 "description": "The result code this exception was constructed with.",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -11171,7 +11161,7 @@
               {
                 "type": "java.util.List<AppOwnedSdkSandboxInterface>",
                 "description": "An object of type List<AppOwnedSdkSandboxInterface> that might contain sensitive data, but is not sensitive itself",
-                "possibly_sensitive": false
+                "possiblySensitive": false
               }
             ],
             "dataTransmitted": []
@@ -11187,7 +11177,7 @@
               {
                 "type": "java.lang.String",
                 "description": "The package name of the client app",
-                "possibly_sensitive": true
+                "possiblySensitive": true
               }
             ],
             "dataTransmitted": []
@@ -11398,7 +11388,8 @@
                 "description": "An object of type Builder that might contain sensitive data, but is not sensitive itself",
                 "possiblySensitive": false
               }
-            ]
+            ],
+            "dataTransmitted":[]
           },
           {
             "code": "Builder addIcon(Icon, String, List<String>)",
