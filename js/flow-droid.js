@@ -2,14 +2,9 @@
  * Exports the current data in changes.json to FlowDroid format as a text file.
  */
 function exportFlowDroid() {
-  fetch('data/json/changes.json')
-    .then(response => response.json())
-    .then(data => {
-      const parsedData = parseApiData(data)
-      const methodAnnotations = groupByCodeLong(parsedData)
-      const formattedData = formatFlowDroidAnnotations(methodAnnotations)
-      saveToFile(formattedData, 'sources-sinks-flowdroid')
-    })
+  const methodAnnotations = groupByCodeLong(apiData)
+  const formattedData = formatFlowDroidAnnotations(methodAnnotations)
+  saveToFile(formattedData, 'sources-sinks-flowdroid')
 }
 
 /**
@@ -30,7 +25,8 @@ function groupByCodeLong(parsedData) {
         changes[key] = {
           classTypes: new Set(),
           classOrInterfaceImport: implementedMethod.classOrInterfaceImport,
-          codeLong: implementedMethod.codeLong
+          codeLong: implementedMethod.codeLong,
+          formatedChanges: new Set()
         }
       }
       changes[key].formatedChanges.add(classType)
