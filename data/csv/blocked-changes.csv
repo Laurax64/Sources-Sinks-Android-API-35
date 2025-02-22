@@ -460,3 +460,17 @@ Landroid/content/pm/ArchivedActivityInfo;->getParcel()Landroid/content/pm/Archiv
 Landroid/content/pm/ArchivedPackageInfo;-><init>(Landroid/content/pm/ArchivedPackageParcel;)V,blocked
 Landroid/content/pm/ArchivedPackageInfo;->__metadata()V,blocked
 Landroid/content/pm/ArchivedPackageInfo;->getParcel()Landroid/content/pm/ArchivedPackageParcel;,blocked
+
+Landroid/content/pm/LauncherApps$ArchiveCompatibilityParams;->isEnableIconOverlay()Z,blocked
+Landroid/content/pm/LauncherApps$ArchiveCompatibilityParams;->isEnableUnarchivalConfirmation()Z,blocked
+
+Landroid/content/pm/LauncherUserInfo$1;-><init>()V,blocked
+Landroid/content/pm/LauncherUserInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/LauncherUserInfo;,blocked
+Landroid/content/pm/LauncherUserInfo$1;->newArray(I)[Landroid/content/pm/LauncherUserInfo;,blocked
+Landroid/content/pm/LauncherUserInfo$Builder;-><init>(Ljava/lang/String;I)V,blocked
+Landroid/content/pm/LauncherUserInfo$Builder;->build()Landroid/content/pm/LauncherUserInfo;,blocked
+Landroid/content/pm/LauncherUserInfo;-><clinit>()V,blocked
+Landroid/content/pm/LauncherUserInfo;-><init>(Landroid/os/Parcel;)V,blocked
+Landroid/content/pm/LauncherUserInfo;-><init>(Landroid/os/Parcel;Landroid/content/pm/LauncherUserInfo-IA;)V,blocked
+Landroid/content/pm/LauncherUserInfo;-><init>(Ljava/lang/String;I)V,blocked
+Landroid/content/pm/LauncherUserInfo;-><init>(Ljava/lang/String;ILandroid/content/pm/LauncherUserInfo-IA;)V,blocked

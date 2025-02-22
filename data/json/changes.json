@@ -14253,6 +14253,94 @@
             "dataTransmitted": []
           }
         ]
+      },
+      {
+        "name": "LauncherApps.ArchiveCompatibilityParams",
+        "implementedMethods": [
+          {
+            "code": "void setEnableIconOverlay(boolean)",
+            "codeLong": "void setEnableIconOverlay(boolean)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/LauncherApps.java;l=2199",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void setEnableUnarchivalConfirmation(boolean)",
+            "codeLong": "void setEnableUnarchivalConfirmation(boolean)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/LauncherApps.java;l=2212",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          }
+        ]
+      },
+      {
+        "name": "LauncherUserInfo",
+        "implementedMethods": [
+          {
+            "code": "String getUserType()",
+            "codeLong": "java.lang.String getUserType()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/LauncherUserInfo.java;l=48",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "java.lang.String",
+                "description": "Type of the Android user as defined e.g., managed profile or private profile",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int getUserSerialNumber()",
+            "codeLong": "int getUserSerialNumber()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/LauncherUserInfo.java;l=59",
+            "class": "Sensitive Source",
+            "category": "Device or other IDs",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "Serial number of the user, which is a device-unique number assigned to that user",
+                "possiblySensitive": true
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "void writeToParcel(Parcel, int)",
+            "codeLong": "void writeToParcel(android.os.Parcel, int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/LauncherUserInfo.java;l=70",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [],
+            "dataTransmitted": []
+          },
+          {
+            "code": "int describeContents()",
+            "codeLong": "int describeContents()",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/LauncherUserInfo.java;l=77",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "int",
+                "description": "0 which indicates, that the contents are not meant to cross compilation boundaries",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       }
     ]
   },
