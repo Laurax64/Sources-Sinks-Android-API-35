@@ -6,3 +6,4 @@ Fair warning: This [web page](https://laurax64.github.io/Sources-Sinks-Android-A
 ## FlowDroid Usage
 A tutorial on how to use the findings with FlowDroid can be found in [Sources-Sinks-Android-API-35-Taint-Flow-Examples](https://github.com/Laurax64/Sources-Sinks-Android-API-35-Taint-Flow-Examples).
 
+![graphviz(6)](https://github.com/user-attachments/assets/5239f1b3-ec6a-4e07-a7a9-1a547d1f79dd)
