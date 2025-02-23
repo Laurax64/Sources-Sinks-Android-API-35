@@ -474,3 +474,9 @@ Landroid/content/pm/LauncherUserInfo;-><init>(Landroid/os/Parcel;)V,blocked
 Landroid/content/pm/LauncherUserInfo;-><init>(Landroid/os/Parcel;Landroid/content/pm/LauncherUserInfo-IA;)V,blocked
 Landroid/content/pm/LauncherUserInfo;-><init>(Ljava/lang/String;I)V,blocked
 Landroid/content/pm/LauncherUserInfo;-><init>(Ljava/lang/String;ILandroid/content/pm/LauncherUserInfo-IA;)V,blocked
+
+Landroid/content/pm/PackageInstaller$UnarchivalState;-><init>(IIJLandroid/app/PendingIntent;)V,blocked
+Landroid/content/pm/PackageInstaller$UnarchivalState;->getRequiredStorageBytes()J,blocked
+Landroid/content/pm/PackageInstaller$UnarchivalState;->getStatus()I,blocked
+Landroid/content/pm/PackageInstaller$UnarchivalState;->getUnarchiveId()I,blocked
+Landroid/content/pm/PackageInstaller$UnarchivalState;->getUserActionIntent()Landroid/app/PendingIntent;,blocked

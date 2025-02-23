@@ -14341,6 +14341,91 @@
             "dataTransmitted": []
           }
         ]
+      },
+      {
+        "name": "PackageInstaller.UnarchivalState",
+        "implementedMethods": [
+          {
+            "code": "UnarchivalState createOkState(int)",
+            "codeLong": "android.content.pm.PackageInstaller.UnarchivalState createOkState(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/PackageInstaller.java;l=5269",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.PackageInstaller.UnarchivalState",
+                "description": "An object of type UnarchivalState that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "UnarchivalState createUserActionRequiredState(int, PendingIntent)",
+            "codeLong": "android.content.pm.PackageInstaller.UnarchivalState createUserActionRequiredState(int, PendingIntent)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/PackageInstaller.java;l=5286",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.PackageInstaller.UnarchivalState",
+                "description": "An object of type UnarchivalState that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "UnarchivalState createInsufficientStorageState(int, long, android.app.PendingIntent)",
+            "codeLong": "android.content.pm.PackageInstaller.UnarchivalState createInsufficientStorageState(int, long, android.app.PendingIntent)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/PackageInstaller.java;l=5306",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.PackageInstaller.UnarchivalState",
+                "description": "An object of type UnarchivalState that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "UnarchivalState createNoConnectivityState(int)",
+            "codeLong": "android.content.pm.PackageInstaller.UnarchivalState createNoConnectivityState(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/PackageInstaller.java;drc=98e96368cc73432efbacd6fbcf61fe789dcec0ee;l=5320",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.PackageInstaller.UnarchivalState",
+                "description": "An object of type UnarchivalState that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          },
+          {
+            "code": "UnarchivalState createGenericErrorState(int)",
+            "codeLong": "android.content.pm.PackageInstaller.UnarchivalState createGenericErrorState(int)",
+            "link": "https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/java/android/content/pm/PackageInstaller.java;l=5332",
+            "class": "Non-Sensitive",
+            "category": "",
+            "changeType": "Addition",
+            "dataReturned": [
+              {
+                "type": "android.content.pm.PackageInstaller.UnarchivalState",
+                "description": "An object of type UnarchivalState that might contain sensitive data, but is not sensitive itself",
+                "possiblySensitive": false
+              }
+            ],
+            "dataTransmitted": []
+          }
+        ]
       }
     ]
   },
