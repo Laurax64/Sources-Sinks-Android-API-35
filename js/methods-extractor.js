@@ -113,9 +113,7 @@ function extractHeaders(javaCode, classOrInterfaceName) {
         /(?<accessModifier>public|private|protected|default)\s/,
         new RegExp(`(?<changeName>${classOrInterfaceName})`),
         /\((?<parameters>[^)]*)\)/,
-
     ];
-
     const methodMatch = [
         /(?<accessModifier>public|private|protected|default)\s/,
         /(?<returnType>\w+(\<[^>]+\>)?(\[\])*)\s+/,
@@ -123,7 +121,6 @@ function extractHeaders(javaCode, classOrInterfaceName) {
         /\((?<parameters>[^)]*)\)/,
         /(?<exceptions>\s+throws\s+[\w.,<> ]+)?/,
     ];
-
     const combinedPattern = [
         constructorMatch.map(part => part.source).join(''),
         methodMatch.map(part => part.source).join('')

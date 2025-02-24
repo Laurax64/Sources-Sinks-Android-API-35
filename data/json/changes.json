@@ -4122,8 +4122,8 @@
         "name": "AppInfo",
         "implementedMethods": [
           {
-            "code": "boolean isInstalled() ",
-            "codeLong": "boolean isInstalled() ",
+            "code": "boolean isInstalled()",
+            "codeLong": "boolean isInstalled()",
             "link": "https://cs.android.com/android/platform/superproject/main/+/main:packages/modules/OnDevicePersonalization/framework/java/android/adservices/ondevicepersonalization/AppInfo.java;drc=07fff4415846d038b49582e0e2cfb32aa46f6c8f;l=63",
             "class": "Sensitive Source",
             "category": "App Activity",
